@@ -18,6 +18,19 @@ Later on, the web job was not needed anymore as App Service introduced Backup. T
 I wasted a lot of time trying to install the Jekyll Exported plugin.
 It turns out, you don’t need it. With [this guide](https://dev.to/rupeshtiwari/importing-wordpress-or-blogger-blogs-to-jekyll-blog-mpg), it’s enough to use built in Wordpress export!
 
+### TODOs
+
+[x] Export wordpress.xml
+[x] Rename posts from html to md
+[x] Fix syntax highlighting (`<pre> to {% highlight %})
+[ ] setup domain
+[ ] Google Analytics
+[ ] migrate comments
+[ ] prettify (find nicer template?)
+[ ] have landing page like mfranc and dhh
+
+### guides
+
 * [Jekyll Tutorial for Beginners](https://blog.webjeda.com/jekyll-guide/)
 * [4 Steps To Migrate From WordPress To Jekyll ](https://blog.webjeda.com/wordpress-to-jekyll-migration/)
 * [Migrae from Wordpress to Jekyll part 1](https://blog.floriancourgey.com/2018/11/migrate-from-wordpress-to-jekyll)
