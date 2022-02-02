@@ -1,0 +1,5 @@
+I"�<p>Your TypeScript project shouldn't have JavaScript files in the repository. It may be problematic when you want to deploy your site from <a href="http://jj09.net/azure-portal-tips-tricks-15-deploying-website-with-git/">git repo on Azure Web Apps</a>. You may consider adding some custom scripts, but there is a better way: use <code>npm postinstall</code>.</p>
+<p>I have created a simple TypeScript project, put it on <a href="https://github.com/jj09/tsc-postinstall">github</a>, and deployed to <a href="http://tscpostinstall.azurewebsites.net/">tscpostinstall.azurewebsites.net</a></p>
+<p>You can check out how to deploy Azure Web App from github in one of my <a href="http://aka.ms/azuretipsandtricks">Azure Tips &amp; Tricks</a> videos:</p>
+<p><iframe src="https://www.youtube.com/embed/dWvZz9zB7ck" width="640" height="360" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+:ET

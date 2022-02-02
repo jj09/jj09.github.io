@@ -1,0 +1,3538 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+
+<meta name="description" content="
+
+
+
+For last 6 months I've been working on the Azure Mobile App for iOS and Android. We officially announced it at Microsoft's //build conference keynote last month.
+
+Now, you can monitor your Azure Resources from your phone! You can also take quick management actions, like start/stop/restart. Actually, you can do whatever you want using Cloud Shell that enables you to execute any command available through Azure CLI and PowerShell.
+To learn more about the app functionalities, check out Michael Flanakin's blog post: Introducing the Azure app public preview.
+Xamarin
+The app is built with Xamarin Native in C#. To learn more about Xamarin, checkout my blog post Getting started with Xamarin in 2016.
+The great thing about Xamarin Native apps is the fact that you can do everything what is possible when building native iOS apps with swift and native Android apps with Java. You can take any code sample in swift or Java, translate it to C# and use in your Xamarin app. Additionally, you can share code across platforms. We have around 60-70% code share. Most of our code is shared using PCL (Portable Class Library). Some components are in Shared Project.
+
+Continuous Integration and Continuous Delivery with VSTS and Hockey App
+VSTS provide awesome tools for customizing build params, running tests, and deploying with HockeyApp. What's more, when you are publishing your alpha/beta builds with HockeyApp you get auto-update notifications for free.
+We have 3 environments:
+
+alpha - deployed on every commit if tests are passing (used by team members)
+beta - deployed after merge from alpha branch if all tests are passing (available for all Microsoft employees - it allows us to test the next release candidate)
+App Store / Google Play - deployed manually (Apple does not provide mechanism to auto-deploy and we are working on automating Google Play deploy from VSTS)
+
+Build definitions
+I blogged about setting up VSTS for Xamarin.iOS earlier this year. Configuring Android build is much easier. Our VSTS build pipelines for iOS and Android look like below.
+
+
+The general scenario is:
+
+build in Debug mode (in order to initialize TestCloud, which I described in this blog post)
+run tests
+build in Release mode (without TestCloud init code)
+deploy to HockeyApp
+
+We are thinking about running tests in Release mode (it requires passing TEST_CLOUD build param to build command explicitly). This will give us the same app that later on will be deployed to HockeyApp. A few times we had situations when app was working fine in Debug mode and all UI tests were passing, but it was crashing on startup in Release mode. In this case, if somebody updated app on their device, they had to uninstall it, and install manually again after we fixed bug causing crash. Very inconvenient.
+Storing secrets
+VSTS provides mechanism to keep your secrets (passwords and tokens) outside of your source code. You can store them in Variables tab in your build definition. Notice small lock next to secret value. Once you click it, it will hide the secret forever. There is no way to read it back from VSTS. I've done this a few times, and had to regenerate keys and tokens. You can store your secrets in Azure KeyVault, where they are always readable.
+
+When you are running UI tests, usually you need to authenticate (AKA you need password to login with your test account). There is no way to pass password as parameter to Test Cloud, but there is a workaround: we have file Password.txt in UI test project (without password of course), and before running UI tests, we run shell script that takes password (from VSTS Variables) as parameter and writes it to the Password.txt file. You can pass variables stored in VSTS as arguments to VSTS tasks.
+This is shell script:
+" />
+<meta property="og:description" content="
+
+
+
+For last 6 months I've been working on the Azure Mobile App for iOS and Android. We officially announced it at Microsoft's //build conference keynote last month.
+
+Now, you can monitor your Azure Resources from your phone! You can also take quick management actions, like start/stop/restart. Actually, you can do whatever you want using Cloud Shell that enables you to execute any command available through Azure CLI and PowerShell.
+To learn more about the app functionalities, check out Michael Flanakin's blog post: Introducing the Azure app public preview.
+Xamarin
+The app is built with Xamarin Native in C#. To learn more about Xamarin, checkout my blog post Getting started with Xamarin in 2016.
+The great thing about Xamarin Native apps is the fact that you can do everything what is possible when building native iOS apps with swift and native Android apps with Java. You can take any code sample in swift or Java, translate it to C# and use in your Xamarin app. Additionally, you can share code across platforms. We have around 60-70% code share. Most of our code is shared using PCL (Portable Class Library). Some components are in Shared Project.
+
+Continuous Integration and Continuous Delivery with VSTS and Hockey App
+VSTS provide awesome tools for customizing build params, running tests, and deploying with HockeyApp. What's more, when you are publishing your alpha/beta builds with HockeyApp you get auto-update notifications for free.
+We have 3 environments:
+
+alpha - deployed on every commit if tests are passing (used by team members)
+beta - deployed after merge from alpha branch if all tests are passing (available for all Microsoft employees - it allows us to test the next release candidate)
+App Store / Google Play - deployed manually (Apple does not provide mechanism to auto-deploy and we are working on automating Google Play deploy from VSTS)
+
+Build definitions
+I blogged about setting up VSTS for Xamarin.iOS earlier this year. Configuring Android build is much easier. Our VSTS build pipelines for iOS and Android look like below.
+
+
+The general scenario is:
+
+build in Debug mode (in order to initialize TestCloud, which I described in this blog post)
+run tests
+build in Release mode (without TestCloud init code)
+deploy to HockeyApp
+
+We are thinking about running tests in Release mode (it requires passing TEST_CLOUD build param to build command explicitly). This will give us the same app that later on will be deployed to HockeyApp. A few times we had situations when app was working fine in Debug mode and all UI tests were passing, but it was crashing on startup in Release mode. In this case, if somebody updated app on their device, they had to uninstall it, and install manually again after we fixed bug causing crash. Very inconvenient.
+Storing secrets
+VSTS provides mechanism to keep your secrets (passwords and tokens) outside of your source code. You can store them in Variables tab in your build definition. Notice small lock next to secret value. Once you click it, it will hide the secret forever. There is no way to read it back from VSTS. I've done this a few times, and had to regenerate keys and tokens. You can store your secrets in Azure KeyVault, where they are always readable.
+
+When you are running UI tests, usually you need to authenticate (AKA you need password to login with your test account). There is no way to pass password as parameter to Test Cloud, but there is a workaround: we have file Password.txt in UI test project (without password of course), and before running UI tests, we run shell script that takes password (from VSTS Variables) as parameter and writes it to the Password.txt file. You can pass variables stored in VSTS as arguments to VSTS tasks.
+This is shell script:
+" />
+
+<meta name="author" content="Jacob Jedryszek" />
+
+
+<meta property="og:title" content="Under the hood of the Azure Mobile App" />
+<meta property="twitter:title" content="Under the hood of the Azure Mobile App" />
+
+
+
+    <title>Under the hood of the Azure Mobile App – Jacob Jedryszek – Software Engineer at Meta (Ex-MSFT). I helped build Azure Portal, Azure Mobile App, Seeing AI, and Facebook Marketplace.</title>
+
+    <link rel="stylesheet" type="text/css" href="/style.css"/>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/ress/dist/ress.min.css"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/image/favicon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/image/favicon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/image/favicon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/image/favicon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/image/favicon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/image/favicon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/image/favicon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/image/favicon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/image/favicon-180x180.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/image/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/image/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/image/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/image/favicon-192x192.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/image/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/assets/image/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/assets/image/favicon-144x144.png">
+    <meta name="msapplication-config" content="/assets/image/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="alternate" type="application/rss+xml" title="Jacob Jedryszek - Software Engineer at Meta (Ex-MSFT). I helped build Azure Portal, Azure Mobile App, Seeing AI, and Facebook Marketplace." href="/feed.xml"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous" media="print" onload="this.media='all'"/>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.5/plyr.css" media="print" onload="this.media='all'"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" media="print" onload="this.media='all'"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous" media="print" onload="this.media='all'"/>
+
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/" class="site-avatar"><img src="/assets/image/avatar.png" width="70" height="70" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Jacob Jedryszek</a></h1>
+            <p class="site-description">Software Engineer at Meta (Ex-MSFT). I helped build Azure Portal, Azure Mobile App, Seeing AI, and Facebook Marketplace.</p>
+          </div>
+
+          <nav class="nav-menu">
+            
+  <a class="nav-menu-item"<a href="/">Blog</a>
+
+  <a class="nav-menu-item"<a href="/about">About</a>
+
+  <a class="nav-menu-item"<a href="/search">Search</a>
+
+
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="post">
+  <h1>Under the hood of the Azure Mobile App</h1>
+
+  <div class="entry">
+    <p style="text-align: center;"><img class="size-full wp-image-17711" style="float: left; margin: 10px;" src="/assets/2017/06/AzureApp-Resources.png" alt="" width="200" height="356" /></p>
+<p><img class="size-full wp-image-17701" style="float: left; margin: 10px;" src="/assets/2017/06/AzureApp-Resource.png" alt="" width="200" height="356" /></p>
+<p><img class="size-full wp-image-17691" style="float: left; margin: 10px;" src="/assets/2017/06/AzureApp-Notifications.png" alt="" width="200" height="356" /></p>
+<p><img class="size-full wp-image-17681" style="margin: 10px;" src="/assets/2017/06/AzureApp-Console.png" alt="" width="200" height="356" /></p>
+<p>For last 6 months I've been working on <a href="https://thenextweb.com/dd/2017/05/10/microsoft-announces-new-azure-mobile-applications-android-ios/">the Azure Mobile App</a> for iOS and Android. We officially announced it at Microsoft's <a href="https://build.microsoft.com/">//build</a> conference keynote last month.</p>
+<p><iframe src="https://www.youtube.com/embed/YKK_XHMFE3U?start=594&amp;end=639" width="854" height="480" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+<p>Now, you can monitor your Azure Resources from your phone! You can also take quick management actions, like start/stop/restart. Actually, you can do whatever you want using Cloud Shell that enables you to execute any command available through Azure CLI and PowerShell.</p>
+<p>To learn more about the app functionalities, check out <a href="https://twitter.com/flanakin">Michael Flanakin</a>'s blog post: <a href="https://azure.microsoft.com/en-us/blog/azure-app-preview/">Introducing the Azure app public preview</a>.</p>
+<h3>Xamarin</h3>
+<p>The app is built with Xamarin Native in C#. To learn more about Xamarin, checkout my blog post <a href="https://jj09.net/getting-started-with-xamarin-in-2016/">Getting started with Xamarin in 2016</a>.</p>
+<p>The great thing about Xamarin Native apps is the fact that you can do everything what is possible when building native iOS apps with swift and native Android apps with Java. You can take any code sample in swift or Java, translate it to C# and use in your Xamarin app. Additionally, you can share code across platforms. We have around 60-70% code share. Most of our code is shared using PCL (Portable Class Library). Some components are in Shared Project.</p>
+<p><img class="aligncenter size-full wp-image-18131" src="/assets/2017/06/AzureMobileSolution.png" alt="Azure Mobile Solution" width="532" height="422" /></p>
+<h3>Continuous Integration and Continuous Delivery with VSTS and Hockey App</h3>
+<p><a href="https://www.visualstudio.com/team-services/">VSTS</a> provide awesome tools for customizing build params, running tests, and deploying with <a href="https://www.hockeyapp.net/">HockeyApp</a>. What's more, when you are publishing your alpha/beta builds with <a href="https://www.hockeyapp.net/">HockeyApp</a> you get auto-update notifications for free.</p>
+<p>We have 3 environments:</p>
+<ul>
+<li>alpha - deployed on every commit if tests are passing (used by team members)</li>
+<li>beta - deployed after merge from alpha branch if all tests are passing (available for all Microsoft employees - it allows us to test the next release candidate)</li>
+<li>App Store / Google Play - deployed manually (Apple does not provide mechanism to auto-deploy and we are working on automating Google Play deploy from VSTS)</li>
+</ul>
+<h4>Build definitions</h4>
+<p>I blogged about <a href="https://jj09.net/continuous-integration-and-continuous-delivery-for-xamarin-ios-with-vsts/">setting up VSTS for Xamarin.iOS</a> earlier this year. Configuring Android build is much easier. Our VSTS build pipelines for iOS and Android look like below.</p>
+<p style="text-align: center;"><img class="aligncenter size-full wp-image-17751" style="float: left; margin: 10px;" src="/assets/2017/06/VSTS-ios.png" alt="VSTS Xamarin.iOS build definition" width="400" height="832" /></p>
+<p><img class="aligncenter size-full wp-image-17781" style="margin: 10px;" src="/assets/2017/06/VSTS-droid-1.png" alt="VSTS - Xamarin.Droid build definition" width="400" height="1003" /></p>
+<p>The general scenario is:</p>
+<ul>
+<li>build in <em>Debug</em> mode (in order to initialize TestCloud, which I described in <a href="https://jj09.net/continuous-integration-and-continuous-delivery-for-xamarin-ios-with-vsts/">this blog post</a>)</li>
+<li>run tests</li>
+<li>build in <em>Release</em> mode (without TestCloud init code)</li>
+<li>deploy to HockeyApp</li>
+</ul>
+<p>We are thinking about running tests in <em>Release</em> mode (it requires passing <em>TEST_CLOUD</em> build param to build command explicitly). This will give us the same app that later on will be deployed to HockeyApp. A few times we had situations when app was working fine in <em>Debug</em> mode and all UI tests were passing, but it was crashing on startup in Release mode. In this case, if somebody updated app on their device, they had to uninstall it, and install manually again after we fixed bug causing crash. Very inconvenient.</p>
+<h4>Storing secrets</h4>
+<p>VSTS provides mechanism to keep your secrets (passwords and tokens) outside of your source code. You can store them in <em>Variables</em> tab in your build definition. Notice small lock next to secret value. Once you click it, it will hide the secret forever. There is no way to read it back from VSTS. I've done this a few times, and had to regenerate keys and tokens. You can store your secrets in <a href="https://azure.microsoft.com/en-us/services/key-vault/">Azure KeyVault</a>, where they are always readable.</p>
+<p><img class="aligncenter size-full wp-image-17851" src="/assets/2017/06/VSTS-variables.png" alt="VSTS - variables" width="1868" height="800" /></p>
+<p>When you are running UI tests, usually you need to authenticate (AKA you need password to login with your test account). There is no way to pass password as parameter to Test Cloud, but there is a workaround: we have file <em>Password.txt</em> in UI test project (without password of course), and before running UI tests, we run shell script that takes password (from VSTS <em>Variables</em>) as parameter and writes it to the Password.txt file. You can pass variables stored in VSTS as arguments to VSTS tasks.</p>
+<p>This is shell script:</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="err">#</span><span class="p">!/</span><span class="n">bin</span><span class="p">/</span><span class="n">bash</span>
+<span class="n">echo</span> <span class="err">$</span><span class="m">1</span> <span class="p">&gt;</span> <span class="err">$</span><span class="m">2</span><span class="p">/</span><span class="n">Tests</span><span class="p">/</span><span class="n">AzureMobile</span><span class="p">.</span><span class="n">UITests</span><span class="p">/</span><span class="n">password</span><span class="p">.</span><span class="n">txt</span></code></pre></figure>
+
+<p>And this is VSTS task:</p>
+<p><img class="aligncenter size-large wp-image-17961" src="/assets/2017/06/GetPasswordForTestCloud-785x456.png" alt="GetPasswordForTestCloud" width="785" height="456" /></p>
+<p>VSTS is awesome! It allows you to do almost anything with VSTS tasks or custom scripts. You can modify version number in Info.plist file before building solution, <a href="https://jj09.net/hockeyapp-vsts-generate-release-notes-from-last-git-commit-message/">add release notes from git commit messages</a> and much, much more.</p>
+<h3>UI tests with Xamarin Test Cloud</h3>
+<p>TestCloud is awesome. It allows you not only automate UI testing. It also enables you to test your app on hundreds of devices without need of buying any of them.</p>
+<p>UI tests are usually the longest running task in our build pipeline. In order to minimize wait times between builds, we run UI tests only on one, most reliable device. We have separate build definitions to run UI tests nightly on 20 iOS and 40 Android devices. It takes longer, but it helps us to identify issues related to particular device model. Most of the time we don't have changes that are breaking single device.</p>
+<p>We are also thinking about creating 1-2 smoke tests that will be run on every commit, and run entire suite nightly or on separate build (to don't block other runs).</p>
+<h4>Don't assert! Use WaitFor!</h4>
+<p>UI testing 101: when you are writing UI tests, remember to wait for UI to update before asserting some condition. E.g., let's say you have button and label. After button click, you expect label to update its text to 'Button clicked'. Below test will be very flakey:</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="n">app</span><span class="p">.</span><span class="nf">Tap</span><span class="p">(</span><span class="s">"myButton"</span><span class="p">);</span>
+<span class="n">Assert</span><span class="p">.</span><span class="nf">AreEqual</span><span class="p">(</span><span class="s">"Button clicked"</span><span class="p">,</span> <span class="n">app</span><span class="p">.</span><span class="nf">Query</span><span class="p">(</span><span class="s">"myLabel"</span><span class="p">).</span><span class="n">Label</span><span class="p">);</span></code></pre></figure>
+
+<p>Label may not get updated before assertion gets executed. Instead you should use WaitFor:</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="n">app</span><span class="p">.</span><span class="nf">Tap</span><span class="p">(</span><span class="s">"myButton"</span><span class="p">);</span>
+<span class="n">app</span><span class="p">.</span><span class="nf">WaitFor</span><span class="p">(</span><span class="n">app</span><span class="p">.</span><span class="nf">Query</span><span class="p">(</span><span class="s">"myLabel"</span><span class="p">).</span><span class="n">Label</span><span class="p">.</span><span class="nf">Equals</span><span class="p">(</span><span class="s">"Button clicked"</span><span class="p">,</span> <span class="n">StringComparison</span><span class="p">.</span><span class="n">InvariantCulture</span><span class="p">));</span></code></pre></figure>
+
+<h4>Page Object Pattern</h4>
+<p>Another very good practice for writing UI tests is to use <a href="https://github.com/xamarin/customer-success-samples/blob/a51ad4ef949059f7260c3d3af45b701f6dd55503/samples/Snippets/PageObjectPatternExample/README.md">Page Object Pattern</a>. This allows you to isolate implementation details from tests scenarios.</p>
+<p>Here is one of our tests:</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="p">[</span><span class="n">Test</span><span class="p">]</span>
+<span class="k">public</span> <span class="k">void</span> <span class="nf">Favorites_AddToFavorites_ResourceVisibleOnFavoritesPage</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// Arrange</span>
+    <span class="kt">var</span> <span class="n">resourceToFavorite</span> <span class="p">=</span> <span class="n">TestResources</span><span class="p">.</span><span class="n">Azurembwinvm</span><span class="p">;</span>
+    <span class="nf">TapTabBarItem</span><span class="p">(</span><span class="n">Strings</span><span class="p">.</span><span class="n">Resources</span><span class="p">);</span>
+
+    <span class="c1">// Act</span>
+    <span class="n">_resourcesPage</span><span class="p">.</span><span class="nf">TapResourceByName</span><span class="p">(</span><span class="n">resourceToFavorite</span><span class="p">);</span>
+    <span class="n">_resourceDetailsPage</span><span class="p">.</span><span class="nf">VerifyPresent</span><span class="p">();</span>
+    <span class="n">_resourceDetailsPage</span><span class="p">.</span><span class="nf">ExecuteCommand</span><span class="p">(</span><span class="n">Strings</span><span class="p">.</span><span class="n">Favorite</span><span class="p">,</span> <span class="n">Strings</span><span class="p">.</span><span class="n">Unfavorite</span><span class="p">);</span>
+    <span class="n">_resourceDetailsPage</span><span class="p">.</span><span class="nf">GoBack</span><span class="p">();</span>
+
+    <span class="c1">// Assert</span>
+    <span class="nf">TapTabBarItem</span><span class="p">(</span><span class="n">Strings</span><span class="p">.</span><span class="n">Favorites</span><span class="p">);</span>
+    <span class="n">_favoritesPage</span><span class="p">.</span><span class="nf">VerifyPresent</span><span class="p">();</span>
+    <span class="n">_favoritesPage</span><span class="p">.</span><span class="nf">VerifyNavBarTitle</span><span class="p">(</span><span class="m">1</span><span class="p">);</span>
+    <span class="n">_favoritesPage</span><span class="p">.</span><span class="nf">WaitForResourceByName</span><span class="p">(</span><span class="n">resourceToFavorite</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Here, are some methods implemented in Page class:</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="n">FavoritesPage</span> <span class="nf">WaitForResourceByName</span><span class="p">(</span><span class="kt">string</span> <span class="n">resourceName</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">_app</span><span class="p">.</span><span class="nf">Screenshot</span><span class="p">(</span><span class="s">$"Waiting for resource </span><span class="p">{</span><span class="n">resourceName</span><span class="p">}</span><span class="s">..."</span><span class="p">);</span>
+
+    <span class="n">_app</span><span class="p">.</span><span class="nf">WaitForElement</span><span class="p">(</span><span class="n">resourceName</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="n">FavoritesPage</span> <span class="nf">TapResourceByName</span><span class="p">(</span><span class="kt">string</span> <span class="n">resourceName</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">_app</span><span class="p">.</span><span class="nf">Screenshot</span><span class="p">(</span><span class="s">$"Tapping resource '</span><span class="p">{</span><span class="n">resourceName</span><span class="p">}</span><span class="s">'..."</span><span class="p">);</span>
+
+    <span class="n">_app</span><span class="p">.</span><span class="nf">WaitForAndTapOnElement</span><span class="p">(</span><span class="n">resourceName</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">public</span> <span class="n">FavoritesPage</span> <span class="nf">WaitForNoResourceByName</span><span class="p">(</span><span class="kt">string</span> <span class="n">resourceName</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">_app</span><span class="p">.</span><span class="nf">Screenshot</span><span class="p">(</span><span class="s">$"Checking if resource '</span><span class="p">{</span><span class="n">resourceName</span><span class="p">}</span><span class="s">' is not present..."</span><span class="p">);</span>
+
+    <span class="n">_app</span><span class="p">.</span><span class="nf">WaitForNoElement</span><span class="p">(</span><span class="n">resourceName</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<h4>Screenshots during UI tests</h4>
+<p>As you probably noticed in above code snippet, we are taking screenshots at almost every step. Thanks to Page Object Pattern we don't have to think about it in our test steps, but only in our Page implementations. Screenshots helps a lot in diagnosing failures in TestCloud:</p>
+<p><img class="aligncenter size-full wp-image-17881" src="/assets/2017/06/TestCloud-screenshots.png" alt="Xamarin TestCloud - screenshots" width="800" height="478" /></p>
+<p>Above test is failing when <em>Waiting for DetailsCommandLayout... </em>Thanks to screenshot, you can easily identify the line of code responsible for failure.</p>
+<h3>Monitoring and Crash Reporting with HockeyApp and AppInsights</h3>
+<p>A lot of people are using HockeyApp for crash reporting. Not many people are using it for application logging though. That's because HockeyApp does not provide a good way for searching logs. However, you can create an <a href="https://docs.microsoft.com/en-us/azure/application-insights/app-insights-hockeyapp-bridge-app">AppInsights bridge app</a> and stream all HockeyApp events to AppInsights.</p>
+<p>AppInsights provides <a href="https://docs.microsoft.com/en-us/azure/application-insights/app-insights-analytics">very powerful query explorer</a> to search through your logs.</p>
+<p>By default logs are preserved for 3 months, but you can <a href="https://docs.microsoft.com/en-us/azure/application-insights/app-insights-export-telemetry">export them to storage account</a> and keep forever if you want.</p>
+<p>What's more, you can create <a href="https://docs.microsoft.com/en-us/azure/application-insights/app-insights-export-power-bi">awesome PowerBI dashboards using data from AppInsights</a>.</p>
+<h3>Xamarin Open Source plugins and libraries</h3>
+<p>We saved a lot of time by using cross-platform Xamarin plugins:</p>
+<ul>
+<li><a href="https://github.com/jamesmontemagno/SettingsPlugin">XamSettings Plugin</a> (from James Montemagno) - it is an abstraction over native data storage (SharedPreferences for Android, NSUserDefaults for iOS) that allows you to store/access local data in shared code</li>
+<li><a href="https://github.com/luberda-molinet/FFImageLoading">FFImageLoading</a> (from Daniel Luberda) - very powerful image library, it allows us to convert SVGs to native formats in runtime, in shared code</li>
+<li><a href="http://www.oxyplot.org/">OxyPlot</a> (recommended by Frank Kruger) - awesome, powerful, cross-platform chart library used for metrics visualization</li>
+</ul>
+<p>Xamarin community is awesome. If you are building Xamarin apps, I strongly recommend you to join slack channel <a href="https://xamarinchat.slack.com">XamarinChat</a>. You can find there a lot of great developers who are willing to help. We learned about <a href="https://github.com/luberda-molinet/FFImageLoading">FFImageLoading</a> there. What's more, <a href="http://daniel-luberda.github.io/">Daniel Luberda</a> (<a href="https://github.com/luberda-molinet/FFImageLoading">FFImageLoading</a> top contributor) is very active there. One time, he fixed a bug in less than 6h after reporting it by us :)</p>
+<h3>Summary</h3>
+<p>I am really excited about this app. It is an awesome feeling to take an app from zero to <a href="https://youtu.be/YKK_XHMFE3U?t=594">//build keynote</a>. I am even more excited because there is a lot more to come. You can help us with that! If you have an idea about what should be added/changed/removed in Azure App go to <a href="https://aka.ms/azureapp/feedback">aka.ms/azureapp/feedback</a> and add or vote for a feature.</p>
+<p>In meantime, get the app from App Store or Google Play, and let us know what you think!</p>
+<p><a href="https://itunes.apple.com/us/app/microsoft-azure/id1219013620?ls=1&amp;mt=8"><img class="aligncenter size-full wp-image-18061" src="/assets/2017/06/appstore.png" alt="" width="200" height="59" /></a></p>
+<p><a href="https://play.google.com/store/apps/details?id=com.microsoft.azure"><img class="aligncenter size-full wp-image-18071" src="/assets/2017/06/playstore.png" alt="" width="200" height="59" /></a></p>
+<p>Check out me and <a href="https://twitter.com/jamesmontemagno">James Montemagno</a> chatting about the app on Xamarin Show:</p>
+<p>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/7sR98Z0UnPU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</p>
+<p>*This post was written in the clouds during my flight from Seattle to Frankfurt :)</p>
+
+  </div>
+
+  <div class="date">
+    <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;Date:<span style="color: #333333; font-weight: normal;">&nbsp;June  1, 2017</span>
+  </div>
+
+  <div class="post-categories">
+    <i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp;Tags:&nbsp;
+      
+      
+      <a class="categories-button"<a href="/categories/#programming">programming</a>
+      
+      
+  </div>
+
+  <div class="share-post">
+    <i class="fa fa-share-alt-square fa-fw" aria-hidden="true"></i>&nbsp;Share:&nbsp;
+    <!-- Sharingbutton Facebook -->
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=http://localhost:4250/under-the-hood-of-the-azure-mobile-app/" title="Share on Facebook" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/></svg>
+    </div>
+  </div>
+</a>
+
+<!-- Sharingbutton Twitter -->
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=Under the hood of the Azure Mobile App&amp;url=http://localhost:4250/under-the-hood-of-the-azure-mobile-app/" title="Share on Twitter" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5 0-4.55 2.04-4.55 4.54 0 .36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3 0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35 0 12.92-6.92 12.92-12.93 0-.2 0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z"/></svg>
+    </div>
+  </div>
+</a>
+
+<!-- Sharingbutton Tumblr -->
+<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=Under the hood of the Azure Mobile App&amp;content=http://localhost:4250/under-the-hood-of-the-azure-mobile-app/&amp;canonicalUrl=http://localhost:4250/under-the-hood-of-the-azure-mobile-app/&amp;shareSource=tumblr_share_button" title="Share on Tumblr" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.5.5v5h5v4h-5V15c0 5 3.5 4.4 6 2.8v4.4c-6.7 3.2-12 0-12-4.2V9.5h-3V6.7c1-.3 2.2-.7 3-1.3.5-.5 1-1.2 1.4-2 .3-.7.6-1.7.7-3h3.8z"/></svg>
+    </div>
+  </div>
+</a>
+
+<!-- Sharingbutton E-Mail -->
+<a class="resp-sharing-button__link" href="mailto:?subject=Under the hood of the Azure Mobile App&amp;body=Read more at this site http://localhost:4250/under-the-hood-of-the-azure-mobile-app/" title="Share via E-Mail" target="_self" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z"/></svg>
+    </div>
+  </div>
+</a>
+
+<!-- Sharingbutton Pinterest -->
+<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=http://localhost:4250/under-the-hood-of-the-azure-mobile-app/&amp;media=http://localhost:4250/under-the-hood-of-the-azure-mobile-app/&amp;description=Under the hood of the Azure Mobile App" title="Share on Pinterest" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.14.5C5.86.5 2.7 5 2.7 8.75c0 2.27.86 4.3 2.7 5.05.3.12.57 0 .66-.33l.27-1.06c.1-.32.06-.44-.2-.73-.52-.62-.86-1.44-.86-2.6 0-3.33 2.5-6.32 6.5-6.32 3.55 0 5.5 2.17 5.5 5.07 0 3.8-1.7 7.02-4.2 7.02-1.37 0-2.4-1.14-2.07-2.54.4-1.68 1.16-3.48 1.16-4.7 0-1.07-.58-1.98-1.78-1.98-1.4 0-2.55 1.47-2.55 3.42 0 1.25.43 2.1.43 2.1l-1.7 7.2c-.5 2.13-.08 4.75-.04 5 .02.17.22.2.3.1.14-.18 1.82-2.26 2.4-4.33.16-.58.93-3.63.93-3.63.45.88 1.8 1.65 3.22 1.65 4.25 0 7.13-3.87 7.13-9.05C20.5 4.15 17.18.5 12.14.5z"/></svg>
+    </div>
+  </div>
+</a>
+
+<!-- Sharingbutton LinkedIn -->
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://localhost:4250/under-the-hood-of-the-azure-mobile-app/&amp;title=Under the hood of the Azure Mobile App&amp;summary=Under the hood of the Azure Mobile App&amp;source=http://localhost:4250/under-the-hood-of-the-azure-mobile-app/" title="Share on LinkedIn" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.5 21.5h-5v-13h5v13zM4 6.5C2.5 6.5 1.5 5.3 1.5 4s1-2.4 2.5-2.4c1.6 0 2.5 1 2.6 2.5 0 1.4-1 2.5-2.6 2.5zm11.5 6c-1 0-2 1-2 2v7h-5v-13h5V10s1.6-1.5 4-1.5c3 0 5 2.2 5 6.3v6.7h-5v-7c0-1-1-2-2-2z"/></svg>
+    </div>
+  </div>
+</a>
+
+<!-- Sharingbutton Reddit -->
+<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=http://localhost:4250/under-the-hood-of-the-azure-mobile-app/&amp;resubmit=true&amp;title=Under the hood of the Azure Mobile App" title="Share on Reddit" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z"/></svg>
+    </div>
+  </div>
+</a>
+
+<!-- Sharingbutton XING -->
+<a class="resp-sharing-button__link" href="https://www.xing.com/app/user?op=share;http://localhost:4250/under-the-hood-of-the-azure-mobile-app/;title=Under the hood of the Azure Mobile App" title="Share on XING" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--xing resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.2 9.7l-3-5.4C7.2 4 7 4 6.8 4h-5c-.3 0-.4 0-.5.2v.5L4 10 .4 16v.5c0 .2.2.3.4.3h5c.3 0 .4 0 .5-.2l4-6.6v-.5zM24 .2l-.5-.2H18s-.2 0-.3.3l-8 14v.4l5.2 9c0 .2 0 .3.3.3h5.4s.3 0 .4-.2c.2-.2.2-.4 0-.5l-5-8.8L24 .7V.2z"/></svg>
+    </div>
+  </div>
+</a>
+
+<!-- Sharingbutton WhatsApp -->
+<a class="resp-sharing-button__link" href="whatsapp://send?text=Under the hood of the Azure Mobile App%20http://localhost:4250/under-the-hood-of-the-azure-mobile-app/" title="Share via WhatsApp" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.1 3.9C17.9 1.7 15 .5 12 .5 5.8.5.7 5.6.7 11.9c0 2 .5 3.9 1.5 5.6L.6 23.4l6-1.6c1.6.9 3.5 1.3 5.4 1.3 6.3 0 11.4-5.1 11.4-11.4-.1-2.8-1.2-5.7-3.3-7.8zM12 21.4c-1.7 0-3.3-.5-4.8-1.3l-.4-.2-3.5 1 1-3.4L4 17c-1-1.5-1.4-3.2-1.4-5.1 0-5.2 4.2-9.4 9.4-9.4 2.5 0 4.9 1 6.7 2.8 1.8 1.8 2.8 4.2 2.8 6.7-.1 5.2-4.3 9.4-9.5 9.4zm5.1-7.1c-.3-.1-1.7-.9-1.9-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1s-1.2-.5-2.3-1.4c-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6s.3-.3.4-.5c.2-.1.3-.3.4-.5.1-.2 0-.4 0-.5C10 9 9.3 7.6 9 7c-.1-.4-.4-.3-.5-.3h-.6s-.4.1-.7.3c-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.3-.3-.4-.6-.5z"/></svg>
+    </div>
+  </div>
+</a>
+
+<!-- Sharingbutton Hacker News -->
+<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=http://localhost:4250/under-the-hood-of-the-azure-mobile-app/&amp;t=Under the hood of the Azure Mobile App" title="Share on Hacker News" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140"><path fill-rule="evenodd" d="M60.94 82.314L17 0h20.08l25.85 52.093c.397.927.86 1.888 1.39 2.883.53.994.995 2.02 1.393 3.08.265.4.463.764.596 1.095.13.334.262.63.395.898.662 1.325 1.26 2.618 1.79 3.877.53 1.26.993 2.42 1.39 3.48 1.06-2.254 2.22-4.673 3.48-7.258 1.26-2.585 2.552-5.27 3.877-8.052L103.49 0h18.69L77.84 83.308v53.087h-16.9v-54.08z"></path></svg>
+    </div>
+  </div>
+</a>
+
+<!-- Sharingbutton VK -->
+<a class="resp-sharing-button__link" href="http://vk.com/share.php?title=Under the hood of the Azure Mobile App&amp;url=http://localhost:4250/under-the-hood-of-the-azure-mobile-app/" title="Share on VK" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--vk resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.547 7h-3.29a.743.743 0 0 0-.655.392s-1.312 2.416-1.734 3.23C14.734 12.813 14 12.126 14 11.11V7.603A1.104 1.104 0 0 0 12.896 6.5h-2.474a1.982 1.982 0 0 0-1.75.813s1.255-.204 1.255 1.49c0 .42.022 1.626.04 2.64a.73.73 0 0 1-1.272.503 21.54 21.54 0 0 1-2.498-4.543.693.693 0 0 0-.63-.403h-2.99a.508.508 0 0 0-.48.685C3.005 10.175 6.918 18 11.38 18h1.878a.742.742 0 0 0 .742-.742v-1.135a.73.73 0 0 1 1.23-.53l2.247 2.112a1.09 1.09 0 0 0 .746.295h2.953c1.424 0 1.424-.988.647-1.753-.546-.538-2.518-2.617-2.518-2.617a1.02 1.02 0 0 1-.078-1.323c.637-.84 1.68-2.212 2.122-2.8.603-.804 1.697-2.507.197-2.507z"/></svg>
+    </div>
+  </div>
+</a>
+
+<!-- Sharingbutton Telegram -->
+<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=Under the hood of the Azure Mobile App&amp;url=http://localhost:4250/under-the-hood-of-the-azure-mobile-app/" title="Share via Telegram" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M.707 8.475C.275 8.64 0 9.508 0 9.508s.284.867.718 1.03l5.09 1.897 1.986 6.38a1.102 1.102 0 0 0 1.75.527l2.96-2.41a.405.405 0 0 1 .494-.013l5.34 3.87a1.1 1.1 0 0 0 1.046.135 1.1 1.1 0 0 0 .682-.803l3.91-18.795A1.102 1.102 0 0 0 22.5.075L.706 8.475z"/></svg>
+    </div>
+  </div>
+</a>
+
+  </div>
+
+  <div class="related-posts">
+    <div class="related-posts">
+<span class="related-posts-heading">Related Posts:</span><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class="related-posts-post">
+  <a href="/php-in-2020-its-not-your-mamas-php/">
+    PHP in 2020 it's not your mama's PHP
+  </a>
+</div>
+
+
+    
+  
+
+  
+
+  
+
+  
+
+  
+    <div class="related-posts-post">
+  <a href="/leaving-microsoft/">
+    Leaving Microsoft...
+  </a>
+</div>
+
+
+    
+  
+
+  
+    <div class="related-posts-post">
+  <a href="/azure-search-on-azure-friday/">
+    Azure Search on Azure Friday
+  </a>
+</div>
+
+
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+</div>
+
+  </div>
+
+  <div class="post-nav">
+    <div class="post-nav">
+  <p>
+    
+    <span class="post-nav-label">Previous</span><br>
+    <a href="/the-clean-coder-a-code-of-conduct-for-professional-programmers/">&#9194;&nbsp;The Clean Coder: A Code of Conduct for Professional Programmers</a>
+    
+  </p>
+  <p>
+    
+    <span class="post-nav-label">Next</span><br>
+    <a href="/quick-intro-to-web-development-with-typescript-webpack-and-aurelia/">Quick intro to web development with TypeScript, webpack and Aurelia&nbsp;&#9193;</a>
+    
+  </p>
+</div>
+
+  </div>
+
+</article>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer"><div class="social-icons"><a class="social-icon" href="/feed.xml"><i class="fa fa-rss-square fa-2x" title="Feed"></i></a><a class="social-icon" href="https://twitter.com/realJacobJed"><i class="fa fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://github.com/jj09"><i class="fa fa-github-square fa-2x" title="GitHub"></i></a></div><div class="copyright">
+            
+            <p>&copy; 2022 Jacob Jedryszek. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/forever-jekyll/forever-jekyll" rel="nofollow">Forever Jekyll</a>.</p>
+            
+          </div>    
+        </footer>
+      </div>
+    </div>
+
+    <script defer src="https://cdn.plyr.io/3.6.5/plyr.js"></script>
+    <script>
+      const player = new Plyr('#player');
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <script type="text/javascript">
+      const lightbox = GLightbox({
+          touchNavigation: true,
+          loop: true,
+          autoplayVideos: true
+      });
+    </script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/auto-render.min.js"
+            onload="renderMathInElement(document.body,{
+                    delimiters: [
+                    { left: '$$',  right: '$$',  display: true  },
+                    { left: '$',   right: '$',   display: false },
+                    { left: '\\[', right: '\\]', display: true  },
+                    { left: '\\(', right: '\\)', display: false }
+                    ]});">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+      function addDarkmodeWidget() {
+        new Darkmode().showWidget();
+        window.addEventListener('load', addDarkmodeWidget);
+      }
+      const options = {
+        label: '🌓',
+      }
+      const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+    </script>
+
+  </body>
+</html>

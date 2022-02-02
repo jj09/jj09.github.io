@@ -50,6 +50,10 @@ footer_links:
     url: https://twitter.com/realJacobJed
     icon: fa fa-twitter-square
 
+  - title: LinkedIn
+    url: https://linkedin.com/in/realjacobjed
+    icon: fa fa-linkedin-square
+
   - title: GitHub
     url: https://github.com/jj09
     icon: fa fa-github-square

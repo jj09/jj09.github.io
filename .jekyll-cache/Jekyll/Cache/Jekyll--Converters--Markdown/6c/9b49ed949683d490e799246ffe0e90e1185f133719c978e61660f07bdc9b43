@@ -1,0 +1,17 @@
+I"�<p><img class="aligncenter size-full wp-image-6561" src="/assets/2014/11/gulpjs.png" alt="gulp.js" width="134" height="271" /></p>
+<p>Gulp is a streaming build system (aka task runner). It contains plugins, which allows you to run tasks such as TypeScript to JavaScript compilation, Less to CSS compilation, bundling, minification, running you own scripts, and much, much more.</p>
+<h3>Installation</h3>
+<p>Required: <a href="https://www.npmjs.org/">npm</a> (Node Packaged Modules). You can install it with <a href="https://chocolatey.org/">Chocolatey</a>:</p>
+<p><code>cinst nodejs</code></p>
+<p>When you have npm, you are good to go and install Gulp:</p>
+<p><code>npm install -g gulp</code></p>
+<p>After installation, localize "gulp.cmd" file, and add its location to your PATH. Location depends on the way how you installed nodejs. On my one machine, where I installed nodejs using the <a href="http://nodejs.org/download/">installer</a>, it is in C:\Users\jjed\AppData\Roaming\npm directory. On my other machine, where I installed nodejs from Chocolatey, it is in C:\ProgramData\chocolatey\lib\nodejs.commandline.0.10.31\tools. I recommend you <a href="http://www.voidtools.com/">Everything Search Engine</a> not only for this task, but for searching all kind of files on your machine. It is ridiculously fast, and when you pin it to your task bar as the first item, you can invoke it with WIN+1.</p>
+<p>I wish npm installation did this work (adding gulp to PATH) automatically.</p>
+<h3>Gulp Hello World</h3>
+<p>Open the Console (I recommend <a href="http://sourceforge.net/projects/conemu/">ConEmu</a> as you Console on Windows), and cd into your project directory (for now it can be even empty directory).</p>
+<p>From your project root directory run:</p>
+<p><code>npm install --save-dev gulp</code></p>
+<p>Create <em>gulpfile.js</em> file in the root of your project:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">gulp</span><span class="dl">'</span><span class="p">);</span></code></pre></figure>
+:ET

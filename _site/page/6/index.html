@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+
+<meta name="description" content="Software Engineer at Meta (Ex-MSFT). I helped build Azure Portal, Azure Mobile App, Seeing AI, and Facebook Marketplace.">
+<meta property="og:description" content="Software Engineer at Meta (Ex-MSFT). I helped build Azure Portal, Azure Mobile App, Seeing AI, and Facebook Marketplace." />
+
+<meta name="author" content="Jacob Jedryszek" />
+
+
+
+
+    <title>Jacob Jedryszek – Software Engineer at Meta (Ex-MSFT). I helped build Azure Portal, Azure Mobile App, Seeing AI, and Facebook Marketplace.</title>
+
+    <link rel="stylesheet" type="text/css" href="/style.css"/>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/ress/dist/ress.min.css"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/image/favicon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/image/favicon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/image/favicon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/image/favicon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/image/favicon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/image/favicon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/image/favicon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/image/favicon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/image/favicon-180x180.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/image/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/image/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/image/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/image/favicon-192x192.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/image/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/assets/image/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/assets/image/favicon-144x144.png">
+    <meta name="msapplication-config" content="/assets/image/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="alternate" type="application/rss+xml" title="Jacob Jedryszek - Software Engineer at Meta (Ex-MSFT). I helped build Azure Portal, Azure Mobile App, Seeing AI, and Facebook Marketplace." href="/feed.xml"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous" media="print" onload="this.media='all'"/>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.5/plyr.css" media="print" onload="this.media='all'"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" media="print" onload="this.media='all'"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous" media="print" onload="this.media='all'"/>
+
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/" class="site-avatar"><img src="/assets/image/avatar.png" width="70" height="70" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Jacob Jedryszek</a></h1>
+            <p class="site-description">Software Engineer at Meta (Ex-MSFT). I helped build Azure Portal, Azure Mobile App, Seeing AI, and Facebook Marketplace.</p>
+          </div>
+
+          <nav class="nav-menu">
+            
+  <a class="nav-menu-item"<a href="/">Blog</a>
+
+  <a class="nav-menu-item"<a href="/about">About</a>
+
+  <a class="nav-menu-item"<a href="/search">Search</a>
+
+
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <div class="posts">
+  
+    <article class="post">
+
+      <h1><a href="/adding-biometrics-authentication-to-xamarin-ios-touch-id-face-id-and-xamarin-android-fingerprint/">Adding biometrics authentication to Xamarin.iOS (Touch ID / Face ID) and Xamarin.Android (Fingerprint)</a></h1>
+
+      <div class="entry">
+        <p>One of the top <a href="http://aka.ms/azureapp">Azure App</a> users requests was to <a href="https://feedback.azure.com/forums/568069-azure-mobile-app/suggestions/19251607-add-touch-id-support">add Touch ID support</a> for additional security. In this post I will share the details of implementing biometrics authentication for iOS and Android with Xamarin.</p>
+<p>There are three aspects of biometrics auth:<br />
+1. Enable user to turn biometrics authentication on and off. Users shouldn't be forced to use this additional security feature.<br />
+2. Detecting when user should be asked for biometrics authentication, e.g., when app is coming from background, and when app is starting.<br />
+3. Authentication process. Includes detecting hardware capabilities (is touch or face id available?), and local setup (does user configured local authentication in system settings).</p>
+<p>Enabling biometrics authentication usually can be controlled in settings (like in Outlook or OneDrive). We did the same in Azure App:</p>
+<p><img class="aligncenter size-full wp-image-19453" src="/assets/2018/01/RequireTouchIdSettings-e1514930926880.png" alt="Require Touch ID Settings" width="350" height="623" /></p>
+<h3>iOS</h3>
+<p>Detecting when user is switching back to our app in iOS is pretty simple. Every time when user switch from background, method <code>WillEnterForeground</code> in <code>AppDelegate</code> is being called. We just need to override it with our custom implementation:</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">WillEnterForeground</span><span class="p">(</span><span class="n">UIApplication</span> <span class="n">application</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// biometrics authentication logic here
+</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>You should also authenticate user when app is being launched. In that case authentication should be performed in your initial view controller.</p>
+<p>In iOS we have 2 kinds of biometrics authentication:<br />
+1. Touch ID<br />
+2. Face ID (available from iPhoneX)</p>
+<p>We can also fallback to passcode if touch/face ID is not configured, or user's device does not support it.</p>
+<p>The <a href="https://developer.xamarin.com/guides/ios/platform_features/introduction_to_touchid/#Adding_Touch_ID_to_your_application">iOS Local Auth API</a> is pretty straightforward, and well documented. I created simple helper to handle feature detection and authentication:</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">static</span> <span class="k">class</span> <span class="nc">LocalAuthHelper</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="k">enum</span> <span class="n">LocalAuthType</span>
+    <span class="p">{</span>
+        <span class="n">None</span><span class="p">,</span>
+        <span class="n">Passcode</span><span class="p">,</span>
+        <span class="n">TouchId</span><span class="p">,</span>
+        <span class="n">FaceId</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="kt">string</span> <span class="nf">GetLocalAuthLabelText</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">localAuthType</span> <span class="p">=</span> <span class="nf">GetLocalAuthType</span><span class="p">();</span>
+
+        <span class="k">switch</span> <span class="p">(</span><span class="n">localAuthType</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">case</span> <span class="n">LocalAuthType</span><span class="p">.</span><span class="n">Passcode</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">Strings</span><span class="p">.</span><span class="n">RequirePasscode</span><span class="p">;</span>
+            <span class="k">case</span> <span class="n">LocalAuthType</span><span class="p">.</span><span class="n">TouchId</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">Strings</span><span class="p">.</span><span class="n">RequireTouchID</span><span class="p">;</span>
+            <span class="k">case</span> <span class="n">LocalAuthType</span><span class="p">.</span><span class="n">FaceId</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">Strings</span><span class="p">.</span><span class="n">RequireFaceID</span><span class="p">;</span>
+            <span class="k">default</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="kt">string</span> <span class="nf">GetLocalAuthIcon</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">localAuthType</span> <span class="p">=</span> <span class="nf">GetLocalAuthType</span><span class="p">();</span>
+
+        <span class="k">switch</span> <span class="p">(</span><span class="n">localAuthType</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">case</span> <span class="n">LocalAuthType</span><span class="p">.</span><span class="n">Passcode</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">SvgLibrary</span><span class="p">.</span><span class="n">LockIcon</span><span class="p">;</span>
+            <span class="k">case</span> <span class="n">LocalAuthType</span><span class="p">.</span><span class="n">TouchId</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">SvgLibrary</span><span class="p">.</span><span class="n">TouchIdIcon</span><span class="p">;</span>
+            <span class="k">case</span> <span class="n">LocalAuthType</span><span class="p">.</span><span class="n">FaceId</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">SvgLibrary</span><span class="p">.</span><span class="n">FaceIdIcon</span><span class="p">;</span>
+            <span class="k">default</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="kt">string</span> <span class="nf">GetLocalAuthUnlockText</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">localAuthType</span> <span class="p">=</span> <span class="nf">GetLocalAuthType</span><span class="p">();</span>
+
+        <span class="k">switch</span> <span class="p">(</span><span class="n">localAuthType</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">case</span> <span class="n">LocalAuthType</span><span class="p">.</span><span class="n">Passcode</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">Strings</span><span class="p">.</span><span class="n">UnlockWithPasscode</span><span class="p">;</span>
+            <span class="k">case</span> <span class="n">LocalAuthType</span><span class="p">.</span><span class="n">TouchId</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">Strings</span><span class="p">.</span><span class="n">UnlockWithTouchID</span><span class="p">;</span>
+            <span class="k">case</span> <span class="n">LocalAuthType</span><span class="p">.</span><span class="n">FaceId</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">Strings</span><span class="p">.</span><span class="n">UnlockWithFaceID</span><span class="p">;</span>
+            <span class="k">default</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="kt">bool</span> <span class="n">IsLocalAuthAvailable</span> <span class="p">=&gt;</span> <span class="nf">GetLocalAuthType</span><span class="p">()</span> <span class="p">!=</span> <span class="n">LocalAuthType</span><span class="p">.</span><span class="n">None</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Authenticate</span><span class="p">(</span><span class="n">Action</span> <span class="n">onSuccess</span><span class="p">,</span> <span class="n">Action</span> <span class="n">onFailure</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">context</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">LAContext</span><span class="p">();</span>
+        <span class="n">NSError</span> <span class="n">AuthError</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">context</span><span class="p">.</span><span class="nf">CanEvaluatePolicy</span><span class="p">(</span><span class="n">LAPolicy</span><span class="p">.</span><span class="n">DeviceOwnerAuthenticationWithBiometrics</span><span class="p">,</span> <span class="k">out</span> <span class="n">AuthError</span><span class="p">)</span>
+            <span class="p">||</span> <span class="n">context</span><span class="p">.</span><span class="nf">CanEvaluatePolicy</span><span class="p">(</span><span class="n">LAPolicy</span><span class="p">.</span><span class="n">DeviceOwnerAuthentication</span><span class="p">,</span> <span class="k">out</span> <span class="n">AuthError</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="kt">var</span> <span class="n">replyHandler</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">LAContextReplyHandler</span><span class="p">((</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="p">=&gt;</span>
+            <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">success</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">onSuccess</span><span class="p">?.</span><span class="nf">Invoke</span><span class="p">();</span>
+                <span class="p">}</span>
+                <span class="k">else</span>
+                <span class="p">{</span>
+                    <span class="n">onFailure</span><span class="p">?.</span><span class="nf">Invoke</span><span class="p">();</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+
+            <span class="n">context</span><span class="p">.</span><span class="nf">EvaluatePolicy</span><span class="p">(</span><span class="n">LAPolicy</span><span class="p">.</span><span class="n">DeviceOwnerAuthentication</span><span class="p">,</span> <span class="n">Strings</span><span class="p">.</span><span class="n">PleaseAuthenticateToProceed</span><span class="p">,</span> <span class="n">replyHandler</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">private</span> <span class="k">static</span> <span class="n">LocalAuthType</span> <span class="nf">GetLocalAuthType</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">localAuthContext</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">LAContext</span><span class="p">();</span>
+        <span class="n">NSError</span> <span class="n">AuthError</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">localAuthContext</span><span class="p">.</span><span class="nf">CanEvaluatePolicy</span><span class="p">(</span><span class="n">LAPolicy</span><span class="p">.</span><span class="n">DeviceOwnerAuthentication</span><span class="p">,</span> <span class="k">out</span> <span class="n">AuthError</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">localAuthContext</span><span class="p">.</span><span class="nf">CanEvaluatePolicy</span><span class="p">(</span><span class="n">LAPolicy</span><span class="p">.</span><span class="n">DeviceOwnerAuthenticationWithBiometrics</span><span class="p">,</span> <span class="k">out</span> <span class="n">AuthError</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nf">GetOsMajorVersion</span><span class="p">()</span> <span class="p">&gt;=</span> <span class="m">11</span> <span class="p">&amp;&amp;</span> <span class="n">localAuthContext</span><span class="p">.</span><span class="n">BiometryType</span> <span class="p">==</span> <span class="n">LABiometryType</span><span class="p">.</span><span class="n">TypeFaceId</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="k">return</span> <span class="n">LocalAuthType</span><span class="p">.</span><span class="n">FaceId</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="k">return</span> <span class="n">LocalAuthType</span><span class="p">.</span><span class="n">TouchId</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="k">return</span> <span class="n">LocalAuthType</span><span class="p">.</span><span class="n">Passcode</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">LocalAuthType</span><span class="p">.</span><span class="n">None</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">private</span> <span class="k">static</span> <span class="kt">int</span> <span class="nf">GetOsMajorVersion</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="kt">int</span><span class="p">.</span><span class="nf">Parse</span><span class="p">(</span><span class="n">UIDevice</span><span class="p">.</span><span class="n">CurrentDevice</span><span class="p">.</span><span class="n">SystemVersion</span><span class="p">.</span><span class="nf">Split</span><span class="p">(</span><span class="sc">'.'</span><span class="p">)[</span><span class="m">0</span><span class="p">]);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>There are helper methods determining proper label (<code>GetLocalAuthLabelText</code>), icon (<code>GetLocalAuthIcon</code>) and authentication text (<code>GetLocalAuthUnlockText</code>) depending on available authentication type. There is also one liner <code>IsLocalAuthAvailable</code> checking if Local Authentication (face/touch ID or passcode) is available, and <code>Authenticate</code> method that performs authentication, which takes <code>success</code> and <code>failure</code> callbacks as parameters. It can be used in <code>WillEnterForeground</code> method as follows:</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">WillEnterForeground</span><span class="p">(</span><span class="n">UIApplication</span> <span class="n">application</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(!</span><span class="n">AppSettings</span><span class="p">.</span><span class="n">IsLocalAuthEnabled</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">LocalAuthHelper</span><span class="p">.</span><span class="nf">Authenticate</span><span class="p">(</span><span class="k">null</span><span class="p">,</span> <span class="c1">// do not do anything on success
+</span>
+    <span class="p">()</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="c1">// show View Controller that requires authentication
+</span>
+        <span class="nf">InvokeOnMainThread</span><span class="p">(()</span> <span class="p">=&gt;</span>
+        <span class="p">{</span>
+            <span class="kt">var</span> <span class="n">localAuthViewController</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">LocalAuthViewController</span><span class="p">();</span>
+            <span class="n">Window</span><span class="p">.</span><span class="n">RootViewController</span><span class="p">.</span><span class="nf">ShowViewController</span><span class="p">(</span><span class="n">localAuthViewController</span><span class="p">,</span> <span class="k">null</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>We do not have to do anything on success. The popup shown by iOS will disappear and user will be able to use the app. On failed authentication though we should display some kind of shild (e.g., ViewController) that prevent user from using the app until authorization succeed. This is how it looks in Azure App:</p>
+<p><img class="aligncenter size-full wp-image-19464" src="/assets/2018/01/AzureAppUnlockWithTouchId-e1515522992230.png" alt="Azure App - Unlock with Touch ID" width="300" height="534" /></p>
+<h3>Android</h3>
+<p>Detecting when app is coming from background in Android is tricky. There is no single method that is invoked only when app is coming back from background. The <code>OnResume</code> method is being called when app is coming back from the background, but it's also called when you switch from one activity to another. Solution for that is to keep a time stamp with last successful authentication, and update it to <code>DateTime.Now</code> every time when activity is calling <code>OnPause</code>. This happen when app is going to background, but also when app is changing between activities. Thus we cannot simply set flag <code>Background=true</code> when <code>OnPause</code> is called. However, when difference between subsequent <code>OnPause</code> and <code>OnResume</code> is larger than some period of time (e.g., more than a few seconds) we can assume that app went to background. Below code should be implemented in some <code>BaseActivity</code> class that all activities inherit from:</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">class</span> <span class="nc">BaseActivity</span>
+<span class="p">{</span>
+  <span class="k">public</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">FingerprintAuthTimeoutSeconds</span> <span class="p">=</span> <span class="m">5</span><span class="p">;</span>
+  <span class="k">public</span> <span class="k">static</span> <span class="n">DateTime</span> <span class="n">LastSuccessfulFingerprintAuth</span> <span class="p">=</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">MinValue</span><span class="p">;</span>
+    
+  <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnResume</span><span class="p">()</span>
+  <span class="p">{</span>
+    <span class="k">base</span><span class="p">.</span><span class="nf">OnResume</span><span class="p">();</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nf">IsFingerprintAvailable</span><span class="p">()</span> <span class="p">&amp;&amp;</span> <span class="n">LastSuccessfulFingerprintAuth</span> <span class="p">&gt;</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="nf">AddSeconds</span><span class="p">(-</span><span class="n">FingerprintAuthTimeoutSeconds</span><span class="p">))</span>
+    <span class="p">{</span>
+      <span class="nf">StartActivity</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">FingerprintAuthActivity</span><span class="p">));</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnPause</span><span class="p">()</span>
+  <span class="p">{</span>
+    <span class="k">base</span><span class="p">.</span><span class="nf">OnPause</span><span class="p">();</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nf">IsFingerprintAvailable</span><span class="p">())</span>
+    <span class="p">{</span>
+      <span class="n">LastSuccessfulFingerprintAuth</span> <span class="p">=</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>The basics of Fingerprint authentication are very well described in <a href="https://developer.xamarin.com/guides/android/platform_features/fingerprint-authentication/">Xamarin docs</a>.</p>
+<p>Even better reference is a sample app <a href="https://github.com/xamarin/monodroid-samples/tree/master/FingerprintGuide">FingerprintGuide</a> from Xamarin.</p>
+<p>The main disadvantage of adding fingerprint authentication in Android (over Face/Touch ID in iOS) is requirement to build your own UI and logic for the authentication popup. This includes adding icon, and handling all authentication results. iOS handles incorrect scan, and displays popup again with passcode fallback after too many unsuccessful tries. In Android you have to implement this entire logic by yourself.</p>
+<h3>Summary</h3>
+<p>Adding biometrics authentication is useful for apps that hold sensitive data, like banking apps, file managers (Dropbox, OneDrive), or an app that has access to your Azure Resources :)</p>
+<p>Implementing local authentication in iOS is pretty straightforward, and iOS APIs provide authentication UI for free. In Android however, the APIs are only working with the backend, and UI has to be implemented by you.</p>
+<p>Local authentication should be always optional. Some users may not need nor want it. Thus, it should be configurable in the app settings.</p>
+<p>Try out biometrics auth in Azure App!</p>
+<p><a href="https://itunes.apple.com/us/app/microsoft-azure/id1219013620?ls=1&amp;mt=8"><img src="/assets/2018/01/appstore.png" alt="Download on the App Store" width="200" height="59" class="aligncenter size-full wp-image-18061" /></a><br />
+<a href="https://play.google.com/store/apps/details?id=com.microsoft.azure"><img src="/assets/2018/01/playstore.png" alt="Get it on Google Play" width="200" height="59" class="aligncenter size-full wp-image-18071" /></a></p>
+
+      </div>
+
+      <a href="/adding-biometrics-authentication-to-xamarin-ios-touch-id-face-id-and-xamarin-android-fingerprint/" class="read-more">Read more&nbsp;&#183;<span class="reading-time">
+  
+  6 min read
+</span>
+</a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/managing-multiple-accounts-in-azure-app/">Managing multiple accounts in Azure App</a></h1>
+
+      <div class="entry">
+        <p>One of our <a href="https://feedback.azure.com/forums/568069-azure-mobile-app/filters/top">top user's feedback requests</a> was to enable <a href="https://feedback.azure.com/forums/568069-azure-mobile-app/suggestions/18825487-multiple-account-access">multiple account access</a> without singing out and signing in.</p>
+<p>It is now available on latest <a href="https://aka.ms/azureapp/ios">iOS</a> and <a href="https://aka.ms/azureapp/android">Android</a> releases!</p>
+<h3>Quick overview</h3>
+<p><img class="aligncenter size-full wp-image-19333" src="/assets/2017/11/AzureApp-MultiAccounts.gif" alt="Azure App - Multiple Accounts" width="376" height="668" /></p>
+<p>You can see all your accounts in hamburger menu. You can add new account by tapping 'Add account'. To remove account you need to simply sign out.</p>
+<h3>Limitations</h3>
+<p><b>First limitation (AKA caveat):</b> when you are adding second live account you, you may run into the following screen during authentication with Active Directory:</p>
+<p><img class="aligncenter wp-image-19343 size-full" src="/assets/2017/11/AzureApp-alreadysignedin.png" alt="Azure App - already signed in" width="582" height="530" /></p>
+<p>This is <a href="https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/issues/892">Active Directory limitation</a>. Just tap 'Sign out and sign in with a different account', and we will sign you in to another account <b>without signing you out from another</b>.</p>
+<p><b>Second limitation:</b> you are not able to sign in into two accounts if they are associated with one email. Yes! One email can be used to sign in to more than 1 account. If you are seeing screen similar like below during authentication this is a case:</p>
+<p><img class="aligncenter size-full wp-image-19383" src="/assets/2017/11/AzureApp-MultiAccountsOneEmail-e1511392866455.png" alt="Azure App - Multi Accounts One Email" width="400" height="711" /></p>
+<p>In this situation you need to sign out, and then sign in again choosing another account.</p>
+<h3>Summary</h3>
+<p>I personally love this feature as switching between my MSDN account and work account was a pain in the past. Now it's seamless.</p>
+<p>We are still exploring possibility to enable users to sign in into two accounts tied to the same email. We are also looking at improvements around removing and adding accounts.</p>
+<p>Do you have feedback? Let us know! You can ping <a href="https://twitter.com/JakubJedryszek">me</a> or <a href="https://twitter.com/AzureApp">our team</a> on twitter. You can also add or vote on existing ideas at <a href="https://aka.ms/azureapp/feedback">our User Voice</a>.</p>
+<p>Happy Thanksgiving!</p>
+
+      </div>
+
+      <a href="/managing-multiple-accounts-in-azure-app/" class="read-more">Read more&nbsp;&#183;<span class="reading-time">
+  
+  2 min read
+</span>
+</a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/in-memory-caching-in-xamarin-apps/">In-memory caching in Xamarin apps</a></h1>
+
+      <div class="entry">
+        <p><img class="aligncenter size-full wp-image-19203" src="/assets/2017/09/cpu.png" alt="CPU" width="1440" height="614" /></p>
+<p>Recently we added in-memory caching to <a href="https://aka.ms/azureapp">Azure App</a>. You can try it out now on <a href="https://aka.ms/azureapp/ios">iOS</a> and <a href="https://aka.ms/azureapp/android">Android</a>!</p>
+<p>It turns out <a href="http://www.go-mono.com/status/status.aspx?reference=4.5&amp;profile=4.5&amp;assembly=System.Runtime.Caching">Mono doesn't have <code>System.Runtime.Caching</code> namespace</a>, which makes it easy to implement caching for .NET apps. We had to find another way.</p>
+<h3>Caching libraries for Xamarin</h3>
+<p>We looked at a few libraries for caching (e.g., <a href="https://www.nuget.org/packages/MemoryCache/">MemoryCache</a> and <a href="https://github.com/akavache/Akavache/">Akavache</a>), but surprisingly none of them manage cache size and memory. They simply add items to Dictionary, and if you add too many you get <code>OutOfMemoryException</code>.</p>
+<p>It may not be an issue for many applications, but in <a href="https://aka.ms/azureapp">Azure App</a> we need to take into account users who has multiple subscriptions with thousands of resources.</p>
+<p>BTW: Akavache is a great library. Besides in-memory cache it also supports persistent cache, have clean APIs and a lot of great documentation.</p>
+<h3>Implementing in-memory cache</h3>
+<p>After browsing internets and asking people at <a href="https://xamarinchat.slack.com">Xamarin chat</a> we didn't find anything that would work for us, and we decided to implement in-memory cache by ourselves.</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">public</span> <span class="k">class</span> <span class="nc">InMemoryCache</span><span class="p">&lt;</span><span class="n">t</span><span class="p">&gt;</span> <span class="p">:</span> <span class="n">IInMemoryCache</span><span class="p">&lt;</span><span class="n">t</span><span class="p">&gt;</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">LimitedCacheThreshold</span> <span class="p">=</span> <span class="m">1000</span><span class="p">;</span>
+
+    <span class="k">private</span> <span class="k">class</span> <span class="nc">Reference</span>
+    <span class="p">{</span>
+        <span class="k">private</span> <span class="kt">int</span> <span class="n">_hitCount</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+
+        <span class="k">public</span> <span class="n">DateTimeOffset</span> <span class="n">Timestamp</span>
+        <span class="p">{</span>
+            <span class="k">get</span><span class="p">;</span>
+            <span class="k">private</span> <span class="k">set</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="n">T</span> <span class="n">Data</span>
+        <span class="p">{</span>
+            <span class="k">get</span><span class="p">;</span>
+            <span class="k">private</span> <span class="k">set</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="k">void</span> <span class="nf">AddRef</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="n">Interlocked</span><span class="p">.</span><span class="nf">Increment</span><span class="p">(</span><span class="k">ref</span> <span class="n">_hitCount</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="kt">int</span> <span class="nf">ResetRef</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="kt">var</span> <span class="n">count</span> <span class="p">=</span> <span class="n">_hitCount</span><span class="p">;</span>
+            <span class="n">_hitCount</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+            <span class="k">return</span> <span class="n">count</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="k">static</span> <span class="n">Reference</span> <span class="nf">Create</span><span class="p">(</span><span class="n">T</span> <span class="n">obj</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="nf">Reference</span><span class="p">()</span>
+            <span class="p">{</span>
+                <span class="n">Timestamp</span> <span class="p">=</span> <span class="n">DateTimeOffset</span><span class="p">.</span><span class="n">Now</span><span class="p">,</span>
+                <span class="n">Data</span> <span class="p">=</span> <span class="n">obj</span><span class="p">,</span>
+            <span class="p">};</span>
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="nf">Reference</span><span class="p">()</span>
+        <span class="p">{</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">ConcurrentDictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="n">WeakReference</span><span class="p">&lt;</span><span class="n">reference</span><span class="p">&gt;&gt;</span> <span class="n">_weakCache</span><span class="p">;</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">ConcurrentDictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="n">Reference</span><span class="p">&gt;</span> <span class="n">_limitedCache</span><span class="p">;</span>
+    <span class="k">private</span> <span class="k">readonly</span> <span class="n">ConcurrentDictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">t</span><span class="p">&gt;&gt;</span> <span class="n">_pendingTasks</span><span class="p">;</span>
+
+    <span class="k">private</span> <span class="nf">InMemoryCache</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">_weakCache</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ConcurrentDictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="n">WeakReference</span><span class="p">&lt;</span><span class="n">reference</span><span class="p">&gt;&gt;(</span><span class="n">StringComparer</span><span class="p">.</span><span class="n">Ordinal</span><span class="p">);</span>
+        <span class="n">_limitedCache</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ConcurrentDictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="n">Reference</span><span class="p">&gt;(</span><span class="n">StringComparer</span><span class="p">.</span><span class="n">Ordinal</span><span class="p">);</span>
+        <span class="n">_pendingTasks</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ConcurrentDictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">t</span><span class="p">&gt;&gt;(</span><span class="n">StringComparer</span><span class="p">.</span><span class="n">Ordinal</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="n">IInMemoryCache</span><span class="p">&lt;</span><span class="n">t</span><span class="p">&gt;</span> <span class="nf">Create</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">InMemoryCache</span><span class="p">&lt;</span><span class="n">t</span><span class="p">&gt;();</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">t</span><span class="p">&gt;</span> <span class="nf">GetOrAdd</span><span class="p">(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="n">DateTimeOffset</span> <span class="n">expiration</span><span class="p">,</span> <span class="n">Func</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="n">Task</span><span class="p">&lt;</span><span class="n">t</span><span class="p">&gt;&gt;</span> <span class="n">addFactory</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">WeakReference</span><span class="p">&lt;</span><span class="n">reference</span><span class="p">&gt;</span> <span class="n">cachedReference</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">_weakCache</span><span class="p">.</span><span class="nf">TryGetValue</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="k">out</span> <span class="n">cachedReference</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">Reference</span> <span class="n">cachedValue</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">cachedReference</span><span class="p">.</span><span class="nf">TryGetTarget</span><span class="p">(</span><span class="k">out</span> <span class="n">cachedValue</span><span class="p">)</span> <span class="p">||</span> <span class="n">cachedValue</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">cachedValue</span><span class="p">.</span><span class="n">Timestamp</span> <span class="p">&gt;</span> <span class="n">expiration</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">cachedValue</span><span class="p">.</span><span class="nf">AddRef</span><span class="p">();</span>
+                    <span class="k">return</span> <span class="n">cachedValue</span><span class="p">.</span><span class="n">Data</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">try</span>
+        <span class="p">{</span>
+            <span class="kt">var</span> <span class="n">actualValue</span> <span class="p">=</span> <span class="k">await</span> <span class="n">_pendingTasks</span><span class="p">.</span><span class="nf">GetOrAdd</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">addFactory</span><span class="p">);</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">_limitedCache</span><span class="p">.</span><span class="n">Count</span> <span class="p">&gt;</span> <span class="n">LimitedCacheThreshold</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="kt">var</span> <span class="n">keysToRemove</span> <span class="p">=</span> <span class="n">_limitedCache</span>
+                    <span class="p">.</span><span class="nf">Select</span><span class="p">(</span><span class="n">item</span> <span class="p">=&gt;</span> <span class="n">Tuple</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span>
+                        <span class="n">item</span><span class="p">.</span><span class="n">Value</span><span class="p">.</span><span class="nf">ResetRef</span><span class="p">(),</span>
+                        <span class="n">item</span><span class="p">.</span><span class="n">Value</span><span class="p">.</span><span class="n">Timestamp</span><span class="p">,</span>
+                        <span class="n">item</span><span class="p">.</span><span class="n">Key</span><span class="p">))</span>
+                    <span class="p">.</span><span class="nf">ToArray</span><span class="p">()</span>
+                    <span class="p">.</span><span class="nf">OrderBy</span><span class="p">(</span><span class="n">item</span> <span class="p">=&gt;</span> <span class="n">item</span><span class="p">.</span><span class="n">Item1</span><span class="p">)</span>
+                    <span class="p">.</span><span class="nf">ThenBy</span><span class="p">(</span><span class="n">item</span> <span class="p">=&gt;</span> <span class="n">item</span><span class="p">.</span><span class="n">Item2</span><span class="p">)</span>
+                    <span class="p">.</span><span class="nf">Select</span><span class="p">(</span><span class="n">item</span> <span class="p">=&gt;</span> <span class="n">item</span><span class="p">.</span><span class="n">Item3</span><span class="p">)</span>
+                    <span class="p">.</span><span class="nf">Take</span><span class="p">(</span><span class="n">LimitedCacheThreshold</span> <span class="p">/</span> <span class="m">2</span><span class="p">)</span>
+                    <span class="p">.</span><span class="nf">ToArray</span><span class="p">();</span>
+
+                <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">k</span> <span class="k">in</span> <span class="n">keysToRemove</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">Reference</span> <span class="n">unused</span><span class="p">;</span>
+                    <span class="n">_limitedCache</span><span class="p">.</span><span class="nf">TryRemove</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="k">out</span> <span class="n">unused</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+
+            <span class="kt">var</span> <span class="n">reference</span> <span class="p">=</span> <span class="n">Reference</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="n">actualValue</span><span class="p">);</span>
+            <span class="n">_weakCache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="p">=</span> <span class="k">new</span> <span class="n">WeakReference</span><span class="p">&lt;</span><span class="n">reference</span><span class="p">&gt;(</span><span class="n">reference</span><span class="p">);</span>
+            <span class="n">_limitedCache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="p">=</span> <span class="n">reference</span><span class="p">;</span>
+
+            <span class="k">return</span> <span class="n">actualValue</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">finally</span>
+        <span class="p">{</span>
+            <span class="n">Task</span><span class="p">&lt;</span><span class="n">t</span><span class="p">&gt;</span> <span class="n">unused</span><span class="p">;</span>
+            <span class="n">_pendingTasks</span><span class="p">.</span><span class="nf">TryRemove</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="k">out</span> <span class="n">unused</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>We use two layers of caching. First is using <code>WeakReference</code> that leaves memory management to Garbage Collector. As GC is not very predictable and sometimes may unnecessary release some reference, we have second layer of caching. We call it <code>_limitedCache</code>, and it keeps objects in memory until capacity reach 1000 objects. Then we remove half (500), least used objects from dictionary. Because the same objects are being kept in two dictionaries, the <code>WeakReference</code> will never be released as long as object is in <code>_limitedCache</code>. Thus, we always check only if object is present in <code>_weakCache</code>.</p>
+<p>There is also third dictionary that keeps track of pending tasks that are responsible for getting data. This prevents us from sending the same requests more than once if object is not in cache yet.</p>
+<h3>Summary</h3>
+<p>What is great about building apps with Xamarin is the ability to share code across platforms. When we were implementing cache, we didn't touch any platform specific code. All work was done in <a href="https://developer.xamarin.com/guides/cross-platform/application_fundamentals/pcl/introduction_to_portable_class_libraries/">Portable Class Library</a>.</p>
+<p>Adding cache to <a href="https://aka.ms/azureapp">Azure App</a> helped not only to decrease user's network data usage, but also to improve performance significantly!</p>
+<p>If you need in-memory cache for your app, go ahead and use the above code snippet! If you are looking for persistent cache then consider using <a href="https://github.com/akavache/Akavache/">Akavache</a>.</p>
+<p>Are you caching? How? Why? Why not?</p>
+
+      </div>
+
+      <a href="/in-memory-caching-in-xamarin-apps/" class="read-more">Read more&nbsp;&#183;<span class="reading-time">
+  
+  4 min read
+</span>
+</a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/trying-ios-11-with-xamarin/">Trying iOS 11 with Xamarin</a></h1>
+
+      <div class="entry">
+        <p>The triathlon season is over. I completed all three, planned races for this year:</p>
+<ol>
+<li>Ironman 70.3 Coeur d'Alene</li>
+<li>SeaFair Sprint Triathlon (new PR!)</li>
+<li>Lake Meridian Olympic Triathlon (new PR!)</li>
+</ol>
+<p>I also finished <a href="http://www.redmondcyclingclub.org/RAMROD/RAMROD_course_information.html">RAMROD</a> (epic Ride Around Mt Rainier in One Day) and <a href="http://redmondcyclingclub.org/rides/Coursed'Equipe.html">Course d'Equipe</a>. The last bike ride for this season is <a href="http://granfondowhistler.com/">Gran Fondo Whistler</a> in two weeks.</p>
+<p>In the meantime...</p>
+<h3>The Winter is coming!</h3>
+<p>Apple is cooking for us iOS 11, and I decided to give it a shot! It actually works nice.</p>
+<ol>
+<li>Install latest Xcode beta from <a href="https://developer.apple.com/download/">here</a></li>
+<li>Install latest <a href="https://dl.xamarin.com/MonoTouch/Mac/xamarin.ios-10.99.5.13.pkg">Xamarin.iOS</a> (all links are <a href="https://releases.xamarin.com/category/preview/">here</a>, hint: version is 10.99, not 11 yet)</li>
+<li>Set VS for Mac to Xcode-beta (Preferences -&gt; Projects -&gt; SDK Locations -&gt; Apple -&gt; Location)</li>
+</ol>
+<p>If you did everything correct you should be able to see new iOS11 simulator:</p>
+<p><img class="aligncenter size-full wp-image-18993" src="/assets/2017/09/iOS11Simulator-e1503980619876.png" alt="iOS 11 simulator" width="350" height="718" /></p>
+<p>I encountered one issue: when deploying to device I got following errors:</p>
+<p><em>Error: unable to find utility "lipo", not a developer tool or in PATH</em><br />
+<em>Error: Failed to create the a fat library</em></p>
+<p>Solution was to run the following command:</p>
+<p><code>sudo xcode-select --switch /Applications/Xcode-beta.app/Contents/Developer/</code></p>
+<p><a href="https://forums.xamarin.com/discussion/31493/mtouchtask-error-mt5206-failed-to-create-the-a-fat-library-please-review-the-build-log-mt5206">Related Xamarin Forums thread</a>.</p>
+<h3>Summary</h3>
+<p>So far everything works pretty well. Occasionally when I run VS for Mac it doesn't detect simulators, but after restart they are back!</p>
+<p>Have you tried iOS 11 yet?</p>
+
+      </div>
+
+      <a href="/trying-ios-11-with-xamarin/" class="read-more">Read more&nbsp;&#183;<span class="reading-time">
+  
+  2 min read
+</span>
+</a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/azure-resource-manager-batch-api/">Azure Resource Manager Batch API</a></h1>
+
+      <div class="entry">
+        <p>The latest Azure Mobile App update has statuses on the resources list:</p>
+<p><img class="aligncenter size-full wp-image-18563" src="/assets/2017/08/AzureAppStatuses-e1502211629995.jpg" alt="Azure App - Statuses on resources list" width="300" height="534" /></p>
+<p>You probably want to ask why we didn't have them before. Great question! Currently <a href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview">Azure Resource Manager</a> (public API we are using to get your Azure resources) requires to make separate calls to get single resource status. It means: if you have 100-200 resources, you would have to make 100-200 extra calls. There are some people who has almost 2000 in one subscription! Taking performance and data usage into consideration, this is not ideal.</p>
+<p>Both iOS and Android platforms allows to address this problem to some extent by querying for status only resources that are currently visible. However this is still extra 5-10 calls. It is even worse when you start scrolling, and very bad if you scroll on your list containing 2000 resources.</p>
+<h3>Batch API</h3>
+<p>Sometime ago <a href="https://docs.microsoft.com/en-us/rest/api/batchservice/">ARM</a> added <a href="https://msdn.microsoft.com/en-us/skype/ucwa/batchingrequests">Batch API</a> - you can send POST request with up to 20 URIs in the body. Response will contain up to 20 packaged responses that you have to extract. Using batch API, you can decrease number of requests by up to 20x. This matters especially when user has a lot of resources and keep scrolling on the list.</p>
+<p>When implementing batch requests, you need to figure out the optimal interval for sending requests. We started with 200ms, but then we changed it to 50ms. Additionally, every time new request is coming we delay sending batch request by additional 50ms. This may cause indefinite delay. In order to solve this: we always submit request if queue has 20 or more pending requests. 20*50ms = 1000ms = 1s = long time! We tweaked it again, and changed interval to 20ms. With current implementation, we wait anytime between 20ms and 400ms to send batch request.</p>
+<h3>Implementing Batch API</h3>
+<p>You probably gonna say: "it all sounds great, but how do I implement it"? For you convenience I created small console application that demonstrate ARM Batch API in action, and I put it on <a href="https://github.com/jj09/ArmBatchApi">github</a>.</p>
+<p>Xamarin.iOS and Xamarin.Android does not have <code>System.Threading.Timer</code>. We created our own implementation <code>OneShotTimer</code> (thanks William Moy!).</p>
+<p>Entire magic happens in <em>ArmService</em>. It has one public method <code>GetResource</code> that instead of directly sending GET request is adding request to <em>ConcurrentQueue</em>. <code>OneShotTimer</code> and <code>BatchRequestDipatcher</code> methods are responsible for sending the actual HTTP request.</p>
+<p>In order to run console app, you need to provide ARM token, and (optionally) resource ids you want to request. In demo app I provided fake resource ids, which will be fine to issue requests, but you will not get resource back.</p>
+<p>To get ARM token, go to Azure Portal, open F12 tools and inspect some ARM request. From request headers, copy <em>Authorization</em> header (string starting with <tt>Bearer rAnDoMcHaRacTErS...</tt>):</p>
+<p><img class="aligncenter size-full wp-image-18743" src="/assets/2017/08/AzurePortalToken-e1502985354279.png" alt="Azure Portal - ARM token" width="800" height="528" /></p>
+<p>You can also get resources ids from F12 tab. The best way is to go to All Resources blade, and find some batch request:</p>
+<p><img class="aligncenter size-full wp-image-18763" src="/assets/2017/08/AzurePortalResourceIds-e1502985461123.png" alt="Azure Portal - resources ids" width="799" height="529" /></p>
+<p>Once you paste resource ids and ArmToken in Program.cs you can run the app, and you should see the following output:</p>
+<p><img class="aligncenter size-full wp-image-18783" src="/assets/2017/08/Batch5000ms-e1502987360917.png" alt="Batch requests with 5s randomness" width="800" height="908" /></p>
+<p>Requests are send in random time, anytime from 0 to 5s after program runs. This is done using <em>Task.Delay</em>:</p>
+
+<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="kt">var</span> <span class="n">tasks</span> <span class="p">=</span> <span class="n">_resourceIds</span><span class="p">.</span><span class="nf">Select</span><span class="p">(</span><span class="k">async</span> <span class="n">resourceId</span> <span class="p">=&gt;</span>
+<span class="p">{</span>
+  <span class="k">await</span> <span class="n">Task</span><span class="p">.</span><span class="nf">Delay</span><span class="p">(</span><span class="k">new</span> <span class="nf">Random</span><span class="p">().</span><span class="nf">Next</span><span class="p">()</span> <span class="p">%</span> <span class="m">5000</span><span class="p">);</span>   <span class="c1">// simulate calling GetResource from different parts of UI</span>
+  <span class="kt">var</span> <span class="n">response</span> <span class="p">=</span> <span class="k">await</span> <span class="n">_armService</span><span class="p">.</span><span class="nf">GetResource</span><span class="p">(</span><span class="n">resourceId</span><span class="p">);</span>
+  <span class="n">resources</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">response</span><span class="p">);</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>When you change randomness from 5s to 0.5s you can observe that there will be less batch requests (AKA more requests sent in single batch):</p>
+<p><img class="aligncenter size-full wp-image-18803" src="/assets/2017/08/Batch500ms-e1502987628893.png" alt="Batch requests with 0.5s randomness" width="800" height="910" /></p>
+<h3>Summary</h3>
+<p>Using Batch API for getting resource statuses visibly improves performance in the mobile app. It is noticeable especially when using network data.</p>
+<p>Azure Resource Manager has plans to add ARM API that will allow to do 1 request to get multiple resources with statuses. This should improve performance even more in the future.</p>
+<p>If you are facing similar problem with your app, consider implementing Batch API on your server!</p>
+
+      </div>
+
+      <a href="/azure-resource-manager-batch-api/" class="read-more">Read more&nbsp;&#183;<span class="reading-time">
+  
+  4 min read
+</span>
+</a>
+    </article>
+  
+
+  
+
+
+
+
+
+
+  
+
+		
+
+    <div class="Pagination">
+      <div class="Pagination-inner">
+	
+        <a class="Pagination-link Pagination-link--arrow" href="/page/5/" aria-label="Go to previous page">
+          <span class="Pagination-arrow Pagination-arrow--left"></span>
+        </a>
+	
+
+	
+        <a class="Pagination-link" href="/" aria-label="Go to page 1">1</a>
+        <div class="Pagination-separator"></div>
+	
+
+	
+        
+        <a class="Pagination-link" href="/page/4" aria-label="Go to page 4">4</a>
+        
+	
+        
+        <a class="Pagination-link" href="/page/5" aria-label="Go to page 5">5</a>
+        
+	
+        
+        <a class="Pagination-link Pagination-link--active" class="active" aria-label="Go to page 6">6</a>
+        
+	
+        
+        <a class="Pagination-link" href="/page/7" aria-label="Go to page 7">7</a>
+        
+	
+        
+        <a class="Pagination-link" href="/page/8" aria-label="Go to page 8">8</a>
+        
+	
+
+	
+		    <div class="Pagination-separator"></div>
+		    <a class="Pagination-link" href="/page/40"  aria-label="Go to page 40">40</a>
+		    
+
+		    
+		    <a class="Pagination-link Pagination-link--arrow" href="/page/7/" aria-label="Go to next page">
+		      <span class="Pagination-arrow Pagination-arrow--right"></span>
+		    </a>
+		    
+      </div>
+    </div>
+    
+
+</div>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer"><div class="social-icons"><a class="social-icon" href="/feed.xml"><i class="fa fa-rss-square fa-2x" title="Feed"></i></a><a class="social-icon" href="https://twitter.com/realJacobJed"><i class="fa fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://github.com/jj09"><i class="fa fa-github-square fa-2x" title="GitHub"></i></a></div><div class="copyright">
+            
+            <p>&copy; 2022 Jacob Jedryszek. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/forever-jekyll/forever-jekyll" rel="nofollow">Forever Jekyll</a>.</p>
+            
+          </div>    
+        </footer>
+      </div>
+    </div>
+
+    <script defer src="https://cdn.plyr.io/3.6.5/plyr.js"></script>
+    <script>
+      const player = new Plyr('#player');
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <script type="text/javascript">
+      const lightbox = GLightbox({
+          touchNavigation: true,
+          loop: true,
+          autoplayVideos: true
+      });
+    </script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/auto-render.min.js"
+            onload="renderMathInElement(document.body,{
+                    delimiters: [
+                    { left: '$$',  right: '$$',  display: true  },
+                    { left: '$',   right: '$',   display: false },
+                    { left: '\\[', right: '\\]', display: true  },
+                    { left: '\\(', right: '\\)', display: false }
+                    ]});">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+      function addDarkmodeWidget() {
+        new Darkmode().showWidget();
+        window.addEventListener('load', addDarkmodeWidget);
+      }
+      const options = {
+        label: '🌓',
+      }
+      const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+    </script>
+
+  </body>
+</html>

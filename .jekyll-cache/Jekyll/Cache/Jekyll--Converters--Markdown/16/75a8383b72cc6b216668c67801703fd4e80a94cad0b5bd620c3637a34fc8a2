@@ -1,0 +1,40 @@
+I"u<p><img class="aligncenter size-full wp-image-8011" src="/assets/2015/01/voicerecognition.png" alt="voice recognition" width="398" height="306" /></p>
+<p>Recently I discovered <a href="https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html">Web Speech API</a>. I was already talking to the browser using Google Hangout and Google Translator, but I have never thought about adding voice support to my own website.</p>
+<p>I did some research, and I found a <a href="http://www.google.com/intl/en/chrome/demos/speech.html">demo</a>. Based on that I put up <a href="https://nancyonazure.azurewebsites.net/">simple demo website</a> (say: "show website blog", and it will take you directly to the sub page that can be also approached with 3 mouse clicks). For now speech recognition <a href="http://caniuse.com/#feat=web-speech">works only in Google Chrome and Safari</a>. In Chrome it is not SpeechRecognition API, but <strong>webkit</strong>SpeechRegognition API. I hope, in the near future, other browsers will also implement it. Especially Spartan, which is integrated with Cortana.</p>
+<p>I noticed that while the API is flexible, it is not easy to use. I think, for most common scenarios, developer would like to be able to add commands associated with function callbacks, and control recognition state with start/stop actions.</p>
+<p>I created a JavaScript library <a href="https://github.com/jj09/voiceCmdr">voiceCmdr</a>. It is a single .js file without any dependencies. You can install it with npm or bower (check <a href="https://github.com/jj09/voiceCmdr">README on github</a>).</p>
+<p>You can add commands:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">voiceCmdr</span><span class="p">.</span><span class="nx">addCommand</span><span class="p">(</span><span class="dl">"</span><span class="s2">go home</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// go to home page</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Callback function can have parameter, which is everything you said after command. E.g.:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">voiceCmdr</span><span class="p">.</span><span class="nx">addCommand</span><span class="p">(</span><span class="dl">"</span><span class="s2">search</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">param</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// search for phrase specified in param</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>You can also remove commands:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">voiceCmdr</span><span class="p">.</span><span class="nx">removeCommand</span><span class="p">(</span><span class="dl">"</span><span class="s2">go home</span><span class="dl">"</span><span class="p">);</span></code></pre></figure>
+
+<p>In order to start listening for commands:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">voiceCmdr</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span></code></pre></figure>
+
+<p>To stop listening:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">voiceCmdr</span><span class="p">.</span><span class="nx">stop</span><span class="p">();</span></code></pre></figure>
+
+<p>You can also invoke listening for single command:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">voiceCmdr</span><span class="p">.</span><span class="nx">getCommand</span><span class="p">();</span></code></pre></figure>
+
+<p>Check <a href="https://github.com/jj09/voiceCmdr/tree/master/examples">examples</a>, and be aware that Web Speech API works only through http, and https (<span style="text-decoration: underline;">it will not work if you open static html file</span>). The easiest way to run server is to use python SimpleHTTPServer:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">python</span> <span class="o">-</span><span class="nx">m</span> <span class="nx">SimpleHTTPServer</span> <span class="mi">8080</span></code></pre></figure>
+
+<p>This can also go another way (by browser talking to you) with <a href="http://updates.html5rocks.com/2014/01/Web-apps-that-talk---Introduction-to-the-Speech-Synthesis-API">Web Synthesis API</a>.</p>
+<p>I am curious what do you think. Are we ready for voice commands in the browser? Are you concerned about your privacy (<a href="https://twitter.com/shanselman/status/558154885787430913">check Scott Hanselman's tweet</a>)?</p>
+:ET

@@ -1,0 +1,40 @@
+I"…<p>When your backend code is calling external APIs you may want to measure particular request time to identify bottlenecks.</p>
+<p>The most straight forward, but incorrect, way to measure how long request takes is to use JavaScript <code>Date</code> object:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">request</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">start_time</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">();</span>
+
+<span class="nx">request</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://google.com</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Time elapsed:</span><span class="dl">'</span><span class="p">,</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">-</span> <span class="nx">start_time</span><span class="p">);</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>However, this won't give you the actual time that request takes. Above request call is async, and you start measuring time at the time when request was queued, not actually sent.</p>
+<p>In order to determine how much time elapsed since sending request, you can use the <code>time</code> parameter:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">request</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">request</span><span class="p">.</span><span class="kd">get</span><span class="p">({</span> <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">http://www.google.com</span><span class="dl">'</span><span class="p">,</span> <span class="na">time</span><span class="p">:</span> <span class="kc">true</span> <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">The actual time elapsed:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">response</span><span class="p">.</span><span class="nx">elapsedTime</span><span class="p">);</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>You can also compare results returned by both methods:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">request</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">let</span> <span class="nx">start_time</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">();</span>
+
+<span class="nx">request</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://google.com</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Time elapsed since queuing the request:</span><span class="dl">'</span><span class="p">,</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">-</span> <span class="nx">start_time</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">request</span><span class="p">.</span><span class="kd">get</span><span class="p">({</span> <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">http://www.google.com</span><span class="dl">'</span><span class="p">,</span> <span class="na">time</span><span class="p">:</span> <span class="kc">true</span> <span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">The actual time elapsed:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">response</span><span class="p">.</span><span class="nx">elapsedTime</span><span class="p">);</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>When I run it, I got the following results:</p>
+<p><code>The actual time elapsed: 72<br />
+Time elapsed since queuing the request: 156</code></p>
+<p>Notice that the first callback resolves after the second one(!)</p>
+<p>The difference is almost 2x. Depending on your server side code, this difference might be even larger, and give you incorrect hints while you are profiling your application.</p>
+:ET

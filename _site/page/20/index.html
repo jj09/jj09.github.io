@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+
+<meta name="description" content="Software Engineer at Meta (Ex-MSFT). I helped build Azure Portal, Azure Mobile App, Seeing AI, and Facebook Marketplace.">
+<meta property="og:description" content="Software Engineer at Meta (Ex-MSFT). I helped build Azure Portal, Azure Mobile App, Seeing AI, and Facebook Marketplace." />
+
+<meta name="author" content="Jacob Jedryszek" />
+
+
+
+
+    <title>Jacob Jedryszek – Software Engineer at Meta (Ex-MSFT). I helped build Azure Portal, Azure Mobile App, Seeing AI, and Facebook Marketplace.</title>
+
+    <link rel="stylesheet" type="text/css" href="/style.css"/>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/ress/dist/ress.min.css"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/image/favicon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/image/favicon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/image/favicon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/image/favicon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/image/favicon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/image/favicon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/image/favicon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/image/favicon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/image/favicon-180x180.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/image/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/image/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/image/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/image/favicon-192x192.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/image/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/assets/image/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/assets/image/favicon-144x144.png">
+    <meta name="msapplication-config" content="/assets/image/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="alternate" type="application/rss+xml" title="Jacob Jedryszek - Software Engineer at Meta (Ex-MSFT). I helped build Azure Portal, Azure Mobile App, Seeing AI, and Facebook Marketplace." href="/feed.xml"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous" media="print" onload="this.media='all'"/>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.5/plyr.css" media="print" onload="this.media='all'"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" media="print" onload="this.media='all'"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous" media="print" onload="this.media='all'"/>
+
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/" class="site-avatar"><img src="/assets/image/avatar.png" width="70" height="70" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Jacob Jedryszek</a></h1>
+            <p class="site-description">Software Engineer at Meta (Ex-MSFT). I helped build Azure Portal, Azure Mobile App, Seeing AI, and Facebook Marketplace.</p>
+          </div>
+
+          <nav class="nav-menu">
+            
+  <a class="nav-menu-item"<a href="/">Blog</a>
+
+  <a class="nav-menu-item"<a href="/about">About</a>
+
+  <a class="nav-menu-item"<a href="/search">Search</a>
+
+
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <div class="posts">
+  
+    <article class="post">
+
+      <h1><a href="/ip-heatmap-generator/">IP heatmap generator</a></h1>
+
+      <div class="entry">
+        <p><img class="aligncenter size-full wp-image-11321" src="/assets/2015/09/ipheatmapgenerator.jpg" alt="IP heatmap generator" width="800" height="419" /></p>
+<p>Recently, we were looking at the error logs of the Azure Portal. One of our ideas - in order to investigate errors that were hard to diagnose - was to check in which part of the World users who get errors are located. The assumption was that people from, e.g., New Zealand might have slow connection issues (timeouts) more likely than people from USA or Europe. I couldn't find any tool that does that, so I put a simple website at <a href="http://ipheatmap.azurewebsites.net/ipinfo.html">ipheatmap.azurewebsites.net</a>. The main page use <a href="https://www.npmjs.com/package/geoip-lite">geoip-lite</a> node library to geolocate IP address. For cross-check, you go to <a href="http://ipheatmap.azurewebsites.net/ipinfo.html">ipheatmap.azurewebsites.net/ipinfo.html</a>, and the IP will be located using <a href="http://ipinfo.io">ipinfo.io</a> API.</p>
+<p>Creating website + setting up deployment from github took me less than 5 minutes on Azure. I didn't have to do any special configuration to get it work. I didn't even have to leave the Azure Portal to lookup github url, because it fetches all available repos automatically after you provide your credentials. Even better: repos are sorted by creation date - thus the recently created repo (one that you would choose most likely) is on top of the list.</p>
+<p>Source code is available on github: <a href="https://github.com/jj09/ip-heatmap-generator">https://github.com/jj09/ip-heatmap-generator</a>.</p>
+
+      </div>
+
+      <a href="/ip-heatmap-generator/" class="read-more">Read more&nbsp;&#183;<span class="reading-time">
+  
+  2 min read
+</span>
+</a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/seattle-code-camp-aurelia-and-tdd-with-typescript-angularjs-and-node-js/">Seattle Code Camp: Aurelia and TDD with TypeScript, AngularJS, and Node.js</a></h1>
+
+      <div class="entry">
+        <p>
+Last Saturday I had a pleasure to speak at <a href="https://seattle.codecamp.us/">Seattle Code Camp</a>. It was an amazing event, which was free. There were over 50 talks, 500 attendees, and raffle with many prizes, e.g., Microsoft Surface Pro 3!</p>
+<p><img src="/assets/2015/09/SeattleCodeCampAurelia.jpg" alt="Seattle Code Camp - Aurelia" width="800" height="530" class="aligncenter size-full wp-image-11251" /></p>
+<h3>Aurelia - the Next Generation JavaScript Framework you will love</h3>
+<p>Aurelia is a next generation JavaScript client framework that leverages simple conventions to empower your creativity created by Rob Eisenberg, creator of Durandal, who left Angular 2 team to create cleaner and simpler JavaScript framework of tomorrow written in ECMAScript 7!</p>
+<p>In this talk I am showing how to get started with Aurelia, and how <a href="http://kangax.github.io/compat-table/es7/">ES7 (aka ES 2016)</a>, <a href="http://jspm.io">JSPM</a>, <a href="https://github.com/systemjs/systemjs">System.js</a>, <a href="https://babeljs.io/">babel</a>, and <a href="http://gulpjs.com/">gulp</a> can make you development amazingly fast, smooth, and enjoyable.</p>
+<h4>Video</h4>
+<p><iframe src="https://www.youtube.com/embed/N855h5-OdZw" width="640" height="360" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+<h4>Slides</h4>
+<p><script class="speakerdeck-embed" src="//speakerdeck.com/assets/embed.js" async="" data-id="9d75e610543148409f179f4b8672ae71" data-ratio="1.77777777777778"></script></p>
+<h4>Code</h4>
+<p>You can find demo app I created during presentation on <a href="https://github.com/jj09/aurelia-demo">github</a>.</p>
+<h3>TDD with TypeScript, AngularJS, and Node.js</h3>
+<p>TypeScript helps to develop and maintain large web applications. Strong typing prevents from introducing bugs, but it doesn’t mean we can give up on testing. In this talk I showed how we can use TDD for building web applications with TypeScript on the client side (with AngularJS) and server side (with NodeJS). I showed a few JavaScript testing frameworks (<a href="https://mochajs.org/">mocha</a>, <a href="http://jasmine.github.io/">Jasmine</a>), and showed a few tools that can make Web Developer’s life easier (<a href="https://www.npmjs.com/">npm</a>, <a href="http://gulpjs.com/">gulp</a>, <a href="http://bower.io/">bower</a>, <a href="http://definitelytyped.org/tsd/">tsd</a>, <a href="http://karma-runner.github.io/0.13/index.html">karma</a>, <a href="https://angular.github.io/protractor/#/">protractor</a>).</p>
+<h4>Video</h4>
+<p><iframe src="https://www.youtube.com/embed/vGo1aDhXMM4" width="640" height="360" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+<h4>Slides</h4>
+<p><script class="speakerdeck-embed" src="//speakerdeck.com/assets/embed.js" async="" data-id="5c2362764fed403aa29ca790f2048e90" data-ratio="1.77777777777778"></script></p>
+<h4>Code</h4>
+<p>You can find demo app I created during presentation on <a href="https://github.com/jj09/tdd-with-typescript-angularjs-nodejs">github</a>.</p>
+<h3>More is coming</h3>
+<p>I will be speaking about Aurelia, and TDD with TypeScript, AngularJS, and Node.js at various events this fall. You can find more details in my <a href="http://jj09.net/speaking/">speaking</a> page.</p>
+
+      </div>
+
+      <a href="/seattle-code-camp-aurelia-and-tdd-with-typescript-angularjs-and-node-js/" class="read-more">Read more&nbsp;&#183;<span class="reading-time">
+  
+  2 min read
+</span>
+</a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/my-first-year-at-microsoft/">My first year at Microsoft</a></h1>
+
+      <div class="entry">
+        <p>I joined Microsoft on September 8, 2014. Today is my first year anniversary.</p>
+<p><img class="aligncenter size-full wp-image-10921" src="/assets/2015/09/changing-the-world-with-hololens.jpg" alt="Changing the World with Holo Lens" width="800" height="420" /></p>
+<h3>How do I get the job at Microsoft</h3>
+<p>When I was in College/Grad School, I wanted to work for Microsoft, because of Scott Hanselman, Scott Guthrie, Steve Sanderson, Damian Edwards, Mads Kristensen, Anders Hejlsberg, Eric Lippert, and other great developers. However, I knew them only from their blogs, and conference talks. I didn't know how day-to-day work at Microsoft looks like. When I was organizing <a href="http://dotnetconf.pl">dotNetConfPL 2013</a> I talked to Tomasz Janczuk, who worked for Microsoft for over 12 years, and he told me that "it is definitely worth it to work for Microsoft if you want to learn how to make software". After that, I was sure, I wanted to work for Microsoft.</p>
+<p>In 2013, recruiter from Microsoft came to my department at Kansas State University, and after collecting resumes, selected group of people for on-campus interviews. I was one of them. Two weeks later I had 30 minutes interview on campus. It was short 5 minutes introduction, and 25 minutes of coding. After a week I got an email informing me that I was recommended for the next round - on-site interview in Redmond. Two months later I flew from Manhattan, KS to Redmond, WA. Interview in Redmond was a set of 5 interviews, with 5 different people, 1 hour each. Every interviewer was asking briefly about myself, and then programming question. What was surprising for me, they asked me to write code in Visual Studio. Two weeks after the interview I got an offer, which I accepted and on September 2014 I joined the Azure Portal Team.</p>
+<h3>What have I done during my first year</h3>
+<p>I am working for the Azure Portal Framework team, which is delivering the core of the portal, and framework to build extensions on top of it. Each Extension, e.g. Websites, Virtual Machines, or Application Insights, is a gateway to underlying Azure infrastructure. Framework team is divided in a few subgroups. My group is responsible mainly for developing reusable controls that are part of the framework. I created a few controls, and I was fixing/improving some other. The most challenging one was to create a set of date/time controls. Why was it hard? Because <a href="http://jj09.net/javascript-date-a-bad-part/">JavaScript Date sucks</a>, and <a href="https://www.youtube.com/watch?v=-5wpm-gesOY">it is not easy to deal with date/time at all</a>.</p>
+<p>In addition to controls, I was also working on keyboard support for the Portal, and keyboard shortcuts that I blogged about earlier this year (<a href="http://jj09.net/hidden-feature-of-the-azure-portal-keyboard-shortcuts/">here</a> and <a href="http://jj09.net/more-keyboard-shortcuts-and-better-focus-management-on-the-azure-portal/">here</a>). Now, it is possible to use the portal with keyboard only.</p>
+<p>I also helped to improve our development experience. I proposed to add <a href="http://sinonjs.org/">Sinon.JS</a> to our testing tool-set, and helped to create strong-typed wrapper on top of it - <a href="https://github.com/jj09/TypeSinon">TypeSinon</a> (which was proposed by Steve Sanderson). In order to make our QUnit tests cleaner, I also proposed and integrated <a href="https://github.com/AStepaniuk/qunit-parameterize">QUnit Parametrize</a> plugin that works like <a href="http://www.nunit.org/index.php?p=testCase&amp;r=2.5"><em>TestCase</em> attribute in NUnit</a>. I did other small improvements, like helping to upgrade to TypeScript 1.5, and turning off verbose printing to the console during build - which saves a few dev-minutes everyday, and ultimately a few dev-hours or even days per year.</p>
+<h3>Lessons learned</h3>
+<p>The best thing about working at Microsoft is the opportunity to work with smart people, and learn from them. All developers working at Microsoft are this type of people who get things done. They do not like to talk too much about what they want to do, but they prefer doing it instead. I remember when once I was arguing with some people over the email that something should be than in one way, not the other. After a few e-mails one teammate told me: "If you really believe that something should be done in some way, do not argue with people, just do it". I also noticed that the best developers do not ask you to do something for them, but send out a Code Review instead.</p>
+<p>In my team there is no fear to try new things. Do you want to use the latest version of TypeScript, <span style="text-decoration: underline;">in production</span>, one day before the release? One of my team leaders, personally, performed this upgrade. Do you want to introduce, a new tool? Usually, not a problem, but then you are responsible for it. When I wanted to add Sinon.JS, I sent an email to the entire team to ask what they think. A few folks had some doubts (not about if, but about how). We called a quick meeting, and resolved all of them. Next time, when I wanted to add QUnit Parametrize, I just sent out a Code Review and email to entire team. No problems, everybody was ok with that. The only price I have to pay is helping others with issues related to these libraries. "With great power comes great responsibility" :)</p>
+<p>I also remember when I wanted to make some change and asked a few people if I can do it. Nobody was sure, and somebody said: "It's better to ask for forgiveness than for permission" :)</p>
+<p>Even if you fail, or create something not perfect, people at Microsoft do not criticize very often saying: "This sucks, that sucks". They know these words would create an expectation to propose better solution, or even implement it, and then - in the future - be responsible for every issue related to that. Instead, they say: "what do you think about this alternative solution?", or "let's take a look if we can do it better", or do not say anything.</p>
+<p>From development perspective, the most valuable lesson I learned was to avoid planning for one, big refactoring in the future (which usually you will never have time for), but instead perform small refactorings with every commit. I had also opportunity to observe the real value of tests in the project. Many times when somebody, or myself, were performing some change that "there was no way it could impacted that functionality", and test was failing - it saved us from probably many long hours of debugging and investigating. I could also observed when after a few weeks we noticed something wasn't working from "some time ago", and we didn't know what caused it because we didn't have tests. Every time when this happened we had to invest a lot of time to investigate and find the change that caused this (which is not easy in project where 40+ people contribute to one repository, and you have ~40 commits every day).</p>
+<h3>Culture</h3>
+<p>I have many friends who knows two things for sure:</p>
+<ul>
+<li>eventually they will die</li>
+<li>corporations are evil</li>
+</ul>
+<p>I was afraid of the second. Especially after reading the stories about Microsoft on the Internet that can be summarized like that:</p>
+<p><img class="aligncenter size-full wp-image-10801" src="/assets/2015/09/microsoft-org-chart.jpg" alt="Microsoft org chart" width="600" height="389" /></p>
+<p>The fact that there is enterprise overhead at Microsoft is true. It was nicely summarized by Eric Lippert in his blog post <a href="http://blogs.msdn.com/b/ericlippert/archive/2003/10/28/how-many-microsoft-employees-does-it-take-to-change-a-lightbulb.aspx">How many Microsoft employees does it take to change a lightbulb?</a> However, now Microsoft is becoming a cool company again. The idea of <a href="https://news.microsoft.com/2013/07/11/one-microsoft-company-realigns-to-enable-innovation-at-greater-speed-efficiency/">One Microsoft</a> is happening now. It feels like people are working towards the same goal. Last summer I participated in <a href="http://www.geekwire.com/2015/at-microsofts-hackathon-employees-come-up-with-solutions-to-fix-societal-problems/">//oneweek hackathon</a> where together with people from different teams across Microsoft we were hacking together, and it was great to be a hacker for a few days while being an engineer in everyday job (<a href="http://dandreamsofcoding.com/2013/09/16/hackers-and-software-engineers/">Hackers and Software Engineers</a>). Recently I was at IoT meetup in Seattle, and one guy said: "Microsoft was a wonderful company in 90', and then took a wrong direction in 2000', but now they are switching back. There is many interesting things happening at Microsoft now, and they are becoming cool again". Other people are starting notice this as well: <a href="http://seekingalpha.com/article/3135906-microsoft-is-cool-again">link</a>, <a href="http://www.usatoday.com/story/tech/2015/01/21/is-microsoft-cool-again-big-tech-push/22115289/">link</a>, <a href="http://www.theverge.com/2015/3/2/8134603/microsoft-is-cool-again">link</a>.</p>
+<p>There is even a new, unofficial logo of the NEW Microsoft - Ninja Cat on Unicorn:</p>
+<p><img class="aligncenter size-full wp-image-10841" src="/assets/2015/09/new-microsoft-logo.jpg" alt="New Microsoft logo" width="800" height="463" /></p>
+<p>I will say it again: there are many smart people working at Microsoft. What's more: higher in the hierarchy somebody is - he is a smarter person. This goes from my teammates, through our team leaders, all the way to Scott Guthrie and Satya. What is important when you work for some company, is to believe in your leadership team. I have no doubts that people like Scott Guthrie, Mark Russinovich or Satya know what they are doing. Additionally, every month there is Q&amp;A session with Satya, where every employee can ask him a question. I wish I could quote some of Satya's answers here, because they are really valuable, and reasonable pieces of advice. You can find more about Microsoft under Satya in <a href="http://www.wired.com/2015/01/microsoft-nadella/">this article</a>.</p>
+<p>Let's also talk about management at the lower level. Many people in Microsoft says "my boss". I do not like calling my team leader like that, because I think he is more a leader than boss:</p>
+<p><img class="aligncenter size-full wp-image-10831" src="/assets/2015/09/boss-vs-leader.jpg" alt="boss vs leader" width="624" height="630" /></p>
+<p>I have 1 on 1 with him on every week. Usually 30 minutes, sometimes less or more, depends on the needs. During these meetings he is checking how I am doing, and <u>how he can help me</u> with any issues I have, and how he can enable me to utilize my full potential. He is doing the same for other 8 developers in the team, and in addition to that, he is doing as much development as others. His scrum update is not much different than the rest of us.</p>
+<p>Another interesting thing at Microsoft is separate hierarchy for developers and program managers. As Joel Spolsky pointed out in this book - Joel on Software - there is a reason behind it. Instead of giving direct orders to developer, program manager has to convince developer that whatever he want him to implement make sense.</p>
+<h3>What next?</h3>
+<p>It has been a great year. I had opportunity to work with amazing people, on a very interesting project, and I learned a lot.</p>
+<p>I am staying with the Azure Portal team. We have a lot of work to do. Especially, because Azure is growing exponentially. One year ago, when you clicked 'Browse' on the portal, there was ~10 types of services on the list. Now, 1 year later, there is over 40 items on that list. This requires from us to enable other teams to develop at very fast pace using our framework. We keep improving the programming model, APIs, performance, and usability. There is also <a href="http://feedback.azure.com/forums/223579-azure-preview-portal">a lot of requests from users</a> that we constantly monitor, and make happen (150/739 are fulfilled for today). We really appreciate your feedback!</p>
+<p>I am very excited about the future of the Azure Portal. From a developer point of view - it's a dream place to work. We are using the latest, greatest technologies. We are doing things that exercise browsers to such an extent that we are finding bugs in them, or have to fix/patch Open Source libraries that we are using. There is also a few features, I will be working on, that I am very excited about. Stay tuned!</p>
+<p>Additionally, in upcoming months <a href="http://jj09.net/speaking/">I will be speaking at a few conferences</a>, and on October 31 there is the third edition of <a href="http://dotnetconf.pl">dotNetConfPL</a> - online conference for .NET developers that I co-founded together with <a href="http://www.mfranc.com">Michal Franc</a> and <a href="http://pawel.sawicz.eu">Pawel Sawicz</a>.</p>
+<p>I would like to say thank you for every member of my team. It's a pleasure to work with you, and be part of Microsoft in these days. I has never been a better time to work for Microsoft!</p>
+
+      </div>
+
+      <a href="/my-first-year-at-microsoft/" class="read-more">Read more&nbsp;&#183;<span class="reading-time">
+  
+  11 min read
+</span>
+</a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/speech-recognition-in-the-browser/">Speech Recognition in the Browser</a></h1>
+
+      <div class="entry">
+        <p>Last Thursday I had a pleasure to give talk about Speech Recognition in the Browser at the <a href="http://www.codefellows.org/">Code Fellows</a> in Seattle.</p>
+
+      </div>
+
+      <a href="/speech-recognition-in-the-browser/" class="read-more">Read more&nbsp;&#183;<span class="reading-time">
+  
+  3 min read
+</span>
+</a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/settimeout-considered-harmful/">setTimeout considered harmful</a></h1>
+
+      <div class="entry">
+        <p><img class="aligncenter size-full wp-image-10311" src="/assets/2015/08/setTimeout-SteveTweet.png" alt="setTimeout - Steve's Tweet" width="603" height="269" /></p>
+<p>Recently I learned the hard way about setTimeouts side effects.</p>
+<h3>101 setTimeout issue</h3>
+<p>Let's say we have a following piece of code:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">someVar</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">changeVar</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">someVar</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="p">};</span></code></pre></figure>
+
+<p>And unit test:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">QUnit</span><span class="p">.</span><span class="nx">asyncTest</span><span class="p">(</span><span class="dl">'</span><span class="s1">should change variable to 10</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Arrange
+</span>
+    <span class="nx">someVar</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="c1">// Act
+</span>
+    <span class="nx">changeVar</span><span class="p">();</span>
+
+    <span class="c1">// Assert
+</span>
+    <span class="nx">equals</span><span class="p">(</span><span class="nx">someVar</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Of course test passes, and we are happy.</p>
+<p>Then, after some time, because of a reason (e.g., we want to fix some bug), we are adding <em>setTimeout</em> to <em>changeVar</em> function:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">changeVar</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">someVar</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="p">},</span> <span class="mi">10</span><span class="p">);</span>
+<span class="p">};</span></code></pre></figure>
+
+<p>Unit test does not pass anymore. So we are adding <em>setTimeout</em> to our unit test as well (ideally: appropriately longer than one in <em>changeVar</em> function to avoid confusion!):</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">QUnit</span><span class="p">.</span><span class="nx">asyncTest</span><span class="p">(</span><span class="dl">'</span><span class="s1">should change variable to 10</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Arrange
+</span>
+    <span class="nx">someVar</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="c1">// Act
+</span>
+    <span class="nx">changeVar</span><span class="p">();</span>
+
+    <span class="c1">// Assert
+</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">equals</span><span class="p">(</span><span class="nx">someVar</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+    <span class="p">},</span> <span class="mi">20</span><span class="p">);</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Then, we are introducing change to our code. Update only when <em>someVar</em> is not zero. We update function, and test accordingly:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">changeVar</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">someVar</span> <span class="o">!==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">someVar</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">},</span> <span class="mi">10</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">QUnit</span><span class="p">.</span><span class="nx">asyncTest</span><span class="p">(</span><span class="dl">'</span><span class="s1">should change variable to 10 if someVar != 0</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Arrange
+</span>
+    <span class="nx">someVar</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="c1">// Act
+</span>
+    <span class="nx">changeVar</span><span class="p">();</span>
+
+    <span class="c1">// Assert
+</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">equal</span><span class="p">(</span><span class="nx">someVar</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="p">},</span> <span class="mi">20</span><span class="p">);</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Everything works. Great! Then, somebody else is fixing another bug - of course by increasing timeout:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">changeVar</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">someVar</span> <span class="o">!==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">someVar</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">},</span> <span class="mi">50</span><span class="p">);</span>
+<span class="p">};</span></code></pre></figure>
+
+<p>Still works, but when after some time we decide to change our logic:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">changeVar</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">someVar</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">someVar</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">},</span> <span class="mi">50</span><span class="p">);</span>
+<span class="p">};</span></code></pre></figure>
+
+<p>Our test is still passing...when it shouldn't!</p>
+<p>Of course all of this is happening in large codebase with more complex logic.</p>
+<p>But this is not that bad. Let's take a look at more interesting scenario.</p>
+<h3>More complex case</h3>
+<p>We are in worst situation when we have waterfall of <em>setTimeout</em>s.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">fun1</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">someVar</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">},</span> <span class="mi">10</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">fun2</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">fun1</span><span class="p">();</span>
+        <span class="nx">someVar</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="p">},</span> <span class="mi">10</span><span class="p">);</span>
+<span class="p">};</span></code></pre></figure>
+
+<p>Guess if this unit test will pass:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">QUnit</span><span class="p">.</span><span class="nx">asyncTest</span><span class="p">(</span><span class="dl">'</span><span class="s1">should change variable to 11</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Arrange
+</span>
+    <span class="nx">someVar</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="c1">// Act
+</span>
+    <span class="nx">fun2</span><span class="p">();</span>
+
+    <span class="c1">// Assert
+</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    	<span class="nx">equal</span><span class="p">(</span><span class="nx">someVar</span><span class="p">,</span> <span class="mi">11</span><span class="p">);</span>
+    	<span class="nx">start</span><span class="p">();</span>
+    <span class="p">},</span> <span class="mi">20</span><span class="p">);</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>You think it should? You are wrong!</p>
+<p>But this test will pass:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">QUnit</span><span class="p">.</span><span class="nx">asyncTest</span><span class="p">(</span><span class="dl">'</span><span class="s1">should change variable to 11</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Arrange
+</span>
+    <span class="nx">someVar</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="c1">// Act
+</span>
+    <span class="nx">fun2</span><span class="p">();</span>
+
+    <span class="c1">// Assert
+</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    	<span class="nx">equal</span><span class="p">(</span><span class="nx">someVar</span><span class="p">,</span> <span class="mi">11</span><span class="p">);</span>
+    	<span class="nx">start</span><span class="p">();</span>
+    <span class="p">},</span> <span class="mi">21</span><span class="p">);</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Do you see the difference? Yes, timeout is 21 instead of 20. And of course everything will fall apart if somebody increase timeout in <em>fun1</em> or <em>fun2</em>.</p>
+<h3>Solution</h3>
+<p>The best solution is not to use <em>setTimeout</em> at all. Unfortunately we need async operations sometimes. In this case - you should use promises if possible. Unfortunately World is not perfect, especially Web Development World, and sometimes you have to use <em>setTimeout</em> (e.g., for UI effects etc.). You may think that if you set long enough timeout in your unit tests, everything should be good, right? Well...remember that it will make your unit tests slower. Instead - you should use <a href="http://davidwalsh.name/javascript-polling">polling approach</a>.</p>
+<p>To apply it to the last example - using "Without Deferreds" approach - copy poll function to your codebase:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">poll</span><span class="p">(</span><span class="nx">fn</span><span class="p">,</span> <span class="nx">callback</span><span class="p">,</span> <span class="nx">errback</span><span class="p">,</span> <span class="nx">timeout</span><span class="p">,</span> <span class="nx">interval</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">endTime</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">())</span> <span class="o">+</span> <span class="p">(</span><span class="nx">timeout</span> <span class="o">||</span> <span class="mi">2000</span><span class="p">);</span>
+    <span class="nx">interval</span> <span class="o">=</span> <span class="nx">interval</span> <span class="o">||</span> <span class="mi">100</span><span class="p">;</span>
+
+    <span class="p">(</span><span class="kd">function</span> <span class="nx">p</span><span class="p">()</span> <span class="p">{</span>
+            <span class="c1">// If the condition is met, we're done! 
+</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">fn</span><span class="p">())</span> <span class="p">{</span>
+                <span class="nx">callback</span><span class="p">();</span>
+            <span class="p">}</span>
+            <span class="c1">// If the condition isn't met but the timeout hasn't elapsed, go again
+</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">())</span> <span class="o">&lt;</span> <span class="nx">endTime</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span> <span class="nx">interval</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="c1">// Didn't match and too much time, reject!
+</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">errback</span><span class="p">(</span><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">timed out for </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">fn</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">arguments</span><span class="p">));</span>
+            <span class="p">}</span>
+    <span class="p">})();</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>And call it in your unit test:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">QUnit</span><span class="p">.</span><span class="nx">asyncTest</span><span class="p">(</span><span class="dl">'</span><span class="s1">should change variable to 11</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Arrange
+</span>
+    <span class="nx">someVar</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="c1">// Act
+</span>
+    <span class="nx">fun2</span><span class="p">();</span>
+
+    <span class="c1">// Assert
+</span>
+    <span class="nx">poll</span><span class="p">(</span>
+	    <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	        <span class="k">return</span> <span class="nx">someVar</span> <span class="o">===</span> <span class="mi">11</span><span class="p">;</span>
+	    <span class="p">},</span>
+	    <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	        <span class="nx">ok</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+	        <span class="nx">start</span><span class="p">();</span>
+	    <span class="p">},</span>
+	    <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	        <span class="nx">ok</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+	        <span class="nx">start</span><span class="p">();</span>
+	    <span class="p">}</span>
+	<span class="p">);</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Now, you do not have to guess what value will be appropriate for <em>setTimeout</em> delay, and you will speed up your tests as well.</p>
+<p>When I see some strange behavior in code, the first thing I am looking at are <em>setTimeout</em> calls.</p>
+
+      </div>
+
+      <a href="/settimeout-considered-harmful/" class="read-more">Read more&nbsp;&#183;<span class="reading-time">
+  
+  5 min read
+</span>
+</a>
+    </article>
+  
+
+  
+
+
+
+
+
+
+  
+
+		
+
+    <div class="Pagination">
+      <div class="Pagination-inner">
+	
+        <a class="Pagination-link Pagination-link--arrow" href="/page/19/" aria-label="Go to previous page">
+          <span class="Pagination-arrow Pagination-arrow--left"></span>
+        </a>
+	
+
+	
+        <a class="Pagination-link" href="/" aria-label="Go to page 1">1</a>
+        <div class="Pagination-separator"></div>
+	
+
+	
+        
+        <a class="Pagination-link" href="/page/18" aria-label="Go to page 18">18</a>
+        
+	
+        
+        <a class="Pagination-link" href="/page/19" aria-label="Go to page 19">19</a>
+        
+	
+        
+        <a class="Pagination-link Pagination-link--active" class="active" aria-label="Go to page 20">20</a>
+        
+	
+        
+        <a class="Pagination-link" href="/page/21" aria-label="Go to page 21">21</a>
+        
+	
+        
+        <a class="Pagination-link" href="/page/22" aria-label="Go to page 22">22</a>
+        
+	
+
+	
+		    <div class="Pagination-separator"></div>
+		    <a class="Pagination-link" href="/page/40"  aria-label="Go to page 40">40</a>
+		    
+
+		    
+		    <a class="Pagination-link Pagination-link--arrow" href="/page/21/" aria-label="Go to next page">
+		      <span class="Pagination-arrow Pagination-arrow--right"></span>
+		    </a>
+		    
+      </div>
+    </div>
+    
+
+</div>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer"><div class="social-icons"><a class="social-icon" href="/feed.xml"><i class="fa fa-rss-square fa-2x" title="Feed"></i></a><a class="social-icon" href="https://twitter.com/realJacobJed"><i class="fa fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://github.com/jj09"><i class="fa fa-github-square fa-2x" title="GitHub"></i></a></div><div class="copyright">
+            
+            <p>&copy; 2022 Jacob Jedryszek. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/forever-jekyll/forever-jekyll" rel="nofollow">Forever Jekyll</a>.</p>
+            
+          </div>    
+        </footer>
+      </div>
+    </div>
+
+    <script defer src="https://cdn.plyr.io/3.6.5/plyr.js"></script>
+    <script>
+      const player = new Plyr('#player');
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <script type="text/javascript">
+      const lightbox = GLightbox({
+          touchNavigation: true,
+          loop: true,
+          autoplayVideos: true
+      });
+    </script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/auto-render.min.js"
+            onload="renderMathInElement(document.body,{
+                    delimiters: [
+                    { left: '$$',  right: '$$',  display: true  },
+                    { left: '$',   right: '$',   display: false },
+                    { left: '\\[', right: '\\]', display: true  },
+                    { left: '\\(', right: '\\)', display: false }
+                    ]});">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+      function addDarkmodeWidget() {
+        new Darkmode().showWidget();
+        window.addEventListener('load', addDarkmodeWidget);
+      }
+      const options = {
+        label: '🌓',
+      }
+      const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4250/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4250/" rel="alternate" type="text/html" hreflang="en" /><updated>2022-02-01T22:25:14-08:00</updated><id>http://localhost:4250/feed.xml</id><title type="html">Jacob Jedryszek</title><subtitle>Software Engineer at Meta (Ex-MSFT). I helped build Azure Portal, Azure Mobile App, Seeing AI, and Facebook Marketplace.</subtitle><entry><title type="html">Hello World</title><link href="http://localhost:4250/content/demo/2021/07/15/hello-world/" rel="alternate" type="text/html" title="Hello World" /><published>2021-07-15T00:00:00-07:00</published><updated>2021-07-15T00:00:00-07:00</updated><id>http://localhost:4250/content/demo/2021/07/15/hello-world</id><content type="html" xml:base="http://localhost:4250/content/demo/2021/07/15/hello-world/"><![CDATA[<p>Hello and welcome. The only purpose of this post is to greet you when your site comes alive for the first time.<br />
+This post will demonstrate some of the more common content &amp; elements found in posts.<br />
+Feel free to delete this post when you are ready to publish your first post.</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit.</p>
+
+<h2 id="some-great-heading-h2">Some great heading (h2)</h2>
+
+<p>Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum. In arcu magna, aliquet vel pretium et, molestie et arcu.</p>
+
+<p>Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.</p>
+
+<h2 id="another-great-heading-h2">Another great heading (h2)</h2>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit.</p>
+
+<h3 id="some-great-subheading-h3">Some great subheading (h3)</h3>
+
+<p>Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum. In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum.</p>
+
+<p>Phasellus et hendrerit mauris. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc.</p>
+
+<h3 id="some-great-subheading-h3-1">Some great subheading (h3)</h3>
+
+<p>Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.</p>
+
+<blockquote>
+  <p>This quote will <em>change</em> your life. It will reveal the <i>secrets</i> of the universe, and all the wonders of humanity. Don’t <em>misuse</em> it.</p>
+</blockquote>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt.</p>
+
+<h3 id="some-great-subheading-h3-2">Some great subheading (h3)</h3>
+
+<p>Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit. Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum.</p>
+
+<p>In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.</p>
+
+<h4 id="you-might-want-a-sub-subheading-h4">You might want a sub-subheading (h4)</h4>
+
+<p>In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.</p>
+
+<p>In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.</p>
+
+<h4 id="but-its-probably-overkill-h4">But it’s probably overkill (h4)</h4>
+
+<p>In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.</p>
+
+<h5 id="could-be-a-smaller-sub-heading-pacman-h5">Could be a smaller sub-heading, <code class="language-plaintext highlighter-rouge">pacman</code> (h5)</h5>
+
+<p>In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.</p>
+
+<h6 id="small-yet-significant-sub-heading--h6">Small yet significant sub-heading  (h6)</h6>
+
+<p>In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.</p>
+
+<h3 id="highlight-the-code-please">Highlight the code please!!</h3>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="kt">float</span> <span class="nf">Q_rsqrt</span><span class="p">(</span> <span class="kt">float</span> <span class="n">number</span> <span class="p">)</span>
+<span class="p">{</span>
+	<span class="kt">long</span> <span class="n">i</span><span class="p">;</span>
+	<span class="kt">float</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span>
+	<span class="k">const</span> <span class="kt">float</span> <span class="n">threehalfs</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span><span class="mi">5</span><span class="n">F</span><span class="p">;</span>
+
+	<span class="n">x2</span> <span class="o">=</span> <span class="n">number</span> <span class="o">*</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="n">F</span><span class="p">;</span>
+	<span class="n">y</span>  <span class="o">=</span> <span class="n">number</span><span class="p">;</span>
+	<span class="n">i</span>  <span class="o">=</span> <span class="o">*</span> <span class="p">(</span> <span class="kt">long</span> <span class="o">*</span> <span class="p">)</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">;</span>                       <span class="c1">// evil floating point bit level hacking
+</span>
+	<span class="n">i</span>  <span class="o">=</span> <span class="mh">0x5f3759df</span> <span class="o">-</span> <span class="p">(</span> <span class="n">i</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span> <span class="p">);</span>               <span class="c1">// what the fuck? 
+</span>
+	<span class="n">y</span>  <span class="o">=</span> <span class="o">*</span> <span class="p">(</span> <span class="kt">float</span> <span class="o">*</span> <span class="p">)</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">;</span>
+	<span class="n">y</span>  <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="p">(</span> <span class="n">threehalfs</span> <span class="o">-</span> <span class="p">(</span> <span class="n">x2</span> <span class="o">*</span> <span class="n">y</span> <span class="o">*</span> <span class="n">y</span> <span class="p">)</span> <span class="p">);</span>   <span class="c1">// 1st iteration
+</span>
+<span class="c1">//	y  = y * ( threehalfs - ( x2 * y * y ) );   // 2nd iteration, this can be removed
+</span>
+
+	<span class="k">return</span> <span class="n">y</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<h3 id="oh-hai-an-unordered-list">Oh hai, an unordered list!!</h3>
+
+<p>In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.</p>
+
+<ul>
+  <li>First item, yo</li>
+  <li>Second item, dawg</li>
+  <li>Third item, what what?!</li>
+  <li>Fourth item, fo sheezy my neezy</li>
+</ul>
+
+<h3 id="oh-hai-an-ordered-list">Oh hai, an ordered list!!</h3>
+
+<p>In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris.</p>
+
+<ol>
+  <li>First item, yo</li>
+  <li>Second item, dawg</li>
+  <li>Third item, what what?!</li>
+  <li>Fourth item, fo sheezy my neezy</li>
+</ol>
+
+<h2 id="headings-are-cool-h2">Headings are cool! (h2)</h2>
+
+<p>Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.</p>
+
+<p>Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.</p>
+
+<p>Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc.</p>
+
+<h3 id="tables">Tables</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title 1</th>
+      <th>Title 2</th>
+      <th>Title 3</th>
+      <th>Title 4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>lorem</td>
+      <td>lorem ipsum</td>
+      <td>lorem ipsum dolor</td>
+      <td>lorem ipsum dolor sit</td>
+    </tr>
+    <tr>
+      <td>lorem ipsum dolor sit</td>
+      <td>lorem ipsum dolor sit</td>
+      <td>lorem ipsum dolor sit</td>
+      <td>lorem ipsum dolor sit</td>
+    </tr>
+    <tr>
+      <td>lorem ipsum dolor sit</td>
+      <td>lorem ipsum dolor sit</td>
+      <td>lorem ipsum dolor sit</td>
+      <td>lorem ipsum dolor sit</td>
+    </tr>
+    <tr>
+      <td>lorem ipsum dolor sit</td>
+      <td>lorem ipsum dolor sit</td>
+      <td>lorem ipsum dolor sit</td>
+      <td>lorem ipsum dolor sit</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title 1</th>
+      <th>Title 2</th>
+      <th>Title 3</th>
+      <th>Title 4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>lorem</td>
+      <td>lorem ipsum</td>
+      <td>lorem ipsum dolor</td>
+      <td>lorem ipsum dolor sit</td>
+    </tr>
+    <tr>
+      <td>lorem ipsum dolor sit amet</td>
+      <td>lorem ipsum dolor sit amet consectetur</td>
+      <td>lorem ipsum dolor sit amet</td>
+      <td>lorem ipsum dolor sit</td>
+    </tr>
+    <tr>
+      <td>lorem ipsum dolor</td>
+      <td>lorem ipsum</td>
+      <td>lorem</td>
+      <td>lorem ipsum</td>
+    </tr>
+    <tr>
+      <td>lorem ipsum dolor</td>
+      <td>lorem ipsum dolor sit</td>
+      <td>lorem ipsum dolor sit amet</td>
+      <td>lorem ipsum dolor sit amet consectetur</td>
+    </tr>
+  </tbody>
+</table>]]></content><author><name></name></author><category term="content" /><category term="demo" /><summary type="html"><![CDATA[Hello and welcome. The only purpose of this post is to greet you when your site comes alive for the first time. This post will demonstrate some of the more common content &amp; elements found in posts. Feel free to delete this post when you are ready to publish your first post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit. Some great heading (h2) Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum. In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est. Another great heading (h2) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit. Some great subheading (h3) Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum. In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Some great subheading (h3) Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est. This quote will change your life. It will reveal the secrets of the universe, and all the wonders of humanity. Don’t misuse it. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Some great subheading (h3) Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit. Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum. In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris. You might want a sub-subheading (h4) In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris. In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris. But it’s probably overkill (h4) In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris. Could be a smaller sub-heading, pacman (h5) In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris. Small yet significant sub-heading (h6) In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris. Highlight the code please!! float Q_rsqrt( float number ) { long i; float x2, y; const float threehalfs = 1.5F; x2 = number * 0.5F; y = number; i = * ( long * ) &amp;y; // evil floating point bit level hacking i = 0x5f3759df - ( i &gt;&gt; 1 ); // what the fuck? y = * ( float * ) &amp;i; y = y * ( threehalfs - ( x2 * y * y ) ); // 1st iteration // y = y * ( threehalfs - ( x2 * y * y ) ); // 2nd iteration, this can be removed return y; } Oh hai, an unordered list!! In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris. First item, yo Second item, dawg Third item, what what?! Fourth item, fo sheezy my neezy Oh hai, an ordered list!! In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris. First item, yo Second item, dawg Third item, what what?! Fourth item, fo sheezy my neezy Headings are cool! (h2) Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Tables Title 1 Title 2 Title 3 Title 4 lorem lorem ipsum lorem ipsum dolor lorem ipsum dolor sit lorem ipsum dolor sit lorem ipsum dolor sit lorem ipsum dolor sit lorem ipsum dolor sit lorem ipsum dolor sit lorem ipsum dolor sit lorem ipsum dolor sit lorem ipsum dolor sit lorem ipsum dolor sit lorem ipsum dolor sit lorem ipsum dolor sit lorem ipsum dolor sit Title 1 Title 2 Title 3 Title 4 lorem lorem ipsum lorem ipsum dolor lorem ipsum dolor sit lorem ipsum dolor sit amet lorem ipsum dolor sit amet consectetur lorem ipsum dolor sit amet lorem ipsum dolor sit lorem ipsum dolor lorem ipsum lorem lorem ipsum lorem ipsum dolor lorem ipsum dolor sit lorem ipsum dolor sit amet lorem ipsum dolor sit amet consectetur]]></summary></entry><entry><title type="html">Puppy Tutorial</title><link href="http://localhost:4250/puppy-tutorial/" rel="alternate" type="text/html" title="Puppy Tutorial" /><published>2021-05-26T15:25:15-07:00</published><updated>2021-05-26T15:25:15-07:00</updated><id>http://localhost:4250/puppy-tutorial</id><content type="html" xml:base="http://localhost:4250/puppy-tutorial/"><![CDATA[<p><!-- wp:html --></p>
+<figure class="wp-block-image size-large"><img src="/assets/2021/05/pluto.jpeg" alt="Tony Teddybear Montant" class="wp-image-19962" /></figure>
+<p>Meet Tony "Teddy Bear" Montana. My new family member since October last year.</p>
+<p>I wanted to have a dog for a while, but before COViD I was always on the go. Traveling outside of the city or outside of the country at least once a month. My lifestyle was not good for having a dog. Especially a puppy! However, when COViD hit I thought: now or never. My plan was simple: I’ll get a puppy during COViD, and before the pandemic is over he will be a well trained dog.</p>
+<p>As raising a puppy is not easy, I decided to journal my experience for the future me and friends. This is not a comprehensive guide as there is a bunch of stuff all over the internet, but I would share my gotchas and notes.</p>
+<h3>Before puppy arrival</h3>
+<p>I am all about learning from others and their mistakes. Thus, I read a few books before even getting a dog:</p>
+<ul>
+<li><a href="https://www.goodreads.com/book/show/27208849-zak-george-s-dog-training-revolution">Zak George's Dog Training Revolution</a> - great intro about what having a dog is and how to select the perfect dog breed for you</li>
+<li><a href="https://www.goodreads.com/book/show/32218.The_Art_of_Raising_a_Puppy">The Art of Raising a Puppy</a> - good set of tips on how to train a puppy from the first days. It has some good ideas about creating a routine for your puppy, etc.
+</li>
+<li><strong><a href="https://www.goodreads.com/book/show/215767.The_Power_of_Positive_Dog_Training">The Power of Positive Dog Training</a></strong> - comprehensive guide on how to train a dog with step by step instructions for teaching particular commands. I strongly recommend this one, especially after you figure out the basics (potty training, etc.)</li>
+</ul>
+<p>Another things to be aware BEFORE you get a puppy:</p>
+<ul>
+<li><b>first days/weeks will be rough</b> - sleepless nights, waking up at 1am, 3am and 5am to take your puppy pee, and constant supervision will be needed</li>
+<li><b>the most important is consistency</b> - this is hard, because we humans are not robots; to be most successful with a puppy you need to behave consistently in EVERY situation in order to not confuse him: even getting him food in specific way can be confusing</li>
+<li><b>The puppy needs to get used to YOUR schedule</b> - he does not need to go to work, but you do; he does not need to go grocery shopping, but you do; he does not need to take you out, but you need to take him out...you have much more responsibilities than him, and you shouldn't feel guilty that you are leaving him alone while you are working or taking care of errands</li>
+</ul>
+<h3>First 2 weeks</h3>
+<p>It was a little bit more challenging than expected. I was fortunate that my now fiance helped me throughout this experience!</p>
+<p>For the first few days you need to sleep next to your puppy's crate. Yes, you need a crate, otherwise he can do something you don’t want during the night. Like eating things that cannot be taken out without surgery!</p>
+<p>It’s really helpful to have your significant other, or friend who would help you during this time. It was a game changer for us when one night, one person was sleeping (and waking up) by Tony’s crate, and another was in the bedroom (with earplugs) getting an actual night of sleep. We were alternating every day.</p>
+<p>It's also recommended to give a limited space to your puppy, and gradually increase it. Giving him access to the entire house might be overwhelming.</p>
+<p>Besides that you need to start <a href="https://www.akc.org/expert-advice/training/potty-training-your-puppy-timeline-and-tips/">potty training</a> and basic commands (I recommend <a href="https://www.goodreads.com/book/show/215767.The_Power_of_Positive_Dog_Training">The Power of Positive Dog Training</a> for that).</p>
+<h4>Quick guide to potty training</h4>
+<p>On the day of arrival, take your puppy out every hour. Ideally to the same spot and wait until he pees. Then increase it by 5 mins every other day or so. The rule of thumb is: puppy can hold pee for as many hours as many months old he is. E.g., 3 months old puppy should be able to hold it for 3 hours. However, always start with 1h. Even if the puppy is 3 months old. Then increase time between breaks gradually.</p>
+<p>I recommend increasing the time between pee breaks on Monday, Wednesday, and Friday. This would add 15mins every week, and ~1h every month. It’s better to not do increases on the weekends as weekends are usually more random than working days.</p>
+<p>Remember, accidents will happen. There is no way around it. They will eventually stop. Just be patient! When accidents happen: just say "no" and immediately take puppy out to usual pee spot.</p>
+<h4>First commands</h4>
+<p>I recommend getting a few sessions with a good dog trainer. You have no idea how the smallest things you do may confuse your dog and be a game changer. Every dog is different, and a few recommendations from an experienced trainer can be a game changer! E.g., our trainer told us: “you are so lucky, your puppy behavior is great for his age…just do not mess him up”.</p>
+<p>People do not realize that THEY have to be trained to have a dog as well! If you need recommendations for a good dog trainer in the Seattle area let me know!</p>
+<p>I also recommend a copy of <a href="https://www.goodreads.com/book/show/215767.The_Power_of_Positive_Dog_Training">The Power of Positive Dog Training</a>.</p>
+<p>Initially, I was skeptical with treat training as my friend told me that then the dog will never listen to me if I won’t give him treats. However, our trainer proved this to be not necessarily true. Bottom line is: treats are good for training as they cause your dog to associate good feelings with them. You say command, he does something, he gets a nice reward. Remember to have tasty treats! Later on, he will be on autopilot and treats won’t be needed.</p>
+<p>We spent a good amount of time deciding which commands are most important. If I was doing it all over again I would teach in this order:</p>
+<ol>
+<li><b>his name</b> (Tony!)</li>
+<li><b>sit</b></li>
+<li><b>off</b> - in the first days he will be jumping at people all the time, sometimes with biting (in a playful way); you don't want him to have that behavior</li>
+<li><b>leave it</b> - in first days your puppy will try to pick up pretty much EVERYTHING from the ground, faster he learns this command the better for his health</li>
+<li><b>wait/stay</b> - we started with stay, but then learned that we need separate commands for: 'wait and do not move' and 'stay and do not follow me' (e.g., when leaving house); it's also helpful to show pointing finger as dogs react more to body language than words</li>
+<li><b>come</b></li>
+</ol>
+<p>After the first few days, when the puppy gets used to the new environment you can start moving your bed further and further away from the crate, or by moving the crate further away from your bed (~1ft/day). We actually skipped that step and just went to the bedroom after 2 weeks. For the first few days Tony was whining, but he eventually stopped.</p>
+<p>When he was 3 or 4 months old we let him sleep outside of the crate...and it was just fine. Actually, one night when I was locking the crate I just locked one door (we have 2 doors crate), because I thought the other door was locked, but it wasn't! At the morning I was wondering why he is not barking (AKA asking to go pee), and found him sleeping by our bedroom door :) After that we knew it's probably gonna be fine to let him sleep outside of the crate :)</p>
+<h3>Socializing</h3>
+<p>Remember to first vaccinate your puppy. Avoid dog parks, at least at the beginning. Make them meet the best behaved dogs you know. Tony learned a lot from Porter - my friend's dog who is the best trained dog I know. It was great when Porter stayed with us for a week. We could just tell him what to do, and Tony would simply follow him! Excellent way to teach with little effort.</p>
+<h3>Sports</h3>
+<p>Puppies should not run until the age of 6 months. We started with hiking (his first hike at the age of 6 months was 5 miles!), and then running (1 mile: 1min walk, 1 min run, 1.5 miles, 2 miles, 3 miles, etc.).</p>
+<p>Swimming is more tricky, as it depends on the breed. Goldendoodles are natural swimmers. Tony’s first swim was when he was in a dog park with Porter (my friend’s dog), and Porter jumped into the water. Tony just followed :P After that we took him for 1h dog SPA where he was swimming in the pool with a trainer. We got him a swim vest and then took him for a 5 min swim (250 yards) at the lake. Then we did 1000 yards, and he was just fine. After that he still had energy to run :O</p>
+<h3>Other tips</h3>
+<ul>
+<li>get pet insurance for the first year – this is the period of time when it’s most likely that something will happen to your puppy. Once you get through the first year that likelihood goes down. Then, again when the dog gets older (10 years or so) it’s worth considering again.</li>
+<li>do not open crate when he is jumping at the door, wait until he sits and then open crate</li>
+<li>make him sit before giving food</li>
+<li>when puppy jumps at you: turn around</li>
+<li>when you want to avoid him jumping at people on the street separate him from others with your body facing him</li>
+</ul>
+<h4>useful resources</h4>
+<ul>
+<li><a href="https://www.akc.org/">American Kennel Club</a> - a bunch of resources about dogs, you can sign up for a weekly newsletter with tips on what to do at a particular age (8 weeks, 9 weeks, etc.)</li>
+<li><a href="https://amzn.to/3qOAIsd">Puppy Primer</a> - nice, quick read about basic aspects of raising a puppy (from potty training to basic behaviors human should do). You can find my notes from that book on <a href="https://www.goodreads.com/review/show/3545969970?book_show_action=false&amp;from_review_page=1">GoodReads</a></li>
+<li><a href="https://amzn.to/3rX7Cqf">How to Behave So Your Dog Behaves</a> - this is very comprehensive guide on how to train your dog. I recommend to pick it up later on, after you went through basic exercises and observed your dog behaviors already. This book will help you to understand why your dog does what he does, and how to adjust nitty gritty details of YOUR daily behaviors.</li>
+</ul>
+<p>This is it for now. I will be updating this when I recall other things or learn some new things.</p>
+<p><!-- /wp:html --></p>]]></content><author><name>{&quot;login&quot;=&gt;&quot;jj09&quot;, &quot;email&quot;=&gt;&quot;jakub.jedryszek@gmail.com&quot;, &quot;display_name&quot;=&gt;&quot;jj09&quot;, &quot;first_name&quot;=&gt;&quot;&quot;, &quot;last_name&quot;=&gt;&quot;&quot;}</name><email>jakub.jedryszek@gmail.com</email></author><category term="blog" /><summary type="html"><![CDATA[Meet Tony "Teddy Bear" Montana. My new family member since October last year. I wanted to have a dog for a while, but before COViD I was always on the go. Traveling outside of the city or outside of the country at least once a month. My lifestyle was not good for having a dog. Especially a puppy! However, when COViD hit I thought: now or never. My plan was simple: I’ll get a puppy during COViD, and before the pandemic is over he will be a well trained dog. As raising a puppy is not easy, I decided to journal my experience for the future me and friends. This is not a comprehensive guide as there is a bunch of stuff all over the internet, but I would share my gotchas and notes. Before puppy arrival I am all about learning from others and their mistakes. Thus, I read a few books before even getting a dog: Zak George's Dog Training Revolution - great intro about what having a dog is and how to select the perfect dog breed for you The Art of Raising a Puppy - good set of tips on how to train a puppy from the first days. It has some good ideas about creating a routine for your puppy, etc. The Power of Positive Dog Training - comprehensive guide on how to train a dog with step by step instructions for teaching particular commands. I strongly recommend this one, especially after you figure out the basics (potty training, etc.) Another things to be aware BEFORE you get a puppy: first days/weeks will be rough - sleepless nights, waking up at 1am, 3am and 5am to take your puppy pee, and constant supervision will be needed the most important is consistency - this is hard, because we humans are not robots; to be most successful with a puppy you need to behave consistently in EVERY situation in order to not confuse him: even getting him food in specific way can be confusing The puppy needs to get used to YOUR schedule - he does not need to go to work, but you do; he does not need to go grocery shopping, but you do; he does not need to take you out, but you need to take him out...you have much more responsibilities than him, and you shouldn't feel guilty that you are leaving him alone while you are working or taking care of errands First 2 weeks It was a little bit more challenging than expected. I was fortunate that my now fiance helped me throughout this experience! For the first few days you need to sleep next to your puppy's crate. Yes, you need a crate, otherwise he can do something you don’t want during the night. Like eating things that cannot be taken out without surgery! It’s really helpful to have your significant other, or friend who would help you during this time. It was a game changer for us when one night, one person was sleeping (and waking up) by Tony’s crate, and another was in the bedroom (with earplugs) getting an actual night of sleep. We were alternating every day. It's also recommended to give a limited space to your puppy, and gradually increase it. Giving him access to the entire house might be overwhelming. Besides that you need to start potty training and basic commands (I recommend The Power of Positive Dog Training for that). Quick guide to potty training On the day of arrival, take your puppy out every hour. Ideally to the same spot and wait until he pees. Then increase it by 5 mins every other day or so. The rule of thumb is: puppy can hold pee for as many hours as many months old he is. E.g., 3 months old puppy should be able to hold it for 3 hours. However, always start with 1h. Even if the puppy is 3 months old. Then increase time between breaks gradually. I recommend increasing the time between pee breaks on Monday, Wednesday, and Friday. This would add 15mins every week, and ~1h every month. It’s better to not do increases on the weekends as weekends are usually more random than working days. Remember, accidents will happen. There is no way around it. They will eventually stop. Just be patient! When accidents happen: just say "no" and immediately take puppy out to usual pee spot. First commands I recommend getting a few sessions with a good dog trainer. You have no idea how the smallest things you do may confuse your dog and be a game changer. Every dog is different, and a few recommendations from an experienced trainer can be a game changer! E.g., our trainer told us: “you are so lucky, your puppy behavior is great for his age…just do not mess him up”. People do not realize that THEY have to be trained to have a dog as well! If you need recommendations for a good dog trainer in the Seattle area let me know! I also recommend a copy of The Power of Positive Dog Training. Initially, I was skeptical with treat training as my friend told me that then the dog will never listen to me if I won’t give him treats. However, our trainer proved this to be not necessarily true. Bottom line is: treats are good for training as they cause your dog to associate good feelings with them. You say command, he does something, he gets a nice reward. Remember to have tasty treats! Later on, he will be on autopilot and treats won’t be needed. We spent a good amount of time deciding which commands are most important. If I was doing it all over again I would teach in this order: his name (Tony!) sit off - in the first days he will be jumping at people all the time, sometimes with biting (in a playful way); you don't want him to have that behavior leave it - in first days your puppy will try to pick up pretty much EVERYTHING from the ground, faster he learns this command the better for his health wait/stay - we started with stay, but then learned that we need separate commands for: 'wait and do not move' and 'stay and do not follow me' (e.g., when leaving house); it's also helpful to show pointing finger as dogs react more to body language than words come After the first few days, when the puppy gets used to the new environment you can start moving your bed further and further away from the crate, or by moving the crate further away from your bed (~1ft/day). We actually skipped that step and just went to the bedroom after 2 weeks. For the first few days Tony was whining, but he eventually stopped. When he was 3 or 4 months old we let him sleep outside of the crate...and it was just fine. Actually, one night when I was locking the crate I just locked one door (we have 2 doors crate), because I thought the other door was locked, but it wasn't! At the morning I was wondering why he is not barking (AKA asking to go pee), and found him sleeping by our bedroom door :) After that we knew it's probably gonna be fine to let him sleep outside of the crate :) Socializing Remember to first vaccinate your puppy. Avoid dog parks, at least at the beginning. Make them meet the best behaved dogs you know. Tony learned a lot from Porter - my friend's dog who is the best trained dog I know. It was great when Porter stayed with us for a week. We could just tell him what to do, and Tony would simply follow him! Excellent way to teach with little effort. Sports Puppies should not run until the age of 6 months. We started with hiking (his first hike at the age of 6 months was 5 miles!), and then running (1 mile: 1min walk, 1 min run, 1.5 miles, 2 miles, 3 miles, etc.). Swimming is more tricky, as it depends on the breed. Goldendoodles are natural swimmers. Tony’s first swim was when he was in a dog park with Porter (my friend’s dog), and Porter jumped into the water. Tony just followed :P After that we took him for 1h dog SPA where he was swimming in the pool with a trainer. We got him a swim vest and then took him for a 5 min swim (250 yards) at the lake. Then we did 1000 yards, and he was just fine. After that he still had energy to run :O Other tips get pet insurance for the first year – this is the period of time when it’s most likely that something will happen to your puppy. Once you get through the first year that likelihood goes down. Then, again when the dog gets older (10 years or so) it’s worth considering again. do not open crate when he is jumping at the door, wait until he sits and then open crate make him sit before giving food when puppy jumps at you: turn around when you want to avoid him jumping at people on the street separate him from others with your body facing him useful resources American Kennel Club - a bunch of resources about dogs, you can sign up for a weekly newsletter with tips on what to do at a particular age (8 weeks, 9 weeks, etc.) Puppy Primer - nice, quick read about basic aspects of raising a puppy (from potty training to basic behaviors human should do). You can find my notes from that book on GoodReads How to Behave So Your Dog Behaves - this is very comprehensive guide on how to train your dog. I recommend to pick it up later on, after you went through basic exercises and observed your dog behaviors already. This book will help you to understand why your dog does what he does, and how to adjust nitty gritty details of YOUR daily behaviors. This is it for now. I will be updating this when I recall other things or learn some new things.]]></summary></entry><entry><title type="html">Notes from Growth Hacking book</title><link href="http://localhost:4250/notes-from-growth-hacking-book/" rel="alternate" type="text/html" title="Notes from Growth Hacking book" /><published>2021-03-02T21:25:45-08:00</published><updated>2021-03-02T21:25:45-08:00</updated><id>http://localhost:4250/notes-from-growth-hacking-book</id><content type="html" xml:base="http://localhost:4250/notes-from-growth-hacking-book/"><![CDATA[<p><a href="https://amzn.to/2OlFvR5"><img class="wp-image-19916 center aligncenter" src="/assets/2021/03/GrowthHackingBook-1.jpg" alt="Growth Hacking book" /></a></p>
+<blockquote><p>Growth Hacker (noun) /’grōth ha-kər/: a highly resourceful and creative marketer singularly focused on high-leverage growth. Growth hackers thrive in resource-constrained environments where money is tight and time is of the essence. Through a mix of creativity and technology, a growth hacker is able to hack through the jungle, uncover buried resources along the way, and construct the tools needed to grow a business. A growth hacker is the figure-it-out-as-we-go adventurer of Indiana Jones mixed with the problem-solving ingenuity of MacGyver.</p></blockquote>
+<p><a href="https://amzn.to/2OlFvR5">Growth Hacking: Silicon Valley's Best Kept Secret</a> is a good end to end overview what you need to take into account when running (digital) business.</p>
+<p>It is very simple and trivial, but if you are doing Growth Hacking you need to remember, and remind yourself EVERY DAY that your two primary resources are <b>TIME</b> and <b>MONEY</b>. It is always tradeoff to choose between one of these two, while building a business.</p>
+<p>Entire book describes so-called ASP - Automated Sales Process:</p>
+<ol>
+<li>Attraction (Acquisition)</li>
+<li>First Impression</li>
+<li>Engage &amp; Educate</li>
+<li>Follow-Up</li>
+<li>Sales Technology</li>
+<li>Referrals &amp; Retention</li>
+</ol>
+<p>Many times, when working on a product, we tend to forget about some of above elements. Most companies focus on acquisition, but forget about first impression or education. For people working on particular product many things are obvious, but most of them might be not obvious for new customers.</p>
+<h3>Attraction (Acquisition)</h3>
+<blockquote><p>Half the money I spend on advertising is wasted; the trouble is, I don’t know which half.</p></blockquote>
+<p>This is not a case anymore thanks to Facebook and Google! With Facebook ads you can target males in their 30s who live in Seattle, with income in range of $100-150k/year.</p>
+<p>When creating targeting profile, authors recommend to take following customer signals into account:</p>
+<ul>
+<li>gender</li>
+<li>age</li>
+<li>profession</li>
+<li>income</li>
+<li>living location</li>
+<li>martial status</li>
+<li>having kids</li>
+<li>hobbies</li>
+<li>interests</li>
+</ul>
+<blockquote><p>A clever way to determine specifically where your target customer spends time is to use a tool called SimilarWeb. Enter your competitor’s URLs into the tool, and scroll down to see exactly where their website traffic is coming from. This is a great way to discover places to “steal” clients away from your competition.</p></blockquote>
+<p>The job of growth hacker is to without spending a dollar more on marketing, acquire the most customers in the least time.</p>
+<blockquote><p>The domino theory of growth hacking states that small wins beget progressively larger wins. Your job as a growth hacker is to identify the lead domino, the first tactic to implement, and line up the subsequent dominoes in ascending level of achievability on a path that leads you to your ultimate goal.</p></blockquote>
+<p>Other acquisition techniques:</p>
+<ul>
+<li>The four primary categories to keep Attraction tactics organized are direct, search platforms, branding platforms, and other.</li>
+<li>A framework for identifying high-ROI Attraction opportunities is called advertising arbitrage: seek advertising opportunities where advertising inventory supply outpaces advertiser demand.</li>
+<li>A strategy for creating cost-efficient advertising opportunities is to marry content creation with commerce.</li>
+<li>Collaboration opportunities exist where your customer base overlaps with a complementary company and is fertile territory for affiliate, joint venture, comarketing, and other similar types of partnership arrangements.</li>
+</ul>
+<h3>First Impression</h3>
+<p>Making first impression is hard, but it's very important. My takeaway from this section is that you should just look at the best first impression strategies that are out there and use fast follow/copy strategy.</p>
+<blockquote><p>It’s far cheaper to stand on the proverbial shoulders of early-adopting giants than reinvent the proverbial wheel. The trick is to figure out whom to follow.</p></blockquote>
+<p>You need to be on top of that all the time, and update/evolve your first impression technique ALL THE TIME.</p>
+<h3>Engage &amp; Educate</h3>
+<p>In order to maximize the persuasive effect of your communication, you must make all three rhetorical appeals of persuasion:</p>
+<ol>
+<li>ethos (credibility)</li>
+<li>pathos (emotion)</li>
+<li>logos (logic)</li>
+</ol>
+<p>On top of that, you need USP (Unique Selling Proposition) - succinct summary of what differentiates you from competition.</p>
+<p>Use customer-centric words and phrases to describe your product:</p>
+<ul>
+<li>Words to avoid: “we”, “my ”, “us” and “our”</li>
+<li>Words to use: “you” and “your”</li>
+</ul>
+<p>Social proof helps to engage people, because when people are unsure what to do they mimic the actions of others. Especially, if others are people they know or their friends.</p>
+<h3>Follow-Up</h3>
+<p>Once you get your customer familiar with your product, you need to remind of yourself.</p>
+<p>First step is to get customer information.</p>
+<p>It's important to remember that more information you request from your lead, the more friction there is, which leads to the prospect being less likely to provide the requested information.</p>
+<p>Instead of asking explicitly for customer information you can use retargeting campaign using Facebook or Google ads.</p>
+<p>There is very thin line between being effective and annoying which may result in losing customer. On the other hand, there is <a href="https://www.krusecontrolinc.com/rule-of-7-how-social-media-crushes-old-school-marketing/">the marketing rule of 7</a>.</p>
+<blockquote><p>The Marketing Rule of 7 states that a prospect needs to “hear” the advertiser’s message at least 7 times before they’ll take action to buy that product or service.</p></blockquote>
+<p>All reach-outs need to follow 4Es:</p>
+<ol>
+<li>Engaging</li>
+<li>Educational</li>
+<li>Entertaining</li>
+<li>Emotional</li>
+</ol>
+<h3>Sales Technology</h3>
+<blockquote><p>Upsell - “up” the price by suggesting a more premium product or service.</p>
+<p>Cross-sell - encourage you to reach across the aisle and add a complementary product to your order.</p></blockquote>
+<p>Automating your online sales require you to build everything by yourself (time) or use existing solutions (money).</p>
+<p>More you automate, and measure the better results and improvements you can make. E.g., sending upsell/cross-sell emails after purchase or even confirmations can help to increase sales.</p>
+<p>There is list of <a href="https://deviatelabs.com/resources/resource-tools/">recommended tools</a> for automating sales.</p>
+<h3>Referrals &amp; Retention</h3>
+<p>Once your customer made the purchase, you need to try to retain him, and encourage to refer your product to others.</p>
+<p>Increasing client retention increases Customer Lifetime Value. This allows to spend more on acquisition, which opens up new customer acquisition channels that are otherwise unaffordable.</p>
+<p>The most popular and easy retention technique is to send simple holiday or birthday card. However, authors recommend to send holiday cards on less popular holidays, e.g., “Happy Saint Patrick’s Day” card will be more distinctive and more likely to be read than a New Year “Happy Holidays” card</p>
+<blockquote><p>We worked with one of our clients to send a box of See’s chocolates for Valentine’s Day to their top general contractor clients, and they ended up generating <strong>more than fifty thousand dollars of contracts from a two - hundred - dollar investment</strong>. They also helped several “forgetful” gentlemen look like wonderfully thoughtful husbands when they brought chocolate to their wives on Valentine’s Day.</p></blockquote>
+<p>The best time for applying growth-hacking is after the point of initial purchase at the very bottom of the proverbial funnel.</p>
+<p>Testimonial formula: [Specific End Result or Benefit the Customer Received] + [Specific Period of Time] + [Accompanied Customer Emotion] + [Customer Name with Relevant Stats].</p>
+<p>Dealing with negative comments, opinions, feedback:</p>
+<ul>
+<li>Preempt it through satisfaction surveys and other internal feedback forms</li>
+<li>For a negative truth: admit, apologize, and promote the opposite</li>
+<li>For a negative lie: state that the comment is inaccurate or invalid, and substantiate your comment</li>
+</ul>
+<p>The two primary categories of active referral systems are:</p>
+<ul>
+<li>financial, e.g, get product after referring a friend</li>
+<li>in-kind (non-cash), e.g., encourage to share product with friends, or leave review on social media</li>
+</ul>
+<h3>Summary</h3>
+<p>I really like this book. Although it doesn't provide direct recipe for growth, it outlines different stages of customer journey very well.</p>
+<ol>
+<li><strong>ATTRACT</strong> thousands of interested new leads.</li>
+<li>Create a powerful <strong>FIRST IMPRESSION</strong> to set the tone for a consistent, personalized, and professional experience with your company.</li>
+<li><strong> ENGAGE &amp; EDUCATE</strong> your prospects so they have all the information they need to feel comfortable buying from you.</li>
+<li>Implement a seamless <strong>FOLLOW-UP</strong> process so that no business slips through the cracks and your company is always top-of-mind.</li>
+<li>Use <strong>SALES TECHNOLOGY</strong> to more efficiently close sales, upsell, and cross-sell products and services.</li>
+<li>Generate high-value <strong>REFERRALS</strong> while <strong>RETAINING</strong> existing clients.</li>
+</ol>
+<p>There is complementary list of resources to dive in more on book authors' website: <a href="https://deviatelabs.com/resources">deviatelabs.com/resources</a>. Especially, check the <a href="https://deviatelabs.com/resources/resource-tools/">list of recommended tools</a> for each part of ASP.</p>
+<blockquote><p>Comfort is a death sentence to progress, and progress is what you seek.</p></blockquote>]]></content><author><name>{&quot;login&quot;=&gt;&quot;jj09&quot;, &quot;email&quot;=&gt;&quot;jakub.jedryszek@gmail.com&quot;, &quot;display_name&quot;=&gt;&quot;jj09&quot;, &quot;first_name&quot;=&gt;&quot;&quot;, &quot;last_name&quot;=&gt;&quot;&quot;}</name><email>jakub.jedryszek@gmail.com</email></author><category term="blog" /><summary type="html"><![CDATA[Growth Hacker (noun) /’grōth ha-kər/: a highly resourceful and creative marketer singularly focused on high-leverage growth. Growth hackers thrive in resource-constrained environments where money is tight and time is of the essence. Through a mix of creativity and technology, a growth hacker is able to hack through the jungle, uncover buried resources along the way, and construct the tools needed to grow a business. A growth hacker is the figure-it-out-as-we-go adventurer of Indiana Jones mixed with the problem-solving ingenuity of MacGyver. Growth Hacking: Silicon Valley's Best Kept Secret is a good end to end overview what you need to take into account when running (digital) business. It is very simple and trivial, but if you are doing Growth Hacking you need to remember, and remind yourself EVERY DAY that your two primary resources are TIME and MONEY. It is always tradeoff to choose between one of these two, while building a business. Entire book describes so-called ASP - Automated Sales Process: Attraction (Acquisition) First Impression Engage &amp; Educate Follow-Up Sales Technology Referrals &amp; Retention Many times, when working on a product, we tend to forget about some of above elements. Most companies focus on acquisition, but forget about first impression or education. For people working on particular product many things are obvious, but most of them might be not obvious for new customers. Attraction (Acquisition) Half the money I spend on advertising is wasted; the trouble is, I don’t know which half. This is not a case anymore thanks to Facebook and Google! With Facebook ads you can target males in their 30s who live in Seattle, with income in range of $100-150k/year. When creating targeting profile, authors recommend to take following customer signals into account: gender age profession income living location martial status having kids hobbies interests A clever way to determine specifically where your target customer spends time is to use a tool called SimilarWeb. Enter your competitor’s URLs into the tool, and scroll down to see exactly where their website traffic is coming from. This is a great way to discover places to “steal” clients away from your competition. The job of growth hacker is to without spending a dollar more on marketing, acquire the most customers in the least time. The domino theory of growth hacking states that small wins beget progressively larger wins. Your job as a growth hacker is to identify the lead domino, the first tactic to implement, and line up the subsequent dominoes in ascending level of achievability on a path that leads you to your ultimate goal. Other acquisition techniques: The four primary categories to keep Attraction tactics organized are direct, search platforms, branding platforms, and other. A framework for identifying high-ROI Attraction opportunities is called advertising arbitrage: seek advertising opportunities where advertising inventory supply outpaces advertiser demand. A strategy for creating cost-efficient advertising opportunities is to marry content creation with commerce. Collaboration opportunities exist where your customer base overlaps with a complementary company and is fertile territory for affiliate, joint venture, comarketing, and other similar types of partnership arrangements. First Impression Making first impression is hard, but it's very important. My takeaway from this section is that you should just look at the best first impression strategies that are out there and use fast follow/copy strategy. It’s far cheaper to stand on the proverbial shoulders of early-adopting giants than reinvent the proverbial wheel. The trick is to figure out whom to follow. You need to be on top of that all the time, and update/evolve your first impression technique ALL THE TIME. Engage &amp; Educate In order to maximize the persuasive effect of your communication, you must make all three rhetorical appeals of persuasion: ethos (credibility) pathos (emotion) logos (logic) On top of that, you need USP (Unique Selling Proposition) - succinct summary of what differentiates you from competition. Use customer-centric words and phrases to describe your product: Words to avoid: “we”, “my ”, “us” and “our” Words to use: “you” and “your” Social proof helps to engage people, because when people are unsure what to do they mimic the actions of others. Especially, if others are people they know or their friends. Follow-Up Once you get your customer familiar with your product, you need to remind of yourself. First step is to get customer information. It's important to remember that more information you request from your lead, the more friction there is, which leads to the prospect being less likely to provide the requested information. Instead of asking explicitly for customer information you can use retargeting campaign using Facebook or Google ads. There is very thin line between being effective and annoying which may result in losing customer. On the other hand, there is the marketing rule of 7. The Marketing Rule of 7 states that a prospect needs to “hear” the advertiser’s message at least 7 times before they’ll take action to buy that product or service. All reach-outs need to follow 4Es: Engaging Educational Entertaining Emotional Sales Technology Upsell - “up” the price by suggesting a more premium product or service. Cross-sell - encourage you to reach across the aisle and add a complementary product to your order. Automating your online sales require you to build everything by yourself (time) or use existing solutions (money). More you automate, and measure the better results and improvements you can make. E.g., sending upsell/cross-sell emails after purchase or even confirmations can help to increase sales. There is list of recommended tools for automating sales. Referrals &amp; Retention Once your customer made the purchase, you need to try to retain him, and encourage to refer your product to others. Increasing client retention increases Customer Lifetime Value. This allows to spend more on acquisition, which opens up new customer acquisition channels that are otherwise unaffordable. The most popular and easy retention technique is to send simple holiday or birthday card. However, authors recommend to send holiday cards on less popular holidays, e.g., “Happy Saint Patrick’s Day” card will be more distinctive and more likely to be read than a New Year “Happy Holidays” card We worked with one of our clients to send a box of See’s chocolates for Valentine’s Day to their top general contractor clients, and they ended up generating more than fifty thousand dollars of contracts from a two - hundred - dollar investment. They also helped several “forgetful” gentlemen look like wonderfully thoughtful husbands when they brought chocolate to their wives on Valentine’s Day. The best time for applying growth-hacking is after the point of initial purchase at the very bottom of the proverbial funnel. Testimonial formula: [Specific End Result or Benefit the Customer Received] + [Specific Period of Time] + [Accompanied Customer Emotion] + [Customer Name with Relevant Stats]. Dealing with negative comments, opinions, feedback: Preempt it through satisfaction surveys and other internal feedback forms For a negative truth: admit, apologize, and promote the opposite For a negative lie: state that the comment is inaccurate or invalid, and substantiate your comment The two primary categories of active referral systems are: financial, e.g, get product after referring a friend in-kind (non-cash), e.g., encourage to share product with friends, or leave review on social media Summary I really like this book. Although it doesn't provide direct recipe for growth, it outlines different stages of customer journey very well. ATTRACT thousands of interested new leads. Create a powerful FIRST IMPRESSION to set the tone for a consistent, personalized, and professional experience with your company. ENGAGE &amp; EDUCATE your prospects so they have all the information they need to feel comfortable buying from you. Implement a seamless FOLLOW-UP process so that no business slips through the cracks and your company is always top-of-mind. Use SALES TECHNOLOGY to more efficiently close sales, upsell, and cross-sell products and services. Generate high-value REFERRALS while RETAINING existing clients. There is complementary list of resources to dive in more on book authors' website: deviatelabs.com/resources. Especially, check the list of recommended tools for each part of ASP. Comfort is a death sentence to progress, and progress is what you seek.]]></summary></entry><entry><title type="html">What I learned from books in 2019</title><link href="http://localhost:4250/what-i-learned-from-books-in-2019/" rel="alternate" type="text/html" title="What I learned from books in 2019" /><published>2020-11-29T18:22:42-08:00</published><updated>2020-11-29T18:22:42-08:00</updated><id>http://localhost:4250/what-i-learned-from-books-in-2019</id><content type="html" xml:base="http://localhost:4250/what-i-learned-from-books-in-2019/"><![CDATA[<p><img class="size-full wp-image-19900" src="/assets/2020/11/used-books-store-2.jpg" alt="Books 2019" width="900" height="440" /></p>
+<p>Last year, I decided to review most interesting books I read last year, and write down my thoughts. Inspiration comes from <a href="https://www.gatesnotes.com/">GatesNotes</a>. This post is long overdue, but I'm glad I managed to publish it before the end of 2020 :)</p>
+<ul>
+<li><a href="https://amzn.to/30lldcB">Deep Learning with Python</a>
+<ul>
+<li>good overview of different types of ML applications: from basic models than can be mapped to 0 and 1s, through computer vision to text</li>
+<li>using Keras and writing python to actually train neural nets while reading this book was super helpful in understanding ML</li>
+<li>I think thanks to this book I understood that I do <strong>not</strong> want to build Machine Learning models, but rather apply them in products</li>
+</ul>
+</li>
+<li><a href="https://amzn.to/36V8Ean">Principles: Life and Work</a>
+<ul>
+<li>life principles
+<ul>
+<li>Decide 1) what you want, 2) what is true, and 3) what you should do to achieve #1 in light of #2 - many time we want to achieve things, but we are not willing to acknowledge reality, I've been guilty of that many times in the past. Realizing that some things are just harder to do than they appear helps tremendously.</li>
+<li>open-mindedness and radical transparency are invaluable for rapid learning and effective change</li>
+<li>look at yourself with other's eyes - many times (always?) we have totally different image of ourselves than other do</li>
+<li>5-Step Process to Get What You Want Out of Life: 1) identify clear goals, 2) identify problems, 3) diagnose problems, 4) create a plan how to deal with problems, 5) execute</li>
+<li>remember that all people are wired very differently (they come from different backgrounds, have different experiences and goals)</li>
+<li>in his book, Ray Dalio outlines framework for effective decision making: first learn, then decide (be aware of harmful emotions)</li>
+</ul>
+</li>
+<li>work principles
+<ul>
+<li>Ray Dalio believes in meritocracy and radical transparency for running organizations</li>
+<li>hiring right people is most important thing</li>
+<li>there is much more that can be found in <a href="https://inside.bwater.com/publications/principles_excerpt">this</a> great, more detailed summary</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://amzn.to/39Y6sQ0">The Subtle Art of Not Giving a F*ck: A Counterintuitive Approach to Living a Good Life</a>
+<ul>
+<li>have good values</li>
+<li>remember that you are not special</li>
+<li>instead of chasing fame, try to be useful in what you do today</li>
+<li>struggle for what makes you happy</li>
+<li>remember that you are probably wrong about majority of things you have opinion about</li>
+<li>when making decision, imagine yourself 5-10 years from now and think what would you do if you look back</li>
+</ul>
+</li>
+<li><a href="https://amzn.to/39YIpjV">Lean Enterprise</a> (book worth reading more than once!)
+<ul>
+<li>focusing only on maximizing profits has the paradoxical effect of reducing</li>
+<li>MVPs over long term efforts</li>
+<li>solid CI is a must for rapid development</li>
+<li>delivery in small batches is a key to success</li>
+<li>get hypothesis from user research and validate with A/B testing</li>
+<li>check <a href="https://www.becausetech.rocks/blog/lean-enterprise/">this great summary</a> for more</li>
+</ul>
+</li>
+<li><a href="https://amzn.to/2XxqRZw">100 Tricks to Appear Smart in Meetings</a>
+<ul>
+<li>this is a sarcastic story how meaningless can actually play on people emotions and make a difference</li>
+<li><a href="https://thecooperreview.com/10-tricks-to-appear-smart-during-meetings/">top 10 tricks</a>: Draw a Venn diagram, Translate percentage metrics into fractions, Encourage everyone to “take a step back", Nod continuously while pretending to take notes, Repeat the last thing the engineer said, but very very slowly, Ask “Will this scale?” no matter what it is, Pace around the room, Ask the presenter to go back a slide, Step out for a phone call, Make fun of yourself</li>
+</ul>
+</li>
+<li><a href="https://amzn.to/2UVNyVM">Seven Languages in Seven Weeks</a>
+<ul>
+<li>great book presenting 7 totally different languages that get your out of your comfort zone</li>
+</ul>
+</li>
+<li><a href="https://amzn.to/3aXuR9S">Measure What Matters</a>
+<ul>
+<li>book about achieving results through OKR: Objectives and Key Results</li>
+<li>approach is widely used at google</li>
+<li>it's all about defining specific goals (objectives) and steps that would take you there (key results)</li>
+</ul>
+</li>
+<li><a href="https://amzn.to/2Vhlf38">Designing Data-Intensive Applications</a>
+<ul>
+<li>this is bible for distributed systems, as well as good prep book for system design interview</li>
+</ul>
+</li>
+<li><a href="https://amzn.to/2JUkNCr">Why we Sleep</a>
+<ul>
+<li>probably the most influential book I read in 2019, made me reprioritize life</li>
+<li>before reading this book, my priorities were: 1) working out and healthy eating, 2) work 3) hobbies</li>
+<li>after reading this book, my priorities are: 1) sleep, 2) working out and healthy eating, 3) work, 4) hobbies</li>
+</ul>
+</li>
+<li><a href="https://amzn.to/2JYG9ys">Hello, Startup</a> - awesome book! See <a href="https://jj09.net/hello-startup-360-overview-of-running-tech-business/">separate post</a>.</li>
+</ul>
+<p>I'm curious what did you read and learn. Share your thoughts. You can also follow me on <a href="https://www.goodreads.com/user/show/28888194-jacob">GoodReads</a> to stay up to date with my readings!</p>]]></content><author><name>{&quot;login&quot;=&gt;&quot;jj09&quot;, &quot;email&quot;=&gt;&quot;jakub.jedryszek@gmail.com&quot;, &quot;display_name&quot;=&gt;&quot;jj09&quot;, &quot;first_name&quot;=&gt;&quot;&quot;, &quot;last_name&quot;=&gt;&quot;&quot;}</name><email>jakub.jedryszek@gmail.com</email></author><category term="books" /><summary type="html"><![CDATA[Last year, I decided to review most interesting books I read last year, and write down my thoughts. Inspiration comes from GatesNotes. This post is long overdue, but I'm glad I managed to publish it before the end of 2020 :) Deep Learning with Python good overview of different types of ML applications: from basic models than can be mapped to 0 and 1s, through computer vision to text using Keras and writing python to actually train neural nets while reading this book was super helpful in understanding ML I think thanks to this book I understood that I do not want to build Machine Learning models, but rather apply them in products Principles: Life and Work life principles Decide 1) what you want, 2) what is true, and 3) what you should do to achieve #1 in light of #2 - many time we want to achieve things, but we are not willing to acknowledge reality, I've been guilty of that many times in the past. Realizing that some things are just harder to do than they appear helps tremendously. open-mindedness and radical transparency are invaluable for rapid learning and effective change look at yourself with other's eyes - many times (always?) we have totally different image of ourselves than other do 5-Step Process to Get What You Want Out of Life: 1) identify clear goals, 2) identify problems, 3) diagnose problems, 4) create a plan how to deal with problems, 5) execute remember that all people are wired very differently (they come from different backgrounds, have different experiences and goals) in his book, Ray Dalio outlines framework for effective decision making: first learn, then decide (be aware of harmful emotions) work principles Ray Dalio believes in meritocracy and radical transparency for running organizations hiring right people is most important thing there is much more that can be found in this great, more detailed summary The Subtle Art of Not Giving a F*ck: A Counterintuitive Approach to Living a Good Life have good values remember that you are not special instead of chasing fame, try to be useful in what you do today struggle for what makes you happy remember that you are probably wrong about majority of things you have opinion about when making decision, imagine yourself 5-10 years from now and think what would you do if you look back Lean Enterprise (book worth reading more than once!) focusing only on maximizing profits has the paradoxical effect of reducing MVPs over long term efforts solid CI is a must for rapid development delivery in small batches is a key to success get hypothesis from user research and validate with A/B testing check this great summary for more 100 Tricks to Appear Smart in Meetings this is a sarcastic story how meaningless can actually play on people emotions and make a difference top 10 tricks: Draw a Venn diagram, Translate percentage metrics into fractions, Encourage everyone to “take a step back", Nod continuously while pretending to take notes, Repeat the last thing the engineer said, but very very slowly, Ask “Will this scale?” no matter what it is, Pace around the room, Ask the presenter to go back a slide, Step out for a phone call, Make fun of yourself Seven Languages in Seven Weeks great book presenting 7 totally different languages that get your out of your comfort zone Measure What Matters book about achieving results through OKR: Objectives and Key Results approach is widely used at google it's all about defining specific goals (objectives) and steps that would take you there (key results) Designing Data-Intensive Applications this is bible for distributed systems, as well as good prep book for system design interview Why we Sleep probably the most influential book I read in 2019, made me reprioritize life before reading this book, my priorities were: 1) working out and healthy eating, 2) work 3) hobbies after reading this book, my priorities are: 1) sleep, 2) working out and healthy eating, 3) work, 4) hobbies Hello, Startup - awesome book! See separate post. I'm curious what did you read and learn. Share your thoughts. You can also follow me on GoodReads to stay up to date with my readings!]]></summary></entry><entry><title type="html">Speed reading</title><link href="http://localhost:4250/speed-reading/" rel="alternate" type="text/html" title="Speed reading" /><published>2020-04-15T23:15:50-07:00</published><updated>2020-04-15T23:15:50-07:00</updated><id>http://localhost:4250/speed-reading</id><content type="html" xml:base="http://localhost:4250/speed-reading/"><![CDATA[<p><img class="aligncenter size-full wp-image-19887" src="/assets/2020/04/reading-fast.jpg" alt="speed reading" width="620" height="400" /></p>
+<p>Is your <a href="https://www.goodreads.com/review/list/28888194?shelf=to-read">"to read" backlog</a> longer than 100 books? Is there more books than you can read in one year? Mine too!</p>
+<p>Solution? Pick top 20, and remove the rest?</p>
+<p>That's one way to go, but there is also another one: speed reading.</p>
+<p>I decided to learn a little about speed reading in order to get to some books that I'm curious about, but...not enough to devote a month of reading for them. There are some books I just want to just know what's in there.</p>
+<p>Speed reading is also useful for articles. How many times your friends send you things that take 20 minutes to read, and then you are like "meh...I wish I spent this time by going for a walk"?</p>
+<p>How many times you decided that you want to read something because you are very interested in particular topic? How many times you ended up in reading it, and concluding: <em>"if I could go back in time I wouldn't read it"</em> or <em>"content was not what I was expecting"</em>? How many times you read something and you think: <em>"Yeah, it's good, but it can be summarized in 1 paragraph"</em>?</p>
+<h3>Resources to get started</h3>
+<p>Here is a list of good resources I went through to get familiar with speed reading:</p>
+<ul style="font-weight: 400;">
+<li data-aria-posinset="1" data-aria-level="1"><b><span data-contrast="auto">Book: </span></b><a href="https://amzn.to/3aexzGO"><b><span data-contrast="auto">Speed Reading: The Comprehensive Guide To Speed Reading</span></b></a> - good quick read, 100 pager overview of speed reading</li>
+<li data-aria-posinset="2" data-aria-level="1"><a href="https://www.scotthyoung.com/blog/2015/01/19/speed-reading-redo/">I Was Wrong About Speed Reading: Here are the Facts</a><span data-contrast="auto"> </span>- good overview of speed reading, and useful tips
+<ul>
+<li data-aria-posinset="2" data-aria-level="1">Skim Before You Read</li>
+<li data-aria-posinset="2" data-aria-level="1">Improve Your Fluency to Improve Your Speed</li>
+<li data-aria-posinset="2" data-aria-level="1">know what you’re trying to get out of a text before you read it</li>
+<li data-aria-posinset="2" data-aria-level="1">highlight things you want to remember</li>
+</ul>
+</li>
+<li data-aria-posinset="2" data-aria-level="1"><a href="http://www.entrepreneurfinesse.com/how-to-double-your-reading-speed/">How To Double Your Reading Speed</a>
+<ul>
+<li data-aria-posinset="3" data-aria-level="1">Read Classics In The Morning</li>
+<li data-aria-posinset="3" data-aria-level="1">Have An End Goal In Mind</li>
+<li data-aria-posinset="3" data-aria-level="1">Read The Right Books (classics, how-to, biographies)</li>
+<li data-aria-posinset="3" data-aria-level="1">Trick Your Brain To Think Of Reading Like Working Out</li>
+<li data-aria-posinset="3" data-aria-level="1"><strong>Nap After Reading To Retain Memory</strong></li>
+</ul>
+</li>
+<li data-aria-posinset="3" data-aria-level="1"><a href="http://www.howtolearn.com/2013/02/skimming-and-scanning-two-important-strategies-for-speeding-up-your-reading/"> Skimming And Scanning: Two Important Strategies For Speeding Up Your Reading </a> - this article talks about two essential techniques of speed reading: <strong>scanning</strong> and <strong>skimming</strong></li>
+<li data-aria-posinset="3" data-aria-level="1"><a href="https://www.youtube.com/watch?v=RmQiOEC8UnM">Free Speed Reading Video Course</a><span data-contrast="auto"> (~45 min)</span></li>
+<li data-aria-posinset="3" data-aria-level="1"><a href="https://m.signalvnoise.com/speed-reading-2ff843053cc6"><span data-contrast="auto">Speed Reading by Nathan Kontny</span></a><span data-contrast="auto"> - tl;dr - skimming is the key</span></li>
+<li data-aria-posinset="3" data-aria-level="1"><a href="http://tim.blog/2009/07/30/speed-reading-and-accelerated-learning/"><span data-contrast="auto">Scientific Speed Reading: How to Read 300% Faster in 20 Minutes (Tim Ferris)</span></a><span data-contrast="auto"> - very structured approach to learn how to quick read</span></li>
+<li data-aria-posinset="3" data-aria-level="1"><b><span data-contrast="auto">[FREE] </span></b><a href="http://www.irisreading.com/gift/"><b>Free Speed Reading Fundamentals Course</b></a> - my results:
+<ul>
+<li data-aria-posinset="1" data-aria-level="2"><span data-contrast="auto">First test: 339 (1m)</span></li>
+<li data-aria-posinset="2" data-aria-level="2"><span data-contrast="auto">Second test: 581+187 (2m)</span></li>
+<li data-aria-posinset="3" data-aria-level="2"><span data-contrast="auto">Third: 581+180 (1m30s)</span></li>
+<li data-aria-posinset="4" data-aria-level="2"><span data-contrast="auto">Text2: 269 (1m)</span></li>
+</ul>
+</li>
+<li data-aria-posinset="4" data-aria-level="2"><a href="https://www.youtube.com/watch?v=ZwEquW_Yij0">How to speed read by Tim Ferris</a>
+<ul style="font-weight: 400;">
+<li data-aria-posinset="4" data-aria-level="2">focus on reading middle of each line - ignore 1 inch of beginning and 1 inch of end of the line (watch video for details)</li>
+<li data-aria-posinset="4" data-aria-level="2">use pointer (finger or pen) to follow</li>
+<li data-aria-posinset="4" data-aria-level="2">fast read as exercise, then read in normal speed - this should increase reading speed!</li>
+</ul>
+</li>
+</ul>
+<h3>My approach</h3>
+<p>When I see something that interests me I do not read it from back to back anymore. I skim first, and if it's good I read it more carefully, or do another, more comprehensive skim. If it's a book, I read table of contents first.</p>
+<p>Sometimes I also read summary at <a href="http://www.wikisummaries.org">wikisummaries</a>, <a href="https://fourminutebooks.com">fourminutebooks</a> or <a href="https://www.blinkist.com/">blinkist</a>.</p>
+<p>Another heuristic that helps me to make a decision about reading books is to check GoodReads score. If it's above 4 then it's promising. Around 4.5 usually end up being very good, worth reading back to back.</p>
+<p>For storytelling books, like biographies, I usually pick up an audiobook on <a href="https://libbyapp.com/">Libby</a> or <a href="https://www.audible.com/">Audible</a>. Then I listen to it while making breakfast or home errands.</p>
+<p>For articles, I usually start with summary/conclusion. Many times that's where I stop...</p>
+<h3>Summary</h3>
+<p>It's all about skimming.</p>
+<p>If you want to read fast: skim the words, read first sentence of every paragraph, or even just headers or book/article.</p>
+<p>Faster reading = worse comprehension. The art of speed reading is to find the sweet spot of how much comprehension you are willing to sacrifice for speed of reading.</p>]]></content><author><name>{&quot;login&quot;=&gt;&quot;jj09&quot;, &quot;email&quot;=&gt;&quot;jakub.jedryszek@gmail.com&quot;, &quot;display_name&quot;=&gt;&quot;jj09&quot;, &quot;first_name&quot;=&gt;&quot;&quot;, &quot;last_name&quot;=&gt;&quot;&quot;}</name><email>jakub.jedryszek@gmail.com</email></author><category term="other" /><category term="speedreading" /><summary type="html"><![CDATA[Is your "to read" backlog longer than 100 books? Is there more books than you can read in one year? Mine too! Solution? Pick top 20, and remove the rest? That's one way to go, but there is also another one: speed reading. I decided to learn a little about speed reading in order to get to some books that I'm curious about, but...not enough to devote a month of reading for them. There are some books I just want to just know what's in there. Speed reading is also useful for articles. How many times your friends send you things that take 20 minutes to read, and then you are like "meh...I wish I spent this time by going for a walk"? How many times you decided that you want to read something because you are very interested in particular topic? How many times you ended up in reading it, and concluding: "if I could go back in time I wouldn't read it" or "content was not what I was expecting"? How many times you read something and you think: "Yeah, it's good, but it can be summarized in 1 paragraph"? Resources to get started Here is a list of good resources I went through to get familiar with speed reading: Book: Speed Reading: The Comprehensive Guide To Speed Reading - good quick read, 100 pager overview of speed reading I Was Wrong About Speed Reading: Here are the Facts - good overview of speed reading, and useful tips Skim Before You Read Improve Your Fluency to Improve Your Speed know what you’re trying to get out of a text before you read it highlight things you want to remember How To Double Your Reading Speed Read Classics In The Morning Have An End Goal In Mind Read The Right Books (classics, how-to, biographies) Trick Your Brain To Think Of Reading Like Working Out Nap After Reading To Retain Memory Skimming And Scanning: Two Important Strategies For Speeding Up Your Reading  - this article talks about two essential techniques of speed reading: scanning and skimming Free Speed Reading Video Course (~45 min) Speed Reading by Nathan Kontny - tl;dr - skimming is the key Scientific Speed Reading: How to Read 300% Faster in 20 Minutes (Tim Ferris) - very structured approach to learn how to quick read [FREE] Free Speed Reading Fundamentals Course - my results: First test: 339 (1m) Second test: 581+187 (2m) Third: 581+180 (1m30s) Text2: 269 (1m) How to speed read by Tim Ferris focus on reading middle of each line - ignore 1 inch of beginning and 1 inch of end of the line (watch video for details) use pointer (finger or pen) to follow fast read as exercise, then read in normal speed - this should increase reading speed! My approach When I see something that interests me I do not read it from back to back anymore. I skim first, and if it's good I read it more carefully, or do another, more comprehensive skim. If it's a book, I read table of contents first. Sometimes I also read summary at wikisummaries, fourminutebooks or blinkist. Another heuristic that helps me to make a decision about reading books is to check GoodReads score. If it's above 4 then it's promising. Around 4.5 usually end up being very good, worth reading back to back. For storytelling books, like biographies, I usually pick up an audiobook on Libby or Audible. Then I listen to it while making breakfast or home errands. For articles, I usually start with summary/conclusion. Many times that's where I stop... Summary It's all about skimming. If you want to read fast: skim the words, read first sentence of every paragraph, or even just headers or book/article. Faster reading = worse comprehension. The art of speed reading is to find the sweet spot of how much comprehension you are willing to sacrifice for speed of reading.]]></summary></entry><entry><title type="html">Future of Package Delivery is Underground</title><link href="http://localhost:4250/future-of-package-delivery-is-underground/" rel="alternate" type="text/html" title="Future of Package Delivery is Underground" /><published>2020-04-02T22:12:41-07:00</published><updated>2020-04-02T22:12:41-07:00</updated><id>http://localhost:4250/future-of-package-delivery-is-underground</id><content type="html" xml:base="http://localhost:4250/future-of-package-delivery-is-underground/"><![CDATA[<p><img src="/assets/2020/04/underground-package-delivery.jpg" alt="Underground Package Delivery System" width="839" height="403" class="aligncenter size-full wp-image-19864" /></p>
+<p>Back in 2016, after reading <a href="https://amzn.to/351Rcjn">Peter Thiel's Zero to One</a>, I came up with an idea of Underground Package Delivery System. At first it would connect just distribution centers. Then we gonna have local dropbox stations. Like Amazon Lockers. Ultimately: everyone will have dropbox in their homes. You order something on amazon, <s>worker</s> machine sends this to you through underground pipes, you get notification, open dropbox which is next to your closet...and it's there! <b>Packages</b> will travel like internet <b>packages</b>.</p>
+<p>At first, everyone was laughing and told me that it is IMPOSSIBLE! Only a few months later, <a href="https://www.geekwire.com/2017/amazon-patent-subterranean-network-delivery/">Amazon was granted a patent for that idea</a>.</p>
+<p>I recently discussed this idea with one friend, and decided to re-research it. It looks like a <a href="https://www.cnbc.com/2019/11/14/underground-tunnels-could-deliver-more-than-600-million-parcels-a-year.html">company from UK (Magway) is working on it</a>! Another company, Mole Solutions, has even built <a href="http://www.molesolutions.co.uk/index.php/demonstrator/">344-foot prototype</a>. They also created awesome video with an overview of the idea:</p>
+<p><iframe src="https://www.youtube.com/embed/I3XiE3f4mQg" width="630" height="360" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+<p>This is another video of how it would look like:</p>
+<p><iframe src="https://www.youtube.com/embed/72Zo9dRSHSk" width="630" height="360" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+<p><a href="https://www.21cpw.com/oig-are-underground-delivery-systems-realistic-options-for-moving-packages-quickly/">Are underground delivery systems realistic options for moving packages quickly?</a></p>
+<p>Magway estimates that it would cost 6 Million Dollars per mile. This is actually not bad! Compare this with urban rail cost per mile being up to 1 Billion Dollars (<a href="https://www.citylab.com/transportation/2018/01/why-its-so-expensive-to-build-urban-rail-in-the-us/551408/">source</a>)!</p>
+<p>I know that majority of people see the future in drones, but...do you really want to have entire sky polluted with packages?</p>
+<p><img class="aligncenter size-full wp-image-19857" src="/assets/2020/04/Drone-Invasion-e1585889527929.jpg" alt="Sky of Drones" width="600" height="400" /></p>
+<p>There is one man, who really believes in tunnels. You know who that is ;) <a href="https://singularityhub.com/2020/02/20/elon-musks-boring-company-finishes-first-tunnel-for-155mph-vegas-loop/">Hint</a>.</p>
+<p>What do you think?</p>]]></content><author><name>{&quot;login&quot;=&gt;&quot;jj09&quot;, &quot;email&quot;=&gt;&quot;jakub.jedryszek@gmail.com&quot;, &quot;display_name&quot;=&gt;&quot;jj09&quot;, &quot;first_name&quot;=&gt;&quot;&quot;, &quot;last_name&quot;=&gt;&quot;&quot;}</name><email>jakub.jedryszek@gmail.com</email></author><category term="other" /><summary type="html"><![CDATA[Back in 2016, after reading Peter Thiel's Zero to One, I came up with an idea of Underground Package Delivery System. At first it would connect just distribution centers. Then we gonna have local dropbox stations. Like Amazon Lockers. Ultimately: everyone will have dropbox in their homes. You order something on amazon, worker machine sends this to you through underground pipes, you get notification, open dropbox which is next to your closet...and it's there! Packages will travel like internet packages. At first, everyone was laughing and told me that it is IMPOSSIBLE! Only a few months later, Amazon was granted a patent for that idea. I recently discussed this idea with one friend, and decided to re-research it. It looks like a company from UK (Magway) is working on it! Another company, Mole Solutions, has even built 344-foot prototype. They also created awesome video with an overview of the idea: This is another video of how it would look like: Are underground delivery systems realistic options for moving packages quickly? Magway estimates that it would cost 6 Million Dollars per mile. This is actually not bad! Compare this with urban rail cost per mile being up to 1 Billion Dollars (source)! I know that majority of people see the future in drones, but...do you really want to have entire sky polluted with packages? There is one man, who really believes in tunnels. You know who that is ;) Hint. What do you think?]]></summary></entry><entry><title type="html">PHP in 2020 it’s not your mama’s PHP</title><link href="http://localhost:4250/php-in-2020-its-not-your-mamas-php/" rel="alternate" type="text/html" title="PHP in 2020 it’s not your mama’s PHP" /><published>2020-02-18T22:59:24-08:00</published><updated>2020-02-18T22:59:24-08:00</updated><id>http://localhost:4250/php-in-2020-its-not-your-mamas-php</id><content type="html" xml:base="http://localhost:4250/php-in-2020-its-not-your-mamas-php/"><![CDATA[<p>I decided to write this post, because before joining Facebook I thought that PHP is just old, limited language from 2 decades ago when server was responsible for simple form parsing, and generating HTML.</p>
+<p>I actually learned web development using PHP in mid-2000s, when I was in middle school. I created my personal blog, and website about very popular back then game Deluxe Ski Jump. I actually still have the source code and recently put it on Azure at <a href="http://dsjonline.azurewebsites.net/">dsjonine.azurewebsites.net</a> - it is in polish, and there is no database:P Didn't bother to update character encoding from ISO-8859-2 to UTF. Why I used ISO-8859-2? Because my cousin told me to do so! It was real copy/paste programmer back then! Good times :D</p>
+<p>Mark Zuckerberg wrote first version of Facebook around that time using PHP too. <a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)">LAMP</a> stack was the way to go for web development in 2000s.</p>
+<p>A few days after joining facebook I realized that PHP now is full blown OO language. It has classes, interfaces, abstract classes, dependency injection, etc. It is much closer to C# or Java than to PHP that I used to write 15 years ago. At facebook we use <a href="https://hacklang.org/">Hack</a> (typed PHP). It's awesome. You have the best of two Worlds: type safety and no compilation! Just save, and refresh to see your changes. Yay! As pure PHP performance is not the best, <a href="https://dan.hersam.com/2015/02/25/go-vs-node-vs-php-vs-hhvm-and-wordpress-benchmarks/">HHVM performance is an improvement</a>.</p>
+<p>In PHP, you can access pretty much every module in the codebase without explicitly referencing it. That's an extra productivity boost. Or hack:) Intellisense in editors like <a href="https://nuclide.io/">Nuclide</a> (Atom) or VSCode is pretty good as well. When you add Facebook engineering systems, where everything is so neatly setup to prioritize productivity, you are in heaven :) I know most of PHP devs do not have that luxury, but just sayin' ;)</p>
+<p>If you want to learn more about modern PHP, check out these resources:</p>
+<ul>
+<li><a href="https://phptherightway.com/">PHP the right way</a></li>
+<li><a href="https://www.amazon.com/Modern-PHP-Features-Good-Practices-ebook/dp/B00TKVLL26">Modern PHP book</a></li>
+<li><a href="https://www.youtube.com/watch?v=wCZ5TJCBWMg">25 years of PHP (by the Creator of PHP)</a></li>
+<li><a href="https://www.amazon.com/Hack-HHVM-Programming-Productivity-Breaking-ebook/dp/B014VH495E">Hack and HHVM book</a></li>
+</ul>
+<p>As of February 2020, PHP is 5th most popular language on StackOverflow (<a href="https://stackoverflow.com/tags">source</a>)! Just recently taken over by python.</p>
+<p>In any means I am not recommending you to learn PHP if you don't have to. Choose <a href="https://www.rust-lang.org/">Rust</a> or <a href="https://golang.org/">Go</a> instead! Just wanted to let you know, that PHP changed A LOT! PHP in 2020 is not PHP from Web 1.0 times.</p>]]></content><author><name>{&quot;login&quot;=&gt;&quot;jj09&quot;, &quot;email&quot;=&gt;&quot;jakub.jedryszek@gmail.com&quot;, &quot;display_name&quot;=&gt;&quot;jj09&quot;, &quot;first_name&quot;=&gt;&quot;&quot;, &quot;last_name&quot;=&gt;&quot;&quot;}</name><email>jakub.jedryszek@gmail.com</email></author><category term="programming" /><summary type="html"><![CDATA[I decided to write this post, because before joining Facebook I thought that PHP is just old, limited language from 2 decades ago when server was responsible for simple form parsing, and generating HTML. I actually learned web development using PHP in mid-2000s, when I was in middle school. I created my personal blog, and website about very popular back then game Deluxe Ski Jump. I actually still have the source code and recently put it on Azure at dsjonine.azurewebsites.net - it is in polish, and there is no database:P Didn't bother to update character encoding from ISO-8859-2 to UTF. Why I used ISO-8859-2? Because my cousin told me to do so! It was real copy/paste programmer back then! Good times :D Mark Zuckerberg wrote first version of Facebook around that time using PHP too. LAMP stack was the way to go for web development in 2000s. A few days after joining facebook I realized that PHP now is full blown OO language. It has classes, interfaces, abstract classes, dependency injection, etc. It is much closer to C# or Java than to PHP that I used to write 15 years ago. At facebook we use Hack (typed PHP). It's awesome. You have the best of two Worlds: type safety and no compilation! Just save, and refresh to see your changes. Yay! As pure PHP performance is not the best, HHVM performance is an improvement. In PHP, you can access pretty much every module in the codebase without explicitly referencing it. That's an extra productivity boost. Or hack:) Intellisense in editors like Nuclide (Atom) or VSCode is pretty good as well. When you add Facebook engineering systems, where everything is so neatly setup to prioritize productivity, you are in heaven :) I know most of PHP devs do not have that luxury, but just sayin' ;) If you want to learn more about modern PHP, check out these resources: PHP the right way Modern PHP book 25 years of PHP (by the Creator of PHP) Hack and HHVM book As of February 2020, PHP is 5th most popular language on StackOverflow (source)! Just recently taken over by python. In any means I am not recommending you to learn PHP if you don't have to. Choose Rust or Go instead! Just wanted to let you know, that PHP changed A LOT! PHP in 2020 is not PHP from Web 1.0 times.]]></summary></entry><entry><title type="html">Hello, Startup - 360 overview of running tech business</title><link href="http://localhost:4250/hello-startup-360-overview-of-running-tech-business/" rel="alternate" type="text/html" title="Hello, Startup - 360 overview of running tech business" /><published>2020-01-22T20:34:07-08:00</published><updated>2020-01-22T20:34:07-08:00</updated><id>http://localhost:4250/hello-startup-360-overview-of-running-tech-business</id><content type="html" xml:base="http://localhost:4250/hello-startup-360-overview-of-running-tech-business/"><![CDATA[<p><a href="https://amzn.to/379nNVv"><img class="aligncenter wp-image-19777 size-medium" src="/assets/2020/01/hello-startup-200x300.jpg" alt="Hello, Startup" width="200" height="300" /></a></p>
+<p>Some time ago, <a href="https://twitter.com/remohjansen">Remo Jansen</a> recommended me to check out awesome book <a href="https://amzn.to/340fdqH">Hello, Startup</a> by <a href="https://twitter.com/brikis98">Yevgeniy Brikman</a>. I finally got into it, and I need to admit that it is a gem describing startup and tech World end-to-end.</p>
+<p>Here are my key take aways:</p>
+<ul>
+<li>Building successful company requires give or take 10 years (<a href="https://www.startups.com/library/expert-advice/how-long-will-it-take-for-my-startup-to-be-successful">this</a> is short overview why from other source).</li>
+<li>These 10 years are not 955 work weeks, it's 996 on the good days.</li>
+<li>Tip: Have a notebook to write down any idea that comes to your mind. Even the most stupid one! You will be surprised when a few years later someone turn it into the product. Someone, but not you.</li>
+<li>New business recipe: copy, transform, combine.</li>
+<li>Initial startup idea requires many iterations. Always! Yevgeniy gives a lot of simple examples including creating resume (from very raw to very nice looking).</li>
+<li>Doing things that don't scale is ok at the beginning to validate the idea, you can automate later. Launching business that automates something? Hire vendors that would do it manually, and once it take off hire developers who will automate it. As automation and scaling is usually much more expensive.</li>
+<li>Metrics to track:
+<ul>
+<li>acquisition - its sources, conversions and cost</li>
+<li>activation - how many new users engage with the product, and why</li>
+<li>retention - how many users stays after week, month, year...</li>
+<li>referral - channels and conversions</li>
+<li>revenue - month over month, year over year, CLV (Customer Lifetime Value)</li>
+<li>magic number - e.g. once facebook user connects with 7 friends within 10 days they usually become highly engaged, for twitter it takes following 30 people, and for Slack - exchanging 2000 messages (<a href="https://andrewchen.co/my-quora-answer-to-how-do-you-find-insights-like-facebooks-7-friends-in-10-days-to-grow-your-product-faster/">how to find insights like that</a> by Andrew Chen)</li>
+</ul>
+</li>
+<li>Data-Driven Development: idea -&gt; develop MVP -&gt; A/B Test -&gt; Release (requires well defined metrics and measurement tools)</li>
+<li>Distribution channels for startups:
+<ul>
+<li>word of mouth
+<ul>
+<li>build better product</li>
+<li>great customer service</li>
+<li>build viral loops into your product</li>
+</ul>
+</li>
+<li>marketing
+<ul>
+<li>advertising</li>
+<li>PR and media</li>
+<li>email</li>
+<li>SEO</li>
+<li>social media</li>
+<li><a href="https://www.hubspot.com/inbound-marketing">inbound marketing</a> - e.g., publishing useful blog posts, like <a href="https://engineering.fb.com/">Facebook engineering blog</a></li>
+</ul>
+</li>
+<li>sales
+<ul>
+<li>automated - website checkout</li>
+<li>inside - sales representatives at the store, or by phone</li>
+<li>outside - "traveling salesmen"</li>
+</ul>
+</li>
+<li>branding (Apple = "Think different", Red Bull = extreme sports, Nike = great athletes)</li>
+</ul>
+</li>
+<li>Use OSS and buy SaaS solutions for everything, but your competitive advantage ("secret sauce").</li>
+<li>Align tech stack with current market trends (in 2020 it's much easier to hire React developer than Backbone developer).</li>
+<li>Against Joel Spolsky opinion that <a href="https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/">rewrite is worst thing you can do</a>, these days startups often change technologies (<a href="https://medium.com/@mittalyashu/why-did-twitter-switch-from-ruby-on-rails-dac66150044d">Twitter migration from RoR to Scala</a>, <a href="https://medium.com/coursera-engineering/why-we-love-scala-at-coursera-80fa1fc66d74">Coursera moved from PHP to Scala</a> or <a href="https://medium.com/airbnb-engineering/sunsetting-react-native-1868ba28e30a">AirBnB is moving from React Native to pure native</a>). Thus do not worry too much about stack choice - treat it as it will eventually be rewritten. Microservice architecture over monolith helps with that!</li>
+<li>Keep code clean! Good naming, conventions, DRY, SRP, tests. It can bite even within first year. Especially because at  Startup you will be constantly evolving existing code!</li>
+<li>Company culture (mission and values) helps to avoid processes. People can trust each other to do the right thing.</li>
+<li>First 5-10 hires can kill or make your company successful. Look for: "<a href="https://amzn.to/2R94mGJ">smart and get things done</a>", culture fit, communication skills and "would you be ok reporting to them?".</li>
+</ul>
+<p>This book is GOLD! I strongly recommend everyone to read it. Besides awesome 360 overview of startup World, there is a lot of great insights into everyday developer's life. It's worth to remember that pretty much every tech company is a startup...just in different phase.</p>
+<p>If you are still in doubt, this book has <a href="https://amzn.to/340fdqH">4.9/5 rating on Amazon</a> and <a href="https://www.goodreads.com/book/show/26457143-hello-startup">4.45/5 on goodreads</a>!</p>
+<p>There is one quote from the book that I would like to finish this summary with:</p>
+<blockquote><p>I started asking, ``What are the important problems of your field?'' And after a week or so, ``What important problems are you working on?'' And after some more time I came in one day and said, ``If what you are doing is not important, and if you don't think it is going to lead to something important, why are you at Bell Labs working on it?''</p>
+<p>Richard Hamming, <a href="https://www.cs.virginia.edu/~robins/YouAndYourResearch.html">You and Your Research</a></p></blockquote>]]></content><author><name>{&quot;login&quot;=&gt;&quot;jj09&quot;, &quot;email&quot;=&gt;&quot;jakub.jedryszek@gmail.com&quot;, &quot;display_name&quot;=&gt;&quot;jj09&quot;, &quot;first_name&quot;=&gt;&quot;&quot;, &quot;last_name&quot;=&gt;&quot;&quot;}</name><email>jakub.jedryszek@gmail.com</email></author><category term="books" /><category term="startups" /><summary type="html"><![CDATA[Some time ago, Remo Jansen recommended me to check out awesome book Hello, Startup by Yevgeniy Brikman. I finally got into it, and I need to admit that it is a gem describing startup and tech World end-to-end. Here are my key take aways: Building successful company requires give or take 10 years (this is short overview why from other source). These 10 years are not 955 work weeks, it's 996 on the good days. Tip: Have a notebook to write down any idea that comes to your mind. Even the most stupid one! You will be surprised when a few years later someone turn it into the product. Someone, but not you. New business recipe: copy, transform, combine. Initial startup idea requires many iterations. Always! Yevgeniy gives a lot of simple examples including creating resume (from very raw to very nice looking). Doing things that don't scale is ok at the beginning to validate the idea, you can automate later. Launching business that automates something? Hire vendors that would do it manually, and once it take off hire developers who will automate it. As automation and scaling is usually much more expensive. Metrics to track: acquisition - its sources, conversions and cost activation - how many new users engage with the product, and why retention - how many users stays after week, month, year... referral - channels and conversions revenue - month over month, year over year, CLV (Customer Lifetime Value) magic number - e.g. once facebook user connects with 7 friends within 10 days they usually become highly engaged, for twitter it takes following 30 people, and for Slack - exchanging 2000 messages (how to find insights like that by Andrew Chen) Data-Driven Development: idea -&gt; develop MVP -&gt; A/B Test -&gt; Release (requires well defined metrics and measurement tools) Distribution channels for startups: word of mouth build better product great customer service build viral loops into your product marketing advertising PR and media email SEO social media inbound marketing - e.g., publishing useful blog posts, like Facebook engineering blog sales automated - website checkout inside - sales representatives at the store, or by phone outside - "traveling salesmen" branding (Apple = "Think different", Red Bull = extreme sports, Nike = great athletes) Use OSS and buy SaaS solutions for everything, but your competitive advantage ("secret sauce"). Align tech stack with current market trends (in 2020 it's much easier to hire React developer than Backbone developer). Against Joel Spolsky opinion that rewrite is worst thing you can do, these days startups often change technologies (Twitter migration from RoR to Scala, Coursera moved from PHP to Scala or AirBnB is moving from React Native to pure native). Thus do not worry too much about stack choice - treat it as it will eventually be rewritten. Microservice architecture over monolith helps with that! Keep code clean! Good naming, conventions, DRY, SRP, tests. It can bite even within first year. Especially because at  Startup you will be constantly evolving existing code! Company culture (mission and values) helps to avoid processes. People can trust each other to do the right thing. First 5-10 hires can kill or make your company successful. Look for: "smart and get things done", culture fit, communication skills and "would you be ok reporting to them?". This book is GOLD! I strongly recommend everyone to read it. Besides awesome 360 overview of startup World, there is a lot of great insights into everyday developer's life. It's worth to remember that pretty much every tech company is a startup...just in different phase. If you are still in doubt, this book has 4.9/5 rating on Amazon and 4.45/5 on goodreads! There is one quote from the book that I would like to finish this summary with: I started asking, ``What are the important problems of your field?'' And after a week or so, ``What important problems are you working on?'' And after some more time I came in one day and said, ``If what you are doing is not important, and if you don't think it is going to lead to something important, why are you at Bell Labs working on it?'' Richard Hamming, You and Your Research]]></summary></entry><entry><title type="html">Don’t hate the player! Hate the game!</title><link href="http://localhost:4250/dont-hate-the-player-hate-the-game/" rel="alternate" type="text/html" title="Don’t hate the player! Hate the game!" /><published>2019-12-18T08:25:35-08:00</published><updated>2019-12-18T08:25:35-08:00</updated><id>http://localhost:4250/dont-hate-the-player-hate-the-game</id><content type="html" xml:base="http://localhost:4250/dont-hate-the-player-hate-the-game/"><![CDATA[<p>Over years, I noticed that people develop a grudge against coworkers or their bosses.</p>
+<p>Often, if not always, this is caused by others goals and job constraints.</p>
+<p>Example: "I deserved a promotion, but I didn't get it because HE/SHE THINKS I DIDN'T DESERVE IT". Usually this is caused by manager having budget and needing to play bonus allocation tetris AKA calibration. Probably (most likely) if he didn't have these constraints it would look differently.</p>
+<p>Another example: "I hate this guy. He is always against me.". The reason why somebody oppose an idea is usually because of reasons. Reasons are caused by constraints a person operates in, and past experiences.</p>
+<p>Of course somebody may just not like you. That happens too.</p>
+<p>Maybe I'm the luckiest employee in the World, but over 7 years I didn't have boss that sucked. Did I work with some people who didn't like me? Probably, but I was always focused on solving problems, and cared less about their personal feelings. It also happened to me that I didn't get promotion/bonus when I deserved it. However, after digging in, I understood why, and it was because of constraints others operated in.</p>
+<p>A few years ago, while learning about AI from Peter Norvig (director of research at Google), I learned about <a href="https://www.investopedia.com/terms/p/paradox-rationality.asp">Paradox of Rationality</a> - people making rational decisions often end up with worse outcome if they would make irrational decisions. This is foundation of game theory, and obviously happens in life. Did you see irrational outcome coming out of congress lately? Do you think it's because politicians are stupid? Maybe it's because of how the game is setup?</p>
+<p>Don't hate the player! Hate the game! Your life will be better :)</p>]]></content><author><name>{&quot;login&quot;=&gt;&quot;jj09&quot;, &quot;email&quot;=&gt;&quot;jakub.jedryszek@gmail.com&quot;, &quot;display_name&quot;=&gt;&quot;jj09&quot;, &quot;first_name&quot;=&gt;&quot;&quot;, &quot;last_name&quot;=&gt;&quot;&quot;}</name><email>jakub.jedryszek@gmail.com</email></author><category term="career" /><category term="other" /><summary type="html"><![CDATA[Over years, I noticed that people develop a grudge against coworkers or their bosses. Often, if not always, this is caused by others goals and job constraints. Example: "I deserved a promotion, but I didn't get it because HE/SHE THINKS I DIDN'T DESERVE IT". Usually this is caused by manager having budget and needing to play bonus allocation tetris AKA calibration. Probably (most likely) if he didn't have these constraints it would look differently. Another example: "I hate this guy. He is always against me.". The reason why somebody oppose an idea is usually because of reasons. Reasons are caused by constraints a person operates in, and past experiences. Of course somebody may just not like you. That happens too. Maybe I'm the luckiest employee in the World, but over 7 years I didn't have boss that sucked. Did I work with some people who didn't like me? Probably, but I was always focused on solving problems, and cared less about their personal feelings. It also happened to me that I didn't get promotion/bonus when I deserved it. However, after digging in, I understood why, and it was because of constraints others operated in. A few years ago, while learning about AI from Peter Norvig (director of research at Google), I learned about Paradox of Rationality - people making rational decisions often end up with worse outcome if they would make irrational decisions. This is foundation of game theory, and obviously happens in life. Did you see irrational outcome coming out of congress lately? Do you think it's because politicians are stupid? Maybe it's because of how the game is setup? Don't hate the player! Hate the game! Your life will be better :)]]></summary></entry><entry><title type="html">Facebook Bootcamp is the best thing in the World</title><link href="http://localhost:4250/facebook-bootcamp-is-the-best-thing-in-the-world/" rel="alternate" type="text/html" title="Facebook Bootcamp is the best thing in the World" /><published>2019-11-22T08:38:27-08:00</published><updated>2019-11-22T08:38:27-08:00</updated><id>http://localhost:4250/facebook-bootcamp-is-the-best-thing-in-the-world</id><content type="html" xml:base="http://localhost:4250/facebook-bootcamp-is-the-best-thing-in-the-world/"><![CDATA[<p>After 5 years at Microsoft I joined company, which product I've been using for last 12 years :O</p>
+<p><img class="aligncenter wp-image-19770 size-medium" src="/assets/2019/11/12-years-at-facebook-300x290.png" alt="12 years at facebook" width="300" height="290" /></p>
+<p>Before I forget how amazing it was, I wanted to drop a few lines about Facebook Engineering Bootcamp.</p>
+<p>When you are about to join typical company you have to make a decision whether it's a good fit for you. Usually it's based on 4 or 5, hour long <a href="https://leetcode.com/">LeetCode</a> sessions with different members of the team. Of course you talk to your future manager, HR is telling you how great it's gonna be etc.</p>
+<p>Facebook does it differently! Your are being interviewed by people from different teams across the company. Not necessary from the team that you are going to join. It's actually very unlikely that you gonna end up working with any of them. This allows to remove bias, and make interviewing a fair game. Microsoft and Amazon have huge variation between teams. Somebody who wouldn't pass interview in one team can be a rockstar in other team.</p>
+<p>After you pass the interview and join Facebook, you start as bootcamper. You have usually 6-8 weeks to learn facebook engineering systems, and to find a team. You can to talk to as many teams in the company as you want. These are not interviews, but informal chats. Usually short 30 mins meeting, quick coffee or lunch. Some people call it "Facebook Dating" :D</p>
+<p>Once you determine that there is "chemistry" between you and your future manager, or somebody from the team, then you usually work with that team for a couple of days or a week. Like a real work! They give you desk in their open space area, you get some easy task that is related to what they are working on, and you are a team member for the time being.</p>
+<p>Don't worry about good and bad teams. At Facebook there are only <strong>different</strong> teams :) I was surprised how everybody I met during bootcamp had slightly different interests and all of us decided to join different teams :O</p>
+<p>Usually you want to "try" a few teams to have comparison, and to make connections that might help you in the future. E.g., when you will need to work with different team, or when you will be changing teams. This is the best part of the bootcamp. You can literally give you future job a trial run.</p>
+<p>I graduated from bootcamp last week and joined Facebook Marketplace Growth team.</p>
+<p>I'll probably drop a few lines about Facebook Engineering systems in separate post, but I'll just tell you this: imagine that you can have all your wishes regarding engineering systems fulfilled, and it's better than that :)</p>
+<p>If you want to learn more about bootcamp check <a href="https://www.facebook.com/notes/facebook-engineering/facebook-engineering-bootcamp/177577963919/">this note</a> :)</p>]]></content><author><name>{&quot;login&quot;=&gt;&quot;jj09&quot;, &quot;email&quot;=&gt;&quot;jakub.jedryszek@gmail.com&quot;, &quot;display_name&quot;=&gt;&quot;jj09&quot;, &quot;first_name&quot;=&gt;&quot;&quot;, &quot;last_name&quot;=&gt;&quot;&quot;}</name><email>jakub.jedryszek@gmail.com</email></author><category term="career" /><summary type="html"><![CDATA[After 5 years at Microsoft I joined company, which product I've been using for last 12 years :O Before I forget how amazing it was, I wanted to drop a few lines about Facebook Engineering Bootcamp. When you are about to join typical company you have to make a decision whether it's a good fit for you. Usually it's based on 4 or 5, hour long LeetCode sessions with different members of the team. Of course you talk to your future manager, HR is telling you how great it's gonna be etc. Facebook does it differently! Your are being interviewed by people from different teams across the company. Not necessary from the team that you are going to join. It's actually very unlikely that you gonna end up working with any of them. This allows to remove bias, and make interviewing a fair game. Microsoft and Amazon have huge variation between teams. Somebody who wouldn't pass interview in one team can be a rockstar in other team. After you pass the interview and join Facebook, you start as bootcamper. You have usually 6-8 weeks to learn facebook engineering systems, and to find a team. You can to talk to as many teams in the company as you want. These are not interviews, but informal chats. Usually short 30 mins meeting, quick coffee or lunch. Some people call it "Facebook Dating" :D Once you determine that there is "chemistry" between you and your future manager, or somebody from the team, then you usually work with that team for a couple of days or a week. Like a real work! They give you desk in their open space area, you get some easy task that is related to what they are working on, and you are a team member for the time being. Don't worry about good and bad teams. At Facebook there are only different teams :) I was surprised how everybody I met during bootcamp had slightly different interests and all of us decided to join different teams :O Usually you want to "try" a few teams to have comparison, and to make connections that might help you in the future. E.g., when you will need to work with different team, or when you will be changing teams. This is the best part of the bootcamp. You can literally give you future job a trial run. I graduated from bootcamp last week and joined Facebook Marketplace Growth team. I'll probably drop a few lines about Facebook Engineering systems in separate post, but I'll just tell you this: imagine that you can have all your wishes regarding engineering systems fulfilled, and it's better than that :) If you want to learn more about bootcamp check this note :)]]></summary></entry></feed>

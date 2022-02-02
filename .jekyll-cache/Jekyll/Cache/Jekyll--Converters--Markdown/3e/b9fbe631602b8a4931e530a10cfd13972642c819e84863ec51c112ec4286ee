@@ -1,0 +1,15 @@
+I"Y<p>In <a href="http://jj09.net/web-accessibility-hacker-way/">Web Accessibility Hacker Way</a> I mentioned that "only 20% of accessibility requirements can be verified by tools". Nevertheless, it is worth to cover this 20%. Especially, when it is not very hard. You know that having automated test that guard against regressions always pays off in a long run.</p>
+<p>As of today the best automatic verification tool for accessibility is <a href="http://www.deque.com/products/axe/">aXe</a>.</p>
+<p><img class="aligncenter size-full wp-image-15532" src="/assets/2016/09/aXeLogo-300x300.png" alt="aXe" width="300" height="300" /></p>
+<p>There is <a href="http://bitly.com/aXe-Chrome">aXe Chrome plugin</a> and <a href="http://bit.ly/aXe-Firefox">aXe Firefox plugin</a> that enables you to run accessibility audit manually:</p>
+<p><img class="aligncenter size-full wp-image-15581" src="/assets/2016/09/axe_results.jpg" alt="aXe - results" width="792" height="506" /></p>
+<p>Running automated tool manually is useful, but it is better to run it automatically as unit test, and incorporate it into your Continuous Integration to run it automatically after every commit.</p>
+<h3>Running accessibility audit with aXe</h3>
+<p>You can install aXe with npm:</p>
+<p><code>npm i axe-core</code></p>
+<p>The aXe has a function <code>a11yCheck</code> that performs accessibility audit on specified HTML Element. You may run it against widgets or partial views on your web app. That function takes 2 parameters:</p>
+<ol>
+<li>HTMLElement to be audited</li>
+<li>callback function that is invoked with <code>results</code> parameter</li>
+</ol>
+:ET

@@ -1,0 +1,7 @@
+I"�<p>A few weeks ago, when pushing towards the <a href="https://azure.microsoft.com/en-us/blog/announcing-azure-portal-general-availability/">new Azure Portal version 1.0 (aka GA at Microsoft)</a>, we added new shortcuts that can be activated with G+[key].</p>
+<p>We also changed/updated the old shortcuts that you can find in my previous posts: <a href="http://jj09.net/hidden-feature-of-the-azure-portal-keyboard-shortcuts/">1</a>, <a href="http://jj09.net/more-keyboard-shortcuts-and-better-focus-management-on-the-azure-portal/">2</a>.</p>
+<p>The full list of shortcuts is available on pressing <strong>? </strong>key:</p>
+<p><img class="aligncenter size-full wp-image-12171" src="/assets/2015/12/azure_portal-shortcutsGA.png" alt="Azure Portal - keyboard shortcuts" width="422" height="627" /></p>
+<p>You may notice that we change shortcut for opening dashboard from H to D. However, H will still work. We didn't want to take it away from people who already learned it, and got used to that. The same with New (formerly Create): the new shortcut N will work together with C.</p>
+<p>BTW: If there is some keyboard, or focus related issue on the portal that is bothering you let me know!</p>
+:ET

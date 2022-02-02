@@ -1,0 +1,217 @@
+I"ÖE<p><img class="aligncenter size-full wp-image-10311" src="/assets/2015/08/setTimeout-SteveTweet.png" alt="setTimeout - Steve's Tweet" width="603" height="269" /></p>
+<p>Recently I learned the hard way about setTimeouts side effects.</p>
+<h3>101 setTimeout issue</h3>
+<p>Let's say we have a following piece of code:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">someVar</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">changeVar</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">someVar</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="p">};</span></code></pre></figure>
+
+<p>And unit test:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">QUnit</span><span class="p">.</span><span class="nx">asyncTest</span><span class="p">(</span><span class="dl">'</span><span class="s1">should change variable to 10</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Arrange
+</span>
+    <span class="nx">someVar</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="c1">// Act
+</span>
+    <span class="nx">changeVar</span><span class="p">();</span>
+
+    <span class="c1">// Assert
+</span>
+    <span class="nx">equals</span><span class="p">(</span><span class="nx">someVar</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Of course test passes, and we are happy.</p>
+<p>Then, after some time, because of a reason (e.g., we want to fix some bug), we are adding <em>setTimeout</em> to <em>changeVar</em> function:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">changeVar</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">someVar</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="p">},</span> <span class="mi">10</span><span class="p">);</span>
+<span class="p">};</span></code></pre></figure>
+
+<p>Unit test does not pass anymore. So we are adding <em>setTimeout</em> to our unit test as well (ideally: appropriately longer than one in <em>changeVar</em> function to avoid confusion!):</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">QUnit</span><span class="p">.</span><span class="nx">asyncTest</span><span class="p">(</span><span class="dl">'</span><span class="s1">should change variable to 10</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Arrange
+</span>
+    <span class="nx">someVar</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="c1">// Act
+</span>
+    <span class="nx">changeVar</span><span class="p">();</span>
+
+    <span class="c1">// Assert
+</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">equals</span><span class="p">(</span><span class="nx">someVar</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+    <span class="p">},</span> <span class="mi">20</span><span class="p">);</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Then, we are introducing change to our code. Update only when <em>someVar</em> is not zero. We update function, and test accordingly:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">changeVar</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">someVar</span> <span class="o">!==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">someVar</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">},</span> <span class="mi">10</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">QUnit</span><span class="p">.</span><span class="nx">asyncTest</span><span class="p">(</span><span class="dl">'</span><span class="s1">should change variable to 10 if someVar != 0</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Arrange
+</span>
+    <span class="nx">someVar</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="c1">// Act
+</span>
+    <span class="nx">changeVar</span><span class="p">();</span>
+
+    <span class="c1">// Assert
+</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">equal</span><span class="p">(</span><span class="nx">someVar</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="p">},</span> <span class="mi">20</span><span class="p">);</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Everything works. Great! Then, somebody else is fixing another bug - of course by increasing timeout:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">changeVar</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">someVar</span> <span class="o">!==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">someVar</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">},</span> <span class="mi">50</span><span class="p">);</span>
+<span class="p">};</span></code></pre></figure>
+
+<p>Still works, but when after some time we decide to change our logic:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">changeVar</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">someVar</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">someVar</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">},</span> <span class="mi">50</span><span class="p">);</span>
+<span class="p">};</span></code></pre></figure>
+
+<p>Our test is still passing...when it shouldn't!</p>
+<p>Of course all of this is happening in large codebase with more complex logic.</p>
+<p>But this is not that bad. Let's take a look at more interesting scenario.</p>
+<h3>More complex case</h3>
+<p>We are in worst situation when we have waterfall of <em>setTimeout</em>s.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">fun1</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">someVar</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">},</span> <span class="mi">10</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">fun2</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">fun1</span><span class="p">();</span>
+        <span class="nx">someVar</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="p">},</span> <span class="mi">10</span><span class="p">);</span>
+<span class="p">};</span></code></pre></figure>
+
+<p>Guess if this unit test will pass:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">QUnit</span><span class="p">.</span><span class="nx">asyncTest</span><span class="p">(</span><span class="dl">'</span><span class="s1">should change variable to 11</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Arrange
+</span>
+    <span class="nx">someVar</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="c1">// Act
+</span>
+    <span class="nx">fun2</span><span class="p">();</span>
+
+    <span class="c1">// Assert
+</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    	<span class="nx">equal</span><span class="p">(</span><span class="nx">someVar</span><span class="p">,</span> <span class="mi">11</span><span class="p">);</span>
+    	<span class="nx">start</span><span class="p">();</span>
+    <span class="p">},</span> <span class="mi">20</span><span class="p">);</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>You think it should? You are wrong!</p>
+<p>But this test will pass:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">QUnit</span><span class="p">.</span><span class="nx">asyncTest</span><span class="p">(</span><span class="dl">'</span><span class="s1">should change variable to 11</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Arrange
+</span>
+    <span class="nx">someVar</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="c1">// Act
+</span>
+    <span class="nx">fun2</span><span class="p">();</span>
+
+    <span class="c1">// Assert
+</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    	<span class="nx">equal</span><span class="p">(</span><span class="nx">someVar</span><span class="p">,</span> <span class="mi">11</span><span class="p">);</span>
+    	<span class="nx">start</span><span class="p">();</span>
+    <span class="p">},</span> <span class="mi">21</span><span class="p">);</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Do you see the difference? Yes, timeout is 21 instead of 20. And of course everything will fall apart if somebody increase timeout in <em>fun1</em> or <em>fun2</em>.</p>
+<h3>Solution</h3>
+<p>The best solution is not to use <em>setTimeout</em> at all. Unfortunately we need async operations sometimes. In this case - you should use promises if possible. Unfortunately World is not perfect, especially Web Development World, and sometimes you have to use <em>setTimeout</em> (e.g., for UI effects etc.). You may think that if you set long enough timeout in your unit tests, everything should be good, right? Well...remember that it will make your unit tests slower. Instead - you should use <a href="http://davidwalsh.name/javascript-polling">polling approach</a>.</p>
+<p>To apply it to the last example - using "Without Deferreds" approach - copy poll function to your codebase:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">poll</span><span class="p">(</span><span class="nx">fn</span><span class="p">,</span> <span class="nx">callback</span><span class="p">,</span> <span class="nx">errback</span><span class="p">,</span> <span class="nx">timeout</span><span class="p">,</span> <span class="nx">interval</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">endTime</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">())</span> <span class="o">+</span> <span class="p">(</span><span class="nx">timeout</span> <span class="o">||</span> <span class="mi">2000</span><span class="p">);</span>
+    <span class="nx">interval</span> <span class="o">=</span> <span class="nx">interval</span> <span class="o">||</span> <span class="mi">100</span><span class="p">;</span>
+
+    <span class="p">(</span><span class="kd">function</span> <span class="nx">p</span><span class="p">()</span> <span class="p">{</span>
+            <span class="c1">// If the condition is met, we're done! 
+</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">fn</span><span class="p">())</span> <span class="p">{</span>
+                <span class="nx">callback</span><span class="p">();</span>
+            <span class="p">}</span>
+            <span class="c1">// If the condition isn't met but the timeout hasn't elapsed, go again
+</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nb">Number</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">())</span> <span class="o">&lt;</span> <span class="nx">endTime</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span> <span class="nx">interval</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="c1">// Didn't match and too much time, reject!
+</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">errback</span><span class="p">(</span><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">'</span><span class="s1">timed out for </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">fn</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">arguments</span><span class="p">));</span>
+            <span class="p">}</span>
+    <span class="p">})();</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>And call it in your unit test:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">QUnit</span><span class="p">.</span><span class="nx">asyncTest</span><span class="p">(</span><span class="dl">'</span><span class="s1">should change variable to 11</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Arrange
+</span>
+    <span class="nx">someVar</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="c1">// Act
+</span>
+    <span class="nx">fun2</span><span class="p">();</span>
+
+    <span class="c1">// Assert
+</span>
+    <span class="nx">poll</span><span class="p">(</span>
+	    <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	        <span class="k">return</span> <span class="nx">someVar</span> <span class="o">===</span> <span class="mi">11</span><span class="p">;</span>
+	    <span class="p">},</span>
+	    <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	        <span class="nx">ok</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+	        <span class="nx">start</span><span class="p">();</span>
+	    <span class="p">},</span>
+	    <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	        <span class="nx">ok</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+	        <span class="nx">start</span><span class="p">();</span>
+	    <span class="p">}</span>
+	<span class="p">);</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Now, you do not have to guess what value will be appropriate for <em>setTimeout</em> delay, and you will speed up your tests as well.</p>
+<p>When I see some strange behavior in code, the first thing I am looking at are <em>setTimeout</em> calls.</p>
+:ET

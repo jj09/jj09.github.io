@@ -1,0 +1,23 @@
+I"h<p>A few weeks ago I blogged about <a href="http://jj09.net/voicecmdr-voice-commands-in-the-browser/">voiceCmdr</a> - library for adding voice commands to website (built on top of <a href="https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html">Web Speech API</a>).</p>
+<p>I put up simple website - <a href="https://github.com/jj09/BooksLib">BooksLib </a>- a books library that allows up voting books, adding to favorites, and searching.</p>
+<p>This application enables also voice interaction. You can check it live <a href="http://bookslib.azurewebsites.net/">here</a> (Azure) or <a href="http://books-lib.herokuapp.com">here</a> (Heroku).</p>
+<p>It works in two modes:</p>
+<ol>
+<li>continuous - website is listening for commands continuously</li>
+<li>single - website is listening for a single command, and stops listening after receiving</li>
+</ol>
+<p>You can enable one of two modes through panel on the top-right corner:</p>
+<p><img class="aligncenter size-full wp-image-9721" src="/assets/2015/05/bookslib-voicePanel.jpg" alt="BooksLib - voice panel" width="257" height="110" /></p>
+<p>Available commands:</p>
+<ul>
+<li><em>Home</em> - go to home site</li>
+<li><em>Books</em> - go to books site</li>
+<li><em>Favorites</em> - go to favorites site</li>
+<li><em>Top 10</em> - go to top 10 site</li>
+<li><em>Search [phrase]</em> - search for given phrase (e.g. "Search JavaScript" will display all books with "JavaScript" phrase in title)</li>
+<li><em>Favorite</em> - add currently displayed book to favorites (can be used only when single books is displayed)</li>
+</ul>
+<p>You can check how these commands were added in lines 60-85, in <a href="https://github.com/jj09/BooksLib/blob/master/public/app/app.js">app.js</a> file (only 25 lines including empty lines and brackets!).</p>
+<p>To add voice commands to your website easily check out <a href="https://github.com/jj09/voiceCmdr">voiceCmdr</a> library.</p>
+<p>* Voice commands works only in Google Chrome - the only web browser that <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API#Browser_compatibility">supports Web Speech API</a> so far.</p>
+:ET

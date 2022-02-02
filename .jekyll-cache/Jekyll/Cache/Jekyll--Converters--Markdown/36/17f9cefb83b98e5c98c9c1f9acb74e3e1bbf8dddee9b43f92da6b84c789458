@@ -1,0 +1,10 @@
+I"Ò<p>Before I joined <a href="http://santoslab.org">SAnToS Lab</a>, I heard about Ada programming language only a few times. I thought it is an ancient language, that nobody is using anymore. I assumed, that only reason why somebody may bother are some legacy applications written 30 years ago. I thought that safety-critical and high-assurance systems are developed in C/C++ or even Assembly language.</p>
+<p>I was wrong.</p>
+<h3>Ada programming language</h3>
+<p>First version of Ada programming language - Ada 83 - was designed to meet the US Department of Defence Requirements formalized in <a href="http://www.adahome.com/History/Steelman/steelman.htm">"Steelman" document</a>. Since that time, Ada evolved. There were Ada 95, Ada 2005 and <a href="http://www.ada2012.org">Ada 2012</a> (released in December 10, 2012). Ada is activelly used in many <a href="http://www.seas.gwu.edu/~mfeldman/ada-project-summary.html">Real-World projects</a>, e.g. Aviation (<a href="http://archive.adaic.com/projects/atwork/boeing.html">Boeing 777's Software is written in Ada</a>), Railway Transportation, Commercial Rockets, Satellites and even Banking. One of the main goals of Ada is to ensure software correctness and safety. The picture below, shows what is the goal of Ada: prevent the Developer from introducing bugs into system by rich tooling and language properties.</p>
+<p><img class="aligncenter size-large wp-image-1199" src="/assets/2014/04/developer_responsibility_in_ada-785x541.png" alt="Ada responsibilities" width="785" height="541" /></p>
+<p>Ada does not use curly braces. The code listing below shows "Hello, World" in Ada:</p>
+
+<figure class="highlight"><pre><code class="language-ada" data-lang="ada"><span class="kn">with</span> <span class="nn">Ada</span><span class="p">.</span><span class="nn">Text_IO</span><span class="p">;</span> 
+<span class="k">use</span> <span class="n">Ada</span><span class="p">.</span><span class="n">Text_IO</span><span class="p">;</span></code></pre></figure>
+:ET

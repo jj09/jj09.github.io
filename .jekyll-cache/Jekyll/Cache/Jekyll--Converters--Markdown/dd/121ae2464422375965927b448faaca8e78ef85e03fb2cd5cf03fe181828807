@@ -1,0 +1,80 @@
+I"�5<p>Last Thursday I had a pleasure to give talk about Speech Recognition in the Browser at the <a href="http://www.codefellows.org/">Code Fellows</a> in Seattle.</p>
+<p><script class="speakerdeck-embed" src="//speakerdeck.com/assets/embed.js" async="" data-id="aa2459863d4244f68222792860923a31" data-ratio="1.77777777777778"></script></p>
+<p>Many people were surprised how easy it is to add speech recognition to your website with pure JavaScript. So I thought I will share a few code snippets here. It works in Chrome only so far.</p>
+<h3>Recognizing speech</h3>
+<p>This is how you can translate speech to text:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">sr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">webkitSpeechRecognition</span><span class="p">();</span>
+<span class="nx">sr</span><span class="p">.</span><span class="nx">onresult</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">evt</span><span class="p">.</span><span class="nx">results</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">].</span><span class="nx">transcript</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">sr</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span></code></pre></figure>
+
+<p>You can also get the confidence level of the result:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">sr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">webkitSpeechRecognition</span><span class="p">();</span>
+<span class="nx">sr</span><span class="p">.</span><span class="nx">onresult</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">evt</span><span class="p">.</span><span class="nx">results</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">].</span><span class="nx">transcript</span><span class="p">,</span> <span class="nx">evt</span><span class="p">.</span><span class="nx">results</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">].</span><span class="nx">confidence</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">sr</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span></code></pre></figure>
+
+<p>You can get interim results:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">sr</span><span class="p">.</span><span class="nx">interimResults</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>	<span class="c1">// false by default</span>
+<span class="nx">sr</span><span class="p">.</span><span class="nx">onresult</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span> <span class="nx">evt</span><span class="p">.</span><span class="nx">results</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="o">++</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">evt</span><span class="p">.</span><span class="nx">results</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="mi">0</span><span class="p">].</span><span class="nx">transcript</span><span class="p">);</span>
+	<span class="p">};</span>
+<span class="p">};</span></code></pre></figure>
+
+<p>Or different alternatives of recognized speech:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">sr</span><span class="p">.</span><span class="nx">maxAlternatives</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>	<span class="c1">// default = 1</span>
+<span class="nx">sr</span><span class="p">.</span><span class="nx">onresult</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span> <span class="nx">evt</span><span class="p">.</span><span class="nx">results</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">length</span><span class="p">;</span> <span class="o">++</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">evt</span><span class="p">.</span><span class="nx">results</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="nx">i</span><span class="p">].</span><span class="nx">transcript</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>You can set a language, e.g., to Polish:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">sr</span><span class="p">.</span><span class="nx">lang</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">pl-PL</span><span class="dl">'</span></code></pre></figure>
+
+<p>All above will stop recognition when you stop speaking. In order to do not stop recognition you need to set <em>continuous</em> flag to <em>true</em>. Additionally, this will treat every fragment of you speech as interim result, so you need to update <em>onresult</em> callback too:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">sr</span><span class="p">.</span><span class="nx">continuous</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>	<span class="c1">// false by default</span>
+<span class="nx">sr</span><span class="p">.</span><span class="nx">onresult</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">evt</span><span class="p">.</span><span class="nx">results</span><span class="p">[</span><span class="nx">evt</span><span class="p">.</span><span class="nx">results</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">].</span><span class="nx">transcript</span><span class="p">);</span>
+<span class="p">};</span></code></pre></figure>
+
+<p>Speech Recognition object has other callbacks (than <em>onresult</em>) that you can take advantage of:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">sr</span><span class="p">.</span><span class="nx">onstart</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">onstart</span><span class="dl">"</span><span class="p">);</span> <span class="p">}</span>
+<span class="nx">sr</span><span class="p">.</span><span class="nx">onend</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">onend</span><span class="dl">"</span><span class="p">);</span> <span class="p">}</span>
+<span class="nx">sr</span><span class="p">.</span><span class="nx">onspeechstart</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="dl">"</span><span class="s2">speech start</span><span class="dl">"</span><span class="p">);</span> <span class="p">}</span>
+<span class="nx">sr</span><span class="p">.</span><span class="nx">onspeechend</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="dl">"</span><span class="s2">speech end</span><span class="dl">"</span><span class="p">);</span> <span class="p">}</span></code></pre></figure>
+
+<h3>Emitting speech</h3>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">msg</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SpeechSynthesisUtterance</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hi, I</span><span class="se">\'</span><span class="s1">m Jakub!</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">speechSynthesis</span><span class="p">.</span><span class="nx">speak</span><span class="p">(</span><span class="nx">msg</span><span class="p">);</span></code></pre></figure>
+
+<p>You can also change the speaker voice:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">voices</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">speechSynthesis</span><span class="p">.</span><span class="nx">getVoices</span><span class="p">();</span>
+<span class="nx">msg</span><span class="p">.</span><span class="nx">voice</span> <span class="o">=</span> <span class="nx">voices</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span> <span class="c1">// Note: some voices don't support altering params</span></code></pre></figure>
+
+<p>There is also other options you can set:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">msg</span><span class="p">.</span><span class="nx">volume</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 0 to 1</span>
+<span class="nx">msg</span><span class="p">.</span><span class="nx">pitch</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">//0 to 2</span>
+<span class="nx">msg</span><span class="p">.</span><span class="nx">text</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Hello World</span><span class="dl">'</span><span class="p">;</span>
+<span class="nx">msg</span><span class="p">.</span><span class="nx">lang</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">en-US</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="nx">msg</span><span class="p">.</span><span class="nx">onend</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Finished in </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">event</span><span class="p">.</span><span class="nx">elapsedTime</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> seconds.</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">};</span></code></pre></figure>
+
+<h3>Summary</h3>
+<p>Speech is coming to the browser, and you can not stop it. The question is when most of websites will add voice support. Check out <a href="https://github.com/jj09/voiceCmdr">voiceCmdr</a> - a library that I <a href="http://jj09.net/voicecmdr-voice-commands-in-the-browser/">blogged about earlier this year</a>, which helps to add voice commands to your websites in very easy way. You can also check out <a href="http://bookslib.azurewebsites.net/">website</a> that can be navigated with voice commands - you can find available commands in my <a href="http://jj09.net/website-with-speech-recognition-for-free/">blog post</a>. You can find entire logic for voice commands support in <a href="https://bookslib.azurewebsites.net/app/app.js">this file</a> (lines: 38-103).</p>
+:ET

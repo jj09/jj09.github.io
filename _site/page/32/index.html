@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+
+<meta name="description" content="Software Engineer at Meta (Ex-MSFT). I helped build Azure Portal, Azure Mobile App, Seeing AI, and Facebook Marketplace.">
+<meta property="og:description" content="Software Engineer at Meta (Ex-MSFT). I helped build Azure Portal, Azure Mobile App, Seeing AI, and Facebook Marketplace." />
+
+<meta name="author" content="Jacob Jedryszek" />
+
+
+
+
+    <title>Jacob Jedryszek – Software Engineer at Meta (Ex-MSFT). I helped build Azure Portal, Azure Mobile App, Seeing AI, and Facebook Marketplace.</title>
+
+    <link rel="stylesheet" type="text/css" href="/style.css"/>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/ress/dist/ress.min.css"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/image/favicon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/image/favicon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/image/favicon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/image/favicon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/image/favicon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/image/favicon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/image/favicon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/image/favicon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/image/favicon-180x180.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/image/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/image/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/image/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/image/favicon-192x192.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/image/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/assets/image/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/assets/image/favicon-144x144.png">
+    <meta name="msapplication-config" content="/assets/image/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="alternate" type="application/rss+xml" title="Jacob Jedryszek - Software Engineer at Meta (Ex-MSFT). I helped build Azure Portal, Azure Mobile App, Seeing AI, and Facebook Marketplace." href="/feed.xml"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous" media="print" onload="this.media='all'"/>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.5/plyr.css" media="print" onload="this.media='all'"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" media="print" onload="this.media='all'"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous" media="print" onload="this.media='all'"/>
+
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/" class="site-avatar"><img src="/assets/image/avatar.png" width="70" height="70" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Jacob Jedryszek</a></h1>
+            <p class="site-description">Software Engineer at Meta (Ex-MSFT). I helped build Azure Portal, Azure Mobile App, Seeing AI, and Facebook Marketplace.</p>
+          </div>
+
+          <nav class="nav-menu">
+            
+  <a class="nav-menu-item"<a href="/">Blog</a>
+
+  <a class="nav-menu-item"<a href="/about">About</a>
+
+  <a class="nav-menu-item"<a href="/search">Search</a>
+
+
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <div class="posts">
+  
+    <article class="post">
+
+      <h1><a href="/multithreading-in-csharp/">Multithreading in C#</a></h1>
+
+      <div class="entry">
+        <p>Multithreading is one of the advanced topics in Computer Science. Every Developer, sooner or later will need to write some multithreaded application. It is definitely better to do it sooner, even just for exercise, than later.</p>
+<p>Everyone who attend a University and got a CS degree had to write at least one concurrent application. Usually, in Java, as 'standard language for Universities'. At least that was in my case, and two Universities I attended (Wroclaw University of Technology and Kansas State). Many University-based resources from Google are in Java. Sometimes there is C/C++ used. That's my observation after googling.</p>
+<p>As .NET Developer I was interested in multithreading in C#. One of the best sources about that is <a href="http://www.albahari.com/threading/">Threading in C#</a> by Joseph Albahari. It's an overview of all threading-related features in C#. In this post, I would like to make an overview of the most basic techniques: accessing shared resources and signaling.</p>
+<h3>Basic locking</h3>
+<p>The issues with threading are usually correlated with shared resources (e.g. variables). One thread can start modifying it, while in meantime another thread also start do that. Then, sometimes, we cannot predict the final state of the resource (value of variable). Moreover, in one execution it can be value set by thread #1 and in the other - by thread #2.</p>
+<p>To solve this issue, we have constructs such as: <a href="http://en.wikipedia.org/wiki/Semaphore_(programming)">semaphors</a> or <a href="http://en.wikipedia.org/wiki/Monitor_(synchronization)">monitors</a>. In C#, the monitor implementation is <code>lock</code> statement. To apply it, we need 'locker object', which has to be locked before access to shared resources and unlocked after. Once 'locker object' is locked, other threads has to wait until it becomes unlocked. Look at below example (from Albahari's eBook):</p>
+<p>[csharp]using System;<br />
+using System.Threading;</p>
+<p>class ThreadTest<br />
+{<br />
+  static bool done;    // Static fields are shared between all threads</p>
+<p>  static void Main()<br />
+  {<br />
+    new Thread (Go).Start();<br />
+    Go();<br />
+  }</p>
+<p>  static void Go()<br />
+  {<br />
+    if (!done) { done = true; Console.WriteLine (&quot;Done&quot;); }<br />
+  }<br />
+}[/csharp]</p>
+<p>The <code>bool</code> variable <code>done</code> is shared resource. Above program will have 2 threads. First one, starts in a new thread and second one, right after the first one, in main thread. Both will try to access shared resource. We can see that during method <code>Go()</code> execution, the shared variable is accessed actually 2 times. First - to check its value, and second - to set it (if it was false). The problem is that thread #1 can access it first (when it is false), then give up processor for thread #2, which also will check the value (still false) and we will get "Done" printed twice. That's something we do not want. To solve this issue, we introduce 'locker object' represented by variable <code>locker</code>.</p>
+<p>[csharp]using System;<br />
+using System.Threading;</p>
+<p>class ThreadSafe<br />
+{<br />
+  static bool done;<br />
+  static readonly object locker = new object();</p>
+<p>  static void Main()<br />
+  {<br />
+    new Thread (Go).Start();<br />
+    Go();<br />
+  }</p>
+<p>  static void Go()<br />
+  {<br />
+    lock (locker)<br />
+    {<br />
+      if (!done) { Console.WriteLine (&quot;Done&quot;); done = true; }<br />
+    }<br />
+  }<br />
+}[/csharp]</p>
+<p>Now, the if statement is secured by lock. Every thread, which wants to enter it, has to obtain the lock. Once one thread obtain the lock, another threads cannot. They have to wait, until it becomes unlocked. In above example, when thread #1 has the lock and start executing critical section, then even if it give up for thread #2, we have warranty that another thread will not enter the critical section. Additionally, only thread #1 can release the lock.</p>
+<p>The following code:</p>
+<p>[csharp]lock(locker)<br />
+{<br />
+    //code<br />
+}[/csharp]</p>
+<p>is equivalent to (C# 4.0):</p>
+<p>[csharp]bool lockTaken = false;<br />
+try<br />
+{<br />
+  Monitor.Enter (locker, ref lockTaken);<br />
+  //code<br />
+}<br />
+finally { if (lockTaken) Monitor.Exit (locker); }[/csharp]</p>
+<h3>Signaling</h3>
+<p>Another common technique in multithreaded applications is signaling. It is notifying other thread(s). For example: thread #1 can start another thread (thread #2) and wait for signal from it (e.g. that it finished some operation). Thread #2 is performing the operation, while thread #1 is waiting. Once thread #2 finish operation, it notify (send signal) thread #1, which then can continue other computations.</p>
+<p>In the example below, then main thread, create new thread to perform <code>Operation</code>. After that it performs some computation and when it is done, it waits for thread #2 to finish its operations. After main thread get notification from thread #2, it can proceed.</p>
+<p>[csharp]using System;<br />
+using System.Threading;</p>
+<p>class BasicWaitHandle<br />
+{<br />
+  static EventWaitHandle _waitHandle = new AutoResetEvent (false);</p>
+<p>  static void Main()<br />
+  {<br />
+    new Thread (Operation).Start();<br />
+    Thread.Sleep (1000);                  // Computation...<br />
+    Console.WriteLine (&quot;Wait...&quot;);<br />
+    _waitHandle.WaitOne();                    // Wait for notification<br />
+    Console.WriteLine (&quot;Notified!&quot;);<br />
+  }</p>
+<p>  static void Operation()<br />
+  {<br />
+    Console.WriteLine (&quot;Start operation...&quot;);<br />
+    Thread.Sleep(2000);               // Computation...<br />
+    Console.WriteLine (&quot;Operation finished!&quot;);<br />
+    _waitHandle.Set();                // Notify the Waiter<br />
+    Thread.Sleep(1000);         // Some other computation...<br />
+  }<br />
+}<br />
+[/csharp]</p>
+<h3>Producer-Consumer</h3>
+<p>The classic multithreaded application is <a href="http://en.wikipedia.org/wiki/Producer%E2%80%93consumer_problem">Producer–consumer</a>. Additionally, it is <a href="http://www.researchgate.net/post/In_which_area_of_Computer_Science_is_the_Producer_Consumer_Problem_applied_or_implemented">wide used across many real-life applications</a>. In the listing below, there is Producer-Consumer implementation in C# (taken from <a href="http://www.albahari.com/threading/part2.aspx#_WaitHandle_Producer_Consumer_Queue">Threading in C# - part 2</a>):</p>
+<p>[csharp]using System;<br />
+using System.Threading;<br />
+using System.Collections.Generic;</p>
+<p>class ProducerConsumerQueue : IDisposable<br />
+{<br />
+  EventWaitHandle _wh = new AutoResetEvent (false);<br />
+  Thread _worker;<br />
+  readonly object _locker = new object();<br />
+  Queue&lt;string&gt; _tasks = new Queue&lt;string&gt;();</p>
+<p>  public ProducerConsumerQueue()<br />
+  {<br />
+    _worker = new Thread (Work);<br />
+    _worker.Start();<br />
+  }</p>
+<p>  public void EnqueueTask (string task)<br />
+  {<br />
+    lock (_locker) _tasks.Enqueue (task);<br />
+    _wh.Set();<br />
+  }</p>
+<p>  public void Dispose()<br />
+  {<br />
+    EnqueueTask (null);     // Signal the consumer to exit.<br />
+    _worker.Join();         // Wait for the consumer's thread to finish.<br />
+    _wh.Close();            // Release any OS resources.<br />
+  }</p>
+<p>  void Work()<br />
+  {<br />
+    while (true)<br />
+    {<br />
+      string task = null;<br />
+      lock (_locker)<br />
+        if (_tasks.Count &gt; 0)<br />
+        {<br />
+          task = _tasks.Dequeue();<br />
+          if (task == null) return;<br />
+        }<br />
+      if (task != null)<br />
+      {<br />
+        Console.WriteLine (&quot;Performing task: &quot; + task);<br />
+        Thread.Sleep (1000);  // simulate work...<br />
+      }<br />
+      else<br />
+        _wh.WaitOne();         // No more tasks - wait for a signal<br />
+    }<br />
+  }<br />
+}</p>
+<p>class Program<br />
+{<br />
+	static void Main()<br />
+	{<br />
+	  using (var q = new ProducerConsumerQueue())<br />
+	  {<br />
+	    q.EnqueueTask (&quot;Hello&quot;);<br />
+	    for (int i = 0; i &lt; 10; i++) q.EnqueueTask (&quot;Say &quot; + i);<br />
+	    q.EnqueueTask (&quot;Goodbye!&quot;);<br />
+	  }</p>
+<p>	  // Exiting the using statement calls q's Dispose method, which<br />
+	  // enqueues a null task and waits until the consumer finishes.<br />
+	}<br />
+}[/csharp]</p>
+<p>It takes advantage of locking and signaling. Producer is creating tasks and putting them into the buffer. Consumer is consuming tasks (fetching them from the buffer). In above program: the buffer is implemented as Queue. </p>
+<p>There are two threads:</p>
+<ul>
+<li>Main thread - creating tasks and adding them into the queue (enqueuing)</li>
+<li>Work thread - processing tasks (dequeuing)</li>
+</ul>
+<p>'Work thread' is consuming tasks if the queue is not empty. If the queue is empty, instead of checking its content continuously, it waits for the signal from Main thread. The Main thread notify Work thread every time it enqueued new task into the queue. Work thread terminates, once it receive <code>null</code> task. In above program, it happens when we quit the <code>using</code> statement in Main thread. That cause <code>Dispose()</code> method call (in <code>ProducerConsumerQueue</code> class), which enqueues <code>null</code> task into the queue. During enqueuing and dequeuing, the queue is locked using <code>lock</code> construct.</p>
+<p>More detailed description of this implementation can be found on <a href="http://www.albahari.com/threading/part2.aspx#_WaitHandle_Producer_Consumer_Queue">Joe Albahari's article</a>.</p>
+<h3>Summary</h3>
+<p>There are many advantages of multithreading: speeding up applications by performing operations in different thread, while processor is waiting for I/O operation or making UI thread responsive all the time, while processing is done in background. However, multithreaded applications are much harder to find bugs and debug. Because of that: you should avoid multithreading everywhere when possible. Especially, when threads access the shared resource.</p>
+<p>To get familiar with multithreading you can read <a href="http://www.devmanuals.com/tutorials/java/corejava/MultiThreading.html">Introduction to Multithreading</a> (with examples in Java) and <a href="http://www.yoda.arachsys.com/csharp/threads/">Multi-threading in .NET: Introduction and suggestions</a> (with "Hello, world" example in C#).</p>
+<p>For a jump start you may find useful a session from TechEd New Zealand 2012: <a href="http://channel9.msdn.com/Events/TechEd/NewZealand/TechEd-New-Zealand-2012/DEV402">Multi-threaded Programming in .NET from the ground up</a> (it's 2 years old, but still accurate).</p>
+<p><iframe style="height:270px;width:480px" src="http://channel9.msdn.com/Events/TechEd/NewZealand/TechEd-New-Zealand-2012/DEV402/player?w=480&amp;h=270" frameborder="0" scrolling="no"></iframe></p>
+<p>To learn more about multithreading in C#, I strongly recommend you <a href="http://www.albahari.com/threading/">Threading in C#</a> by Joseph Albahari, which is also part of <a href="http://www.amazon.com/5-0-Nutshell-The-Definitive-Reference/dp/1449320104">C# 5.0 in a Nutshell</a> (book I am reading now...and also recommending!). </p>
+
+      </div>
+
+      <a href="/multithreading-in-csharp/" class="read-more">Read more&nbsp;&#183;<span class="reading-time">
+  
+  8 min read
+</span>
+</a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/my-pomidoro-windows-8-app-is-getting-famous/">My Pomidoro Windows 8 app is getting famous</a></h1>
+
+      <div class="entry">
+        <p>Over a year ago I created simple Windows 8 app: <a href="http://apps.microsoft.com/windows/en-us/app/pomidoro/63bde253-b627-44ec-884e-59e17af7a918">Pomidoro</a> (the name 'Pomodoro' was already taken at the Windows Store). And yes, it is for applying <a href="http://pomodorotechnique.com/">The Pomodoro Technique</a>. I published it to the <a href="http://apps.microsoft.com/windows/en-us/app/pomidoro/63bde253-b627-44ec-884e-59e17af7a918">Windows Store</a> on January 7, 2013. </p>
+<p><img src="/assets/2014/03/pomidoro_screenshot3.jpg" alt="Pomidoro screenshot" width="759" height="427" class="aligncenter size-full wp-image-1104" /></p>
+<p>The reason I created this app, was to learn Windows 8 Metro apps development. </p>
+<p>From time to time I receive e-mails that my app got some third party award or was reviewed by some website I have never heard about.</p>
+<p>A few weeks ago I received e-mail from <a href="http://bestwindows8apps.net">Best Windows 8 Apps</a>. My app received <a href="http://bestwindows8apps.net/pomidoro/">Editor's pick award</a>:</p>
+<p><img src="/assets/2014/03/pomidoro-editors-pick-award.png" alt="Pomidoro Editor's pick award" width="200" height="137" class="aligncenter size-full wp-image-1021" /></p>
+<p>A few days ago I received e-mail from <a href="http://www.appfeds.com/">AppFeds</a>. They states, that they are tracking 116,642 apps. Windows 8 Store contains over 144,739 (<a href="http://www.winbeta.org/news/144739-total-apps-windows-store-and-top-windows-81-apps-jan-19th">source</a>). Now, my app is 579/673 in the productivity category.</p>
+<p><img src="/assets/2014/03/pomidoro-ranking-in-productivity.jpg" alt="Pomidoro Windows 8 app in Ranking in Productivity" width="777" height="410" class="aligncenter size-full wp-image-936" /></p>
+<p><img src="/assets/2014/03/pomidoro-ranking-in-free-productivity.jpg" alt="Pomidoro Windows 8 app in Top Free Ranking in Productivity" width="785" height="405" class="aligncenter size-full wp-image-935" /></p>
+<p><del>I checked how many productivity apps they have and I was a little bit surprised. They have 673 apps in category <a href="http://www.appfeds.com/catalog/apps/all/productivity/all/all/all/rating/?page=68">Productivity</a>. How is this possible that my app was ranked 958 in January 31? Did they have more apps or they are just lying? First warning about credibility of their website.</del></p>
+<p><strong>EDIT (after clarification from <a href="http://www.appfeds.com/">AppFeds</a>, see comment)</strong>: They have more than 2800 apps in category <a href="http://www.appfeds.com/catalog/apps/all/productivity/all/all/all/rating/?page=284&amp;well_received=off">Productivity</a> and almost 700 of them are <a href="http://www.appfeds.com/catalog/apps/all/productivity/all/all/all/rating/?page=69">well received</a>. My app was 958 in January, now is 674. Yesterday (before the comment from <a href="http://www.appfeds.com/">AppFeds</a> was posted), my app was <a href="http://www.appfeds.com/catalog/US/jj09/pomidoro/stats/">557</a>.</p>
+<p><img src="/assets/2014/03/pomidoro-ranking_mar12-2014.png" alt="Pomidoro ranking in productivity March 12, 2014" width="782" height="402" class="aligncenter size-full wp-image-1108" /></p>
+<p>But, in the same time, my app is in page 38, when I sort <a href="http://www.appfeds.com/catalog/apps/all/productivity/all/all/all/rating/?page=38&amp;well_received=off">Productivity apps, by ranking (with 'Well Received' filter off)</a>. There is 10 apps per page, which means my app is in top 380(?) Why there is a difference between the list and above chart? Maybe guys from <a href="http://www.appfeds.com/">AppFeds</a> can explain that as well? <strong>&lbrack;End Of Edit&rbrack;</strong></p>
+<p>Yesterday I received another e-mail. It made me to create this post. The e-mail was from <a href="http://www.ilovefreesoftware.com/">I Love Free Software</a>:</p>
+<blockquote><p>Hi jj09 team,</p>
+<p>I am Ubaidullah from www.ilovefreesoftware.com. We recently reviewed Pomidoro on our website here:</p>
+<p>http://www.ilovefreesoftware.com/24/featured/free-pomodoro-timer-apps-windows-8.html</p>
+<p>We are a popular tech website and get hundreds of thousands of visitors from over 150 countries around the world. </p>
+<p>It would be great if you could add a link to the review on your website. This would tell your visitors that we have reviewed your app as one of the best free app available (and that would add up to your credibility as well).</p>
+<p>I have attached a badge with this mail which you can flaunt on your website, and link that to the review. Alternatively, you can just add this code:</p>
+<p>&lt;a href="http://www.ilovefreesoftware.com/24/featured/free-pomodoro-timer-apps-windows-8.html" title="Free Software" &gt;&lt;img border="0" src="http://cdn.ilovefreesoftware.com/wp-content/uploads/2011/03/ilovefreesoftware_reviewed_5Star.png"/&gt;&lt;/a&gt;</p>
+<p>Feel free to get back to me with any questions.</p>
+<p>Have Fun,</p>
+<p>Ubaidullah Khan<br />
+Collaboration Manager</p></blockquote>
+<p>I checked this <a href="http://www.ilovefreesoftware.com/24/featured/free-pomodoro-timer-apps-windows-8.html">review</a>. Doesn't look like a simple scam. It is neither high quality review. The cool thing is my app is 1st of 4 best Pomodoro apps :) This is the badge from them:</p>
+<p><img src="/assets/2014/03/pomidoro-ilovefreesoftware_reviewed_5Star.png" alt="Pomidoro - I love free software reviewed 5 Star" width="166" height="104" class="aligncenter size-full wp-image-1023" /></p>
+<p>* Of course I didn't paste link provided by them. The picture is stored on my server for <a href="http://en.wikipedia.org/wiki/Cross-site_request_forgery">security reasons</a>.</p>
+<p>Is that means my tiny app is good? Maybe average Windows Store apps are not very high quality (if app created within one day can be better than them)? Or maybe there are people who trying to get their websites popular, by scaming Windows Apps's creators? I think the last reason is the most likely :)</p>
+<p>Now, let's look at the most accurate statistics - Windows Store:</p>
+<p><img src="/assets/2014/03/pomidoro-windows-store-stats.png" alt="Pomidoro Windows Store stats" width="376" height="185" class="aligncenter size-full wp-image-1026" /></p>
+<p>The problem here is following: how can I check how good my app is? The best way to do that is compare it with other apps. But how? I was trying to find some Apps rankings on Windows Store websites and I didn't find any. Maybe I am not good google user. I found some ranking on Microsoft Store for <a href="http://www.windowsphone.com/en-us/store/top-free-apps">Windows Phone</a> (using Bing), but not for Windows 8.</p>
+<p>I know, I am feeding scammers by linking these third party websites here. On the other had, some of them (e.g. <a href="http://www.appannie.com/apps/windows-store/top/united-states/">this</a> or <a href="http://www.distimo.com/leaderboards/windows-store-for-windows-8-x64/united-states/top-overall">that</a>) have better UX than Windows Store websites. I spent 10 minutes trying to find Windows Store Apps rankings online and I failed. I know you can sort Apps in Windows Store by popularity, but why it is not available online? In the same time, third party websites like AppFeds have pretty nice and clear UX for <a href="http://www.appfeds.com/catalog/">Apps Catalogs</a>. Their data may be not accurate, but the UI is nice. Maybe guys from Microsoft should think about something like that?</p>
+
+      </div>
+
+      <a href="/my-pomidoro-windows-8-app-is-getting-famous/" class="read-more">Read more&nbsp;&#183;<span class="reading-time">
+  
+  5 min read
+</span>
+</a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/ideone-online-ide/">ideone: online IDE</a></h1>
+
+      <div class="entry">
+        <p>A few weeks ago, my friend showed me very cool thing: <a href="https://ideone.com/">ideone</a>. It is online Integrated Development Environment for many languages. Of course, it is not that big like Visual Studio, but enough for simple programs.</p>
+<p>It is useful for me, when I am on Mac, and I want to test some C# code (but I do not have Mono installed). It might be useful for you when you are on your tablet (e.g. Surface or iPad). Moreover you can use it on your Smartphone! I tested it on my iPhone 4:</p>
+<p><img src="/assets/2014/03/ideone-iPhone-code.png" alt="ideone on iPhone - code" width="500" height="333" class="aligncenter size-full wp-image-1074" /></p>
+<p><img src="/assets/2014/03/ideone-iPhone-run.png" alt="ideone on iPhone - run" width="500" height="333" class="aligncenter size-full wp-image-1075" /></p>
+<p>* Above screenshots were made on my iPhone 4.</p>
+<p>What I really like about <a href="https://ideone.com/">ideone</a> is its UI and performance. It is designed to test small pieces of code. You can save your code pieces, share them and fork other users' code! Additionally <a href="https://ideone.com/">ideone</a> supports many programming languages (even Ada!):</p>
+<p><img src="/assets/2014/03/ideone-languages.png" alt="ideone - languages" width="665" height="327" class="aligncenter size-full wp-image-1078" /></p>
+<p>In last year, <a href="https://twitter.com/lukaszgasior">Lukasz Gasior</a> recommended online IDEs for Web Developers to test HTML/CSS/JS and collaborate. You can check them here: <a href="http://www.awwwards.com/10-html-css-online-code-editors-for-web-developers.html">10 HTML &amp; CSS Online Code Editors for Web Developers</a>. Most of them are not that lightweight (need to register, sometimes pay) and powerful (do not support so many languages) like <a href="https://ideone.com/">ideone</a>. However, some of you may find it useful.</p>
+<p>If you know about other online IDEs, let me know in comments! </p>
+
+      </div>
+
+      <a href="/ideone-online-ide/" class="read-more">Read more&nbsp;&#183;<span class="reading-time">
+  
+  2 min read
+</span>
+</a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/sumatra-pdf/">Sumatra PDF</a></h1>
+
+      <div class="entry">
+        <p>I added new tool to my <a href="http://jj09.net/tools">tools</a> list: <a href="http://blog.kowalczyk.info/software/sumatrapdf/free-pdf-reader.html">Sumatra PDF</a>.</p>
+<p>It is a PDF, ePub, MOBI, CHM, XPS, DjVu, CBZ, CBR reader for Windows. It detects changes in opened document automatically (e.g. when you regenerate it with LaTeX). It works nicely with <a href="https://github.com/SublimeText/LaTeXTools">SublimeText LaTeXTools</a> plugin, which I <a href="http://jj09.net/latex-with-sublimetext-and-skim/">blogged about yesterday</a>. Sumatra PDF has very nice UI. Additionally you can view eBooks before you put them in you eBook reader (e.g.: .mobi or .epub).</p>
+<p>Sumatra PDF is Open Source project and its code is available on <a href="https://code.google.com/p/sumatrapdf/">Google Code</a>.</p>
+
+      </div>
+
+      <a href="/sumatra-pdf/" class="read-more">Read more&nbsp;&#183;<span class="reading-time">
+  
+  1 min read
+</span>
+</a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/latex-with-sublimetext-and-skim/">LaTeX with SublimeText and Skim</a></h1>
+
+      <div class="entry">
+        <p><img src="/assets/2014/02/SublimeText-LaTeXTools-785x577.png" alt="SublimeText with LaTeX Tools plugin" width="785" height="577" class="aligncenter size-large wp-image-1041" /></p>
+<p>Recently I started writing my Master Thesis. I decided I will do it in LaTeX. </p>
+<p>I work most of the time on MacBook. The most popular LaTeX distribution for Mac is <a href="http://tug.org/mactex/">MacTeX</a> (for Windows: <a href="http://miktex.org/">MiKTeX</a> or <a href="https://www.tug.org/texlive/">TeXlive</a>). Once I had this installed I needed editor. First I was using <a href="https://www.tug.org/texworks/">TeXworks</a>, but it is not very decent environment. Nice thing about it is the built-in PDF viewer. Every time I rebuild the document it refresh generated pdf. However, it's hard to manage documents with more than one .tex file. My Master Thesis consists multiple files and I end up editing files in SublimeText and building pdf with TeXworks. Not cool!</p>
+<p>Today, one friend of mine showed me application, which detects .pdf updates automatically: <a href="http://skim-app.sourceforge.net/">Skim</a>. I have also found <a href="https://github.com/SublimeText/LaTeXTools">LaTeXTools</a> plugin for SublimeText. It allows to build .tex document with CMD+B (Mac) or CTRL+B (Windows/Linux). Moreover, Skim can be integrated with SublimeText in such a way that it checks for updates every time, you perform build in SublimeText.</p>
+<h3>LaTeX + SublimeText + Skim setup</h3>
+<ol>
+<li>Install LaTeX distribution (for Mac OS X: <a href="http://tug.org/mactex/">MacTeX</a>, for Windows: <a href="http://miktex.org/">MiKTeX</a> or <a href="https://www.tug.org/texlive/">TeXlive</a>).</li>
+<li>Install <a href="http://www.sublimetext.com/3">SublimeText</a>
+<ul>
+<li>Optionally: Install <a href="http://wbond.net/sublime_packages/package_control">SublimeText Package Control</a> (if you didn't do that already) - it will be easier to install LaTeXTools package.</li>
+</ul>
+</li>
+<li>Install <a href="https://github.com/SublimeText/LaTeXTools">LaTeXTools</a> plugin. With <a href="http://wbond.net/sublime_packages/package_control">SublimeText Package Control</a> installed: click CMD+SHIFT+P (on Mac) or CTRL+SHIFT+P (Win/Linux). More details can be found <a href="https://github.com/SublimeText/LaTeXTools">here</a>.
+<ul>
+<li>Mac users: You may need to install 'latexmk': <code>sudo tlmgr install latexmk</code> (more info can be found in <a href="https://github.com/SublimeText/LaTeXTools/blob/master/README.markdown">LaTeXTools README</a>).</li>
+</ul>
+</li>
+<li>Install <a href="http://skim-app.sourceforge.net/">Skim</a> (for Windows users: check <a href="http://blog.kowalczyk.info/software/sumatrapdf/download-free-pdf-viewer.html">Sumatra PDF</a>).</li>
+<li>In Skim: go to Preferences-&gt;Sync and set 'preset' to SublimeText.</li>
+</ol>
+<p><img src="/assets/2014/02/Skim-preferences.png" alt="Skim preferences" width="507" height="317" class="aligncenter size-full wp-image-1037" /></p>
+<p>After that you just need to build LaTeX document in SublimeText with CMD+B (Mac) or CTRL+B (Win/Linux). Open the generated .pdf in Skim, then every time you rebuild it in SublimeText - it will be refreshed automatically.</p>
+<p>If you have multiple documents add <code>%!TEX root = &lt;master file name&gt;</code> at the beginning of every file.</p>
+<p>It is much more convenient than using SublimeText and TeXworks for rebuilding pdf. Additionally, TeXworks' PDF viewer is not very decent.</p>
+<p>For LaTeX editing, I have found also <a href="http://texstudio.sourceforge.net/">TeXstudio</a>. It looks good, but I didn't test it so far.</p>
+
+      </div>
+
+      <a href="/latex-with-sublimetext-and-skim/" class="read-more">Read more&nbsp;&#183;<span class="reading-time">
+  
+  3 min read
+</span>
+</a>
+    </article>
+  
+
+  
+
+
+
+
+
+
+  
+
+		
+
+    <div class="Pagination">
+      <div class="Pagination-inner">
+	
+        <a class="Pagination-link Pagination-link--arrow" href="/page/31/" aria-label="Go to previous page">
+          <span class="Pagination-arrow Pagination-arrow--left"></span>
+        </a>
+	
+
+	
+        <a class="Pagination-link" href="/" aria-label="Go to page 1">1</a>
+        <div class="Pagination-separator"></div>
+	
+
+	
+        
+        <a class="Pagination-link" href="/page/30" aria-label="Go to page 30">30</a>
+        
+	
+        
+        <a class="Pagination-link" href="/page/31" aria-label="Go to page 31">31</a>
+        
+	
+        
+        <a class="Pagination-link Pagination-link--active" class="active" aria-label="Go to page 32">32</a>
+        
+	
+        
+        <a class="Pagination-link" href="/page/33" aria-label="Go to page 33">33</a>
+        
+	
+        
+        <a class="Pagination-link" href="/page/34" aria-label="Go to page 34">34</a>
+        
+	
+
+	
+		    <div class="Pagination-separator"></div>
+		    <a class="Pagination-link" href="/page/40"  aria-label="Go to page 40">40</a>
+		    
+
+		    
+		    <a class="Pagination-link Pagination-link--arrow" href="/page/33/" aria-label="Go to next page">
+		      <span class="Pagination-arrow Pagination-arrow--right"></span>
+		    </a>
+		    
+      </div>
+    </div>
+    
+
+</div>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer"><div class="social-icons"><a class="social-icon" href="/feed.xml"><i class="fa fa-rss-square fa-2x" title="Feed"></i></a><a class="social-icon" href="https://twitter.com/realJacobJed"><i class="fa fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://github.com/jj09"><i class="fa fa-github-square fa-2x" title="GitHub"></i></a></div><div class="copyright">
+            
+            <p>&copy; 2022 Jacob Jedryszek. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/forever-jekyll/forever-jekyll" rel="nofollow">Forever Jekyll</a>.</p>
+            
+          </div>    
+        </footer>
+      </div>
+    </div>
+
+    <script defer src="https://cdn.plyr.io/3.6.5/plyr.js"></script>
+    <script>
+      const player = new Plyr('#player');
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <script type="text/javascript">
+      const lightbox = GLightbox({
+          touchNavigation: true,
+          loop: true,
+          autoplayVideos: true
+      });
+    </script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/auto-render.min.js"
+            onload="renderMathInElement(document.body,{
+                    delimiters: [
+                    { left: '$$',  right: '$$',  display: true  },
+                    { left: '$',   right: '$',   display: false },
+                    { left: '\\[', right: '\\]', display: true  },
+                    { left: '\\(', right: '\\)', display: false }
+                    ]});">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+      function addDarkmodeWidget() {
+        new Darkmode().showWidget();
+        window.addEventListener('load', addDarkmodeWidget);
+      }
+      const options = {
+        label: '🌓',
+      }
+      const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+    </script>
+
+  </body>
+</html>

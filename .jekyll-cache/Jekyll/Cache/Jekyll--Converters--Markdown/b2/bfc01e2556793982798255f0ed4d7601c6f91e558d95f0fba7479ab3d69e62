@@ -1,0 +1,23 @@
+I"�<p>June was a month of conferences for .NET developers! We had <a href="http://channel9.msdn.com/Events/TechEd/NorthAmerica/2013">Tech Ed North America</a>, <a href="http://www.ndcoslo.com/">Norwegian Developers Conference</a>, <a href="http://channel9.msdn.com/Events/TechEd/Europe/2013">Tech Ed Europe</a> and bunch more, but the biggest one was <a href="http://www.buildwindows.com/">Microsoft Build Developer Conference</a>.</p>
+<p>All videos are live and available for free on <a href="channel9.msdn.com/Events/Build/2013">Channel 9</a>. Both Keynotes are worth to see, but for .NET people second day's keynote would be more interesting. I also recommend <a href="http://www.hanselman.com/">Scott Hanselman</a>'s session <a href="http://channel9.msdn.com/Events/Build/2013/2-546">What’s New in ASP.NET and Visual Studio 2013</a>. Scott shows lots of nice new features like:</p>
+<ul>
+<li>One ASP.NET</li>
+<li>Bootstrap as default template in ASP.NET project</li>
+<li>Multiple default browsers in Visual Studio</li>
+<li>Real-Time website refreshing between Visual Studio and Browser (without page reloading)</li>
+<li>New ninja snippets</li>
+<li>and much, much more</li>
+</ul>
+<p>There is also very solid session <a href="http://channel9.msdn.com/Events/Build/2013/2-509">Introduction to Node.js on Windows Azure</a> by <a href="http://tomasz.janczuk.org/">Tomasz Janczuk</a>. I really enjoyed this session. Tomasz shows Node.js basics, and how to it on Windows Azure in very simple and clear way.</p>
+<p>Third must see (if you are .NET dev) is <a href="http://channel9.msdn.com/Events/Build/2013/3-503">Visual Studio 2013 for Web Developers: Deep Dive</a> by Mads Kristensen. Mads shows hot new features in VS editors (HTML, CSS, JavaScript) and WebEssentials add-on.</p>
+<p>Other interesting stuff: </p>
+<ul>
+<li><a href="http://channel9.msdn.com/Events/Build/2013/3-9027">3D Printing with Windows</a> - I was in shock when I saw what we can print using 3D Printer</li>
+<li><a href="http://channel9.msdn.com/Events/Build/2013/3-504">ASP.NET Web API 2 – Web Services for Websites, Modern Apps, and Mobile Apps</a> - overview of new WebAPI v2: routing, OWIN, testing, OData, security</li>
+<li><a href="http://channel9.msdn.com/Events/Build/2013/3-314">TypeScript: Application-Scale JavaScript</a> (Anders Hejlsberg) - overview of TypeScript (Anders Hejlsberg is very good speaker)</li>
+<li><a href="http://channel9.msdn.com/Events/Build/2013/2-201">Windows Phone: Introducing App Development</a> - nice overview of Windows Phone platform (perfect for people who want to start WP development today) </li>
+<li><a href="http://channel9.msdn.com/Events/Build/2013/3-339">What’s New in the Visual Studio 2013 IDE</a> - some other (than in Mads Kristensen's talk) VS improvements</li>
+<li><a href="http://channel9.msdn.com/Events/Build/2013/3-502">Scaling the Real-time Web with ASP.NET SignalR</a> (Damian Edwards) - this is advanced talk, going deep into SignalR scaling (intro to SignalR can be found in <a href="http://www.campusmvp.net/signalr-ebook">this ebook</a>)</li>
+<li><a href="http://channel9.msdn.com/Events/Build/2013/2-306">The Future of C++</a> - overview of future features of C++ 14 (e.g. idea of async/await in C++)</li>
+</ul>
+:ET

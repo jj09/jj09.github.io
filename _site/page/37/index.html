@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+
+<meta name="description" content="Software Engineer at Meta (Ex-MSFT). I helped build Azure Portal, Azure Mobile App, Seeing AI, and Facebook Marketplace.">
+<meta property="og:description" content="Software Engineer at Meta (Ex-MSFT). I helped build Azure Portal, Azure Mobile App, Seeing AI, and Facebook Marketplace." />
+
+<meta name="author" content="Jacob Jedryszek" />
+
+
+
+
+    <title>Jacob Jedryszek – Software Engineer at Meta (Ex-MSFT). I helped build Azure Portal, Azure Mobile App, Seeing AI, and Facebook Marketplace.</title>
+
+    <link rel="stylesheet" type="text/css" href="/style.css"/>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/ress/dist/ress.min.css"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/image/favicon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/image/favicon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/image/favicon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/image/favicon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/image/favicon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/image/favicon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/image/favicon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/image/favicon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/image/favicon-180x180.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/image/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/image/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/image/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/image/favicon-192x192.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/image/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/assets/image/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/assets/image/favicon-144x144.png">
+    <meta name="msapplication-config" content="/assets/image/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="alternate" type="application/rss+xml" title="Jacob Jedryszek - Software Engineer at Meta (Ex-MSFT). I helped build Azure Portal, Azure Mobile App, Seeing AI, and Facebook Marketplace." href="/feed.xml"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous" media="print" onload="this.media='all'"/>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.5/plyr.css" media="print" onload="this.media='all'"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" media="print" onload="this.media='all'"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous" media="print" onload="this.media='all'"/>
+
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/" class="site-avatar"><img src="/assets/image/avatar.png" width="70" height="70" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Jacob Jedryszek</a></h1>
+            <p class="site-description">Software Engineer at Meta (Ex-MSFT). I helped build Azure Portal, Azure Mobile App, Seeing AI, and Facebook Marketplace.</p>
+          </div>
+
+          <nav class="nav-menu">
+            
+  <a class="nav-menu-item"<a href="/">Blog</a>
+
+  <a class="nav-menu-item"<a href="/about">About</a>
+
+  <a class="nav-menu-item"<a href="/search">Search</a>
+
+
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <div class="posts">
+  
+    <article class="post">
+
+      <h1><a href="/quick-look-at-java-spring-mvc-framework/">Quick look at Java Spring MVC framework</a></h1>
+
+      <div class="entry">
+        <p>Java software market is still bigger than .NET. Many times, when I heard that some friend on mine is working as Java Web Developer, he is using Spring MVC framework. Finally I decided to look at this (most popular?) Java Web Framework.</p>
+<p>I started with <a href="http://www.pluralsight.com/">Pluralsight.net</a> tutorials: <a href="http://pluralsight.com/training/courses/TableOfContents?courseName=springmvc-intro">Introduction to Spring MVC</a> and <a href="http://pluralsight.com/training/courses/TableOfContents?courseName=spring-jpa-hibernate">Spring with JPA and Hibernate</a>.</p>
+<p>First surprise for me was a lot of xml based configuration, which needs to be written by developer. E.g. we need to configure which class is controller by declaring its path in xml file (servlet-config.xml). For some other elements we need to provide long uris as packages' names. So easy to misspell. This is 'configuration over convention', instead of 'convention over configuration' as it is in Ruby on Rails or ASP.NET MVC.</p>
+<p>As an example, look at this piece of xml, which is needed to handle JSON and XML requests (all written by hand):<br />
+[xml]&lt;bean class=&quot;org.springframework.web.servlet.view.ContentNegotiatingViewResolver&quot;&gt;<br />
+		&lt;property name=&quot;order&quot; value=&quot;1&quot; /&gt;<br />
+		&lt;property name=&quot;contentNegotiationManager&quot;&gt;<br />
+			&lt;bean class=&quot;org.springframework.web.accept.ContentNegotiationManager&quot;&gt;<br />
+				&lt;constructor-arg&gt;<br />
+					&lt;bean class=&quot;org.springframework.web.accept.PathExtensionContentNegotiationStrategy&quot;&gt;<br />
+						&lt;constructor-arg&gt;<br />
+							&lt;map&gt;<br />
+								&lt;entry key=&quot;json&quot; value=&quot;application/json&quot; /&gt;<br />
+								&lt;entry key=&quot;xml&quot; value=&quot;application/xml&quot; /&gt;<br />
+							&lt;/map&gt;<br />
+						&lt;/constructor-arg&gt;<br />
+					&lt;/bean&gt;<br />
+				&lt;/constructor-arg&gt;<br />
+			&lt;/bean&gt;<br />
+		&lt;/property&gt;</p>
+<p>		&lt;property name=&quot;defaultViews&quot;&gt;<br />
+			&lt;list&gt;<br />
+				&lt;bean class=&quot;org.springframework.web.servlet.view.json.MappingJacksonJsonView&quot; /&gt;<br />
+				&lt;bean class=&quot;org.springframework.web.servlet.view.xml.MarshallingView&quot;&gt;<br />
+					&lt;constructor-arg&gt;<br />
+						&lt;bean class=&quot;org.springframework.oxm.xstream.XStreamMarshaller&quot;&gt;<br />
+							&lt;property name=&quot;autodetectAnnotations&quot; value=&quot;true&quot; /&gt;<br />
+						&lt;/bean&gt;<br />
+					&lt;/constructor-arg&gt;<br />
+				&lt;/bean&gt;<br />
+			&lt;/list&gt;<br />
+		&lt;/property&gt;<br />
+	&lt;/bean&gt;[/xml]</p>
+<p>Going back to controller: besides its configuration in XML file, we need to add annotation <em>@Controller</em> on its class and <em>@RequestMapping</em> on methods (no default routing). Additionally we always need to return the name of view (instead of some default value). Here is a sample controller with one action:</p>
+<p>[java]@Controller<br />
+public class HelloWorldController {</p>
+<p>    @RequestMapping(&quot;/helloWorld&quot;)<br />
+    public String helloWorld(Model model) {<br />
+        model.addAttribute(&quot;message&quot;, &quot;Hello World!&quot;);<br />
+        return &quot;helloWorld&quot;;<br />
+    }<br />
+}[/java]</p>
+<p>Above code will return the view <em>helloWorld.jsp</em> (according to convention, located in <em>webapp/WEB-INF/jsp/</em> directory):</p>
+<p>[html]&lt;!DOCTYPE html&gt;<br />
+&lt;html&gt;<br />
+    &lt;head&gt;&lt;/head&gt;<br />
+    &lt;body&gt;<br />
+        Message: ${message}<br />
+    &lt;/body&gt;<br />
+&lt;/html&gt;[/html]</p>
+<p>The result should looks like that:</p>
+<p><img src="/assets/2013/07/SpringMVCHelloWrold.png" alt="Spring MVC Hello World" width="167" height="31" class="aligncenter size-full wp-image-537" /></p>
+<p>Connecting application with database is not easier. Adding dependencies and writing code to make Hibernate working with the app took 1h(!) in Pluralsight tutorial (<a href="http://pluralsight.com/training/courses/TableOfContents?courseName=spring-jpa-hibernate">Spring with JPA and Hibernate</a>). It is over 50 lines of xml. Additionally as we know - it is very easy to make a mistake during writing xml. In ASP.NET MVC it can be done automatically (eventually we can change data source by specifying connection string). I didn't find easier way to do that (in Spring). Of course we can use copy/paste method and just set some properties, but...where is code generation for that?</p>
+<p>After all, I would like to notice how big step was made by other MVC Web Frameworks like Rails, Django or ASP.NET MVC. Lot of stuff, which has to be written by hand in Spring, is already implemented under framework layer (in Rails, Django and ASP.NET MVC). However Spring MVC was also big step ahead, when it was created in 2002. In <a href="http://www.youtube.com/watch?v=FQp8lEp8uro">this video</a> people are explaining that (e.g. because of Spring they do not need to rewrite lots of boilerplate code anymore). </p>
+<p>I wonder whether next version of Spring MVC will have more 'conventions' and default configurations. It will make the framework more developer friendly and easier to maintain.</p>
+<p>If you want to start with Spring MVC i recommend you to start with <a href="http://www.pluralsight.com/">Pluralsight.net</a> tutorials: <a href="http://pluralsight.com/training/courses/TableOfContents?courseName=springmvc-intro">Introduction to Spring MVC</a> and <a href="http://pluralsight.com/training/courses/TableOfContents?courseName=spring-jpa-hibernate">Spring with JPA and Hibernate</a>. You can also find <a href="http://www.springsource.org/tutorials">this website</a> useful, as well as <a href="http://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/">Spring Framework Reference Documentation</a>. I didn't read any book, but I found those two most often recommended: <a href="http://www.amazon.com/Spring-Recipes-A-Problem-Solution-Approach/dp/1430224991">Spring Recipes</a> and <a href="http://www.amazon.com/Spring-Action-Craig-Walls/dp/1935182358">Spring in Action</a>.</p>
+
+      </div>
+
+      <a href="/quick-look-at-java-spring-mvc-framework/" class="read-more">Read more&nbsp;&#183;<span class="reading-time">
+  
+  4 min read
+</span>
+</a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/the-ten-day-mba/">The Ten-Day MBA</a></h1>
+
+      <div class="entry">
+        <p><img src="/assets/2013/07/the-ten-day-mba.jpg" alt="The Ten-Day MBA cover" width="200" class="aligncenter wp-image-481" /></p>
+<p>Chad Fowler, in his book <a href="http://www.amazon.com/The-Passionate-Programmer-Remarkable-Development/dp/1934356344">"The Passionate Programmer"</a> recommended a book <a href="http://www.amazon.com/books/dp/0062199579">The Ten-Day MBA</a>. The reason, why he recommend it, is the fact that successful programmer should know the basics of marketing. E.g. to be aware how much his work is worth.</p>
+<p>The Ten-Day MBA is an overview of fundamental basics of economy, business, finance, leadership and even real estate. In my opinion, this book is not only for programmers. It is for everyone! You can find there difference between monetarists and Keynesian economy, the product life cycle (from factory to customer), the difference between corporation and private business, time estimation of projects, business strategies  etc.</p>
+<p>I strongly recommend this book. I was studying at University of Economics 3 years (Bachelor degree). This book contains all most important concepts I learned there. </p>
+<p>You can find it on <a href="http://www.amazon.com/books/dp/0062199579">amazon</a>.</p>
+
+      </div>
+
+      <a href="/the-ten-day-mba/" class="read-more">Read more&nbsp;&#183;<span class="reading-time">
+  
+  1 min read
+</span>
+</a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/ninja-rails-developer/">Ninja Rails Developer</a></h1>
+
+      <div class="entry">
+        <p><i>Warning: this configuration was tested only on MacOS X.</i></p>
+<p>To create default project in Rails we just need to run command:</p>
+<p><code>rails new my_app</code> </p>
+<p>However it creates project without many useful gems. I found nice Gem-set and some configuration hacks in <a href="http://ruby.railstutorial.org/">Michael Hartl's tutorial</a>.</p>
+<p>Instead of standard test framework (TestUnit) he use <a href="http://rspec.info/">RSpec</a> (which is more popular among Rails developers). To generate project without standard test, run command:</p>
+<p><code>rails new my_app --skip-test-unit</code> </p>
+<p>Then use his <a href="https://raw.github.com/railstutorial/sample_app_2nd_ed/master/Gemfile">Gemfile</a> (this link is kept up to date). Copy it a paste into <em>my_app/Gemfile</em>. I recommend to uncomment everything (to use all Gems from the file).</p>
+<p>Once <em>Gemfile</em> is modified, you need to install gems:</p>
+<p><code>bundle install</code></p>
+<p>Then you can run RSpec test:</p>
+<p><code>bundle exec rspec</code> </p>
+<p>You may need to point the tests' directory:</p>
+<p><code>bundle exec rspec rspec/</code> </p>
+<p>It would be nice to run them with just 'rspec' command. To do that we need to run following commands (if we used RVM to install Rails):</p>
+<p><code>rvm get head &amp;&amp; rvm reload</code> </p>
+<p><code>cd ~/projects/my_app</code> </p>
+<p><code>bundle install --without production --binstubs=./bundler_stubs</code> </p>
+<p>After those steps you should be able to run RSpec with:</p>
+<p><code>rspec</code> </p>
+<p>You should get a warning, that to maintain this possibility you need to add following line to <em>~/.bash_profile</em> if it exists, otherwise add it to <em>~/.bash_login</em>:</p>
+<p><code>source ~/.profile</code> </p>
+<p>Michael Hartl's Gem file contains 'guard'. It allows us to run RSpec test each time, when we change some file (after save). </p>
+<p>To initialize guard (if all above steps are performed, otherwise you need to add 'bundle exec ' at the beginning):</p>
+<p><code>guard init</code> </p>
+<p>It creates <em>Guardfile</em> in main project directory, which specify when tests should be run (which files should be monitored). To run guard:</p>
+<p><code>guard</code> </p>
+<p>The last improvement is use the test server <a href="https://github.com/sporkrb/spork">Spork</a>. It allows to run tests faster. Without Spork, RSpec needs to reload entire Rails environment before run the tests (in each run). Spork loads the environment once, and then maintains a pool of processes for running future tests. Unfortunately it works only on POSIX systems (which means: doesn't work on Windows).</p>
+<p>To setup spork run:</p>
+<p><code>spork --bootstrap</code></p>
+<p>Then change <em>spec/spec_helper.rb</em> file to something like that:</p>
+<p>[ruby]require 'rubygems'<br />
+require 'spork'</p>
+<p>Spork.prefork do<br />
+  ENV[&quot;RAILS_ENV&quot;] ||= 'test'<br />
+  require File.expand_path(&quot;../../config/environment&quot;, __FILE__)<br />
+  require 'rspec/rails'<br />
+  require 'rspec/autorun'</p>
+<p>  Dir[Rails.root.join(&quot;spec/support/**/*.rb&quot;)].each {|f| require f}<br />
+  RSpec.configure do |config|<br />
+    config.mock_with :rspec<br />
+    config.fixture_path = &quot;#{::Rails.root}/spec/fixtures&quot;<br />
+    config.use_transactional_fixtures = true<br />
+    config.infer_base_class_for_anonymous_controllers = false<br />
+  end<br />
+end</p>
+<p>Spork.each_run do<br />
+  # This code will be run each time you run your specs.<br />
+end[/ruby]</p>
+<p>You also need to configure RSpec to automatically use Spork. To do that, modify .rspec file:</p>
+<p>[code]--color<br />
+--drb[/code]</p>
+<p>To run Spork:</p>
+<p><code>spork</code></p>
+<p>You can test difference between running tests with and without spork.</p>
+<p><code>time rspec</code></p>
+<p>In my case it was 4.821s without Spork, and 0.784 with Spork.</p>
+<p>The disadvantage of Spork is that after e.g. changes in database we need to restart it. </p>
+<p>The screencast showing advanced setup by Michael Hartl is available for free <a href="http://youtu.be/FZ-b9oZpCZY">here</a>. If you use SublimeText (as I do), you can follow <a href="http://youtu.be/05x1Jk4rT1A">this screencast</a> to adjust it for Rails development. After that you will be able even to run tests from SublimeText!</p>
+
+      </div>
+
+      <a href="/ninja-rails-developer/" class="read-more">Read more&nbsp;&#183;<span class="reading-time">
+  
+  3 min read
+</span>
+</a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/sign-in-with-facebook-oauth-how-to-and-threats/">Sign in with facebook (OAuth): how to and threats</a></h1>
+
+      <div class="entry">
+        <p>Many websites provide possibility to authorize with OAuth protocol (e.g. using facebook account). </p>
+<h4>How to</h4>
+<p>In ASP.NET application it is very easy to implement. Check <a href="http://www.asp.net/aspnet/overview/aspnet-45/oauth-in-the-default-aspnet-45-templates">this 3 minutes long screencast</a> by <a href="http://hanselman.com">Scott Hanselman</a>.</p>
+<p>In Rails it is a little bit more complex, but also not big deal. There is nice <a href="http://railscasts.com/episodes/360-facebook-authentication?view=asciicast">Rails cast #360</a> about it (12 minutes).</p>
+<h4>Threats</h4>
+<p>However it is good to know what data we are providing when we click 'Login with facebook'. I implemented facebook auth with <a href="https://github.com/mkdynamic/omniauth-facebook">omniauth-facebook</a> library (according to above rails cast). I was surprised when I look at the source code.</p>
+<p>This is auth data available for developer, when we sign in with facebook:</p>
+<p>[ruby]{<br />
+  :provider =&gt; 'facebook',<br />
+  :uid =&gt; '1234567',<br />
+  :info =&gt; {<br />
+    :nickname =&gt; 'jbloggs',<br />
+    :email =&gt; 'joe@bloggs.com',<br />
+    :name =&gt; 'Joe Bloggs',<br />
+    :first_name =&gt; 'Joe',<br />
+    :last_name =&gt; 'Bloggs',<br />
+    :image =&gt; 'http://graph.facebook.com/1234567/picture?type=square',<br />
+    :urls =&gt; { :Facebook =&gt; 'http://www.facebook.com/jbloggs' },<br />
+    :location =&gt; 'Palo Alto, California',<br />
+    :verified =&gt; true<br />
+  },<br />
+  :credentials =&gt; {<br />
+    :token =&gt; 'ABCDEF...', # OAuth 2.0 access_token, which you may wish to store<br />
+    :expires_at =&gt; 1321747205, # when the access token expires (it always will)<br />
+    :expires =&gt; true # this will always be true<br />
+  },<br />
+  :extra =&gt; {<br />
+    :raw_info =&gt; {<br />
+      :id =&gt; '1234567',<br />
+      :name =&gt; 'Joe Bloggs',<br />
+      :first_name =&gt; 'Joe',<br />
+      :last_name =&gt; 'Bloggs',<br />
+      :link =&gt; 'http://www.facebook.com/jbloggs',<br />
+      :username =&gt; 'jbloggs',<br />
+      :location =&gt; { :id =&gt; '123456789', :name =&gt; 'Palo Alto, California' },<br />
+      :gender =&gt; 'male',<br />
+      :email =&gt; 'joe@bloggs.com',<br />
+      :timezone =&gt; -8,<br />
+      :locale =&gt; 'en_US',<br />
+      :verified =&gt; true,<br />
+      :updated_time =&gt; '2011-11-11T06:21:03+0000'<br />
+    }<br />
+  }<br />
+}[/ruby]</p>
+<p>We provide our email(!), timezone and even location! Actually I was not aware of that. I thought facebook provides just basic info like name and photo. </p>
+<p>We should think twice before we sign in to some website with OAuth. Especially due to providing our email address. Malicious websites can use it for sending spam.</p>
+
+      </div>
+
+      <a href="/sign-in-with-facebook-oauth-how-to-and-threats/" class="read-more">Read more&nbsp;&#183;<span class="reading-time">
+  
+  2 min read
+</span>
+</a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/sending-email-from-rails-application/">Sending email from Rails application</a></h1>
+
+      <div class="entry">
+        <p>It took me a while to configure sending email from Rails application. I went through many different tutorials, blogs, StackOverflow posts etc. Step, by step I found working configuration.</p>
+<p>To send emails I use <em>ActionMailer</em>. First you need to generate mailer:</p>
+<p><code>rails generate mailer UserMailer</code></p>
+<p>It will create <em>UserMailer</em> class in <em>app/mailers</em> directory. In this class we need to define our method for sending emails:</p>
+<p>[ruby]class UserMailer &lt; ActionMailer::Base<br />
+  default from: &quot;from@example.com&quot;</p>
+<p>  def send_email(user_email, content)<br />
+  	@user_email = user_email<br />
+  	@content = content<br />
+  	mail(to: &quot;your@mail.com&quot;, subject: &quot;Email from mysite.com&quot;)<br />
+  end<br />
+end[/ruby]</p>
+<p>Then in the directory <em>app/views/user_mailer</em> we need to create template for our email: <em>send_email.html.erb</em> (this name must match the name of action created in <em>UserMailer</em> class):</p>
+<p>[html]&lt;!DOCTYPE html&gt;<br />
+&lt;html&gt;<br />
+  &lt;head&gt;<br />
+    &lt;meta content='text/html; charset=UTF-8' http-equiv='Content-Type' /&gt;<br />
+  &lt;/head&gt;<br />
+  &lt;body&gt;<br />
+    &lt;p&gt;<br />
+      From: &lt;%= @user_email %&gt;<br />
+    &lt;/p&gt;<br />
+    &lt;p&gt;<br />
+      &lt;%= @content %&gt;<br />
+    &lt;/p&gt;<br />
+  &lt;/body&gt;<br />
+&lt;/html&gt;[/html]</p>
+<p>(*) If you do not want to send html you can create plain text and name file <em>send_email.text.erb</em>.</p>
+<p>Now, the hardest part. Configuration of smtp. You need to add it to <em>config/environments/development.rb</em> (or <em>test.rb</em> or <em>production.rb</em>). I found this configuration working for gmail:</p>
+<p>[ruby]# set delivery method to :smtp, :sendmail or :test<br />
+  config.action_mailer.delivery_method = :smtp<br />
+  config.action_mailer.perform_deliveries = true</p>
+<p>  # these options are only needed if you choose smtp delivery<br />
+  config.action_mailer.smtp_settings = {<br />
+    :address        =&gt; 'smtp.gmail.com',<br />
+    :port           =&gt; 587,<br />
+    :domain         =&gt; 'gmail.com',<br />
+    :authentication =&gt; :login,<br />
+    :user_name      =&gt; 'your_gmail@gmail.com',<br />
+    :password       =&gt; 'your_password',<br />
+    :enable_starttls_auto =&gt; true<br />
+  }[/ruby]</p>
+<p>The last thing is call <em>ActionMailer</em> from our app:</p>
+<p>[ruby]UserMailer.send_email(params[:from], params[:content]).deliver[/ruby]</p>
+<p>Form for sending email can looks like that:<br />
+[html]&lt;%= form_tag '/send_email', method: 'post' do %&gt;<br />
+	&lt;div class=&quot;field&quot;&gt;<br />
+		Email&lt;br /&gt;<br />
+    &lt;%= email_field_tag :from %&gt;<br />
+  &lt;/div&gt;</p>
+<p>	&lt;div class=&quot;field&quot;&gt;<br />
+		Content&lt;br /&gt;<br />
+    &lt;%= text_area_tag :content, nil, rows: 10, cols: 25 %&gt;<br />
+  &lt;/div&gt;</p>
+<p>  &lt;div class=&quot;actions&quot;&gt;<br />
+    &lt;%= submit_tag &quot;Send&quot;, class: &quot;btn btn-large btn-primary&quot; %&gt;<br />
+  &lt;/div&gt;<br />
+&lt;% end %&gt;[/html]</p>
+<p>For that you need to configure action in controller and match route e.g.:</p>
+<p>[ruby]match '/send_email', to: 'your_controller#your_action'[/ruby]</p>
+<p>Method <em>send_mail</em> (from <em>UserMailer</em> class) can have as much parameters as you need. It can be also 0. In above example, the params are just rendered in the email template (send_email.html.erb file).</p>
+
+      </div>
+
+      <a href="/sending-email-from-rails-application/" class="read-more">Read more&nbsp;&#183;<span class="reading-time">
+  
+  2 min read
+</span>
+</a>
+    </article>
+  
+
+  
+
+
+
+
+
+
+  
+
+		
+
+    <div class="Pagination">
+      <div class="Pagination-inner">
+	
+        <a class="Pagination-link Pagination-link--arrow" href="/page/36/" aria-label="Go to previous page">
+          <span class="Pagination-arrow Pagination-arrow--left"></span>
+        </a>
+	
+
+	
+        <a class="Pagination-link" href="/" aria-label="Go to page 1">1</a>
+        <div class="Pagination-separator"></div>
+	
+
+	
+        
+        <a class="Pagination-link" href="/page/35" aria-label="Go to page 35">35</a>
+        
+	
+        
+        <a class="Pagination-link" href="/page/36" aria-label="Go to page 36">36</a>
+        
+	
+        
+        <a class="Pagination-link Pagination-link--active" class="active" aria-label="Go to page 37">37</a>
+        
+	
+        
+        <a class="Pagination-link" href="/page/38" aria-label="Go to page 38">38</a>
+        
+	
+        
+        <a class="Pagination-link" href="/page/39" aria-label="Go to page 39">39</a>
+        
+	
+
+	
+		    <div class="Pagination-separator"></div>
+		    <a class="Pagination-link" href="/page/40"  aria-label="Go to page 40">40</a>
+		    
+
+		    
+		    <a class="Pagination-link Pagination-link--arrow" href="/page/38/" aria-label="Go to next page">
+		      <span class="Pagination-arrow Pagination-arrow--right"></span>
+		    </a>
+		    
+      </div>
+    </div>
+    
+
+</div>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer"><div class="social-icons"><a class="social-icon" href="/feed.xml"><i class="fa fa-rss-square fa-2x" title="Feed"></i></a><a class="social-icon" href="https://twitter.com/realJacobJed"><i class="fa fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://github.com/jj09"><i class="fa fa-github-square fa-2x" title="GitHub"></i></a></div><div class="copyright">
+            
+            <p>&copy; 2022 Jacob Jedryszek. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/forever-jekyll/forever-jekyll" rel="nofollow">Forever Jekyll</a>.</p>
+            
+          </div>    
+        </footer>
+      </div>
+    </div>
+
+    <script defer src="https://cdn.plyr.io/3.6.5/plyr.js"></script>
+    <script>
+      const player = new Plyr('#player');
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <script type="text/javascript">
+      const lightbox = GLightbox({
+          touchNavigation: true,
+          loop: true,
+          autoplayVideos: true
+      });
+    </script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/auto-render.min.js"
+            onload="renderMathInElement(document.body,{
+                    delimiters: [
+                    { left: '$$',  right: '$$',  display: true  },
+                    { left: '$',   right: '$',   display: false },
+                    { left: '\\[', right: '\\]', display: true  },
+                    { left: '\\(', right: '\\)', display: false }
+                    ]});">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+      function addDarkmodeWidget() {
+        new Darkmode().showWidget();
+        window.addEventListener('load', addDarkmodeWidget);
+      }
+      const options = {
+        label: '🌓',
+      }
+      const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+    </script>
+
+  </body>
+</html>

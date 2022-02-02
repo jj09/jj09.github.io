@@ -1,0 +1,3628 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+
+<meta name="description" content="We all know that JavaScript has some bad parts. However, one of them is usually forgotten, and skipped in most of "JavaScript Bad Parts" lists on the Internet. It is a Date object. You can have hard time working with it, especially if you want to support time zones. In this post I would like to outline quircks of Date in JavaScript.
+Basics
+In order to create a Date object, you just do:
+
+var now = new Date();
+
+This will create a date set to now.
+If you want to create Date on specific day:
+
+var year = 2015;
+var month = 2-1; // February
+var day = 27;
+var now = new Date(year, month, day);
+
+Here you encounter the first quirk: months are numbered from 0 to 11. January is 0, December is 11.
+You can also specify hours, minutes, seconds, and milliseconds as additional parameters (no more pitfalls here):
+
+var year = 2015;
+var month = 2-1; // February
+var day = 27;
+var hours = 14; // 2PM
+var minutes = 56;
+var seconds = 37;
+var milliseconds = 997;
+var now = new Date(year, month, day, hours, minutes, seconds, milliseconds);
+
+For more details about creating Date, check Date at MDN.
+Formatting
+If you want to display a date, there are a few available converters. Here are the most commonly used:
+
+var date = new Date(2015, 1, 27, 14, 56, 37, 997);
+console.log(date.toDateString());       // Fri Feb 27 2015
+console.log(date.toTimeString());       // 14:56:37 GMT-0800 (Pacific Standard Time)
+console.log(date.toLocaleDateString()); // 2/27/2015
+console.log(date.toLocaleTimeString()); // 2:56:37 PM
+console.log(date.toUTCString());        // Fri, 27 Feb 2015 22:56:37 GMT
+console.log(date.toGMTString());        // Fri, 27 Feb 2015 22:56:37 GMT
+console.log(date.toISOString());        // 2015-02-27T22:56:37.997Z
+console.log(date.toJSON());             // 2015-02-27T22:56:37.997Z
+
+Be careful with 3 and 4. Both return different results, depended on user's machine settings and geographical location. This may cause UI issues (some date formats might be long).
+Converters 5 and 6 are equivalent in all, most popular browsers. However toGMTString is deprecated.
+Converters 7 and 8 are also equivalent. Moreover, toJSON use toISOString underneath to return result.
+There is no significant issues with displaying Date, but there is no way to format it with custom format (e.g., 'YYYY-MM-DD HH:mm') like in C# or Java.
+Alternative for formatting is Intl.DateTimeFormat object from ECMAScript Internationalization API. However, this API is not yet supported by older browsers, most of mobile browsers, and Safari (check browser compatibility on MDN).
+Parsing
+More tricky than displaying dates, is parsing them. There are two common ways to parse date from string:
+
+var parsedDate1 = new Date("2015-02-27 22:56:37");
+var parsedDate2 = Date.parse("2015-02-27 22:56:37");
+
+First returns Date object, second - number 1425106597000 (milliseconds since January 1, 1970, 00:00:00 UTC).
+There is one, very unpleasant detail in parsing:
+Given a date string of "March 7, 2014", parse() assumes a local time zone, but given an ISO format such as "2014-03-07" it will assume a time zone of UTC. Therefore Date objects produced using those strings will represent different moments in time unless the system is set with a local time zone of UTC. This means that two date strings that appear equivalent may result in two different values depending on the format of the string that is being converted (this behavior is changed in ECMAScript ed 6 so that both will be treated as local).
+Source: MDN
+
+This means that date1 and date2 below (created from machine located in Seattle, WA) are different:
+
+var date1 = new Date("2014-01-02");
+var date2 = new Date("1/2/2014");
+console.log(date1); // Wed Jan 01 2014 16:00:00 GMT-0800 (Pacific Standard Time)
+console.log(date2); // Thu Jan 02 2014 00:00:00 GMT-0800 (Pacific Standard Time)
+
+Recommended format for parsing is: YYYY/MM/DD - user local settings independent. It always assumes local timezone offset for date string given as a parameter.
+
+var date1 = new Date("2014/01/02");
+console.log(date1); // Thu Jan 02 2014 00:00:00 GMT-0800 (Pacific Standard Time)
+
+Timezones
+JavaScript Date object always assumes local timezone offset for the machine on which it is displayed. What is important: JavaScript Date does not support time zones, but only timezone offsets. This is a definition of both from Wikipedia:
+A time zone is a geographical region where just about everybody observes the same standard time.
+A time offset is an amount of time subtracted from or added to UTC to get the current civil time - whether it's standard time or Daylight saving time.
+In other words: time zone is constant (as long as government does not changed it) for some place (e.g., San Francisco) all the time, while time zone offset changes (usually, twice a year - this is what we call 'daylight savings').
+To get timezone offset:
+
+var myDate = new Date();
+var timezoneOffset = myDate.getTimezoneOffset(); // result in minutes
+
+The result is in minutes. Here is another quirk: timezones that are 'west' from UTC (offset = 0) have positive values (60 - 720), and timezones that are 'east' from UTC have negative values (-60 - -780). Thus, Pacific Standard Time (UTC -8:00), in JavaScript, has timezone offset 480, and Central European Time (UTC +1:00) has timezone offset -60.
+One more pitfall: local timezone offset is always set depends on value of Date object. Thus, for Computer located in Seattle, WA:
+
+var date1 = new Date(2015,1,20); // date in Pacific Standard Time (before timezone offset change)
+var date2 = new Date(2015,2,20); // date in Pacific Daylight Time (after timezone offset change)
+console.log(date1.getTimezoneOffset()); // 480
+console.log(date2.getTimezoneOffset()); // 420
+
+In this case your current 'local' timezone offset (for the time in which you are creating Date object) does not matter.
+Even if you create Date object with date before the time change, and then you modify it to date after the time change - its timezone offset changes to reflect offset for the new (current) value:
+
+var date = new Date(2015,1,20); // date in Pacific Standard Time
+console.log(date.getTimezoneOffset()); // 480
+date.setMonth(2); // change month so date is in Pacific Daylight Time now
+console.log(date.getTimezoneOffset()); // 420
+
+Moment.js
+Moment.js is a JavaScript library designed to work on the client side (in browser), and on the server side (in node.js). It has a lot of functions to parse, display and manipulate dates. This makes dealing with dates less painful.
+Moment Timezone - a library built on top of Moment.js - supports real time zones (not only timezone offsets). The data for Moment Timezone comes from the IANA Time Zone Database - most popular time zone database. New versions are released periodically as timezone laws change in various countries.
+Consider using Moment.js and Moment Timezone in your application when you are doing more complex operations with dates. Especially when you want to support time zones.
+Summary
+It is really surprising that working with dates in programming is still causing a lot of issues. However, we are getting better at that. To get a comprehensive overview of date/time in programming language I recommend Date and Time Fundamentals by Matt Johnson. You can also check Matt Johnson's blog. He blogs mainly about date/time in variety of environments. His article JavaScript Date type is horribly broken might be good supplement for this post.
+To get a quick insight why dealing with time zones is very complex, check this video. It is also worth to check What Every Programmer Should know about Time.
+" />
+<meta property="og:description" content="We all know that JavaScript has some bad parts. However, one of them is usually forgotten, and skipped in most of "JavaScript Bad Parts" lists on the Internet. It is a Date object. You can have hard time working with it, especially if you want to support time zones. In this post I would like to outline quircks of Date in JavaScript.
+Basics
+In order to create a Date object, you just do:
+
+var now = new Date();
+
+This will create a date set to now.
+If you want to create Date on specific day:
+
+var year = 2015;
+var month = 2-1; // February
+var day = 27;
+var now = new Date(year, month, day);
+
+Here you encounter the first quirk: months are numbered from 0 to 11. January is 0, December is 11.
+You can also specify hours, minutes, seconds, and milliseconds as additional parameters (no more pitfalls here):
+
+var year = 2015;
+var month = 2-1; // February
+var day = 27;
+var hours = 14; // 2PM
+var minutes = 56;
+var seconds = 37;
+var milliseconds = 997;
+var now = new Date(year, month, day, hours, minutes, seconds, milliseconds);
+
+For more details about creating Date, check Date at MDN.
+Formatting
+If you want to display a date, there are a few available converters. Here are the most commonly used:
+
+var date = new Date(2015, 1, 27, 14, 56, 37, 997);
+console.log(date.toDateString());       // Fri Feb 27 2015
+console.log(date.toTimeString());       // 14:56:37 GMT-0800 (Pacific Standard Time)
+console.log(date.toLocaleDateString()); // 2/27/2015
+console.log(date.toLocaleTimeString()); // 2:56:37 PM
+console.log(date.toUTCString());        // Fri, 27 Feb 2015 22:56:37 GMT
+console.log(date.toGMTString());        // Fri, 27 Feb 2015 22:56:37 GMT
+console.log(date.toISOString());        // 2015-02-27T22:56:37.997Z
+console.log(date.toJSON());             // 2015-02-27T22:56:37.997Z
+
+Be careful with 3 and 4. Both return different results, depended on user's machine settings and geographical location. This may cause UI issues (some date formats might be long).
+Converters 5 and 6 are equivalent in all, most popular browsers. However toGMTString is deprecated.
+Converters 7 and 8 are also equivalent. Moreover, toJSON use toISOString underneath to return result.
+There is no significant issues with displaying Date, but there is no way to format it with custom format (e.g., 'YYYY-MM-DD HH:mm') like in C# or Java.
+Alternative for formatting is Intl.DateTimeFormat object from ECMAScript Internationalization API. However, this API is not yet supported by older browsers, most of mobile browsers, and Safari (check browser compatibility on MDN).
+Parsing
+More tricky than displaying dates, is parsing them. There are two common ways to parse date from string:
+
+var parsedDate1 = new Date("2015-02-27 22:56:37");
+var parsedDate2 = Date.parse("2015-02-27 22:56:37");
+
+First returns Date object, second - number 1425106597000 (milliseconds since January 1, 1970, 00:00:00 UTC).
+There is one, very unpleasant detail in parsing:
+Given a date string of "March 7, 2014", parse() assumes a local time zone, but given an ISO format such as "2014-03-07" it will assume a time zone of UTC. Therefore Date objects produced using those strings will represent different moments in time unless the system is set with a local time zone of UTC. This means that two date strings that appear equivalent may result in two different values depending on the format of the string that is being converted (this behavior is changed in ECMAScript ed 6 so that both will be treated as local).
+Source: MDN
+
+This means that date1 and date2 below (created from machine located in Seattle, WA) are different:
+
+var date1 = new Date("2014-01-02");
+var date2 = new Date("1/2/2014");
+console.log(date1); // Wed Jan 01 2014 16:00:00 GMT-0800 (Pacific Standard Time)
+console.log(date2); // Thu Jan 02 2014 00:00:00 GMT-0800 (Pacific Standard Time)
+
+Recommended format for parsing is: YYYY/MM/DD - user local settings independent. It always assumes local timezone offset for date string given as a parameter.
+
+var date1 = new Date("2014/01/02");
+console.log(date1); // Thu Jan 02 2014 00:00:00 GMT-0800 (Pacific Standard Time)
+
+Timezones
+JavaScript Date object always assumes local timezone offset for the machine on which it is displayed. What is important: JavaScript Date does not support time zones, but only timezone offsets. This is a definition of both from Wikipedia:
+A time zone is a geographical region where just about everybody observes the same standard time.
+A time offset is an amount of time subtracted from or added to UTC to get the current civil time - whether it's standard time or Daylight saving time.
+In other words: time zone is constant (as long as government does not changed it) for some place (e.g., San Francisco) all the time, while time zone offset changes (usually, twice a year - this is what we call 'daylight savings').
+To get timezone offset:
+
+var myDate = new Date();
+var timezoneOffset = myDate.getTimezoneOffset(); // result in minutes
+
+The result is in minutes. Here is another quirk: timezones that are 'west' from UTC (offset = 0) have positive values (60 - 720), and timezones that are 'east' from UTC have negative values (-60 - -780). Thus, Pacific Standard Time (UTC -8:00), in JavaScript, has timezone offset 480, and Central European Time (UTC +1:00) has timezone offset -60.
+One more pitfall: local timezone offset is always set depends on value of Date object. Thus, for Computer located in Seattle, WA:
+
+var date1 = new Date(2015,1,20); // date in Pacific Standard Time (before timezone offset change)
+var date2 = new Date(2015,2,20); // date in Pacific Daylight Time (after timezone offset change)
+console.log(date1.getTimezoneOffset()); // 480
+console.log(date2.getTimezoneOffset()); // 420
+
+In this case your current 'local' timezone offset (for the time in which you are creating Date object) does not matter.
+Even if you create Date object with date before the time change, and then you modify it to date after the time change - its timezone offset changes to reflect offset for the new (current) value:
+
+var date = new Date(2015,1,20); // date in Pacific Standard Time
+console.log(date.getTimezoneOffset()); // 480
+date.setMonth(2); // change month so date is in Pacific Daylight Time now
+console.log(date.getTimezoneOffset()); // 420
+
+Moment.js
+Moment.js is a JavaScript library designed to work on the client side (in browser), and on the server side (in node.js). It has a lot of functions to parse, display and manipulate dates. This makes dealing with dates less painful.
+Moment Timezone - a library built on top of Moment.js - supports real time zones (not only timezone offsets). The data for Moment Timezone comes from the IANA Time Zone Database - most popular time zone database. New versions are released periodically as timezone laws change in various countries.
+Consider using Moment.js and Moment Timezone in your application when you are doing more complex operations with dates. Especially when you want to support time zones.
+Summary
+It is really surprising that working with dates in programming is still causing a lot of issues. However, we are getting better at that. To get a comprehensive overview of date/time in programming language I recommend Date and Time Fundamentals by Matt Johnson. You can also check Matt Johnson's blog. He blogs mainly about date/time in variety of environments. His article JavaScript Date type is horribly broken might be good supplement for this post.
+To get a quick insight why dealing with time zones is very complex, check this video. It is also worth to check What Every Programmer Should know about Time.
+" />
+
+<meta name="author" content="Jacob Jedryszek" />
+
+
+<meta property="og:title" content="JavaScript Date: a Bad Part" />
+<meta property="twitter:title" content="JavaScript Date: a Bad Part" />
+
+
+
+    <title>JavaScript Date: a Bad Part – Jacob Jedryszek – Software Engineer at Meta (Ex-MSFT). I helped build Azure Portal, Azure Mobile App, Seeing AI, and Facebook Marketplace.</title>
+
+    <link rel="stylesheet" type="text/css" href="/style.css"/>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/ress/dist/ress.min.css"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/image/favicon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/image/favicon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/image/favicon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/image/favicon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/image/favicon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/image/favicon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/image/favicon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/image/favicon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/image/favicon-180x180.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/image/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/image/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/image/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/image/favicon-192x192.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/image/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/assets/image/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/assets/image/favicon-144x144.png">
+    <meta name="msapplication-config" content="/assets/image/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="alternate" type="application/rss+xml" title="Jacob Jedryszek - Software Engineer at Meta (Ex-MSFT). I helped build Azure Portal, Azure Mobile App, Seeing AI, and Facebook Marketplace." href="/feed.xml"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous" media="print" onload="this.media='all'"/>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.5/plyr.css" media="print" onload="this.media='all'"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" media="print" onload="this.media='all'"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous" media="print" onload="this.media='all'"/>
+
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/" class="site-avatar"><img src="/assets/image/avatar.png" width="70" height="70" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">Jacob Jedryszek</a></h1>
+            <p class="site-description">Software Engineer at Meta (Ex-MSFT). I helped build Azure Portal, Azure Mobile App, Seeing AI, and Facebook Marketplace.</p>
+          </div>
+
+          <nav class="nav-menu">
+            
+  <a class="nav-menu-item"<a href="/">Blog</a>
+
+  <a class="nav-menu-item"<a href="/about">About</a>
+
+  <a class="nav-menu-item"<a href="/search">Search</a>
+
+
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="post">
+  <h1>JavaScript Date: a Bad Part</h1>
+
+  <div class="entry">
+    <p>We all know that JavaScript has some bad parts. However, one of them is usually forgotten, and skipped in most of "JavaScript Bad Parts" lists on the Internet. It is a <code>Date</code> object. You can have hard time working with it, especially if you want to support time zones. In this post I would like to outline quircks of <code>Date</code> in JavaScript.</p>
+<h3>Basics</h3>
+<p>In order to create a <code>Date</code> object, you just do:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span></code></pre></figure>
+
+<p>This will create a date set to now.<br />
+If you want to create <code>Date</code> on specific day:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">year</span> <span class="o">=</span> <span class="mi">2015</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">month</span> <span class="o">=</span> <span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="c1">// February</span>
+<span class="kd">var</span> <span class="nx">day</span> <span class="o">=</span> <span class="mi">27</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">year</span><span class="p">,</span> <span class="nx">month</span><span class="p">,</span> <span class="nx">day</span><span class="p">);</span></code></pre></figure>
+
+<p>Here you encounter the first quirk: months are numbered from 0 to 11. January is 0, December is 11.</p>
+<p>You can also specify hours, minutes, seconds, and milliseconds as additional parameters (no more pitfalls here):</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">year</span> <span class="o">=</span> <span class="mi">2015</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">month</span> <span class="o">=</span> <span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="c1">// February</span>
+<span class="kd">var</span> <span class="nx">day</span> <span class="o">=</span> <span class="mi">27</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">hours</span> <span class="o">=</span> <span class="mi">14</span><span class="p">;</span> <span class="c1">// 2PM</span>
+<span class="kd">var</span> <span class="nx">minutes</span> <span class="o">=</span> <span class="mi">56</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">seconds</span> <span class="o">=</span> <span class="mi">37</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">milliseconds</span> <span class="o">=</span> <span class="mi">997</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">year</span><span class="p">,</span> <span class="nx">month</span><span class="p">,</span> <span class="nx">day</span><span class="p">,</span> <span class="nx">hours</span><span class="p">,</span> <span class="nx">minutes</span><span class="p">,</span> <span class="nx">seconds</span><span class="p">,</span> <span class="nx">milliseconds</span><span class="p">);</span></code></pre></figure>
+
+<p>For more details about creating <code>Date</code>, check <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date at MDN</a>.</p>
+<h3>Formatting</h3>
+<p>If you want to display a date, there are a few available converters. Here are the most commonly used:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">997</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">toDateString</span><span class="p">());</span>       <span class="c1">// Fri Feb 27 2015</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">toTimeString</span><span class="p">());</span>       <span class="c1">// 14:56:37 GMT-0800 (Pacific Standard Time)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">toLocaleDateString</span><span class="p">());</span> <span class="c1">// 2/27/2015</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">toLocaleTimeString</span><span class="p">());</span> <span class="c1">// 2:56:37 PM</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">toUTCString</span><span class="p">());</span>        <span class="c1">// Fri, 27 Feb 2015 22:56:37 GMT</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">toGMTString</span><span class="p">());</span>        <span class="c1">// Fri, 27 Feb 2015 22:56:37 GMT</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">toISOString</span><span class="p">());</span>        <span class="c1">// 2015-02-27T22:56:37.997Z</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">toJSON</span><span class="p">());</span>             <span class="c1">// 2015-02-27T22:56:37.997Z</span></code></pre></figure>
+
+<p>Be careful with 3 and 4. Both return different results, depended on user's machine settings and geographical location. This may cause UI issues (some date formats might be long).</p>
+<p>Converters 5 and 6 are equivalent in all, most popular browsers. However <code>toGMTString</code> is deprecated.</p>
+<p>Converters 7 and 8 are also equivalent. Moreover, <code>toJSON</code> use <code>toISOString</code> underneath to return result.</p>
+<p>There is no significant issues with displaying Date, but there is no way to format it with custom format (e.g., 'YYYY-MM-DD HH:mm') like in C# or Java.</p>
+<p>Alternative for formatting is <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat">Intl.DateTimeFormat</a> object from <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl">ECMAScript Internationalization API</a>. However, this API is not yet supported by older browsers, most of mobile browsers, and Safari (check <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat#Browser_compatibility">browser compatibility on MDN</a>).</p>
+<h3>Parsing</h3>
+<p>More tricky than displaying dates, is parsing them. There are two common ways to parse date from string:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">parsedDate1</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">2015-02-27 22:56:37</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">parsedDate2</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="dl">"</span><span class="s2">2015-02-27 22:56:37</span><span class="dl">"</span><span class="p">);</span></code></pre></figure>
+
+<p>First returns <code>Date</code> object, second - number 1425106597000 (milliseconds since January 1, 1970, 00:00:00 UTC).</p>
+<p>There is one, very unpleasant detail in parsing:</p>
+<blockquote><p>Given a date string of "March 7, 2014", parse() assumes a <strong>local time zone</strong>, but given an ISO format such as "2014-03-07" it will assume a <strong>time zone of UTC</strong>. Therefore Date objects produced using those strings will represent different moments in time unless the system is set with a local time zone of UTC. This means that two date strings that appear equivalent may result in two different values depending on the format of the string that is being converted (<strong>this behavior is changed in ECMAScript ed 6 so that both will be treated as local</strong>).</p>
+<footer>Source: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse">MDN</a></footer>
+</blockquote>
+<p>This means that <code>date1</code> and <code>date2</code> below (created from machine located in Seattle, WA) are different:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">date1</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">2014-01-02</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">date2</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">1/2/2014</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date1</span><span class="p">);</span> <span class="c1">// Wed Jan 01 2014 16:00:00 GMT-0800 (Pacific Standard Time)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date2</span><span class="p">);</span> <span class="c1">// Thu Jan 02 2014 00:00:00 GMT-0800 (Pacific Standard Time)</span></code></pre></figure>
+
+<p>Recommended format for parsing is: <code>YYYY/MM/DD</code> - user local settings independent. It always assumes local timezone offset for date string given as a parameter.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">date1</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="dl">"</span><span class="s2">2014/01/02</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date1</span><span class="p">);</span> <span class="c1">// Thu Jan 02 2014 00:00:00 GMT-0800 (Pacific Standard Time)</span></code></pre></figure>
+
+<h3>Timezones</h3>
+<p>JavaScript <code>Date</code> object always assumes local timezone <span style="text-decoration: underline;">offset</span> for the machine on which it is displayed. What is important: JavaScript <code>Date</code> does not support time zones, but only timezone offsets. This is a definition of both <a href="http://en.wikipedia.org/wiki/Time_zone#Time_zones_and_time_offsets">from Wikipedia</a>:</p>
+<blockquote><p>A <strong>time zone</strong> is a geographical region where just about everybody observes the same standard time.<br />
+A <strong>time offset</strong> is an amount of time subtracted from or added to UTC to get the current civil time - whether it's standard time or Daylight saving time.</p></blockquote>
+<p>In other words: time zone is constant (as long as government does not changed it) for some place (e.g., San Francisco) all the time, while time zone offset changes (usually, twice a year - this is what we call 'daylight savings').</p>
+<p>To get timezone offset:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">myDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">timezoneOffset</span> <span class="o">=</span> <span class="nx">myDate</span><span class="p">.</span><span class="nx">getTimezoneOffset</span><span class="p">();</span> <span class="c1">// result in minutes</span></code></pre></figure>
+
+<p>The result is in minutes. Here is another quirk: timezones that are 'west' from UTC (offset = 0) have positive values (60 - 720), and timezones that are 'east' from UTC have negative values (-60 - -780). Thus, Pacific Standard Time (UTC <strong>-8:00</strong>), in JavaScript, has timezone offset <strong>480</strong>, and Central European Time (UTC <strong>+1:00</strong>) has timezone offset <strong>-60</strong>.</p>
+<p>One more pitfall: local timezone offset is always set depends on value of <code>Date</code> object. Thus, for Computer located in Seattle, WA:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">date1</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span> <span class="c1">// date in Pacific Standard Time (before timezone offset change)</span>
+<span class="kd">var</span> <span class="nx">date2</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span> <span class="c1">// date in Pacific Daylight Time (after timezone offset change)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date1</span><span class="p">.</span><span class="nx">getTimezoneOffset</span><span class="p">());</span> <span class="c1">// 480</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date2</span><span class="p">.</span><span class="nx">getTimezoneOffset</span><span class="p">());</span> <span class="c1">// 420</span></code></pre></figure>
+
+<p>In this case your current 'local' timezone offset (for the time in which you are creating Date object) does not matter.</p>
+<p>Even if you create Date object with date before the time change, and then you modify it to date after the time change - its timezone offset changes to reflect offset for the new (current) value:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span> <span class="c1">// date in Pacific Standard Time</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getTimezoneOffset</span><span class="p">());</span> <span class="c1">// 480</span>
+<span class="nx">date</span><span class="p">.</span><span class="nx">setMonth</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="c1">// change month so date is in Pacific Daylight Time now</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getTimezoneOffset</span><span class="p">());</span> <span class="c1">// 420</span></code></pre></figure>
+
+<h3>Moment.js</h3>
+<p><a href="http://momentjs.com/">Moment.js</a> is a JavaScript library designed to work on the client side (in browser), and on the server side (in node.js). It has a lot of functions to parse, display and manipulate dates. This makes dealing with dates less painful.</p>
+<p><a href="http://momentjs.com/timezone/">Moment Timezone</a> - a library built on top of Moment.js - supports real time zones (not only timezone offsets). The data for Moment Timezone comes from <a href="http://www.iana.org/time-zones">the IANA Time Zone Database</a> - most popular time zone database. New versions are released periodically as timezone laws change in various countries.</p>
+<p>Consider using Moment.js and Moment Timezone in your application when you are doing more complex operations with dates. Especially when you want to support time zones.</p>
+<h3>Summary</h3>
+<p>It is really surprising that working with dates in programming is still causing a lot of issues. However, we are getting better at that. To get a comprehensive overview of date/time in programming language I recommend <a href="http://www.pluralsight.com/courses/date-time-fundamentals">Date and Time Fundamentals</a> by <a href="http://codeofmatt.com/">Matt Johnson</a>. You can also check <a href="http://codeofmatt.com/">Matt Johnson's blog</a>. He blogs mainly about date/time in variety of environments. His article <a href="http://codeofmatt.com/2013/06/07/javascript-date-type-is-horribly-broken/">JavaScript Date type is horribly broken</a> might be good supplement for this post.</p>
+<p>To get a quick insight why dealing with time zones is very complex, check <a href="https://www.youtube.com/watch?v=-5wpm-gesOY">this video</a>. It is also worth to check <a href="https://unix4lyfe.org/time/?v=1">What Every Programmer Should know about Time</a>.</p>
+
+  </div>
+
+  <div class="date">
+    <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;Date:<span style="color: #333333; font-weight: normal;">&nbsp;March  9, 2015</span>
+  </div>
+
+  <div class="post-categories">
+    <i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp;Tags:&nbsp;
+      
+      
+      <a class="categories-button"<a href="/categories/#programming">programming</a>
+      
+      
+  </div>
+
+  <div class="share-post">
+    <i class="fa fa-share-alt-square fa-fw" aria-hidden="true"></i>&nbsp;Share:&nbsp;
+    <!-- Sharingbutton Facebook -->
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=http://localhost:4250/javascript-date-a-bad-part/" title="Share on Facebook" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/></svg>
+    </div>
+  </div>
+</a>
+
+<!-- Sharingbutton Twitter -->
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=JavaScript Date: a Bad Part&amp;url=http://localhost:4250/javascript-date-a-bad-part/" title="Share on Twitter" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5 0-4.55 2.04-4.55 4.54 0 .36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3 0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35 0 12.92-6.92 12.92-12.93 0-.2 0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z"/></svg>
+    </div>
+  </div>
+</a>
+
+<!-- Sharingbutton Tumblr -->
+<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=JavaScript Date: a Bad Part&amp;content=http://localhost:4250/javascript-date-a-bad-part/&amp;canonicalUrl=http://localhost:4250/javascript-date-a-bad-part/&amp;shareSource=tumblr_share_button" title="Share on Tumblr" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.5.5v5h5v4h-5V15c0 5 3.5 4.4 6 2.8v4.4c-6.7 3.2-12 0-12-4.2V9.5h-3V6.7c1-.3 2.2-.7 3-1.3.5-.5 1-1.2 1.4-2 .3-.7.6-1.7.7-3h3.8z"/></svg>
+    </div>
+  </div>
+</a>
+
+<!-- Sharingbutton E-Mail -->
+<a class="resp-sharing-button__link" href="mailto:?subject=JavaScript Date: a Bad Part&amp;body=Read more at this site http://localhost:4250/javascript-date-a-bad-part/" title="Share via E-Mail" target="_self" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z"/></svg>
+    </div>
+  </div>
+</a>
+
+<!-- Sharingbutton Pinterest -->
+<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=http://localhost:4250/javascript-date-a-bad-part/&amp;media=http://localhost:4250/javascript-date-a-bad-part/&amp;description=JavaScript Date: a Bad Part" title="Share on Pinterest" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.14.5C5.86.5 2.7 5 2.7 8.75c0 2.27.86 4.3 2.7 5.05.3.12.57 0 .66-.33l.27-1.06c.1-.32.06-.44-.2-.73-.52-.62-.86-1.44-.86-2.6 0-3.33 2.5-6.32 6.5-6.32 3.55 0 5.5 2.17 5.5 5.07 0 3.8-1.7 7.02-4.2 7.02-1.37 0-2.4-1.14-2.07-2.54.4-1.68 1.16-3.48 1.16-4.7 0-1.07-.58-1.98-1.78-1.98-1.4 0-2.55 1.47-2.55 3.42 0 1.25.43 2.1.43 2.1l-1.7 7.2c-.5 2.13-.08 4.75-.04 5 .02.17.22.2.3.1.14-.18 1.82-2.26 2.4-4.33.16-.58.93-3.63.93-3.63.45.88 1.8 1.65 3.22 1.65 4.25 0 7.13-3.87 7.13-9.05C20.5 4.15 17.18.5 12.14.5z"/></svg>
+    </div>
+  </div>
+</a>
+
+<!-- Sharingbutton LinkedIn -->
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://localhost:4250/javascript-date-a-bad-part/&amp;title=JavaScript Date: a Bad Part&amp;summary=JavaScript Date: a Bad Part&amp;source=http://localhost:4250/javascript-date-a-bad-part/" title="Share on LinkedIn" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.5 21.5h-5v-13h5v13zM4 6.5C2.5 6.5 1.5 5.3 1.5 4s1-2.4 2.5-2.4c1.6 0 2.5 1 2.6 2.5 0 1.4-1 2.5-2.6 2.5zm11.5 6c-1 0-2 1-2 2v7h-5v-13h5V10s1.6-1.5 4-1.5c3 0 5 2.2 5 6.3v6.7h-5v-7c0-1-1-2-2-2z"/></svg>
+    </div>
+  </div>
+</a>
+
+<!-- Sharingbutton Reddit -->
+<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=http://localhost:4250/javascript-date-a-bad-part/&amp;resubmit=true&amp;title=JavaScript Date: a Bad Part" title="Share on Reddit" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 11.5c0-1.65-1.35-3-3-3-.96 0-1.86.48-2.42 1.24-1.64-1-3.75-1.64-6.07-1.72.08-1.1.4-3.05 1.52-3.7.72-.4 1.73-.24 3 .5C17.2 6.3 18.46 7.5 20 7.5c1.65 0 3-1.35 3-3s-1.35-3-3-3c-1.38 0-2.54.94-2.88 2.22-1.43-.72-2.64-.8-3.6-.25-1.64.94-1.95 3.47-2 4.55-2.33.08-4.45.7-6.1 1.72C4.86 8.98 3.96 8.5 3 8.5c-1.65 0-3 1.35-3 3 0 1.32.84 2.44 2.05 2.84-.03.22-.05.44-.05.66 0 3.86 4.5 7 10 7s10-3.14 10-7c0-.22-.02-.44-.05-.66 1.2-.4 2.05-1.54 2.05-2.84zM2.3 13.37C1.5 13.07 1 12.35 1 11.5c0-1.1.9-2 2-2 .64 0 1.22.32 1.6.82-1.1.85-1.92 1.9-2.3 3.05zm3.7.13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9.8 4.8c-1.08.63-2.42.96-3.8.96-1.4 0-2.74-.34-3.8-.95-.24-.13-.32-.44-.2-.68.15-.24.46-.32.7-.18 1.83 1.06 4.76 1.06 6.6 0 .23-.13.53-.05.67.2.14.23.06.54-.18.67zm.2-2.8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm5.7-2.13c-.38-1.16-1.2-2.2-2.3-3.05.38-.5.97-.82 1.6-.82 1.1 0 2 .9 2 2 0 .84-.53 1.57-1.3 1.87z"/></svg>
+    </div>
+  </div>
+</a>
+
+<!-- Sharingbutton XING -->
+<a class="resp-sharing-button__link" href="https://www.xing.com/app/user?op=share;http://localhost:4250/javascript-date-a-bad-part/;title=JavaScript Date: a Bad Part" title="Share on XING" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--xing resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.2 9.7l-3-5.4C7.2 4 7 4 6.8 4h-5c-.3 0-.4 0-.5.2v.5L4 10 .4 16v.5c0 .2.2.3.4.3h5c.3 0 .4 0 .5-.2l4-6.6v-.5zM24 .2l-.5-.2H18s-.2 0-.3.3l-8 14v.4l5.2 9c0 .2 0 .3.3.3h5.4s.3 0 .4-.2c.2-.2.2-.4 0-.5l-5-8.8L24 .7V.2z"/></svg>
+    </div>
+  </div>
+</a>
+
+<!-- Sharingbutton WhatsApp -->
+<a class="resp-sharing-button__link" href="whatsapp://send?text=JavaScript Date: a Bad Part%20http://localhost:4250/javascript-date-a-bad-part/" title="Share via WhatsApp" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.1 3.9C17.9 1.7 15 .5 12 .5 5.8.5.7 5.6.7 11.9c0 2 .5 3.9 1.5 5.6L.6 23.4l6-1.6c1.6.9 3.5 1.3 5.4 1.3 6.3 0 11.4-5.1 11.4-11.4-.1-2.8-1.2-5.7-3.3-7.8zM12 21.4c-1.7 0-3.3-.5-4.8-1.3l-.4-.2-3.5 1 1-3.4L4 17c-1-1.5-1.4-3.2-1.4-5.1 0-5.2 4.2-9.4 9.4-9.4 2.5 0 4.9 1 6.7 2.8 1.8 1.8 2.8 4.2 2.8 6.7-.1 5.2-4.3 9.4-9.5 9.4zm5.1-7.1c-.3-.1-1.7-.9-1.9-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1s-1.2-.5-2.3-1.4c-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6s.3-.3.4-.5c.2-.1.3-.3.4-.5.1-.2 0-.4 0-.5C10 9 9.3 7.6 9 7c-.1-.4-.4-.3-.5-.3h-.6s-.4.1-.7.3c-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.3-.3-.4-.6-.5z"/></svg>
+    </div>
+  </div>
+</a>
+
+<!-- Sharingbutton Hacker News -->
+<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=http://localhost:4250/javascript-date-a-bad-part/&amp;t=JavaScript Date: a Bad Part" title="Share on Hacker News" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140"><path fill-rule="evenodd" d="M60.94 82.314L17 0h20.08l25.85 52.093c.397.927.86 1.888 1.39 2.883.53.994.995 2.02 1.393 3.08.265.4.463.764.596 1.095.13.334.262.63.395.898.662 1.325 1.26 2.618 1.79 3.877.53 1.26.993 2.42 1.39 3.48 1.06-2.254 2.22-4.673 3.48-7.258 1.26-2.585 2.552-5.27 3.877-8.052L103.49 0h18.69L77.84 83.308v53.087h-16.9v-54.08z"></path></svg>
+    </div>
+  </div>
+</a>
+
+<!-- Sharingbutton VK -->
+<a class="resp-sharing-button__link" href="http://vk.com/share.php?title=JavaScript Date: a Bad Part&amp;url=http://localhost:4250/javascript-date-a-bad-part/" title="Share on VK" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--vk resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.547 7h-3.29a.743.743 0 0 0-.655.392s-1.312 2.416-1.734 3.23C14.734 12.813 14 12.126 14 11.11V7.603A1.104 1.104 0 0 0 12.896 6.5h-2.474a1.982 1.982 0 0 0-1.75.813s1.255-.204 1.255 1.49c0 .42.022 1.626.04 2.64a.73.73 0 0 1-1.272.503 21.54 21.54 0 0 1-2.498-4.543.693.693 0 0 0-.63-.403h-2.99a.508.508 0 0 0-.48.685C3.005 10.175 6.918 18 11.38 18h1.878a.742.742 0 0 0 .742-.742v-1.135a.73.73 0 0 1 1.23-.53l2.247 2.112a1.09 1.09 0 0 0 .746.295h2.953c1.424 0 1.424-.988.647-1.753-.546-.538-2.518-2.617-2.518-2.617a1.02 1.02 0 0 1-.078-1.323c.637-.84 1.68-2.212 2.122-2.8.603-.804 1.697-2.507.197-2.507z"/></svg>
+    </div>
+  </div>
+</a>
+
+<!-- Sharingbutton Telegram -->
+<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=JavaScript Date: a Bad Part&amp;url=http://localhost:4250/javascript-date-a-bad-part/" title="Share via Telegram" target="_blank" rel="noopener" aria-label="">
+  <div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M.707 8.475C.275 8.64 0 9.508 0 9.508s.284.867.718 1.03l5.09 1.897 1.986 6.38a1.102 1.102 0 0 0 1.75.527l2.96-2.41a.405.405 0 0 1 .494-.013l5.34 3.87a1.1 1.1 0 0 0 1.046.135 1.1 1.1 0 0 0 .682-.803l3.91-18.795A1.102 1.102 0 0 0 22.5.075L.706 8.475z"/></svg>
+    </div>
+  </div>
+</a>
+
+  </div>
+
+  <div class="related-posts">
+    <div class="related-posts">
+<span class="related-posts-heading">Related Posts:</span><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class="related-posts-post">
+  <a href="/php-in-2020-its-not-your-mamas-php/">
+    PHP in 2020 it's not your mama's PHP
+  </a>
+</div>
+
+
+    
+  
+
+  
+
+  
+
+  
+
+  
+    <div class="related-posts-post">
+  <a href="/leaving-microsoft/">
+    Leaving Microsoft...
+  </a>
+</div>
+
+
+    
+  
+
+  
+    <div class="related-posts-post">
+  <a href="/azure-search-on-azure-friday/">
+    Azure Search on Azure Friday
+  </a>
+</div>
+
+
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+</div>
+
+  </div>
+
+  <div class="post-nav">
+    <div class="post-nav">
+  <p>
+    
+    <span class="post-nav-label">Previous</span><br>
+    <a href="/hidden-feature-of-the-azure-portal-keyboard-shortcuts/">&#9194;&nbsp;Hidden feature of the Azure Portal: keyboard shortcuts</a>
+    
+  </p>
+  <p>
+    
+    <span class="post-nav-label">Next</span><br>
+    <a href="/guest-speakers-in-computer-science/">Guest Speakers in Computer Science&nbsp;&#9193;</a>
+    
+  </p>
+</div>
+
+  </div>
+
+</article>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer"><div class="social-icons"><a class="social-icon" href="/feed.xml"><i class="fa fa-rss-square fa-2x" title="Feed"></i></a><a class="social-icon" href="https://twitter.com/realJacobJed"><i class="fa fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://github.com/jj09"><i class="fa fa-github-square fa-2x" title="GitHub"></i></a></div><div class="copyright">
+            
+            <p>&copy; 2022 Jacob Jedryszek. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/forever-jekyll/forever-jekyll" rel="nofollow">Forever Jekyll</a>.</p>
+            
+          </div>    
+        </footer>
+      </div>
+    </div>
+
+    <script defer src="https://cdn.plyr.io/3.6.5/plyr.js"></script>
+    <script>
+      const player = new Plyr('#player');
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <script type="text/javascript">
+      const lightbox = GLightbox({
+          touchNavigation: true,
+          loop: true,
+          autoplayVideos: true
+      });
+    </script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/auto-render.min.js"
+            onload="renderMathInElement(document.body,{
+                    delimiters: [
+                    { left: '$$',  right: '$$',  display: true  },
+                    { left: '$',   right: '$',   display: false },
+                    { left: '\\[', right: '\\]', display: true  },
+                    { left: '\\(', right: '\\)', display: false }
+                    ]});">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+      function addDarkmodeWidget() {
+        new Darkmode().showWidget();
+        window.addEventListener('load', addDarkmodeWidget);
+      }
+      const options = {
+        label: '🌓',
+      }
+      const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,37 @@
+I"x<p>When your backend code is calling external APIs you may want to measure particular request time to identify bottlenecks.</p>
+<p>The most straight forward, but incorrect, way to measure how long request takes is to use JavaScript <code>Date</code> object:</p>
+<pre lang="javascript">var request = require('request');
+
+let start_time = new Date().getTime();
+
+request.get('https://google.com', function (err, response) {
+    console.log('Time elapsed:', new Date().getTime() - start_time);
+});
+</pre>
+<p>However, this won't give you the actual time that request takes. Above request call is async, and you start measuring time at the time when request was queued, not actually sent.</p>
+<p>In order to determine how much time elapsed since sending request, you can use the <code>time</code> parameter:</p>
+<pre lang="javascript">var request = require('request');
+
+request.get({ url: 'http://www.google.com', time: true }, function (err, response) {
+    console.log('The actual time elapsed:', response.elapsedTime);
+});
+</pre>
+<p>You can also compare results returned by both methods:</p>
+<pre lang="javascript">var request = require('request');
+
+let start_time = new Date().getTime();
+
+request.get('https://google.com', function (err, response) {
+    console.log('Time elapsed since queuing the request:', new Date().getTime() - start_time);
+});
+
+request.get({ url: 'http://www.google.com', time: true }, function (err, response) {
+    console.log('The actual time elapsed:', response.elapsedTime);
+});
+</pre>
+<p>When I run it, I got the following results:</p>
+<p><code>The actual time elapsed: 72<br />
+Time elapsed since queuing the request: 156</code></p>
+<p>Notice that the first callback resolves after the second one(!)</p>
+<p>The difference is almost 2x. Depending on your server side code, this difference might be even larger, and give you incorrect hints while you are profiling your application.</p>
+:ET

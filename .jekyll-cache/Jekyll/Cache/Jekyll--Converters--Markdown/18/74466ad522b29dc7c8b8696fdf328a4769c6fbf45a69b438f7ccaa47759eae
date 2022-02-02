@@ -1,0 +1,11 @@
+I"�<p>This blog post is an overview of testing focus behavior in web browser.</p>
+<p>During the work on Azure Portal I spent quite a bit of time on ensuring rich keyboard support. This requires appropriate focus management. When user press some keyboard shortcut, the focus should move to appropriate element. There is a good article on MDN about <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/Keyboard-navigable_JavaScript_widgets">Keyboard-navigable JavaScript widgets</a>. Focus behavior should be also tested very succinctly. As it is very easy to change (break) with even the smallest change in the HTML or JavaScript.</p>
+<p>Standard test goes as follows:</p>
+<ul>
+<li>Arrange: open some page</li>
+<li>Act: execute some keyboard shortcut that should open particular page and/or set focus on particular element</li>
+<li>Assert: check if expected element is focused</li>
+</ul>
+<h3>How to check if element is focused</h3>
+<p>The simplest way is to use jQuery:</p>
+:ET

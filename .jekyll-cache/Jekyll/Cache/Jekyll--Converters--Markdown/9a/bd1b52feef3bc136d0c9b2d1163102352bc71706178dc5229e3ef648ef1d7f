@@ -1,0 +1,38 @@
+I"�<p style="text-align: center;"><img class="size-full wp-image-17711" style="float: left; margin: 10px;" src="/assets/2017/06/AzureApp-Resources.png" alt="" width="200" height="356" /></p>
+<p><img class="size-full wp-image-17701" style="float: left; margin: 10px;" src="/assets/2017/06/AzureApp-Resource.png" alt="" width="200" height="356" /></p>
+<p><img class="size-full wp-image-17691" style="float: left; margin: 10px;" src="/assets/2017/06/AzureApp-Notifications.png" alt="" width="200" height="356" /></p>
+<p><img class="size-full wp-image-17681" style="margin: 10px;" src="/assets/2017/06/AzureApp-Console.png" alt="" width="200" height="356" /></p>
+<p>For last 6 months I've been working on <a href="https://thenextweb.com/dd/2017/05/10/microsoft-announces-new-azure-mobile-applications-android-ios/">the Azure Mobile App</a> for iOS and Android. We officially announced it at Microsoft's <a href="https://build.microsoft.com/">//build</a> conference keynote last month.</p>
+<p><iframe src="https://www.youtube.com/embed/YKK_XHMFE3U?start=594&amp;end=639" width="854" height="480" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+<p>Now, you can monitor your Azure Resources from your phone! You can also take quick management actions, like start/stop/restart. Actually, you can do whatever you want using Cloud Shell that enables you to execute any command available through Azure CLI and PowerShell.</p>
+<p>To learn more about the app functionalities, check out <a href="https://twitter.com/flanakin">Michael Flanakin</a>'s blog post: <a href="https://azure.microsoft.com/en-us/blog/azure-app-preview/">Introducing the Azure app public preview</a>.</p>
+<h3>Xamarin</h3>
+<p>The app is built with Xamarin Native in C#. To learn more about Xamarin, checkout my blog post <a href="https://jj09.net/getting-started-with-xamarin-in-2016/">Getting started with Xamarin in 2016</a>.</p>
+<p>The great thing about Xamarin Native apps is the fact that you can do everything what is possible when building native iOS apps with swift and native Android apps with Java. You can take any code sample in swift or Java, translate it to C# and use in your Xamarin app. Additionally, you can share code across platforms. We have around 60-70% code share. Most of our code is shared using PCL (Portable Class Library). Some components are in Shared Project.</p>
+<p><img class="aligncenter size-full wp-image-18131" src="/assets/2017/06/AzureMobileSolution.png" alt="Azure Mobile Solution" width="532" height="422" /></p>
+<h3>Continuous Integration and Continuous Delivery with VSTS and Hockey App</h3>
+<p><a href="https://www.visualstudio.com/team-services/">VSTS</a> provide awesome tools for customizing build params, running tests, and deploying with <a href="https://www.hockeyapp.net/">HockeyApp</a>. What's more, when you are publishing your alpha/beta builds with <a href="https://www.hockeyapp.net/">HockeyApp</a> you get auto-update notifications for free.</p>
+<p>We have 3 environments:</p>
+<ul>
+<li>alpha - deployed on every commit if tests are passing (used by team members)</li>
+<li>beta - deployed after merge from alpha branch if all tests are passing (available for all Microsoft employees - it allows us to test the next release candidate)</li>
+<li>App Store / Google Play - deployed manually (Apple does not provide mechanism to auto-deploy and we are working on automating Google Play deploy from VSTS)</li>
+</ul>
+<h4>Build definitions</h4>
+<p>I blogged about <a href="https://jj09.net/continuous-integration-and-continuous-delivery-for-xamarin-ios-with-vsts/">setting up VSTS for Xamarin.iOS</a> earlier this year. Configuring Android build is much easier. Our VSTS build pipelines for iOS and Android look like below.</p>
+<p style="text-align: center;"><img class="aligncenter size-full wp-image-17751" style="float: left; margin: 10px;" src="/assets/2017/06/VSTS-ios.png" alt="VSTS Xamarin.iOS build definition" width="400" height="832" /></p>
+<p><img class="aligncenter size-full wp-image-17781" style="margin: 10px;" src="/assets/2017/06/VSTS-droid-1.png" alt="VSTS - Xamarin.Droid build definition" width="400" height="1003" /></p>
+<p>The general scenario is:</p>
+<ul>
+<li>build in <em>Debug</em> mode (in order to initialize TestCloud, which I described in <a href="https://jj09.net/continuous-integration-and-continuous-delivery-for-xamarin-ios-with-vsts/">this blog post</a>)</li>
+<li>run tests</li>
+<li>build in <em>Release</em> mode (without TestCloud init code)</li>
+<li>deploy to HockeyApp</li>
+</ul>
+<p>We are thinking about running tests in <em>Release</em> mode (it requires passing <em>TEST_CLOUD</em> build param to build command explicitly). This will give us the same app that later on will be deployed to HockeyApp. A few times we had situations when app was working fine in <em>Debug</em> mode and all UI tests were passing, but it was crashing on startup in Release mode. In this case, if somebody updated app on their device, they had to uninstall it, and install manually again after we fixed bug causing crash. Very inconvenient.</p>
+<h4>Storing secrets</h4>
+<p>VSTS provides mechanism to keep your secrets (passwords and tokens) outside of your source code. You can store them in <em>Variables</em> tab in your build definition. Notice small lock next to secret value. Once you click it, it will hide the secret forever. There is no way to read it back from VSTS. I've done this a few times, and had to regenerate keys and tokens. You can store your secrets in <a href="https://azure.microsoft.com/en-us/services/key-vault/">Azure KeyVault</a>, where they are always readable.</p>
+<p><img class="aligncenter size-full wp-image-17851" src="/assets/2017/06/VSTS-variables.png" alt="VSTS - variables" width="1868" height="800" /></p>
+<p>When you are running UI tests, usually you need to authenticate (AKA you need password to login with your test account). There is no way to pass password as parameter to Test Cloud, but there is a workaround: we have file <em>Password.txt</em> in UI test project (without password of course), and before running UI tests, we run shell script that takes password (from VSTS <em>Variables</em>) as parameter and writes it to the Password.txt file. You can pass variables stored in VSTS as arguments to VSTS tasks.</p>
+<p>This is shell script:</p>
+:ET
