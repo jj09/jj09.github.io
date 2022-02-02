@@ -23,11 +23,16 @@ It turns out, you don’t need it. With [this guide](https://dev.to/rupeshtiwari
 [x] Export wordpress.xml
 [x] Rename posts from html to md
 [x] Fix syntax highlighting (`<pre> to {% highlight %})
-[ ] setup domain
-[ ] Google Analytics
-[ ] migrate comments ([guide](https://desiredpersona.com/disqus-comments-jekyll/)) - need to move domain first
+[x] setup domain ([github guide](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site), [pages settings](https://github.com/jj09/jj09.github.io/settings/pages))
+[ ] setup HTTPS ([github FAQ](https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https), [troubleshooting](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/troubleshooting-custom-domains-and-github-pages#https-errors), [article](https://timeandupdate.com/2018/05/custom-domain-in-github-page-support-https/))
+    - readd
+    - wait 5h :O
+    - remove A record (if you have one)
+[ ] Add Google Analytics
+[ ] migrate comments ([link](https://desiredpersona.com/disqus-comments-jekyll/)) - need to move domain first
 [ ] prettify (find nicer template?)
 [ ] have landing page like mfranc and dhh
+[ ] optimize images ([link](https://jetholt.com/automatic-image-optimisation/))
 [ ] configure backup
 
 ### guides
