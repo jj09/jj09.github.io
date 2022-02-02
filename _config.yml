@@ -6,10 +6,11 @@
 lang: "en"
 
 # Name of your site (displayed in the header)
-name: Forever Jekyll
+name: Jacob Jedryszek
 
 # Short bio or description (displayed in the header)
-description: A simple, elegant and full featured Jekyll theme
+description: Jacob Jedryszek is a Software Engineer who started and shipped Azure Mobile app, and helped Microsoft to build and ship the Azure Management Portal. He is also a speaker at conferences around the World.
+
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: /assets/image/avatar.png
@@ -20,7 +21,7 @@ avatar: /assets/image/avatar.png
 
 # Your website URL (e.g. https://forever-jekyll.github.io or https://forever-jekyll.com)
 # Used for Sitemap.xml and your RSS feed
-url: https://forever-jekyll.github.io
+url: https://jj09.github.io
 
 # If you're hosting your site at a Project repository on GitHub pages
 # (http://yourusername.github.io/repository-name)
@@ -46,11 +47,11 @@ footer_links:
     icon: fa fa-rss-square
 
   - title: Twitter
-    url: https://twitter.com/jekyllrb
+    url: https://twitter.com/realJacobJed
     icon: fa fa-twitter-square
 
   - title: GitHub
-    url: https://github.com/forever-jekyll
+    url: https://github.com/jj09
     icon: fa fa-github-square
 
 # Enter your copyright text if you wish to override the default one.
