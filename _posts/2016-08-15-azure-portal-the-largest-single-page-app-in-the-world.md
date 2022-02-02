@@ -44,7 +44,7 @@ permalink: "/azure-portal-the-largest-single-page-app-in-the-world/"
 <p>I received a lot of great feedback after my session:</p>
 <p><img class="aligncenter size-full wp-image-15001" src="{{ site.baseurl }}/assets/2016/08/vslive_session_feedback.jpg" alt="Visual Studio Live session feedback (Hanselman)" width="713" height="163" /></p>
 <p><img class="aligncenter size-full wp-image-14991" src="{{ site.baseurl }}/assets/2016/08/vslive_session_feedback2.jpg" alt="Visual Studio Live session feedback" width="647" height="245" /></p>
-<p>Now, I am waiting for YOUR feedback. Leave it in comments or tweet me at <a href="https://twitter.com/JakubJedryszek">@JakubJedryszek</a>. What did you like, what did you not like, what would you like to see that I haven't show?</p>
+<p>Now, I am waiting for YOUR feedback. Leave it in comments or tweet me at <a href="https://twitter.com/realJacobJed">@JakubJedryszek</a>. What did you like, what did you not like, what would you like to see that I haven't show?</p>
 <p>You can also check out other <a href="https://channel9.msdn.com/Events/Visual-Studio/Visual-Studio-Live-Redmond-2016">recorded sessions from VSLive at channel9</a>.</p>
 <p>I really enjoyed this conference. I had opportunity to meet many interesting people with passion in Software Development. From marketing people, through Software Developers, to CEOs and CTOs.</p>
 <p>Interesting fact I learned from two gentlemen working as Software Engineers at Panama Canal: <a href="http://www.cheapestdestinationsblog.com/2013/07/19/how-much-does-it-cost-to-go-through-the-panama-canal/">it cost hundreds of thousands of dollars to cross the Panama Canal once</a>!</p>

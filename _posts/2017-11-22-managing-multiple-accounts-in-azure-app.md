@@ -49,5 +49,5 @@ permalink: "/managing-multiple-accounts-in-azure-app/"
 <h3>Summary</h3>
 <p>I personally love this feature as switching between my MSDN account and work account was a pain in the past. Now it's seamless.</p>
 <p>We are still exploring possibility to enable users to sign in into two accounts tied to the same email. We are also looking at improvements around removing and adding accounts.</p>
-<p>Do you have feedback? Let us know! You can ping <a href="https://twitter.com/JakubJedryszek">me</a> or <a href="https://twitter.com/AzureApp">our team</a> on twitter. You can also add or vote on existing ideas at <a href="https://aka.ms/azureapp/feedback">our User Voice</a>.</p>
+<p>Do you have feedback? Let us know! You can ping <a href="https://twitter.com/realJacobJed">me</a> or <a href="https://twitter.com/AzureApp">our team</a> on twitter. You can also add or vote on existing ideas at <a href="https://aka.ms/azureapp/feedback">our User Voice</a>.</p>
 <p>Happy Thanksgiving!</p>

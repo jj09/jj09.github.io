@@ -91,5 +91,5 @@ permalink: "/qcon-conferences-real-experts-experience-exchange/"
 <h3>Summary</h3>
 <p>Speaking at QCons and connecting with engineers from different backgrounds is very valuable experience. Being able to learn about other cultures is a plus as well. Sharing with other work that you do everyday can also give you different perspective, and notice things that you would never think about.</p>
 <p>If you want to learn more about Azure Search check out our <a href="https://docs.microsoft.com/en-us/azure/search/search-get-started-portal">getting started docs</a>. To create intelligent search pipelines check out my <a href="https://jj09.net/cognitive-search-azure-search-with-ai">Cognitive Search</a> blog post. For more details we have <a href="https://docs.microsoft.com/en-us/azure/search/cognitive-search-quickstart-blob">quickstart</a> and more comprehensive <a href="https://docs.microsoft.com/en-us/azure/search/cognitive-search-tutorial-blob">API overview</a>.</p>
-<p>Questions? Find me on <a href="https://twitter.com/JakubJedryszek">twitter</a>!</p>
+<p>Questions? Find me on <a href="https://twitter.com/realJacobJed">twitter</a>!</p>
 <p><em>*Soups did not tell me what is the next coin coming to CoinBase :(</em></p>

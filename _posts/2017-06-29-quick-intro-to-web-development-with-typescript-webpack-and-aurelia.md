@@ -46,7 +46,7 @@ permalink: "/quick-intro-to-web-development-with-typescript-webpack-and-aurelia/
 <li><a href="https://medium.com/@tomdale/glimmer-js-whats-the-deal-with-typescript-f666d1a3aad0">Glimmer.js: What’s the Deal with TypeScript?</a></li>
 </ul>
 <p>I also found out that Visual Studio Code was initially written in TypeScript, and before v1 release they switched to TypeScript.</p>
-<p>Do you have questions or thoughts about migrating from JavaScript to TypeScript? Join discussion on <a href="https://twitter.com/JakubJedryszek/status/875032093134172160">twitter</a>.</p>
+<p>Do you have questions or thoughts about migrating from JavaScript to TypeScript? Join discussion on <a href="https://twitter.com/realJacobJed/status/875032093134172160">twitter</a>.</p>
 <p>To learn more about specifics of building large web apps, check out my talk from Ignite Australia I gave earlier this year:</p>
 <p><iframe src="https://channel9.msdn.com/Events/Ignite/Australia-2017/ARC122/player" width="960" height="540" allowfullscreen frameborder="0"></iframe></p>
 <p>At the same conference, I gave a longer version of the talk I did at the meetup. So if you want to dive in deeper, the video is <a href="https://jj09.net/ignite-australia-2017/">here</a>.</p>

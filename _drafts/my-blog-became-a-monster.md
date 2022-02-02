@@ -25,9 +25,10 @@ It turns out, you don’t need it. With [this guide](https://dev.to/rupeshtiwari
 [x] Fix syntax highlighting (`<pre> to {% highlight %})
 [ ] setup domain
 [ ] Google Analytics
-[ ] migrate comments
+[ ] migrate comments ([guide](https://desiredpersona.com/disqus-comments-jekyll/)) - need to move domain first
 [ ] prettify (find nicer template?)
 [ ] have landing page like mfranc and dhh
+[ ] configure backup
 
 ### guides
 

@@ -65,7 +65,7 @@ permalink: "/about/"
 <p style="text-align: justify;"><img class="aligncenter size-full wp-image-14791" src="{{ site.baseurl }}/assets/2013/06/swim.jpg" alt="swim" width="800" height="598" /></p>
 <p style="text-align: justify;"><img class="aligncenter size-full wp-image-14531" src="{{ site.baseurl }}/assets/2013/06/run.jpg" alt="Jakub Jedryszek - run" width="800" height="533" /></p>
 <h3>More</h3>
-<p>I would love if you follow me on <a href="http://twitter.com/JakubJedryszek">Twitter</a> and subscribe to <a href="http://www.youtube.com/c/JakubJedryszek">my youtube channel</a>.</p>
+<p>I would love if you follow me on <a href="http://twitter.com/realJacobJed">Twitter</a> and subscribe to <a href="http://www.youtube.com/c/JakubJedryszek">my youtube channel</a>.</p>
 <p>You can find my Open Source projects on <a href="http://github.com/jj09">github</a>.</p>
 <p>You can check <a href="http://jj09.net/books/">my favorite books</a>.</p>
 <p>You can find more details about me in my <a title="Resume" href="http://jj09.net/resume/">resume</a>.</p>
