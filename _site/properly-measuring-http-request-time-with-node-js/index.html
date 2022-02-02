@@ -82,6 +82,10 @@ The most straight forward, but incorrect, way to measure how long request takes 
       <article class="post">
   <h1>Properly measuring HTTP request time with node.js</h1>
 
+  <div class="date">
+    <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;Date:<span style="color: #333333; font-weight: normal;">&nbsp;February 23, 2018</span>
+  </div>
+
   <div class="entry">
     <p>When your backend code is calling external APIs you may want to measure particular request time to identify bottlenecks.</p>
 <p>The most straight forward, but incorrect, way to measure how long request takes is to use JavaScript <code>Date</code> object:</p>
@@ -123,10 +127,6 @@ Time elapsed since queuing the request: 156</code></p>
 <p>Notice that the first callback resolves after the second one(!)</p>
 <p>The difference is almost 2x. Depending on your server side code, this difference might be even larger, and give you incorrect hints while you are profiling your application.</p>
 
-  </div>
-
-  <div class="date">
-    <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;Date:<span style="color: #333333; font-weight: normal;">&nbsp;February 23, 2018</span>
   </div>
 
   <div class="post-categories">

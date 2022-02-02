@@ -138,6 +138,10 @@ What is even more cool about this plugin, you can create a schedule to run it�
       <article class="post">
   <h1>Wordpress on Azure: Exceeded ClearDB size = lock on INSERT/UPDATE (not able to log in to the admin panel)</h1>
 
+  <div class="date">
+    <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;Date:<span style="color: #333333; font-weight: normal;">&nbsp;November 23, 2014</span>
+  </div>
+
   <div class="entry">
     <p>My Wordpress blog is hosted on Windows Azure, and I am using the only MySQL provider that is available on Azure: ClearDB.</p>
 <p>Yesterday I couldn't log in to the admin panel. I had no idea what was going on, because blog was working. I was googling for cause/solution, checking Azure logs, monitoring on Azure Portal, and accidentally I noticed that I exceeded ClearDB quota (20 MB). I did not receive any notifications from ClearDB though. What is important: if you exceed this limit, they block INSERT and UPDATE operations. My guess is that Wordpress is probably trying to INSERT/UPDATE something in database when you log in. That's why I couldn't log in.</p>
@@ -170,10 +174,6 @@ ORDER BY (data_length + index_length) DESC;[/sql]</p>
 <p>What is even more cool about this plugin, you can create a schedule to run it automatically (Settings -&gt; Optimize DB options):</p>
 <p><img class="aligncenter size-full wp-image-7361" src="/assets/2014/11/optimize-db-plugin.png" alt="Optimize Database after Deleting Revisions - Options" width="800" height="341" /></p>
 
-  </div>
-
-  <div class="date">
-    <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;Date:<span style="color: #333333; font-weight: normal;">&nbsp;November 23, 2014</span>
   </div>
 
   <div class="post-categories">

@@ -200,6 +200,10 @@ Method send_mail (from UserMailer class) can have as much parameters as you need
       <article class="post">
   <h1>Sending email from Rails application</h1>
 
+  <div class="date">
+    <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;Date:<span style="color: #333333; font-weight: normal;">&nbsp;July 15, 2013</span>
+  </div>
+
   <div class="entry">
     <p>It took me a while to configure sending email from Rails application. I went through many different tutorials, blogs, StackOverflow posts etc. Step, by step I found working configuration.</p>
 <p>To send emails I use <em>ActionMailer</em>. First you need to generate mailer:</p>
@@ -263,10 +267,6 @@ end[/ruby]</p>
 <p>[ruby]match '/send_email', to: 'your_controller#your_action'[/ruby]</p>
 <p>Method <em>send_mail</em> (from <em>UserMailer</em> class) can have as much parameters as you need. It can be also 0. In above example, the params are just rendered in the email template (send_email.html.erb file).</p>
 
-  </div>
-
-  <div class="date">
-    <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;Date:<span style="color: #333333; font-weight: normal;">&nbsp;July 15, 2013</span>
   </div>
 
   <div class="post-categories">

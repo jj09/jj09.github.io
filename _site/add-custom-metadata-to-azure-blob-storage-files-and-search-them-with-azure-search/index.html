@@ -92,6 +92,10 @@ const string ContainerName = "";
       <article class="post">
   <h1>Add custom metadata to Azure blob storage files and search them with Azure Search</h1>
 
+  <div class="date">
+    <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;Date:<span style="color: #333333; font-weight: normal;">&nbsp;January 31, 2018</span>
+  </div>
+
   <div class="entry">
     <p>Did you know that you can add custom metadata to your blob containers, and even to individual blob files?</p>
 <p>You can do it in the <a href="https://portal.azure.com">Azure Portal</a>, using <a href="https://github.com/Azure/azure-storage-net">SDK</a> or <a href="https://docs.microsoft.com/en-us/rest/api/storageservices/set-blob-metadata">REST API</a>.</p>
@@ -130,10 +134,6 @@ const string ContainerName = "";
 <p>If you just want to add metadata to existing blob, instead of calling <code>blob.UploadFromStream(fileStream)</code> you can run <code>blob.SetMetadata()</code>.</p>
 <p>When you create new <a href="https://docs.microsoft.com/en-us/azure/search/search-howto-indexing-azure-blob-storage">index for blob in Azure Search</a>, we will automatically detect these fields. If you already have Azure Search index created, you can add new fields (has to be the same as metadata key), and all changes will be synchronized with next re-indexing.</p>
 
-  </div>
-
-  <div class="date">
-    <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;Date:<span style="color: #333333; font-weight: normal;">&nbsp;January 31, 2018</span>
   </div>
 
   <div class="post-categories">

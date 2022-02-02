@@ -124,6 +124,10 @@ You can find more about Azure WebJobs in this article.
       <article class="post">
   <h1>How to save money on Azure with WebJobs</h1>
 
+  <div class="date">
+    <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;Date:<span style="color: #333333; font-weight: normal;">&nbsp;April 25, 2016</span>
+  </div>
+
   <div class="entry">
     <p>This blog is hosted on Azure. It is using WordPress, which stores its data in MySQL database hosted by ClearDb. I <a title="WordPress on Azure: Exceeded ClearDB size = lock on INSERT/UPDATE (not able to log in to the admin panel)" href="http://jj09.net/wordpress-on-azure-exceeded-cleardb-size-lock-on-insert-update/">blogged about the issues with WordPress database size</a> over a year ago. The issue is inserting transient entries into database that are growing its size and exceeding free 20MB ClearDB limit. As I mentioned in <a href="http://jj09.net/wordpress-on-azure-exceeded-cleardb-size-lock-on-insert-update/">this</a> blog post - you can use plugins that clear database for you, or...you can use web jobs. <a href="http://azure.microsoft.com/en-us/documentation/articles/websites-webjobs-resources/">Azure WebJobs</a> is very neat way to perform custom tasks, such as database maintenance, periodically.</p>
 <p>I created a web job that is performing database maintenance for me. Everyday it <a href="http://stackoverflow.com/questions/10422574/can-i-remove-transients-in-the-wp-options-table-of-my-wordpress-install">removes 'transient' entries from wp_options table</a> to keep my MySQL database under 20MB ClearDB limit.</p>
@@ -149,10 +153,6 @@ You can find more about Azure WebJobs in this article.
 <p>I configured my WebJob to run everyday. You can also run it on demand, or continuously.</p>
 <p>You can find more about Azure WebJobs <a href="http://azure.microsoft.com/en-us/documentation/articles/web-sites-create-web-jobs/">in this article</a>.</p>
 
-  </div>
-
-  <div class="date">
-    <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;Date:<span style="color: #333333; font-weight: normal;">&nbsp;April 25, 2016</span>
   </div>
 
   <div class="post-categories">

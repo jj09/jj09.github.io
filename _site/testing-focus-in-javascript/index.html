@@ -98,6 +98,10 @@ The simplest way is to use jQuery:
       <article class="post">
   <h1>Testing focus in JavaScript</h1>
 
+  <div class="date">
+    <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;Date:<span style="color: #333333; font-weight: normal;">&nbsp;January 28, 2016</span>
+  </div>
+
   <div class="entry">
     <p>This blog post is an overview of testing focus behavior in web browser.</p>
 <p>During the work on Azure Portal I spent quite a bit of time on ensuring rich keyboard support. This requires appropriate focus management. When user press some keyboard shortcut, the focus should move to appropriate element. There is a good article on MDN about <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/Keyboard-navigable_JavaScript_widgets">Keyboard-navigable JavaScript widgets</a>. Focus behavior should be also tested very succinctly. As it is very easy to change (break) with even the smallest change in the HTML or JavaScript.</p>
@@ -167,10 +171,6 @@ The simplest way is to use jQuery:
 Use polling approach for testing async actions.<br />
 Use <em>keydown</em> event, and bubble phase to invoke/handle keyboard actions.</p>
 
-  </div>
-
-  <div class="date">
-    <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;Date:<span style="color: #333333; font-weight: normal;">&nbsp;January 28, 2016</span>
   </div>
 
   <div class="post-categories">

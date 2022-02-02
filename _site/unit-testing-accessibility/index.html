@@ -106,6 +106,10 @@ callback function that is invoked with results parameter
       <article class="post">
   <h1>Unit Testing Accessibility</h1>
 
+  <div class="date">
+    <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;Date:<span style="color: #333333; font-weight: normal;">&nbsp;September 20, 2016</span>
+  </div>
+
   <div class="entry">
     <p>In <a href="http://jj09.net/web-accessibility-hacker-way/">Web Accessibility Hacker Way</a> I mentioned that "only 20% of accessibility requirements can be verified by tools". Nevertheless, it is worth to cover this 20%. Especially, when it is not very hard. You know that having automated test that guard against regressions always pays off in a long run.</p>
 <p>As of today the best automatic verification tool for accessibility is <a href="http://www.deque.com/products/axe/">aXe</a>.</p>
@@ -173,10 +177,6 @@ callback function that is invoked with results parameter
 <p>While automated accessibility unit tests are great, you probably still want to use <a href="http://bitly.com/aXe-Chrome">aXe plugin for Chrome</a> to investigate reported violations. It's more convenient, and it has neat user interface, while in unit tests you need to dig in into console errors.</p>
 <p>When you start adding accessibility checks for different parts of your system, you may encounter many violations at first. It is better to still add tests, that ignore known violations, and then incrementally fix the issues. This approach prevents regressions, while delaying adding test until all violations are fixed may cause introducing new ones while fixing others.</p>
 
-  </div>
-
-  <div class="date">
-    <i class="fa fa-calendar fa-fw" aria-hidden="true"></i>&nbsp;Date:<span style="color: #333333; font-weight: normal;">&nbsp;September 20, 2016</span>
   </div>
 
   <div class="post-categories">
