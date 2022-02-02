@@ -1,3 +1,0 @@
-I"<p>When your backend code is calling external APIs you may want to measure particular request time to identify bottlenecks.</p>
-<p>The most straight forward, but incorrect, way to measure how long request takes is to use JavaScript <code>Date</code> object:</p>
-:ET

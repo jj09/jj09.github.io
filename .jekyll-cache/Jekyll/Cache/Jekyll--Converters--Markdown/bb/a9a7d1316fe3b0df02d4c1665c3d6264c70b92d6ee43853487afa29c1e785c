@@ -1,8 +1,0 @@
-I"…<p>Did you know that you can add custom metadata to your blob containers, and even to individual blob files?</p>
-<p>You can do it in the <a href="https://portal.azure.com">Azure Portal</a>, using <a href="https://github.com/Azure/azure-storage-net">SDK</a> or <a href="https://docs.microsoft.com/en-us/rest/api/storageservices/set-blob-metadata">REST API</a>.</p>
-<p>The most common scenario is adding metadata during file upload. Below code is uploading sample invoice from disk, and adds year, month, and day metadata properties.</p>
-
-<figure class="highlight"><pre><code class="language-csharp" data-lang="csharp"><span class="k">const</span> <span class="kt">string</span> <span class="n">StorageAccountName</span> <span class="p">=</span> <span class="s">""</span><span class="p">;</span>
-<span class="k">const</span> <span class="kt">string</span> <span class="n">AccountKey</span> <span class="p">=</span> <span class="s">""</span><span class="p">;</span>
-<span class="k">const</span> <span class="kt">string</span> <span class="n">ContainerName</span> <span class="p">=</span> <span class="s">""</span><span class="p">;</span></code></pre></figure>
-:ET
