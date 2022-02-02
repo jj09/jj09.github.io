@@ -76,246 +76,262 @@
   
     <article class="post">
 
-      <h1><a href="/seeing-ai-photo-gallery/">Seeing AI Photo Gallery</a></h1>
+      <h1><a href="/azure-portal-tips-tricks-17-scaling-website-web-app/">Azure Portal Tips & Tricks - 17. Scaling website (web app)</a></h1>
 
-      <div class="entry">
-        <p><img class="aligncenter size-full wp-image-19664" src="/assets/2018/10/Microsoft-Seeing-AI.png" alt="Microsoft Seeing AI" width="900" height="450" /></p>
-<p>Seeing AI is a mobile app that narrates the world around you. It enables people with low vision to recognize faces, objects, text, bills, colors, and much more! Seeing AI was first announced at <a href="https://www.youtube.com/watch?v=rVF2duPVUTY">//build conference in 2016</a>.</p>
-<p>Over last few months I was working with Seeing AI team overnight on in-app Photo Gallery that allows you to browse through photos that you have taken earlier. Before you could only take photo, analyze it, and save (without description). Now, you can save it with description that you can later retrieve. You can also analyze photos taken with your phone camera.</p>
-<p><iframe src="https://www.youtube.com/embed/tsQMkKCnr9Q?ecver=1" width="855" height="481" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
-<p>One of the challenges was to decide what details about the photo should we present. We have a lot of different channels (short text, document, person, scene, etc.). For now we decided to show scene description, place and date when photo was taken. Let us know if you have suggestions to improve this!</p>
-<p><img class="aligncenter size-full wp-image-19661" src="/assets/2018/10/SeeingAI-photogallery-e1538709662987.png" alt="SeeingAI - photo gallery" width="400" height="711" /></p>
-<p>Another problematic part was deciding how to distinguish between analyzed, and not analyzed photos. Initially we had a toggle to switch between recognized photos and all photos. Ultimately we decided to have only 1 view with all photos. Thoughts?</p>
-<p>For non recognized photos we needed to provide mechanism to analyze them. Initially user had to open photo, and explicitly tap 'analyze'. We changed this approach to automatically analyze not recognized photos when going to full screen view, and enable users to reanalyze them. The 'reanalyze' button might be useful in situations where we update app with new AI models. These models may do better job in recognizing photos.</p>
-<p>Seeing AI is built with Xamarin iOS native. I was surprised that we had to build entire gallery from scratch. There was no plugin or open source sample we could use. Hint: opportunity for you!</p>
-<p>You can download Seeing AI from <a href="https://itunes.apple.com/us/app/seeing-ai/id999062298?mt=8">App Store</a>.</p>
-
-      </div>
-
-      <a href="/seeing-ai-photo-gallery/" class="read-more">Read more&nbsp;&#183;<span class="reading-time">
+      <a href="/azure-portal-tips-tricks-17-scaling-website-web-app/" class="read-more">
+        <span class="reading-time">
   
-  2 min read
+  1 min read
 </span>
-</a>
+
+      </a>
     </article>
   
     <article class="post">
 
-      <h1><a href="/qcon-conferences-real-experts-experience-exchange/">QCon conferences - real experts experience exchange</a></h1>
+      <h1><a href="/azure-portal-tips-tricks-16-deploying-website-web-app-with-github/">Azure Portal Tips & Tricks - 16. Deploying website (web app) with github</a></h1>
 
-      <div class="entry">
-        <p><img class="aligncenter size-full wp-image-19578" src="/assets/2018/07/qcon-beijing-speakers.jpg" alt="QCon Beijing - speakers" width="900" height="246" /></p>
-<p>Earlier this year I attended <a href="https://2018.qconbeijing.com">QCon Beijing</a> and <a href="https://qconsp.com/">QCon Sao Paulo</a> conferences. I really like QCon, because there is no marketing, just real experts exchange of experience. After my first QCon (<a href="https://jj09.net/qcon-shanghai/">Shanghai in 2016</a>) I was very excited to come back this year!</p>
-<h3>QCon Beijing</h3>
-<h4>Cognitive Search</h4>
-<p>I delivered talk about <a href="https://2018.qconbeijing.com/presentation/451">Building web apps with Cloud and AI</a>. I showed how to build intelligent web apps with Azure Search and Cognitive Services (Azure Machine Learning APIs). We call this approach Cognitive Search. In my demo I showcased how you can determine which crypto currencies to buy using sentiment analysis on tweets. I streamed tweets to Event Hub, which triggers Azure Function that calls Text Analytics API to calculate sentiment of tweet. I store tweets and its sentiments in SQL Database. I also created Azure Search index to be able to effectively search through tweets. This index is being syncronized with SQL DB through <a href="https://docs.microsoft.com/en-us/azure/search/search-howto-connecting-azure-sql-database-to-azure-search-using-indexers#sql-integrated-change-tracking-policy">integrated change tracking</a>, and <a href="https://docs.microsoft.com/en-us/azure/search/search-indexer-overview">Azure Search indexer</a> that runs on schedule.</p>
-<p><img class="aligncenter size-full wp-image-19606" src="/assets/2018/07/cognitive_search_architecture.png" alt="Cognitive Search architecture" width="600" height="370" /></p>
-<p>I built UI using <a href="https://github.com/jj09/AzSearch.js">AzSearch.js</a> (UI generation tool for Azure Search indexes), ASP.NET Core and TypeScript (BTW: there is a lot of cool stuff in <a href="https://www.youtube.com/watch?v=hDACN-BGvI8">TypeScript</a> these days!).</p>
-<p><img class="aligncenter size-full wp-image-19636" src="/assets/2018/07/CryptoSearchUI.png" alt="Crypto Search UI" width="1280" height="682" /></p>
-<p>In addition to search interface I also created aggregation chart comparing sentiments between different cryptos:</p>
-<p><img class="aligncenter size-full wp-image-19634" src="/assets/2018/07/CryptoCharts.png" alt="crypto charts" width="1280" height="590" /></p>
-<p>Source code is on github: <a href="http://github.com/jj09/crypto-search">crypto-search</a>.</p>
-<p>Video from my talk:</p>
-<div class="aligncenter" style="margin: 20px;"><iframe src="https://www.youtube.com/embed/Gzwq6JC6qwY?ecver=1" width="640" height="360" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div>
-<p>My talk was very well received. Attendees were assessing talks with green (great talk), yellow (ok talk) and red (bad talk) cards. I got <b>117 green</b>, <b>9 yellows</b> and <b>0 reds</b>.</p>
-<h4>Conference</h4>
-<p>I had a great opportunity to meet a lot of engineers and architects from leading tech companies from around the World.</p>
-<p><a href="https://twitter.com/madstorgersen">Mads Torgersen</a> (the architect of C# language) shared future plans for C#. It was surprising for me how few people attended his talk. <a href="https://twitter.com/Miaomipao">Sisie Xia</a> and <a href="https://www.linkedin.com/in/ccoleman/">Chris Coleman</a> from LinkedIn delivered a great talk about facing challenge of growth, and how they tackle it using their in-house tool <a href="https://engineering.linkedin.com/blog/2017/02/redliner--how-linkedin-determines-the-capacity-limits-of-its-ser">Redliner</a>. <a href="https://github.com/juliusv">Julius Volz</a> shared insights about <a href="https://prometheus.io/">Prometheus</a> monitoring system.</p>
-<p>Majority of talks were in Chinese. I went to <a href="https://2018.qconbeijing.com/presentation/360">Peng Xing</a>'s talk about how they develop Progressive Web Apps at Baidu. I was able to gather 60% of content, but got the essence by talking to him directly. I spent most of my time talking to people in the hallways. It was very eye opening to meet engineers from Chinese cloud giants. China cloud market is dominated by <a href="https://www.alibabacloud.com">Alibaba Cloud (AliCloud)</a>, <a href="https://www.baidu.com">Baidu</a> and <a href="https://intl.cloud.tencent.com">Tencent</a>. Azure and AWS have small market share. Google does not exists in China at all. Alibaba (largest online retailer in China) has even <a href="http://www.scmp.com/tech/enterprises/article/2114965/alibaba-says-it-track-overtake-amazon-worlds-top-cloud-computing">ambitions to overtake AWS</a> in near future. It is worth to notice that Alibaba is Chinese equivalent of Amazon. At the same time people consider Baidu being Chinese Google, and Tencent (who owns WeChat) to be like Facebook. I had an opportunity to chat with <a href="https://2018.qconbeijing.com/presentation/368">Lu</a> from Alibaba Cloud and <a href="https://2018.qconbeijing.com/presentation/440">Wang Yao</a> (Head of IaaS at Baidu). After talking to them, and other engineers I would describe both companies' stack in 3 Words: MacBook, Java and Go. This might be ignorant generalization, but almost every other engineer from big 3 (AliCloud, Baidu, Tencent) that I talked to was either writing code in Java or golang (using Mac of course). I also learned about Alibaba's Search as a Service: <a href="https://m.aliyun.com/doc/product/29102.html">OpenSearch</a>. Something to keep eye on when they will be expanding to USA and Europe market.</p>
-<p>The most popular track was of course Blockchain. Room was overflowed for the entire day:</p>
-<p><img class="aligncenter size-full wp-image-19610" src="/assets/2018/07/qcon_beijing_blockchain.png" alt="QCon Beijing - blockchain track" width="550" height="451" /></p>
-<h4>China Tech</h4>
-<p>Every time when I visit China I am impressed by their progress. Highways superior to US interstates, fast trains between all major cities, and now - mobile payments adoption everywhere. Today, in China, most people use WeChat or AliPay. Sometimes cashier can get mad at you if you want to pay cash or credit card, because you cause inconvenience. Scanning QR code is 10x faster! You can even tip a waiter with your mobile phone!</p>
-<p><img class="aligncenter size-full wp-image-19597" src="/assets/2018/07/tippinginchina.gif" alt="Tipping in China" width="480" height="480" /></p>
-<p>Last year in Seattle we had <a href="https://www.geekwire.com/2017/hello-yellow-bikes-testing-ofo-third-bike-sharing-service-hit-seattles-streets/">three bike-sharing companies</a>, and everybody here thinks that we are at the edge of innovation. By the end of 2017 Beijing had <a href="http://money.cnn.com/2017/12/29/investing/china-bike-sharing-boom-bust">60 bike-sharing companies</a>. Many of them started in 2016. During my visit I learned that <a href="https://gineersnow.com/leadership/chinese-government-dominated-scientists-engineers">China have engineers dominated government</a>. Maybe this explains their progress?</p>
-<p>If you are going to China, it is useful to have these 3 apps:<br />
-1. <a href="https://wechat.com">WeChat</a> - Chinese facebook, for communication with other Chinese people, and exchanging contacts<br />
-2. <a href="www.didichuxing.com">DiDi</a> - Chinese Uber<br />
-3. <a href="https://intl.alipay.com/">AliPay</a> - for mobile payments (currently WeChat payments requires Chinese ID and account in Chinese Bank)</p>
-<p>It was also great to meet China division of Cognitive Services team!</p>
-<p><img class="aligncenter size-full wp-image-19622" src="/assets/2018/07/CognitiveServices-China.png" alt="Cognitive Services - China team" width="800" height="466" /></p>
-<p>Trip to China inspired me to read a book comparing Chinese and Western culture in the World of innovation and progress:</p>
-<p><a href="https://amzn.to/2tOQiGi"><img class="aligncenter size-full wp-image-19628" src="/assets/2018/07/FromGreatWallToWallStreet.jpg" alt="From the Great Wall to Wall Street" width="343" height="499" /></a></p>
-<p>There is a lot of things that these two Worlds can learn from each other.</p>
-<h3>QCon Sao Paulo</h3>
-<h4>Cognitive Search</h4>
-<p>Two days before my talk in Brazil, we officially announced <a href="https://jj09.net/cognitive-search-azure-search-with-ai/">Cognitive Search</a> built in into Azure Search. You do not have to create Cognitive Service anymore. You do not have to write code that orchestrate processing data, and calling API. We do it for you. All what you have to do is to check the checkbox. More details <a href="https://jj09.net/cognitive-search-azure-search-with-ai/">here</a>.</p>
-<p><img class="aligncenter size-full wp-image-19560" src="/assets/2018/07/grok-overview.png" alt="Cognitive Search" width="721" height="355" /></p>
-<p>I extended my demo of crypto analysis based on tweets by adding sentiment analysis on news articles. A while ago we put <a href="https://newstimeline.azurewebsites.net/">news on Azure Search index</a>. We filtered out news related to cryptos, and put it on Azure Blob storage. We also improved our <a href="https://channel9.msdn.com/Shows/AI-Show/Using-Cognitive-Search-to-Understand-the-JFK-Documents">JFK files demo</a>, and now you can deploy it by yourself by following instructions in <a href="https://github.com/Microsoft/AzureSearch_JFK_Files">this github repo</a>.</p>
-<p>Video from my talk:</p>
-<p><iframe width="640" height="360" src="https://www.youtube.com/embed/9hYxHHIJ_Kk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></p>
-<p>Usually during my talk I ask if somebody ever deployed ElasticSearch and how long did it take. In China one guy said it was ~2 weeks. In Brazil there was one guy who said: 6 months(!) :) That's why you don't want this to be your problem. Azure Search takes care of deployment, availability and upgrades for you.</p>
-<p>My talk was pretty well received in Brazil as well. I got <b>148 green</b>, <b>15 yellow</b> and <b>0 red</b> cards.</p>
-<h4>Conference</h4>
-<p>QCon Sao Paulo had very diverse mix of experts from all around the World. Starting with <a href="https://twitter.com/aaronontheweb">Aaron Stannard</a> (co-founder of <a href="https://getakka.net/">AKKA.NET</a>), <a href="https://twitter.com/nikomatsakis">Nicholas Matsakis</a> (from <a href="https://www.rust-lang.org">Rust</a> core team), and <a href="https://twitter.com/kumpera">Rodrigo Kumpera</a> (architect and top contributor of <a href="https://www.mono-project.com/">mono</a> project), through <a href="https://twitter.com/texasmichelle">Michelle Casbon</a> (now Engineer in Google Cloud Platform focused on machine learning and big data tools), <a href="https://twitter.com/BenLesh">Ben Lesh</a> (RxJS Lead at Google), and <a href="https://qconsp.com/sp2018/speaker/martin-spier">Martin Spier</a> (performance engineer at Netflix) to <a href="https://twitter.com/soupsranjan">Soups Ranjan</a> (Director of Data Science at Coinbase*), <a href="https://twitter.com/amcasari">Amanda Casari</a> (Data Scientist at SAP Concur), and <a href="https://github.com/piperniehaus">Piper Niehaus</a> (Elm lang passionate).</p>
-<p>The most interesting thing I learned at QCon Sao Paulo was how different companies struggle with monitoring, telemetry and system malfunction detection. They all have very sophisticated automation, but it is still not enough in today's World complexity. As systems we build have more, and more complex architecture, we need to build even better monitoring software to maintain them.</p>
-<p>In Azure Search we are using <a href="http://www.odata.org/">OData</a> standard. However, recently <a href="https://graphql.org/">GraphQL</a> is gaining popularity. <a href="https://twitter.com/dmcghan">Dan McGhan</a> shared this article about comparing GraphQL and OData: <a href="https://www.progress.com/blogs/rest-api-industry-debate-odata-vs-graphql-vs-ords">REST API Industry Debate: OData vs GraphQL vs ORDS</a>. Interesting read!</p>
-<h4>Brazil</h4>
-<p>May is almost winter in Brazil, but it's also the best time to visit. Not too hot, not too cold. Perfect weather for enjoying your time!</p>
-<p>I like that every bar and restaurant in Brazil have TV on soccer channel :) As a long standing fan of Brazil national football team (since <a href="https://www.youtube.com/watch?v=y-P8owvfsOs">Ronaldo Luiz Nazario de Lima</a> times) I enjoyed it a lot!</p>
-<p>Sao Paulo, the largest city in Brazil (21 million people) and financial center of the country, is also the largest tech-hub in south America. Most of tech-companies are there (Microsoft, Google, Amazon).</p>
-<p>If you ever go to Brazil, remember to visit <a href="https://en.wikipedia.org/wiki/Sugarloaf_Mountain">Sugarloaf</a> to watch the sunset and after the sunset view :)</p>
-<p><img class="aligncenter size-full wp-image-19616" src="/assets/2018/07/sugarlof.png" alt="View from Sugarloaf after night" width="800" height="374" /></p>
-<h3>Summary</h3>
-<p>Speaking at QCons and connecting with engineers from different backgrounds is very valuable experience. Being able to learn about other cultures is a plus as well. Sharing with other work that you do everyday can also give you different perspective, and notice things that you would never think about.</p>
-<p>If you want to learn more about Azure Search check out our <a href="https://docs.microsoft.com/en-us/azure/search/search-get-started-portal">getting started docs</a>. To create intelligent search pipelines check out my <a href="https://jj09.net/cognitive-search-azure-search-with-ai">Cognitive Search</a> blog post. For more details we have <a href="https://docs.microsoft.com/en-us/azure/search/cognitive-search-quickstart-blob">quickstart</a> and more comprehensive <a href="https://docs.microsoft.com/en-us/azure/search/cognitive-search-tutorial-blob">API overview</a>.</p>
-<p>Questions? Find me on <a href="https://twitter.com/JakubJedryszek">twitter</a>!</p>
-<p><em>*Soups did not tell me what is the next coin coming to CoinBase :(</em></p>
+      <a href="/azure-portal-tips-tricks-16-deploying-website-web-app-with-github/" class="read-more">
+        <span class="reading-time">
+  
+  1 min read
+</span>
 
-      </div>
+      </a>
+    </article>
+  
+    <article class="post">
 
-      <a href="/qcon-conferences-real-experts-experience-exchange/" class="read-more">Read more&nbsp;&#183;<span class="reading-time">
+      <h1><a href="/azure-portal-tips-tricks-15-deploying-website-with-git/">Azure Portal Tips & Tricks - 15. Deploying website (web app) with git</a></h1>
+
+      <a href="/azure-portal-tips-tricks-15-deploying-website-with-git/" class="read-more">
+        <span class="reading-time">
+  
+  1 min read
+</span>
+
+      </a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/azure-portal-tips-tricks-14-creating-website/">Azure Portal Tips & Tricks - 14. Creating website (web app)</a></h1>
+
+      <a href="/azure-portal-tips-tricks-14-creating-website/" class="read-more">
+        <span class="reading-time">
+  
+  1 min read
+</span>
+
+      </a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/open-source-at-microsoft-and-beyond/">Open Source at Microsoft and Beyond</a></h1>
+
+      <a href="/open-source-at-microsoft-and-beyond/" class="read-more">
+        <span class="reading-time">
+  
+  2 min read
+</span>
+
+      </a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/azure-portal-tips-tricks-13-customizing-grids/">Azure Portal Tips & Tricks - 13. Customizing Grids</a></h1>
+
+      <a href="/azure-portal-tips-tricks-13-customizing-grids/" class="read-more">
+        <span class="reading-time">
+  
+  1 min read
+</span>
+
+      </a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/azure-portal-tips-tricks-12-adding-custom-html-to-dashboard-with-markdown-control/">Azure Portal Tips & Tricks - 12. Adding custom HTML to dashboard with Markdown control</a></h1>
+
+      <a href="/azure-portal-tips-tricks-12-adding-custom-html-to-dashboard-with-markdown-control/" class="read-more">
+        <span class="reading-time">
+  
+  1 min read
+</span>
+
+      </a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/azure-portal-tips-tricks-11-grouping-resources-with-tags/">Azure Portal Tips & Tricks - 11. Grouping resources with tags</a></h1>
+
+      <a href="/azure-portal-tips-tricks-11-grouping-resources-with-tags/" class="read-more">
+        <span class="reading-time">
+  
+  1 min read
+</span>
+
+      </a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/azure-portal-tips-tricks-10-customizing-dashboard-with-tile-gallery/">Azure Portal Tips & Tricks - 10. Customizing dashboard with tile gallery</a></h1>
+
+      <a href="/azure-portal-tips-tricks-10-customizing-dashboard-with-tile-gallery/" class="read-more">
+        <span class="reading-time">
+  
+  1 min read
+</span>
+
+      </a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/azure-portal-tips-tricks-09-managing-dashboards/">Azure Portal Tips & Tricks - 09. Managing dashboards</a></h1>
+
+      <a href="/azure-portal-tips-tricks-09-managing-dashboards/" class="read-more">
+        <span class="reading-time">
+  
+  1 min read
+</span>
+
+      </a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/getting-started-with-xamarin-in-2016/">Getting started with Xamarin in 2016</a></h1>
+
+      <a href="/getting-started-with-xamarin-in-2016/" class="read-more">
+        <span class="reading-time">
   
   8 min read
 </span>
-</a>
+
+      </a>
     </article>
   
     <article class="post">
 
-      <h1><a href="/wrocsharp-developer-conference-worth-attending/">Wroc# - developer conference worth attending</a></h1>
+      <h1><a href="/azure-portal-tips-tricks-08-finding-things/">Azure Portal Tips & Tricks - 08. Finding things</a></h1>
 
-      <div class="entry">
-        <p><img class="aligncenter size-full wp-image-19591" src="/assets/2018/06/wrocsharp_audience.png" alt="Wroc# - audience" width="800" height="355" /></p>
-<p>Earlier this year I had a pleasure to speak at <a href="https://www.wrocsharp.com/">Wroc#</a> conference in Poland. It was very well organized event that was almost free for attendees. The only cost was required donation to charity: PLN 150 (~$50).</p>
-<p>There was only 1 track with awesome <a href="https://www.wrocsharp.com/">speakers lineup</a>! I finally had an opportunity to meet Roy Osherove in person. I learned about unit testing from his book <a href="https://amzn.to/2HVQVX4">The Art of Unit testing</a>. I'm currently reading his another book: <a href="https://amzn.to/2kEPVsY">Elastic Leadership</a> - a lot of useful tips not only for team leaders! Among other speakers there were <a href="https://twitter.com/Scott_Helme">Scott Helme</a> (Security Researcher) that uncovered some things about web security I have never heard about! Zan Kavtaskin gave great overview about building apps on Azure Cloud, <a href="https://twitter.com/henriksen">Glenn Henriksen</a> showed how on server-less computing works in Real-World, and <a href="https://twitter.com/aahoogendoorn">Sander Hoogendoorn</a> together with <a href="https://twitter.com/kimvanwilgen">Kim van Wilgen</a> shared their perspective on over-engineering development processes.</p>
-<p>The conference venue was great. I would say it was the best setup I've even seen! There was one big room, divided into 3 parts: stage, chairs for audience and Mix&amp;Mingle zone (AKA M&amp;M). You could talk (in the Mix&amp;Mingle zone), and still be able to follow presentations. Speakers' room was on the upper floor, but it was more like a balcony, from where you could listen to talks and overlook entire venue.</p>
-<p>I delivered talk about building mobile apps with Xamarin. I shared what we have learned while building Azure Mobile App, which started as hackathon project, and later turned into official Microsoft product. The app got <a href="https://jj09.net/under-the-hood-of-the-azure-mobile-app/">announced on the stage of //build conference last year</a>. Along the way we learned how to properly architect Xamarin project for multiple platforms, where to do not take shortcuts, does and don'ts for CI/CD and testing. </p>
-<p><center><iframe src="https://player.vimeo.com/video/289823520" width="640" height="360" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe></center></p>
-<p>There was a guy who put a nice summary of my talk:</p>
-<p><a href="https://twitter.com/WrocSharp/status/972143094710833152"><img class="aligncenter size-full wp-image-19587" src="/assets/2018/06/wrocsharp_xamarinsummary.jpg" alt="Wroc# - building mobile apps with Xamarin" width="800" height="593" /></a></p>
-<p>At the end of the conference there was speaker's panel where we were answering and discussing questions from the audience. We had good discussion about different aspects of software development from estimating project cost to writing unit tests. Almost every speaker had different background, and this made it even more interesting!</p>
-<p><center><iframe src="https://player.vimeo.com/video/289824367" width="640" height="360" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe></center></p>
-<p><img class="aligncenter size-full wp-image-19584" src="/assets/2018/06/wrocsharp_speakerspanel.png" alt="Wroc# - speakers panel" width="800" height="449" /></p>
-<p>If you haven't been to Poland before: Wroclaw is an amazing city, and many of my foreign friends says it's their favorite city in Poland. Wroclaw is often refereed as <a href="https://www.google.com/search?q=wroclove&amp;tbm=isch">WrocLove</a> ;)</p>
-<p><img class="aligncenter size-full wp-image-19589" src="/assets/2018/06/wrocsharp_ilovewroclove.png" alt="WrocLove" width="800" height="295" /></p>
-<p>Last, but not least: thank you for everyone who made this conference happen!</p>
-<p><img class="aligncenter size-full wp-image-19585" src="/assets/2018/06/wrocsharp_organizers.png" alt="Wroc# - organizers" width="800" height="273" /></p>
-
-      </div>
-
-      <a href="/wrocsharp-developer-conference-worth-attending/" class="read-more">Read more&nbsp;&#183;<span class="reading-time">
+      <a href="/azure-portal-tips-tricks-08-finding-things/" class="read-more">
+        <span class="reading-time">
   
-  3 min read
+  1 min read
 </span>
-</a>
+
+      </a>
     </article>
   
     <article class="post">
 
-      <h1><a href="/cognitive-search-azure-search-with-ai/">Cognitive Search - Azure Search with AI</a></h1>
+      <h1><a href="/azure-portal-tips-tricks-07-working-with-journeys/">Azure Portal Tips & Tricks - 07. Working with journeys</a></h1>
 
-      <div class="entry">
-        <p><img class="aligncenter size-full wp-image-19560" src="/assets/2018/05/grok-overview.png" alt="Cognitive Search" width="721" height="355" /></p>
-<p>Today, at <a href="https://developer.microsoft.com/en-us/events/build">Microsoft //build conference</a> we announced Cognitive Search. You may wonder what is Cognitive Search. To put it as simple as possible: it’s Azure Search powered by <a href="https://azure.microsoft.com/en-us/services/cognitive-services/">Cognitive Services</a> (Azure Machine Learning APIs). You remember when you wanted to run some intelligence over your data with <a href="https://azure.microsoft.com/en-us/services/cognitive-services/">Cognitive Services</a>? You had to handle creating, e.g., <a href="https://azure.microsoft.com/en-us/services/cognitive-services/text-analytics/">Text Analytics API</a>, then writing code that would take your data from database, issue request to API (remember to use proper key!), serialize, deserialize data and put result in your database?</p>
-<p>Now, with Cognitive Search, you can achieve that by checking one checkbox. You just need to pick a field on which you want to run analytics, and which cognitive services or skills (1 cognitive service usually contain multiple skills) to run. As for now we support 6 skills:</p>
-<ol>
-<li>Key phrases</li>
-<li>People</li>
-<li>Places</li>
-<li>Organizations</li>
-<li>Language</li>
-<li>OCR (Optical Character Recognition)</li>
-</ol>
-<p>We output results directly to your search index.</p>
-<h3>Creating Intelligent Search Index</h3>
-<p>To take advantage of Cognitive Search you need to create Azure Search service in South-Central US or in West Europe. More regions coming soon!</p>
-<p>To create search index powered by cognitive services you need to use ‘import data’ flow. Go to your Azure Search Service and click on ‘Import data’ command:</p>
-<p><img class="aligncenter size-full wp-image-19547" src="/assets/2018/05/grok-step1-e1525702355364.png" alt="Cognitive Search - step 1" width="640" height="295" /></p>
-<p>Then pick your data source (MSSQL, CosmosDB, blob storage etc.). I will choose sample data source that contains real estate data:</p>
-<p><img class="aligncenter size-full wp-image-19548" src="/assets/2018/05/grok-step2-e1525702491696.png" alt="Cognitive Search - import data" width="640" height="293" /></p>
-<p>Now, you need to pick a field on which you want to run analytics. I will choose description. You also need to choose which cognitive services (skills) you want to run, and provide output field names (fields to which we will output cognitive services analysis result):</p>
-<p><img class="aligncenter wp-image-19549 size-full" src="/assets/2018/05/grok-step3-e1525702970533.png" alt="Cognitive Search - skillset definition" width="640" height="355" /></p>
-<p>In the next step you need to configure your index. Usually you want to make fields retrievable, searchable, and filterable. You may also consider making them facetable if you want to aggregate results. This is my sample configuration:</p>
-<p><img class="aligncenter size-full wp-image-19550" src="/assets/2018/05/grok-step4-e1525703032502.png" alt="Cognitive search - define index" width="641" height="292" /></p>
-<p>In the last step you just need to configure indexer – a tool that synchronizes your data source with your search index. In my case I will choose to do synchronization only once, as my sample data source will never change.</p>
-<p><img class="aligncenter size-full wp-image-19551" src="/assets/2018/05/grok-step5-e1525703179232.png" alt="Cognitive Search - create indexer" width="640" height="290" /></p>
-<p>After indexer finish you can browse your data, and cognitive services results in search explorer.</p>
-<p><img class="aligncenter size-full wp-image-19552" src="/assets/2018/05/grok-browse-e1525703442307.png" alt="Cognitive Search - browse" width="640" height="291" /></p>
-<p>You can also generate more usable search UI for your data with AzSearch.js.</p>
-<h3>Generating UI to search data with AzSearch.js</h3>
-<p>If you don’t like browsing your data with search explorer in Azure Portal that returns raw JSON, you can use <a href="https://github.com/jj09/AzSearch.js">AzSearch.js</a> to quickly generate UI over your data.</p>
-<p>The easiest way to get started is to use <a href="http://azsearchstore.azurewebsites.net/azsearchgenerator/index.html">AzSearch.js generator</a>. Before you start, enable CORS on your index:</p>
-<p><img class="aligncenter size-full wp-image-19554" src="/assets/2018/05/grok-cors-e1525703959825.png" alt="Cognitive search - CORS" width="641" height="292" /></p>
-<p>Once you get your <a href="https://docs.microsoft.com/en-us/azure/search/search-query-rest-api#identify-your-azure-search-services-query-api-key">query key</a> and <a href="https://docs.microsoft.com/en-us/rest/api/searchservice/get-index">index definition JSON</a> paste it into <a href="http://azsearchstore.azurewebsites.net/azsearchgenerator/index.html">generator</a> together with your search service name, and click 'Generate'. An html page with simple search interface will be created.</p>
-<p><img class="aligncenter size-full wp-image-19555" src="/assets/2018/05/grok-azsearchjs-e1525707951525.png" alt="Cognitive Search - AzSearch.js" width="639" height="294" /></p>
-<p>This site is super easy to customize. Providing html template for results change JSON into nicely formatted search results:</p>
-<p><img class="aligncenter size-full wp-image-19557" src="/assets/2018/05/grok-azsearch-pretty-e1525705132550.png" alt="Cognitive search - AzSearch.js pretty" width="640" height="292" /></p>
-<p>All what I did was to create HTML template:</p>
-
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">const</span> <span class="nx">resultTemplate</span> <span class="o">=</span>
-    <span class="s2">`&lt;div class="col-xs-12 col-sm-5 col-md-3 result_img"&gt;
-        &lt;img class="img-responsive result_img" src="{{ site.baseurl }}/assets/2018/05/{{thumbnail}}" alt="image not found" /&gt;
-    &lt;/div&gt;
-    &lt;div class="col-xs-12 col-sm-7 col-md-9"&gt;
-        &lt;h4&gt;{{displayText}}&lt;/h4&gt;
-        &lt;div class="resultDescription"&gt;
-            {{summary}}
-        &lt;/div&gt;
-        &lt;div&gt;
-            sqft: &lt;b&gt;{{sqft}}&lt;/b&gt;
-        &lt;/div&gt;
-        &lt;div&gt;
-            beds: &lt;b&gt;{{beds}}&lt;/b&gt;
-        &lt;/div&gt;
-        &lt;div&gt;
-            baths: &lt;b&gt;{{baths}}&lt;/b&gt;
-        &lt;/div&gt;
-        &lt;div&gt;
-            key phrases: &lt;b&gt;{{keyPhrases}}&lt;/b&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;`</span><span class="p">;</span>
-    </code></pre></figure>
-
-<p>And add it to already present <code>addResults</code> function call:</p>
-
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">automagic</span><span class="p">.</span><span class="nx">addResults</span><span class="p">(</span><span class="dl">"</span><span class="s2">results</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">count</span><span class="p">:</span> <span class="kc">true</span> <span class="p">},</span> <span class="nx">resultTemplate</span><span class="p">);</span></code></pre></figure>
-
-<p>I also created <code>resultsProcessor</code> to do some custom transformations. I.e., join few fields into one, truncate description to 200 characters, and convert key phrases from array into string separated by commas:</p>
-
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">resultsProcessor</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">results</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">results</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">){</span>
-        <span class="nx">result</span><span class="p">.</span><span class="nx">displayText</span> <span class="o">=</span> <span class="nx">result</span><span class="p">.</span><span class="nx">number</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">result</span><span class="p">.</span><span class="nx">street</span><span class="o">+</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span> <span class="o">+</span><span class="nx">result</span><span class="p">.</span><span class="nx">city</span><span class="o">+</span> <span class="dl">"</span><span class="s2">, </span><span class="dl">"</span> <span class="o">+</span><span class="nx">result</span><span class="p">.</span><span class="nx">region</span><span class="o">+</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span> <span class="o">+</span><span class="nx">result</span><span class="p">.</span><span class="nx">countryCode</span><span class="p">;</span>
-        <span class="kd">var</span> <span class="nx">summary</span> <span class="o">=</span> <span class="nx">result</span><span class="p">.</span><span class="nx">description</span><span class="p">;</span>
-        <span class="nx">result</span><span class="p">.</span><span class="nx">summary</span> <span class="o">=</span> <span class="nx">summary</span><span class="p">.</span><span class="nx">length</span> <span class="o">&amp;</span><span class="nx">lt</span><span class="p">;</span> <span class="mi">200</span> <span class="p">?</span> <span class="nx">summary</span> <span class="p">:</span> <span class="nx">summary</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">...</span><span class="dl">"</span><span class="p">;</span>
-        <span class="nx">result</span><span class="p">.</span><span class="nx">keyPhrases</span> <span class="o">=</span> <span class="nx">result</span><span class="p">.</span><span class="nx">keyphrases</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="dl">"</span><span class="s2">, </span><span class="dl">"</span><span class="p">);</span>
-        <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
-    <span class="p">});</span>
-<span class="p">};</span>
-<span class="nx">automagic</span><span class="p">.</span><span class="nx">store</span><span class="p">.</span><span class="nx">setResultsProcessor</span><span class="p">(</span><span class="nx">resultsProcessor</span><span class="p">);</span></code></pre></figure>
-
-<p>You can do similar customization with suggestions. You can also add highlights to your results and much more. Everything is described in <a href="https://github.com/jj09/AzSearch.js/blob/master/README.md">AzSearch.js README</a>. We also have <a href="https://github.com/jj09/AzSearch.jsTypeScriptStarter">starter app written with TypeScript and React</a> based on sample real estate data, which takes advantage of more advanced features of <a href="https://github.com/jj09/AzSearch.js">AzSearch.js</a>. If you have any questions or suggestions regarding AzSearch.js let me know on <a href="https://twitter.com/JakubJedryszek">Twitter</a>!</p>
-<h3>Summary</h3>
-<p>Cognitive Search takes analyzing data with Azure Search to the next level. It takes away the burden of writing your own infrastructure for running AI-based analysis. For more advanced analysis, including OCR on your images, check out <a href="https://docs.microsoft.com/en-us/azure/search/cognitive-search-quickstart-blob">our docs</a>. I am super excited to see it in action, and for the next improvements that we are working on. Let us know what do you think!</p>
-<p><em>*This blog post was written in Boeing 787 during my flight from Toronto to São Paulo, when I was on my way to <a href="https://qconsp.com/sp2018/presentation/building-web-apps-cloud-and-ai">QCon conference</a>.</em></p>
-
-      </div>
-
-      <a href="/cognitive-search-azure-search-with-ai/" class="read-more">Read more&nbsp;&#183;<span class="reading-time">
+      <a href="/azure-portal-tips-tricks-07-working-with-journeys/" class="read-more">
+        <span class="reading-time">
   
-  5 min read
+  1 min read
 </span>
-</a>
+
+      </a>
     </article>
   
     <article class="post">
 
-      <h1><a href="/do-you-trust-password-managers/">Do you Trust password managers?</a></h1>
+      <h1><a href="/azure-portal-tips-tricks-06-organizing-blades/">Azure Portal Tips & Tricks - 06. Organizing Blades</a></h1>
 
-      <div class="entry">
-        <p>Password managers are very popular these days. There are some that store your passwords locally (e.g., <a href="https://keepass.info/">KeePass</a>), but vast majority store your passwords online. Two, most popular ones are <a href="https://1password.com/">1password</a> and <a href="https://www.lastpass.com/">LastPass</a>.</p>
-<p>All online password managers <a href="https://1password.com/security/">claim they are secure</a>. But do you know that for sure? Additionally you have no idea what code changes developers working on them are making everyday. You have no idea whether that 128-bit identifier generated locally is actually unique, and cannot be sniffed by spyware on your machine.</p>
-<p>Is storing all password in 1 place, behind 1 password better than reusing passwords on multiple sites? When website it being hacked, they usually leak encrypted password (most of the time with salt). If somebody get access to all your passwords though, you are in BIG TROUBLE. I don't feel I need to even explain what can happen. It didn't happen to the most popular managers yet, but...</p>
-<p>I believe password managers are useful, but should not store most sensitive passwords there. Including your e-mail, bank account, etc. Remember these, or store them on external flash drive. You can also use KeePass to encrypt them. Additionally, you should not store, not-generated passwords. If these get compromised attacker gets some idea what your other passwords can be.</p>
-<p>What's your toughts? Are you using password managers?</p>
+      <a href="/azure-portal-tips-tricks-06-organizing-blades/" class="read-more">
+        <span class="reading-time">
+  
+  1 min read
+</span>
 
-      </div>
+      </a>
+    </article>
+  
+    <article class="post">
 
-      <a href="/do-you-trust-password-managers/" class="read-more">Read more&nbsp;&#183;<span class="reading-time">
+      <h1><a href="/one-hacker-way-by-erik-meijer/">One Hacker Way by Erik Meijer</a></h1>
+
+      <a href="/one-hacker-way-by-erik-meijer/" class="read-more">
+        <span class="reading-time">
+  
+  1 min read
+</span>
+
+      </a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/azure-portal-tips-tricks-05-customizing-blades/">Azure Portal Tips & Tricks - 05. Customizing Blades</a></h1>
+
+      <a href="/azure-portal-tips-tricks-05-customizing-blades/" class="read-more">
+        <span class="reading-time">
+  
+  1 min read
+</span>
+
+      </a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/the-expert-beginner/">The Expert Beginner</a></h1>
+
+      <a href="/the-expert-beginner/" class="read-more">
+        <span class="reading-time">
+  
+  1 min read
+</span>
+
+      </a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/azure-portal-tips-tricks-04-keyboard-shortcuts/">Azure Portal Tips &Tricks - 04. Keyboard Shortcuts</a></h1>
+
+      <a href="/azure-portal-tips-tricks-04-keyboard-shortcuts/" class="read-more">
+        <span class="reading-time">
+  
+  1 min read
+</span>
+
+      </a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/how-to-save-money-on-azure-with-webjobs/">How to save money on Azure with WebJobs</a></h1>
+
+      <a href="/how-to-save-money-on-azure-with-webjobs/" class="read-more">
+        <span class="reading-time">
   
   2 min read
 </span>
-</a>
+
+      </a>
+    </article>
+  
+    <article class="post">
+
+      <h1><a href="/azure-portal-tips-tricks-03-customizing-side-bar/">Azure Portal Tips & Tricks - 03. Customizing Side Bar</a></h1>
+
+      <a href="/azure-portal-tips-tricks-03-customizing-side-bar/" class="read-more">
+        <span class="reading-time">
+  
+  1 min read
+</span>
+
+      </a>
     </article>
   
 
@@ -367,7 +383,7 @@
 
 	
 		    <div class="Pagination-separator"></div>
-		    <a class="Pagination-link" href="/page/40"  aria-label="Go to page 40">40</a>
+		    <a class="Pagination-link" href="/page/10"  aria-label="Go to page 10">10</a>
 		    
 
 		    
@@ -385,7 +401,7 @@
 
     <div class="wrapper-footer">
       <div class="container">
-        <footer class="footer"><div class="social-icons"><a class="social-icon" href="/feed.xml"><i class="fa fa-rss-square fa-2x" title="Feed"></i></a><a class="social-icon" href="https://twitter.com/realJacobJed"><i class="fa fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://github.com/jj09"><i class="fa fa-github-square fa-2x" title="GitHub"></i></a></div><div class="copyright">
+        <footer class="footer"><div class="social-icons"><a class="social-icon" href="/feed.xml"><i class="fa fa-rss-square fa-2x" title="Feed"></i></a><a class="social-icon" href="https://twitter.com/realJacobJed"><i class="fa fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://linkedin.com/in/realjacobjed"><i class="fa fa-linkedin-square fa-2x" title="LinkedIn"></i></a><a class="social-icon" href="https://github.com/jj09"><i class="fa fa-github-square fa-2x" title="GitHub"></i></a></div><div class="copyright">
             
             <p>&copy; 2022 Jacob Jedryszek. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/forever-jekyll/forever-jekyll" rel="nofollow">Forever Jekyll</a>.</p>
             
