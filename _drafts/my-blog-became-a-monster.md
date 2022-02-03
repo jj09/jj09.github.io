@@ -3,6 +3,7 @@ I started this blog in 2013. My first year in the USA, while I was in Grad Schoo
 I decided to use WordPress for my blog as it was a to-go platform for beginners back then.
 
 I don’t remember where I initially hosted it…but I moved it to Azure App Service in 2014(?) when I started working for Microsoft. Since then I did many improvements:
+* Added Google Analytics
 * Added custom domain: jj09.net
 * Created web job that was performing backup of all files + db
 * Enabled comments with Disqus
@@ -10,7 +11,6 @@ I don’t remember where I initially hosted it…but I moved it to Azure App Ser
 * Added HTTPS with CloudFlare
 * Enabled caching with CloudFlare
 * Added SEO optimization
-* Added Google Analytics
 
 Later on, the web job was not needed anymore as App Service introduced Backup. They also introduced an in-app MySQL database, so I didn’t have to maintain a separate MySQL instance.
 
@@ -36,10 +36,10 @@ It turns out, you don’t need it. With [this guide](https://dev.to/rupeshtiwari
         - I had to wait ~10h for cert to be issued, and to be able to  'Enforce HTTPS' in Github Pages settings
 [x] Add Google Analytics
 [x] migrate comments ([link](https://desiredpersona.com/disqus-comments-jekyll/), [link](https://jj09.disqus.com/admin/install/platforms/universalcode/))
-[ ] prettify (find nicer template?)
 [ ] optimize perf ([Google Page Speed](https://pagespeed.web.dev/))
     [ ] optimize images ([link](https://jetholt.com/automatic-image-optimisation/))
     [ ] have landing page like mfranc and dhh
+    [ ] upgrade template to more performant?
 [ ] configure backup
 
 ### guides

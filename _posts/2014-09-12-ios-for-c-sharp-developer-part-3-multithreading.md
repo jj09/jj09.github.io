@@ -42,7 +42,9 @@ permalink: "/ios-for-c-sharp-developer-part-3-multithreading/"
 <p>The most typical scenario to use multithreading is to maintain responsive UI when we do some resource-consuming computation.</p>
 <h3>C#</h3>
 <p>Let's consider simple button click action in C#:</p>
-<pre class="lang:csharp decode:true">private void Button_Click(object sender, RoutedEventArgs e)
+
+{% highlight csharp %}
+private void Button_Click(object sender, RoutedEventArgs e)
 {
     this.status.Content = "Computing...";
     Compute();
@@ -53,10 +55,14 @@ private void Compute()
 {
     Thread.Sleep(5000);            
 }
-</pre>
+
+{% endhighlight %}
+
 <p>Method <code>Compute()</code> is a CPU-intensive operation (simulated by <code>Sleep()</code> function).</p>
 <p>Above code will block UI during computation. To keep UI responsive, computation has to take place in a separate thread. It can be done easily using <code>async</code>/<code>await</code> keywords:</p>
-<pre class="lang:csharp decode:true">private async void Button_Click(object sender, RoutedEventArgs e)
+
+{% highlight csharp %}
+private async void Button_Click(object sender, RoutedEventArgs e)
 {
     this.status.Content = "Computing...";
     await Compute();
@@ -70,10 +76,14 @@ private async Task Compute()
         Thread.Sleep(5000);
     });
 }
-</pre>
+
+{% endhighlight %}
+
 <h3>iOS</h3>
 <p>This is equivalent (single-threaded) button click handler in iOS:</p>
-<pre class="lang:objc decode:true">- (IBAction)buttonClick:(id)sender
+
+{% highlight csharp %}
+- (IBAction)buttonClick:(id)sender
 {
     self.status.text = @"Computing...";
     [self compute];
@@ -84,9 +94,13 @@ private async Task Compute()
 {
     [NSThread sleepForTimeInterval:5];
 }
-</pre>
+
+{% endhighlight %}
+
 <p>Multithreaded version is a little bit different. In Objective-C, there is no syntax similar to <code>async</code>/<code>await</code>. Thus, status update has to be invoked by background thread explicitly. Additionally, every UI operation (in this case: label text update) has to be done in the main thread. Below code, use <a href="https://developer.apple.com/library/ios/documentation/General/Conceptual/ConcurrencyProgrammingGuide/OperationQueues/OperationQueues.html">Dispatch Queues</a>, which is the easiest and recommended way for multithreading scenarios:</p>
-<pre class="lang:objc decode:true">- (IBAction)buttonClick:(id)sender
+
+{% highlight csharp %}
+- (IBAction)buttonClick:(id)sender
 {
     self.status.text = @"Computing...";
     [self compute];
@@ -102,7 +116,9 @@ private async Task Compute()
         });
     });
 }
-</pre>
+
+{% endhighlight %}
+
 <p>This multithreaded code will look pretty similar in Swift.</p>
 <h3>Summary</h3>
 <p>Invoking background threads is much easier from developer perspective in C#. Code is concise and more readable. Multithreading in Objective-C introduce some overhead, but it is not very hard to handle.</p>

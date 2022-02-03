@@ -37,18 +37,23 @@ permalink: "/ios-c-sharp-developer-part-1-classes-and-creating-objects/"
 <p>First part is about Object-Oriented features. If you are C# developer and you are starting with Objective-C, Object-Oriented terminology might be confusing.</p>
 <h3>Interface</h3>
 <p>In Objective-C, interface is a class declaration (not existing in C#). It is like header file in C++. It has even the same extension: <code>.h</code>. This is sample interface:</p>
-<pre class="lang:objc decode:true ">@interface Example
+
+{% highlight objc %}
+@interface Example
 
 + (void)someStaticMethod;
 
 - (NSInteger)someInstanceMethod:(BOOL)param1 calledWith:(NSInteger)num;
 
 @end
-</pre>
+{% endhighlight %}
+
 <p>Static (class) methods are distinguished by <code>+</code> sign. Instance method starts with <code>-</code> sign. Return types are in brackets. Parameters (brackets and name) are preceded by custom name. In class implementation only parameter name matters.</p>
 <h3>Implementation</h3>
 <p>In addition to interface (equivalent of class declaration), Objective-C classes have also implementation files with <code>.m</code> extension (equivalent of .cpp files in C++). Example implementation for previous interface (class declaration) can look like that:</p>
-<pre class="lang:objc">@implementation Example
+
+{% highlight objc %}
+@implementation Example
 
 + (void)someStaticMethod
 {
@@ -65,22 +70,32 @@ permalink: "/ios-c-sharp-developer-part-1-classes-and-creating-objects/"
 }
 
 @end
-</pre>
+{% endhighlight %}
+
 <h3>Protocols</h3>
 <p>Protocol is equivalent of interface in C#. This is sample protocol definition:</p>
-<pre class="lang:objc">@protocol SampleProtocol
+
+{% highlight objc %}
+@protocol SampleProtocol
 - (void)protocolMethod1;
 - (void)protocolMethod2;
 @end
-</pre>
+{% endhighlight %}
+
 <p>To take advantage of this protocol in some class, it has to be stated in angled brackets, in the interface definition:</p>
-<pre class="lang:objc">@interface Example : NSObject <sampleprotocol>
+
+{% highlight objc %}
+@interface Example : NSObject <sampleprotocol>
 + (void)someStaticMethod;
 - (NSInteger)someInstanceMethod:(BOOL)param1 calledWith:(NSInteger)num;
 @end
-</sampleprotocol></pre>
+</sampleprotocol>
+{% endhighlight %}
+
 <p>Then, its methods have to be implemented in the implementation file:</p>
-<pre class="lang:objc">@implementation Example 
+
+{% highlight objc %}
+@implementation Example 
 
 + (void)someStaticMethod 
 { 
@@ -107,14 +122,17 @@ permalink: "/ios-c-sharp-developer-part-1-classes-and-creating-objects/"
 } 
 
 @end
-</pre>
+{% endhighlight %}
+
 <p>There are two types of methods in protocol:</p>
 <ul>
 <li>required (default)</li>
 <li>optional</li>
 </ul>
 <p>In previous protocol, both methods are required, because it is a default mode. This means, both has to be implemented in the class that use the protocol. In order to make second method optional, keyword <code>@optional</code> has to be used:</p>
-<pre class="lang:objc">@protocol SampleProtocol
+
+{% highlight objc %}
+@protocol SampleProtocol
 
 - (void)protocolMethod1;
 
@@ -122,9 +140,12 @@ permalink: "/ios-c-sharp-developer-part-1-classes-and-creating-objects/"
 - (void)protocolMethod2;
 
 @end
-</pre>
+{% endhighlight %}
+
 <p>All methods declared after <code>@optional</code> keyword are optional. In order to declare required method after that, <code>@required</code> keyword has to be used:</p>
-<pre class="lang:objc">@protocol SampleProtocol
+
+{% highlight objc %}
+@protocol SampleProtocol
 
 - (void)protocolMethod1;  // required method
 
@@ -136,14 +157,23 @@ permalink: "/ios-c-sharp-developer-part-1-classes-and-creating-objects/"
 - (void)protocolMethod4;  // required method
 
 @end
-</pre>
+{% endhighlight %}
+
 <h3>Instantiating objects</h3>
 <p>Creating instance of object has two steps: allocation and initialization. To create instance of <code>Example</code> class defined above, message passing syntax is used:</p>
-<pre class="lang:objc">Example *obj = [[Example alloc] init];</pre>
+
+{% highlight objc %}
+Example *obj = [[Example alloc] init];{% endhighlight %}
+
 <p>Shortcut for above object creation:</p>
-<pre class="lang:objc">Example *obj = [Example new];</pre>
+
+{% highlight objc %}
+Example *obj = [Example new];{% endhighlight %}
+
 <p>When the class has a constructor with parameters, e.g.:</p>
-<pre class="lang:objc">@interface Example : NSObject {
+
+{% highlight objc %}
+@interface Example : NSObject {
   NSInteger *sampleProperty;
 }
 - (id) initWithParam:param;
@@ -159,10 +189,14 @@ permalink: "/ios-c-sharp-developer-part-1-classes-and-creating-objects/"
   }
   return self;
 }
+@end{% endhighlight %}
 
-@end</pre>
 <p>Initialization looks as follows:</p>
-<pre class="lang:objc">Example *obj = [Example initWithParam:25];</pre>
+
+{% highlight objc %}
+Example *obj = [Example initWithParam:25];
+{% endhighlight %}
+
 <h3>Summary</h3>
 <ul>
 <li>Interface - class declaration</li>

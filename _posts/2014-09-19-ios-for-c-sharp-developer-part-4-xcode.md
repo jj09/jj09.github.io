@@ -55,7 +55,11 @@ permalink: "/ios-for-c-sharp-developer-part-4-xcode/"
 <h3>Debugging</h3>
 <p>In order to debug application in VS, you have to run it in debug mode. In Xcode, when you run the app on emulator it is always in debug mode. Thus, you just need to set the break-point (by mouse click on the line number, like in VS, or by ⌘ + \ shortcut) and run the app (⌘ + R). Once break-point is reached you can step over (F6), step into (F7) or step out (F8).</p>
 <p>Very useful during debugging is dumping objects into console with <code>NSLog</code> function:</p>
-<pre class="lang:objc decode:true">NSLog(jsonString);</pre>
+
+{% highlight csharp %}
+NSLog(jsonString);
+{% endhighlight %}
+
 <p>This outputs, e.g., JSON string to the console, which allows you to inspect it.</p>
 <p>To get more flavor of debugging, check <a href="https://developer.apple.com/library/ios/documentation/ToolsLanguages/Conceptual/Xcode_Overview/DebugYourApp/DebugYourApp.html">Apple documentation</a> and <a href="http://www.raywenderlich.com/28289/debugging-ios-apps-in-xcode-4-5">Brian Moakley's blog post</a>.</p>
 <h3>Playgrounds</h3>

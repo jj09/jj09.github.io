@@ -34,22 +34,41 @@ permalink: "/hello-world/"
 <p>My name is Jakub Jedryszek. There are many reasons why I start this blog. One of them is <a href="http://java.dzone.com/articles/ghost-who-codes-how-anonymity">this article</a>. The other one is the willingness to share my thoughts with the World. Thanks to <a href="http://mfranc.com/">Michal Franc</a> for a motivation :)</p>
 <p>I created Hello World in couple of languages using <a href="http://wordpress.org/plugins/crayon-syntax-highlighter/">Crayon Syntax Highlighter</a> (code in C#, Ruby, Python, Java and C) and <a href="http://wordpress.org/plugins/syntaxhighlighter/">SyntaxHighlighter Evolved</a> (code in PHP). Please comment which syntax highlighter are you using and why.</p>
 <p>C#:</p>
-<pre class="theme:vs2012 lang:c# decode:true">Console.WriteLine("Hello (blog) World!");</pre>
+{% highlight csharp %}
+Console.WriteLine("Hello (blog) World!");
+{% endhighlight %}
 <p>Ruby:</p>
-<pre class="toolbar:2 lang:ruby decode:true">puts 'Hello (blog) World!'</pre>
+{% highlight ruby %}
+puts 'Hello (blog) World!'
+{% endhighlight %}
+
 <p>Python:</p>
-<pre class="theme:github toolbar:1 lang:python decode:true">print 'Hello (blog) World!'</pre>
+{% highlight python %}
+print 'Hello (blog) World!'
+{% endhighlight %}
+
 <p>Java:</p>
-<pre class="theme:eclipse lang:java decode:true">System.out.println("Hello (blog) World!");</pre>
+{% highlight java %}
+System.out.println("Hello (blog) World!");
+{% endhighlight %}
+
 <p>C:</p>
-<pre class="theme:twilight lang:c decode:true">main()
+{% highlight c %}
+main()
 {
     printf("Hello (blog) World!");
-}</pre>
+}
+{% endhighlight %}
+
 <p>PHP:</p>
-<p>[php]&lt;?php echo &quot;Hello (blog) World!&quot;; ?&gt;[/php]</p>
+{% highlight php %}
+<?php 
+    echo "Hello (blog) World!"; 
+?>
+{% endhighlight %}
 <p>Assembler (AT&T syntax):</p>
-<pre class="theme:arduino-ide lang:asm toolbar:2 decode:true ">        .section        .rodata
+{% highlight asm %}
+        .section        .rodata
 string:
         .ascii "Hello (blog) World!\n"
 length:
@@ -65,4 +84,5 @@ _start:
         int $0x80               #Call Operating System
         movq %rax, %rbx         #Make program return syscall exit status
         movq $1, %rax           #1=exit
-        int $0x80               #Call System Again</pre>
+        int $0x80               #Call System Again
+{% endhighlight %}
