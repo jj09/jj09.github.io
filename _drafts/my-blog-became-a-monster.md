@@ -28,7 +28,7 @@ It turns out, you don’t need it. With [this guide](https://dev.to/rupeshtiwari
     - readd
     - wait 5h :O
     - remove A record (if you have one)
-[ ] Add Google Analytics
+[x] Add Google Analytics
 [ ] migrate comments ([link](https://desiredpersona.com/disqus-comments-jekyll/)) - need to move domain first
 [ ] prettify (find nicer template?)
 [ ] have landing page like mfranc and dhh
