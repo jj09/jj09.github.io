@@ -36,11 +36,21 @@ It turns out, you don’t need it. With [this guide](https://dev.to/rupeshtiwari
         - I had to wait ~10h for cert to be issued, and to be able to  'Enforce HTTPS' in Github Pages settings
 [x] Add Google Analytics
 [x] migrate comments ([link](https://desiredpersona.com/disqus-comments-jekyll/), [link](https://jj09.disqus.com/admin/install/platforms/universalcode/))
-[ ] optimize perf ([Google Page Speed](https://pagespeed.web.dev/))
+[ ] optimize perf ([Google Page Speed](https://pagespeed.web.dev/report?url=https%3A%2F%2Fjj09.net%2F))
     [ ] optimize images ([link](https://jetholt.com/automatic-image-optimisation/))
     [ ] have landing page like mfranc and dhh
     [ ] upgrade template to more performant?
-[ ] configure backup
+        * https://jekyll-themes.com/developr/ 
+        * https://jekyll-themes.com/project-negya/ (hacker style)
+        * https://jekyll-themes.com/texture/ 
+        * https://jekyll-themes.com/premium/cocoa/ 
+        * https://jekyll-themes.com/premium/avocado/ 
+        * https://jekyll-themes.com/leaf/ 
+        * https://breckyunits.com/
+        * https://Mfranc.com
+        * http://dyszkiewicz.me/ 
+[ ] add buy me a coffee
+[ ] configure backup to Dropbox
 
 ### guides
 
