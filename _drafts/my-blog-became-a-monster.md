@@ -29,7 +29,7 @@ It turns out, you don’t need it. With [this guide](https://dev.to/rupeshtiwari
     - wait 5h :O
     - remove A record (if you have one)
 [x] Add Google Analytics
-[ ] migrate comments ([link](https://desiredpersona.com/disqus-comments-jekyll/)) - need to move domain first
+[x] migrate comments ([link](https://desiredpersona.com/disqus-comments-jekyll/), [link](https://jj09.disqus.com/admin/install/platforms/universalcode/)) - need to move domain first
 [ ] prettify (find nicer template?)
 [ ] have landing page like mfranc and dhh
 [ ] optimize images ([link](https://jetholt.com/automatic-image-optimisation/))
