@@ -21,18 +21,25 @@ It turns out, you don’t need it. With [this guide](https://dev.to/rupeshtiwari
 ### TODOs
 
 [x] Export wordpress.xml
-[x] Rename posts from html to md
-[x] Fix syntax highlighting (`<pre> to {% highlight %})
-[x] setup domain ([github guide](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site), [pages settings](https://github.com/jj09/jj09.github.io/settings/pages))
-[ ] setup HTTPS ([github FAQ](https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https), [troubleshooting](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/troubleshooting-custom-domains-and-github-pages#https-errors), [article](https://timeandupdate.com/2018/05/custom-domain-in-github-page-support-https/))
-    - readd
-    - wait 5h :O
-    - remove A record (if you have one)
+[x] Rename posts from .html to .md
+[x] Fix syntax highlighting (`<pre>` to `{% highlight %}`)
+[x] setup domain
+    * [github guide](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
+    * [pages settings](https://github.com/jj09/jj09.github.io/settings/pages)
+    * [How to setup google domain for github pages](https://dev.to/trentyang/how-to-setup-google-domain-for-github-pages-1p58)
+[x] setup HTTPS
+    * [github FAQ](https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https)
+    * [troubleshooting](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/troubleshooting-custom-domains-and-github-pages#https-errors)
+    * [article](https://timeandupdate.com/2018/05/custom-domain-in-github-page-support-https/))
+    * learnings:
+        - map both A record and CNAME
+        - I had to wait ~10h for cert to be issued, and to be able to  'Enforce HTTPS' in Github Pages settings
 [x] Add Google Analytics
-[x] migrate comments ([link](https://desiredpersona.com/disqus-comments-jekyll/), [link](https://jj09.disqus.com/admin/install/platforms/universalcode/)) - need to move domain first
+[x] migrate comments ([link](https://desiredpersona.com/disqus-comments-jekyll/), [link](https://jj09.disqus.com/admin/install/platforms/universalcode/))
 [ ] prettify (find nicer template?)
-[ ] have landing page like mfranc and dhh
-[ ] optimize images ([link](https://jetholt.com/automatic-image-optimisation/))
+[ ] optimize perf ([Google Page Speed](https://pagespeed.web.dev/))
+    [ ] optimize images ([link](https://jetholt.com/automatic-image-optimisation/))
+    [ ] have landing page like mfranc and dhh
 [ ] configure backup
 
 ### guides
@@ -41,6 +48,7 @@ It turns out, you don’t need it. With [this guide](https://dev.to/rupeshtiwari
 * [4 Steps To Migrate From WordPress To Jekyll ](https://blog.webjeda.com/wordpress-to-jekyll-migration/)
 * [Migrae from Wordpress to Jekyll part 1](https://blog.floriancourgey.com/2018/11/migrate-from-wordpress-to-jekyll)
 * [official docs - posts](https://jekyllrb.com/docs/posts/)
+* [Hosting a website for free — Get started with Google Domains & Github Pages](https://medium.com/8px-magazine/hosting-a-website-for-free-get-started-with-google-domains-github-pages-980986550958)
 
 ### Themes
 * https://forever-jekyll.github.io/
