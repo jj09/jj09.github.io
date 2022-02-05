@@ -31,9 +31,9 @@ author:
 permalink: "/puppy-tutorial/"
 ---
 <p><!-- wp:html --></p>
-<figure class="wp-block-image size-large"><img src="{{ site.baseurl }}/assets/2021/05/pluto.jpeg" alt="Tony Teddybear Montant" class="wp-image-19962" /></figure>
+<figure class="wp-block-image size-large"><img src="{{ site.baseurl }}/assets/2021/05/pluto.jpeg" alt="Tony Teddybear Montana" class="wp-image-19962" /></figure>
 <p>Meet Tony "Teddy Bear" Montana. My new family member since October last year.</p>
-<p>I wanted to have a dog for a while, but before COViD I was always on the go. Traveling outside of the city or outside of the country at least once a month. My lifestyle was not good for having a dog. Especially a puppy! However, when COViD hit I thought: now or never. My plan was simple: I’ll get a puppy during COViD, and before the pandemic is over he will be a well trained dog.</p>
+<p>I wanted to have a dog for a while, but before COViD I was always on the go. Traveling outside of the city or outside of the country at least once a month. My lifestyle was not good for having a dog. Especially a puppy! However, when COViD hit I thought: now or never. My plan was simple: I’ll get a puppy during COViD, and before the pandemic is over he will be a well-trained dog.</p>
 <p>As raising a puppy is not easy, I decided to journal my experience for the future me and friends. This is not a comprehensive guide as there is a bunch of stuff all over the internet, but I would share my gotchas and notes.</p>
 <h3>Before puppy arrival</h3>
 <p>I am all about learning from others and their mistakes. Thus, I read a few books before even getting a dog:</p>
