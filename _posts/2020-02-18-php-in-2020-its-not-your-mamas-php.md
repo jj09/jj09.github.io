@@ -33,7 +33,39 @@ permalink: "/php-in-2020-its-not-your-mamas-php/"
 <p>I decided to write this post, because before joining Facebook I thought that PHP is just old, limited language from 2 decades ago when server was responsible for simple form parsing, and generating HTML.</p>
 <p>I actually learned web development using PHP in mid-2000s, when I was in middle school. I created my personal blog, and website about very popular back then game Deluxe Ski Jump. I actually still have the source code and recently put it on Azure at <a href="http://dsjonline.azurewebsites.net/">dsjonine.azurewebsites.net</a> - it is in polish, and there is no database:P Didn't bother to update character encoding from ISO-8859-2 to UTF. Why I used ISO-8859-2? Because my cousin told me to do so! It was real copy/paste programmer back then! Good times :D</p>
 <p>Mark Zuckerberg wrote first version of Facebook around that time using PHP too. <a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)">LAMP</a> stack was the way to go for web development in 2000s.</p>
-<p>A few days after joining facebook I realized that PHP now is full blown OO language. It has classes, interfaces, abstract classes, dependency injection, etc. It is much closer to C# or Java than to PHP that I used to write 15 years ago. At facebook we use <a href="https://hacklang.org/">Hack</a> (typed PHP). It's awesome. You have the best of two Worlds: type safety and no compilation! Just save, and refresh to see your changes. Yay! As pure PHP performance is not the best, <a href="https://dan.hersam.com/2015/02/25/go-vs-node-vs-php-vs-hhvm-and-wordpress-benchmarks/">HHVM performance is an improvement</a>.</p>
+<p>A few days after joining facebook I realized that PHP now is full blown OO language. It has classes, interfaces, abstract classes, dependency injection, etc. It is much closer to C# or Java than to PHP that I used to write 15 years ago. </p>
+<p>At facebook we use <a href="https://hacklang.org/">Hack</a> (typed PHP). It's awesome. You have the best of two Worlds: type safety and no compilation! Just save, and refresh to see your changes. Yay! Sample Hack/PHP code:</p>
+
+{% highlight php %}
+<?php
+  class Foo {
+    public function getFullName(string $firstName, string $lastName): string {
+      return $firstName . " " . $lastName;
+    }
+
+    public async function genImage(string $uri): Awaitable<?Image> {
+      $format = "jpg";
+      
+      if (!Vec\contains($this->allowedFormats, $format)) {
+        return null;
+      }
+
+      $img = await $this->genImageInFormat($uri, $format);
+      return $img;
+    }
+
+    private static allowedFormats = vec["jpg", "png"];
+
+    private async function genImageInFormat(string $uri, string $format): Awaitable<Image> {
+      // ...
+    }
+  }
+?>
+{% endhighlight %}
+
+
+
+<p>As pure PHP performance is not the best, <a href="https://dan.hersam.com/2015/02/25/go-vs-node-vs-php-vs-hhvm-and-wordpress-benchmarks/">HHVM performance is an improvement</a>.</p>
 <p>In PHP, you can access pretty much every module in the codebase without explicitly referencing it. That's an extra productivity boost. Or hack:) Intellisense in editors like <a href="https://nuclide.io/">Nuclide</a> (Atom) or VSCode is pretty good as well. When you add Facebook engineering systems, where everything is so neatly setup to prioritize productivity, you are in heaven :) I know most of PHP devs do not have that luxury, but just sayin' ;)</p>
 <p>If you want to learn more about modern PHP, check out these resources:</p>
 <ul>
