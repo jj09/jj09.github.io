@@ -6,7 +6,7 @@ layout: default
   {% for post in paginator.posts %}
     <article class="post">
       <h2 style="margin: 0px;"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-      <i style="color: #ccc; font-size: 0.8em">{{ post.date | date: "%B %e, %Y" }}</i> -
+      <i class="date-inline">{{ post.date | date: "%B %e, %Y" }}</i> -
       <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">
         {% include read-time.html content=post.content %}
       </a>
