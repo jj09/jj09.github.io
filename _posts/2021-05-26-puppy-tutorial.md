@@ -38,10 +38,10 @@ permalink: "/puppy-tutorial/"
 <h3>Before puppy arrival</h3>
 <p>I am all about learning from others and their mistakes. Thus, I read a few books before even getting a dog:</p>
 <ul>
-<li><a href="https://www.goodreads.com/book/show/27208849-zak-george-s-dog-training-revolution">Zak George's Dog Training Revolution</a> - great intro about what having a dog is and how to select the perfect dog breed for you</li>
-<li><a href="https://www.goodreads.com/book/show/32218.The_Art_of_Raising_a_Puppy">The Art of Raising a Puppy</a> - good set of tips on how to train a puppy from the first days. It has some good ideas about creating a routine for your puppy, etc.
+<li><a href="https://amzn.to/3B8KmcY">Zak George's Dog Training Revolution</a> - great intro about what having a dog is and how to select the perfect dog breed for you</li>
+<li><a href="https://amzn.to/333lN4w">The Art of Raising a Puppy</a> - good set of tips on how to train a puppy from the first days. It has some good ideas about creating a routine for your puppy, etc.
 </li>
-<li><strong><a href="https://www.goodreads.com/book/show/215767.The_Power_of_Positive_Dog_Training">The Power of Positive Dog Training</a></strong> - comprehensive guide on how to train a dog with step by step instructions for teaching particular commands. I strongly recommend this one, especially after you figure out the basics (potty training, etc.)</li>
+<li><strong><a href="https://amzn.to/3rsHKmQ">The Power of Positive Dog Training</a></strong> - comprehensive guide on how to train a dog with step by step instructions for teaching particular commands. I strongly recommend this one, especially after you figure out the basics (potty training, etc.)</li>
 </ul>
 <p>Another things to be aware BEFORE you get a puppy:</p>
 <ul>
@@ -54,7 +54,7 @@ permalink: "/puppy-tutorial/"
 <p>For the first few days you need to sleep next to your puppy's crate. Yes, you need a crate, otherwise he can do something you don’t want during the night. Like eating things that cannot be taken out without surgery!</p>
 <p>It’s really helpful to have your significant other, or friend who would help you during this time. It was a game changer for us when one night, one person was sleeping (and waking up) by Tony’s crate, and another was in the bedroom (with earplugs) getting an actual night of sleep. We were alternating every day.</p>
 <p>It's also recommended to give a limited space to your puppy, and gradually increase it. Giving him access to the entire house might be overwhelming.</p>
-<p>Besides that you need to start <a href="https://www.akc.org/expert-advice/training/potty-training-your-puppy-timeline-and-tips/">potty training</a> and basic commands (I recommend <a href="https://www.goodreads.com/book/show/215767.The_Power_of_Positive_Dog_Training">The Power of Positive Dog Training</a> for that).</p>
+<p>Besides that you need to start <a href="https://www.akc.org/expert-advice/training/potty-training-your-puppy-timeline-and-tips/">potty training</a> and basic commands (I recommend <a href="https://amzn.to/3rsHKmQ">The Power of Positive Dog Training</a> for that).</p>
 <h4>Quick guide to potty training</h4>
 <p>On the day of arrival, take your puppy out every hour. Ideally to the same spot and wait until he pees. Then increase it by 5 mins every other day or so. The rule of thumb is: puppy can hold pee for as many hours as many months old he is. E.g., 3 months old puppy should be able to hold it for 3 hours. However, always start with 1h. Even if the puppy is 3 months old. Then increase time between breaks gradually.</p>
 <p>I recommend increasing the time between pee breaks on Monday, Wednesday, and Friday. This would add 15mins every week, and ~1h every month. It’s better to not do increases on the weekends as weekends are usually more random than working days.</p>
@@ -62,7 +62,7 @@ permalink: "/puppy-tutorial/"
 <h4>First commands</h4>
 <p>I recommend getting a few sessions with a good dog trainer. You have no idea how the smallest things you do may confuse your dog and be a game changer. Every dog is different, and a few recommendations from an experienced trainer can be a game changer! E.g., our trainer told us: “you are so lucky, your puppy behavior is great for his age…just do not mess him up”.</p>
 <p>People do not realize that THEY have to be trained to have a dog as well! If you need recommendations for a good dog trainer in the Seattle area let me know!</p>
-<p>I also recommend a copy of <a href="https://www.goodreads.com/book/show/215767.The_Power_of_Positive_Dog_Training">The Power of Positive Dog Training</a>.</p>
+<p>I also recommend a copy of <a href="https://amzn.to/3rsHKmQ">The Power of Positive Dog Training</a>.</p>
 <p>Initially, I was skeptical with treat training as my friend told me that then the dog will never listen to me if I won’t give him treats. However, our trainer proved this to be not necessarily true. Bottom line is: treats are good for training as they cause your dog to associate good feelings with them. You say command, he does something, he gets a nice reward. Remember to have tasty treats! Later on, he will be on autopilot and treats won’t be needed.</p>
 <p>We spent a good amount of time deciding which commands are most important. If I was doing it all over again I would teach in this order:</p>
 <ol>
@@ -91,7 +91,7 @@ permalink: "/puppy-tutorial/"
 <h4>useful resources</h4>
 <ul>
 <li><a href="https://www.akc.org/">American Kennel Club</a> - a bunch of resources about dogs, you can sign up for a weekly newsletter with tips on what to do at a particular age (8 weeks, 9 weeks, etc.)</li>
-<li><a href="https://amzn.to/3qOAIsd">Puppy Primer</a> - nice, quick read about basic aspects of raising a puppy (from potty training to basic behaviors human should do). You can find my notes from that book on <a href="https://www.goodreads.com/review/show/3545969970?book_show_action=false&from_review_page=1">GoodReads</a></li>
+<li><a href="https://amzn.to/3GwgEzE">Puppy Primer</a> - nice, quick read about basic aspects of raising a puppy (from potty training to basic behaviors human should do). You can find my notes from that book on <a href="https://www.goodreads.com/review/show/3545969970?book_show_action=false&from_review_page=1">GoodReads</a></li>
 <li><a href="https://amzn.to/3rX7Cqf">How to Behave So Your Dog Behaves</a> - this is very comprehensive guide on how to train your dog. I recommend to pick it up later on, after you went through basic exercises and observed your dog behaviors already. This book will help you to understand why your dog does what he does, and how to adjust nitty gritty details of YOUR daily behaviors.</li>
 </ul>
 <p>This is it for now. I will be updating this when I recall other things or learn some new things.</p>
