@@ -1,16 +1,20 @@
 ---
 layout: post
 title: Moving from WordPress to Jekyll
-categories: [blog]
+categories: 
+    - blog
+published: true
+status: publish
+date: 2022-02-06 10:59:24.000000000 -08:00
+permalink: "/moving-from-wordpress-to-jekyll/"
 ---
-
 <div style="text-align: center;"><img src="{{ site.baseurl }}/assets/2022/wordpress-to-jekyll-migration.png" alt="WordPress to Jekyll migration" /></div>
 
 ## Brief story of this blog and why WordPress
 
 I started this blog in 2013. It was my first year living in the USA. I was in Grad School at the time. It has been almost 10 years! I started this blog mostly to improve my English and for documenting my own learnings. I decided to use WordPress as it was a to-go platform for beginners back then. I need to admit, it was pretty neat and straighforward to setup.
 
-Intially I was hosting my blog on webio.pl (that was BC time - Before Cloud). I moved it to Azure App Service in 2014 (it was called Azure Website back then). I did many tweaks and improvements since then:
+Intially I was hosting my blog on webio.pl (that was BC time - Before Cloud). I [moved it to Azure App Service in 2014]({{ site.baseurl }}/moving-wordpress-blog-azure-webio-hosting/) (it was called Azure Website back then). I did many tweaks and improvements since then:
 * Added Google Analytics
 * Added custom domain: jj09.net
 * Created web job that was performing backup of all files + database

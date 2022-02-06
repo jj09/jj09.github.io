@@ -30,7 +30,6 @@ author:
   last_name: ''
 permalink: "/puppy-tutorial/"
 ---
-<p><!-- wp:html --></p>
 <figure class="wp-block-image size-large"><img src="{{ site.baseurl }}/assets/2021/05/pluto.jpeg" alt="Tony Teddybear Montana" class="wp-image-19962" /></figure>
 <p>Meet Tony "Teddy Bear" Montana. My new family member since October last year.</p>
 <p>I wanted to have a dog for a while, but before COViD I was always on the go. Traveling outside of the city or outside of the country at least once a month. My lifestyle was not good for having a dog. Especially a puppy! However, when COViD hit I thought: now or never. My plan was simple: I’ll get a puppy during COViD, and before the pandemic is over he will be a well-trained dog.</p>
@@ -95,4 +94,3 @@ permalink: "/puppy-tutorial/"
 <li><a href="https://amzn.to/3rX7Cqf">How to Behave So Your Dog Behaves</a> - this is very comprehensive guide on how to train your dog. I recommend to pick it up later on, after you went through basic exercises and observed your dog behaviors already. This book will help you to understand why your dog does what he does, and how to adjust nitty gritty details of YOUR daily behaviors.</li>
 </ul>
 <p>This is it for now. I will be updating this when I recall other things or learn some new things.</p>
-<p><!-- /wp:html --></p>
