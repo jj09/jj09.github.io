@@ -56,23 +56,25 @@ permalink: "/moving-wordpress-blog-azure-webio-hosting/"
 <p>When you add domain entries in Azure you need to add www.* entry separately (in my case: jj09.net and www.jj09.net). More details can be found <a href="http://azure.microsoft.com/en-us/documentation/articles/web-sites-custom-domain-name/">here</a>.</p>
 <p><img class="aligncenter size-full wp-image-1481" src="{{ site.baseurl }}/assets/2014/04/azure_manage_custom_domains.jpg" alt="Azure - manage custom domains" width="644" height="396" /></p>
 <p>Remember to create/update web.config file, in order to make your custom domain and permalinks (if you use them) working correctly (as mentioned in <a href="http://www.davebost.com/2013/07/11/moving-a-wordpress-blog-to-windows-azure-part-5-moving-from-a-subfolder-to-the-root">part 5</a> of <a href="http://www.davebost.com/2013/07/10/moving-a-wordpress-blog-to-windows-azure-part-1">Dave Bost's tutorial</a>):</p>
-<p>[xml]&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;<br />
-&lt;configuration&gt;<br />
-	&lt;system.webServer&gt;<br />
-		&lt;rewrite&gt;<br />
-			&lt;rules&gt;<br />
-				&lt;rule name=&quot;Main Rule&quot; stopProcessing=&quot;true&quot;&gt;<br />
-					&lt;match url=&quot;.*&quot;/&gt;<br />
-					&lt;conditions logicalGrouping=&quot;MatchAll&quot;&gt;<br />
-						&lt;add input=&quot;{REQUEST_FILENAME}&quot; matchType=&quot;IsFile&quot; negate=&quot;true&quot;/&gt;<br />
-						&lt;add input=&quot;{REQUEST_FILENAME}&quot; matchType=&quot;IsDirectory&quot; negate=&quot;true&quot;/&gt;<br />
-					&lt;/conditions&gt;<br />
-					&lt;action type=&quot;Rewrite&quot; url=&quot;index.php&quot;/&gt;<br />
-				&lt;/rule&gt;<br />
-			&lt;/rules&gt;<br />
-		&lt;/rewrite&gt;<br />
-	&lt;/system.webServer&gt;<br />
-&lt;/configuration&gt;[/xml]</p>
+{% highlight xml %}
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+	<system.webServer>
+		<rewrite>
+			<rules>
+				<rule name="Main Rule" stopProcessing="true">
+					<match url=".*"/>
+					<conditions logicalGrouping="MatchAll">
+						<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true"/>
+						<add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true"/>
+					</conditions>
+					<action type="Rewrite" url="index.php"/>
+				</rule>
+			</rules>
+		</rewrite>
+	</system.webServer>
+</configuration>
+{% endhighlight}
 <h3>Issues</h3>
 <p>When I was trying to set <a href="http://www.wpbeginner.com/plugins/how-to-send-email-in-wordpress-using-the-gmail-smtp-server/">SMTP server to my gmail</a> I received following email from Google, after try to send test email:</p>
 <p><img class="aligncenter size-full wp-image-1511" src="{{ site.baseurl }}/assets/2014/04/GoogleHijackWarning.png" alt="Google hijack warning" width="576" height="463" /></p>
