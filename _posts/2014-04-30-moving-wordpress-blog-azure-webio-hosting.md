@@ -74,7 +74,7 @@ permalink: "/moving-wordpress-blog-azure-webio-hosting/"
 		</rewrite>
 	</system.webServer>
 </configuration>
-{% endhighlight}
+{% endhighlight %}
 <h3>Issues</h3>
 <p>When I was trying to set <a href="http://www.wpbeginner.com/plugins/how-to-send-email-in-wordpress-using-the-gmail-smtp-server/">SMTP server to my gmail</a> I received following email from Google, after try to send test email:</p>
 <p><img class="aligncenter size-full wp-image-1511" src="{{ site.baseurl }}/assets/2014/04/GoogleHijackWarning.png" alt="Google hijack warning" width="576" height="463" /></p>

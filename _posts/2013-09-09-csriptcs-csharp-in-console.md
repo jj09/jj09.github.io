@@ -39,35 +39,50 @@ author:
 permalink: "/csriptcs-csharp-in-console/"
 ---
 <p>It was always bothering me, when I wanted to run one simple command, and I needed to create new C# console project in Visual Studio to do that. With scriptcs I can finally do that in console. Project <a href="http://scriptcs.net/">scriptcs</a> allows you to run single commands and also C# script files.</p>
-<h4>Installation</h4>
+
+<h3>Installation</h3>
 <p>The easiest way to install scriptcs is <a href="http://chocolatey.org/">Chocolatey</a> ('apt-get' for windows). If you didn't hear about it, you should definitely try it out. To install Chocolatey run the following command in console:</p>
 <p><code>@powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%systemdrive%\chocolatey\bin</code></p>
 <p>Once you have Chocolatey installed, you can install scriptcs:</p>
 <p><code>cinst scriptcs</code></p>
 <p>Chocolatey will install scriptcs to <em>%APPDATA%\scriptcs\</em>. You need to update your PATH accordingly, to easily run it from command line.</p>
-<h4>Getting started</h4>
+
+<h3>Getting started</h3>
 <p>Once scriptcs is installed and added to your PATH, you can run it with <em>scriptcs</em> command:</p>
-<p><code>C:\> scriptcs<br />
-scriptcs (ctrl-c or blank to exit)</p>
-<p>> var message = "Hello, world!";<br />
-> Console.WriteLine(message);<br />
-Hello, world!<br />
-> </p>
-<p>C:\></code></p>
+{% highlight console %}
+C:\> scriptcs
+scriptcs (ctrl-c or blank to exit)
+> var message = "Hello, world!";
+> Console.WriteLine(message);
+Hello, world!
+>
+C:\>
+{% endhighlight %}
+
 <p>You can also create a script hello.csx:</p>
-<p>[csharp]var message = &quot;Hello, world!&quot;;<br />
-Console.WriteLine(message);[/csharp]</p>
+{% highlight csharp %}
+var message = "Hello, world!";
+Console.WriteLine(message);
+{% endhighlight %}
+
 <p>And run it from command line:</p>
-<p><code>C:\>scriptcs hello.csx<br />
-Hello, world!</code></p>
+{% highlight console %}
+C:\>scriptcs hello.csx
+Hello, world!
+{% endhighlight %}
+
 <p>You can find more about scriptcs on <a href="http://scriptcs.net/">scriptcs.net</a>.</p>
-<p><b>EDIT:</b> You don't even need <em>Console.WriteLine</em> to print variables (thanks <a href="http://www.strathweb.com/">Filip W.</a>):</p>
-<p><code>C:\>scriptcs<br />
-scriptcs (ctrl-c or blank to exit)</p>
-<p>> var message = "Hello, scriptcs!";<br />
-> message<br />
-Hello, scriptcs!<br />
-> int four = 2 + 2;<br />
-> four<br />
-4<br />
-></code></p>
+
+<p><b>EDIT:</b> You don't even need <code>Console.WriteLine</code> to print variables (thanks <a href="http://www.strathweb.com/">Filip W.</a>):</p>
+
+{% highlight console %}
+C:\>scriptcs
+scriptcs (ctrl-c or blank to exit)
+> var message = "Hello, scriptcs!";
+> message
+Hello, scriptcs!
+> int four = 2 + 2;
+> four
+4
+>
+{% endhighlight %}

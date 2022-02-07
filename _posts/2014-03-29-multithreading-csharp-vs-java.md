@@ -36,192 +36,226 @@ author:
 permalink: "/multithreading-csharp-vs-java/"
 ---
 <p>In my <a href="http://jj09.net/multithreading-in-csharp/">pervious post</a> I described basic multithreading constructs in C#. Now, I would like to compare them to conforming constructs in Java. It might be useful for those of you, who has already created some multithreaded applications in Java, and would like to learn how to do the same in C#.</p>
+
 <h3>Creating a new thread</h3>
-<p>C#:<br />
-[csharp]using System;<br />
+
+C#:
+
+{% highlight csharp %}
+using System;
 using System.Threading;</p>
-<p>class ThreadTest<br />
-{<br />
-  static void Main()<br />
-  {<br />
-    Thread t = new Thread (Method);<br />
-    t.Start();<br />
-  }</p>
-<p>  static void Method()<br />
-  {<br />
-    Console.WriteLine(&quot;Thread started&quot;);<br />
-  }<br />
-}[/csharp]</p>
-<p>Java:<br />
-[java]public class Program {<br />
-  public static void main(String[] args) {<br />
-    ThreadClass t = new ThreadClass();<br />
-    t.start();<br />
-  }<br />
-}</p>
-<p>class ThreadClass extends Thread {<br />
-  @Override<br />
-  public void run() {<br />
-    System.out.println(&quot;Thread started&quot;);<br />
-  }<br />
-}[/java]</p>
+class ThreadTest
+{
+  static void Main()
+  {
+    Thread t = new Thread (Method);
+    t.Start();
+  }
+  static void Method()
+  {
+    Console.WriteLine("Thread started");
+  }
+}
+{% endhighlight %}
+
+Java:
+
+{% highlight java %}
+public class Program {
+  public static void main(String[] args) {
+    ThreadClass t = new ThreadClass();
+    t.start();
+  }
+}
+class ThreadClass extends Thread {
+  @Override
+  public void run() {
+    System.out.println("Thread started");
+  }
+}
+{% endhighlight %}
+
 <h3>Waiting for another thread to finish</h3>
-<p>C#:<br />
-[csharp]using System;<br />
-using System.Threading;</p>
-<p>class ThreadTest<br />
-{<br />
-  static void Main()<br />
-  {<br />
-    Thread t = new Thread (Method);<br />
-    t.Start();<br />
-    t.Join(); //wait for thread t<br />
-    Console.WriteLine(&quot;Created thread finished&quot;);<br />
-  }</p>
-<p>  static void Method()<br />
-  {<br />
-    Console.WriteLine(&quot;Started new thread...&quot;);<br />
-    Thread.Sleep(1000);<br />
-    Console.WriteLine(&quot;Finishing new thread...&quot;);<br />
-  }<br />
-}[/csharp]</p>
-<p>Java:<br />
-[java]public class Program {<br />
-  public static void main(String[] args) {<br />
-    ThreadClass t = new ThreadClass();<br />
-    t.start();<br />
-    try {<br />
-      t.join(); //wait for thread t<br />
-      System.out.println(&quot;Created thread finished&quot;);<br />
-	} catch(InterruptedException e) {<br />
-	  // handle exception<br />
-	}</p>
-<p>  }<br />
-}</p>
-<p>class ThreadClass extends Thread  {<br />
-  @Override<br />
-  public void run() {<br />
-    System.out.println(&quot;Started new thread...&quot;);<br />
-    try {<br />
-      Thread.sleep(1000);<br />
-    } catch(InterruptedException e) {<br />
-      // handle exception<br />
-    }<br />
-    System.out.println(&quot;Finishing new thread...&quot;);<br />
-  }<br />
-}[/java]</p>
+C#:
+
+{% highlight csharp %}
+using System;
+using System.Threading;
+class ThreadTest
+{
+  static void Main()
+  {
+    Thread t = new Thread (Method);
+    t.Start();
+    t.Join(); //wait for thread t
+    Console.WriteLine("Created thread finished");
+  }
+  static void Method()
+  {
+    Console.WriteLine("Started new thread...");
+    Thread.Sleep(1000);
+    Console.WriteLine("Finishing new thread...");
+  }
+}
+{% endhighlight %}
+
+Java:
+
+{% highlight java %}
+public class Program {
+  public static void main(String[] args) {
+    ThreadClass t = new ThreadClass();
+    t.start();
+    try {
+      t.join(); //wait for thread t
+      System.out.println("Created thread finished");
+    } catch(InterruptedException e) {
+      // handle exception
+    }
+  }
+}
+class ThreadClass extends Thread  {
+  @Override
+  public void run() {
+    System.out.println("Started new thread...");
+    try {
+      Thread.sleep(1000);
+    } catch(InterruptedException e) {
+      // handle exception
+    }
+    System.out.println("Finishing new thread...");
+  }
+}
+{% endhighlight %}
+
 <h3>Accessing shared variable</h3>
-<p>C#:<br />
-[csharp]using System;<br />
-using System.Threading;</p>
-<p>class ThreadTest<br />
-{<br />
-  static readonly object locker = new object();<br />
-  static int sharedVariable;</p>
-<p>  static void Main()<br />
-  {<br />
-    Thread t = new Thread (Method);<br />
-    t.Start();<br />
-    lock(locker)<br />
-    {<br />
-      // sample operation<br />
-      if(sharedVariable==0)<br />
-      {<br />
-        sharedVariable = 1;<br />
-      }<br />
-    }<br />
-  }</p>
-<p>  static void Method()<br />
-  {<br />
-    lock(locker)<br />
-    {<br />
-      // sample operation<br />
-      if(sharedVariable&gt;0)<br />
-      {<br />
-        sharedVariable++;<br />
-      }<br />
-    }<br />
-  }<br />
-}[/csharp]</p>
-<p>Java:<br />
-[java]public class Program {<br />
-  public static int sharedVariable;<br />
-  public static final Object lock = new Object();<br />
-  public static void main(String[] args) {<br />
-    ThreadClass t = new ThreadClass();<br />
-    t.start();<br />
-    synchronized(lock)<br />
-    {<br />
-      //sample operation<br />
-      if(sharedVariable==0) {<br />
-        Program.sharedVariable = 1;<br />
-      }<br />
-    }<br />
-  }<br />
-}</p>
-<p>class ThreadClass extends Thread {<br />
-  @Override<br />
-  public void run() {<br />
-    synchronized(Program.lock) {<br />
-      //sample operation<br />
-      if(Program.sharedVariable&gt;0) {<br />
-        Program.sharedVariable++;<br />
-      }<br />
-    }<br />
-  }<br />
-}[/java]</p>
+C#:
+
+{% highlight csharp %}
+using System;
+using System.Threading;
+class ThreadTest
+{
+  static readonly object locker = new object();
+  static int sharedVariable;
+  static void Main()
+  {
+    Thread t = new Thread (Method);
+    t.Start();
+    lock(locker)
+    {
+      // sample operation
+      if(sharedVariable==0)
+      {
+        sharedVariable = 1;
+      }
+    }
+  }
+  static void Method()
+  {
+    lock(locker)
+    {
+      // sample operation
+      if(sharedVariable > 0)
+      {
+        sharedVariable++;
+      }
+    }
+  }
+}
+{% endhighlight %}
+
+Java:
+
+{% highlight java %}
+public class Program {
+  public static int sharedVariable;
+  public static final Object lock = new Object();
+  public static void main(String[] args) {
+    ThreadClass t = new ThreadClass();
+    t.start();
+    synchronized(lock)
+    {
+      //sample operation
+      if(sharedVariable==0) {
+        Program.sharedVariable = 1;
+      }
+    }
+  }
+}
+class ThreadClass extends Thread {
+  @Override
+  public void run() {
+    synchronized(Program.lock) {
+      //sample operation
+      if(Program.sharedVariable > 0) {
+        Program.sharedVariable++;
+      }
+    }
+  }
+}
+{% endhighlight %}
+
 <h3>Signaling</h3>
-<p>C#:<br />
-[csharp]using System;<br />
-using System.Threading;</p>
-<p>class ThreadTest<br />
-{<br />
-  static EventWaitHandle _waitHandle = new AutoResetEvent (false);</p>
-<p>  static void Main()<br />
-  {<br />
-    new Thread (Waiter).Start();<br />
-    Console.WriteLine(&quot;Wait for notification...&quot;);<br />
-    _waitHandle.WaitOne();<br />
-    Console.WriteLine(&quot;Notification received.&quot;);<br />
-  }</p>
-<p>  static void Waiter()<br />
-  {<br />
-    Thread.Sleep (1000);<br />
-    Console.WriteLine(&quot;Sending notification...&quot;);<br />
-    _waitHandle.Set();<br />
-  }<br />
-}[/csharp]</p>
-<p>Java:<br />
-[java]class Program<br />
-{<br />
-  public static void main(String[] args) {<br />
-    ThreadClass t = new ThreadClass();<br />
-    t.start();<br />
-    System.out.println(&quot;Wait for notification...&quot;);<br />
-    synchronized(t) {<br />
-      try {<br />
-        t.wait();<br />
-      } catch(InterruptedException e) {<br />
-        //handle exception<br />
-      }<br />
-    }<br />
-    System.out.println(&quot;Notification received.&quot;);<br />
-  }<br />
-}</p>
-<p>class ThreadClass extends Thread {<br />
-  @Override<br />
-  public void run() {<br />
-  	try {<br />
-      Thread.sleep(1000);<br />
-    } catch(InterruptedException e) {<br />
-      //handle exception<br />
-    }<br />
-    System.out.println(&quot;Sending notification...&quot;);<br />
-    synchronized(this) {<br />
-      notify();<br />
-    }<br />
-  }<br />
-}[/java]</p>
+C#:
+
+{% highlight csharp %}
+using System;
+using System.Threading;
+class ThreadTest
+{
+  static EventWaitHandle _waitHandle = new AutoResetEvent (false);
+  static void Main()
+  {
+    new Thread (Waiter).Start();
+    Console.WriteLine("Wait for notification...");
+    _waitHandle.WaitOne();
+    Console.WriteLine("Notification received.");
+  }
+  static void Waiter()
+  {
+    Thread.Sleep (1000);
+    Console.WriteLine("Sending notification...");
+    _waitHandle.Set();
+  }
+}
+{% endhighlight %}
+
+Java:
+
+{% highlight java %}
+class Program
+{
+  public static void main(String[] args) {
+    ThreadClass t = new ThreadClass();
+    t.start();
+    System.out.println("Wait for notification...");
+    synchronized(t) {
+      try {
+        t.wait();
+      } catch(InterruptedException e) {
+        //handle exception
+      }
+    }
+    System.out.println("Notification received.");
+  }
+}
+class ThreadClass extends Thread {
+  @Override
+  public void run() {
+  	try {
+      Thread.sleep(1000);
+    } catch(InterruptedException e) {
+      //handle exception
+    }
+    System.out.println("Sending notification...");
+    synchronized(this) {
+      notify();
+    }
+  }
+}
+{% endhighlight %}
+
 <h3>Summary</h3>
 <p>As we can see, threading constructs in both languages are very similar.</p>
 <p>I put all above code in github repository: <a href="https://github.com/jj09/Threading-in-CSharp-vs-Java">Threading-in-CSharp-vs-Java</a>. </p>

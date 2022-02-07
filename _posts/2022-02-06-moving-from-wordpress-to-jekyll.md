@@ -82,7 +82,7 @@ After a few days with Jekyll I absolutely love it!
 
 Pros:
 - simplicity - just text files on Github
-- no database
+- no database, no random issues like <a href="{{site.baseurl}}/wordpress-on-azure-exceeded-cleardb-size-lock-on-insert-update">this</a> I encoutered in the past
 - no need to maintain Azure App Service
 - free hosting on Github Pages <3
 - much less fear of something going wrong and losing all my posts: one WordPress plugin update can corrupt Db, I don't care if I mess up my Jekyll setup as my posts are in .md files that won't be touched

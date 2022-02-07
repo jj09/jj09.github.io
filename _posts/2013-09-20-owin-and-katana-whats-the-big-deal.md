@@ -45,33 +45,37 @@ permalink: "/owin-and-katana-whats-the-big-deal/"
 <p><code>Install-Package Microsoft.Owin.Host.SystemWeb</code></p>
 <p><code>Install-Package Owin.Extensions</code></p>
 <p>Then, we need to create 'Startup class'.</p>
-<p>[csharp]<br />
-using System;<br />
-using System.Collections.Generic;<br />
-using System.Linq;<br />
-using System.Web;<br />
-using Owin;</p>
-<p>namespace OwinDemo<br />
-{<br />
-    public class Startup<br />
-    {<br />
-        public void Configuration(IAppBuilder app)<br />
-        {<br />
-            app.UseHandlerAsync((req, res) =&gt;<br />
-            {<br />
-                res.ContentType = &quot;text/plain&quot;;<br />
-                return res.WriteAsync(&quot;Hello Katana!&quot;);<br />
-            });<br />
-        }<br />
-    }<br />
-}<br />
-[/csharp]</p>
+{% highlight csharp %}
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using Owin;
+
+namespace OwinDemo
+{
+    public class Startup
+    {
+        public void Configuration(IAppBuilder app)
+        {
+            app.UseHandlerAsync((req, res) =>
+            {
+                res.ContentType = "text/plain";
+                return res.WriteAsync('Hello Katana!");
+            });
+        }
+    }
+}
+{% endhighlight %}
 <p>Now we are ready to run our web server, but you may get following error:</p>
 <p><img src="{{ site.baseurl }}/assets/2013/09/owin-error.jpg" alt="OWIN - error" width="518" height="71" class="aligncenter size-full wp-image-677" /></p>
 <p>Fortunately there is easy fix for that. You need to modify Web.config file, adding following code in <em>configuration </em>section:</p>
-<p>[xml]&lt;appSettings&gt;<br />
-    &lt;add key=&quot;owin:HandleAllRequests&quot; value=&quot;true&quot;/&gt;<br />
-&lt;/appSettings&gt;[/xml]</p>
+{% highlight xml %}
+<appSettings>
+    <add key="owin:HandleAllRequests" value="true"/>
+</appSettings>
+{% endhighlight %}
+
 <p>Then you can run server (CTRL+F5) and you should see:</p>
 <p><img src="{{ site.baseurl }}/assets/2013/09/owin-helloKatana.jpg" alt="OWIN - Hello Katana" width="135" height="53" class="aligncenter size-full wp-image-681" /></p>
 <h4>Summary</h4>

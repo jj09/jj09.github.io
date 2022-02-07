@@ -66,28 +66,34 @@ permalink: "/ninja-rails-developer/"
 <p>The last improvement is use the test server <a href="https://github.com/sporkrb/spork">Spork</a>. It allows to run tests faster. Without Spork, RSpec needs to reload entire Rails environment before run the tests (in each run). Spork loads the environment once, and then maintains a pool of processes for running future tests. Unfortunately it works only on POSIX systems (which means: doesn't work on Windows).</p>
 <p>To setup spork run:</p>
 <p><code>spork --bootstrap</code></p>
+
 <p>Then change <em>spec/spec_helper.rb</em> file to something like that:</p>
-<p>[ruby]require 'rubygems'<br />
-require 'spork'</p>
-<p>Spork.prefork do<br />
-  ENV[&quot;RAILS_ENV&quot;] ||= 'test'<br />
-  require File.expand_path(&quot;../../config/environment&quot;, __FILE__)<br />
-  require 'rspec/rails'<br />
-  require 'rspec/autorun'</p>
-<p>  Dir[Rails.root.join(&quot;spec/support/**/*.rb&quot;)].each {|f| require f}<br />
-  RSpec.configure do |config|<br />
-    config.mock_with :rspec<br />
-    config.fixture_path = &quot;#{::Rails.root}/spec/fixtures&quot;<br />
-    config.use_transactional_fixtures = true<br />
-    config.infer_base_class_for_anonymous_controllers = false<br />
-  end<br />
-end</p>
-<p>Spork.each_run do<br />
-  # This code will be run each time you run your specs.<br />
-end[/ruby]</p>
+{%highlight ruby %}
+require 'rubygems'
+require 'spork'
+Spork.prefork do
+  ENV["RAILS_ENV"] ||= 'test'
+  require File.expand_path("../../config/environment", __FILE__)
+  require 'rspec/rails'
+  require 'rspec/autorun'
+  Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
+  RSpec.configure do |config|
+    config.mock_with :rspec
+    config.fixture_path = "#{::Rails.root}/spec/fixtures"
+    config.use_transactional_fixtures = true
+    config.infer_base_class_for_anonymous_controllers = false
+  end
+end
+Spork.each_run do
+  # This code will be run each time you run your specs.
+end
+{% endhighlight %}
+
 <p>You also need to configure RSpec to automatically use Spork. To do that, modify .rspec file:</p>
-<p>[code]--color<br />
---drb[/code]</p>
+{% highlight txt %}
+--color
+--drb
+{% endhighlight %}
 <p>To run Spork:</p>
 <p><code>spork</code></p>
 <p>You can test difference between running tests with and without spork.</p>
