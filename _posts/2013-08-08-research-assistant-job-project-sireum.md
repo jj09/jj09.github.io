@@ -54,7 +54,9 @@ permalink: "/research-assistant-job-project-sireum/"
 </ul>
 <p>GPS along with Kiasan plugin is available in Sireum distribution, which can be downloaded from <a href="http://www.sireum.org/download">http://www.sireum.org/download</a>.</p>
 <p>In the demo below I am showing how to install Sireum distribution and GPS with Kiasan plugin on Windows.</p>
-<p><iframe width="640" height="360" src="http://www.youtube.com/embed/3Sh5_j3tqTk?feature=player_detailpage" frameborder="0" allowfullscreen></iframe></p>
+<p>
+<iframe width="656" height="492" src="https://www.youtube.com/embed/3Sh5_j3tqTk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
 <p>By the way: Sireum Project is <a href="http://github.com/sireum">Open Source on github</a>!</p>
 <p>Do I like GRA job? Yes. It is very nice experience. I am able to work on Mac. I didn't have this opportunity before (I wouldn't buy it soon probably). I was able to learn Python (and PyGTK). I learn <a href="http://en.wikipedia.org/wiki/Design_by_contract">Design by Contract</a>. I learn how to create plugin for IDE (GNAT Programming Studio). We have continues integration server - Jenkins: I learn how to manage it. I explore the World of 'High Assurance Software' and Ada programming language, which is most common in such environment. It is totally different than working as software developer in some company. </p>
 <p>Recently I started working on second SAnToS' project: <a href="http://mdcf.santos.cis.ksu.edu/">Medical Device Coordination Framework</a>. Another interesting thing. But I will tell you about it in another post.</p>

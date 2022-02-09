@@ -53,7 +53,7 @@ class ThreadTest
   }
   static void Go()
   {
-    if (!done) { done = true; Console.WriteLine (&quot;Done&quot;); }
+    if (!done) { done = true; Console.WriteLine ("Done"); }
   }
 }
 {% endhighlight %}
@@ -76,7 +76,7 @@ class ThreadSafe
   {
     lock (locker)
     {
-      if (!done) { Console.WriteLine (&quot;Done&quot;); done = true; }
+      if (!done) { Console.WriteLine ("Done"); done = true; }
     }
   }
 }
@@ -118,15 +118,15 @@ class BasicWaitHandle
   {
     new Thread (Operation).Start();
     Thread.Sleep (1000);                  // Computation...
-    Console.WriteLine (&quot;Wait...&quot;);
+    Console.WriteLine ("Wait...");
     _waitHandle.WaitOne();                    // Wait for notification
-    Console.WriteLine (&quot;Notified!&quot;);
+    Console.WriteLine ("Notified!");
   }
   static void Operation()
   {
-    Console.WriteLine (&quot;Start operation...&quot;);
+    Console.WriteLine ("Start operation...");
     Thread.Sleep(2000);               // Computation...
-    Console.WriteLine (&quot;Operation finished!&quot;);
+    Console.WriteLine ("Operation finished!");
     _waitHandle.Set();                // Notify the Waiter
     Thread.Sleep(1000);         // Some other computation...
   }
@@ -176,7 +176,7 @@ class ProducerConsumerQueue : IDisposable
         }
       if (task != null)
       {
-        Console.WriteLine (&quot;Performing task: &quot; + task);
+        Console.WriteLine ("Performing task: " + task);
         Thread.Sleep (1000);  // simulate work...
       }
       else
@@ -190,9 +190,9 @@ class Program
 	{
 	  using (var q = new ProducerConsumerQueue())
 	  {
-	    q.EnqueueTask (&quot;Hello&quot;);
-	    for (int i = 0; i < 10; i++) q.EnqueueTask (&quot;Say &quot; + i);
-	    q.EnqueueTask (&quot;Goodbye!&quot;);
+	    q.EnqueueTask ("Hello");
+	    for (int i = 0; i < 10; i++) q.EnqueueTask ("Say " + i);
+	    q.EnqueueTask ("Goodbye!");
 	  }
 	  // Exiting the using statement calls q's Dispose method, which
 	  // enqueues a null task and waits until the consumer finishes.
@@ -212,5 +212,5 @@ class Program
 <p>There are many advantages of multithreading: speeding up applications by performing operations in different thread, while processor is waiting for I/O operation or making UI thread responsive all the time, while processing is done in background. However, multithreaded applications are much harder to find bugs and debug. Because of that: you should avoid multithreading everywhere when possible. Especially, when threads access the shared resource.</p>
 <p>To get familiar with multithreading you can read <a href="http://www.devmanuals.com/tutorials/java/corejava/MultiThreading.html">Introduction to Multithreading</a> (with examples in Java) and <a href="http://www.yoda.arachsys.com/csharp/threads/">Multi-threading in .NET: Introduction and suggestions</a> (with "Hello, world" example in C#).</p>
 <p>For a jump start you may find useful a session from TechEd New Zealand 2012: <a href="http://channel9.msdn.com/Events/TechEd/NewZealand/TechEd-New-Zealand-2012/DEV402">Multi-threaded Programming in .NET from the ground up</a> (it's 2 years old, but still accurate).</p>
-<p><iframe style="height:270px;width:480px" src="http://channel9.msdn.com/Events/TechEd/NewZealand/TechEd-New-Zealand-2012/DEV402/player?w=480&amp;h=270" frameborder="0" scrolling="no"></iframe></p>
+<p><iframe style="height:270px;width:480px" src="https://channel9.msdn.com/Events/TechEd/NewZealand/TechEd-New-Zealand-2012/DEV402/player?w=480&amp;h=270" frameborder="0" scrolling="no"></iframe></p>
 <p>To learn more about multithreading in C#, I strongly recommend you <a href="http://www.albahari.com/threading/">Threading in C#</a> by Joseph Albahari, which is also part of <a href="http://www.amazon.com/5-0-Nutshell-The-Definitive-Reference/dp/1449320104">C# 5.0 in a Nutshell</a> (book I am reading now...and also recommending!). </p>

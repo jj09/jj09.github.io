@@ -38,7 +38,7 @@ author:
   last_name: ''
 permalink: "/single-page-apps-spa-rich-internet-apps-with-html5-and-knockout/"
 ---
-<blockquote>A rich Internet application (RIA) is a Web application that has many of the characteristics of desktop application software.</p></blockquote>
+<blockquote>A rich Internet application (RIA) is a Web application that has many of the characteristics of desktop application software.</blockquote>
 <p>We used to create Rich Internet Applications in Silverlight. Now, JavaScript frameworks (e.g. Knockout, Angular) are getting more popular for such purpose. Everything because of HTML5, which combined with them can easily provide nice development environment and rich experience.</p>
 <p>However, all of those frameworks just take advantage of AJAX calls. So, what's big deal? </p>
 <p>There is a few reasons. First one is the fact, that HTML5 <em>data-*</em> attribute allows to bind variables to HTML elements. We do not need to select them using id or class attributes. Another reason is variety of frameworks, which makes all of those AJAX calls behind the scenes. Additionally they do lot of other work such us serializing, models binding etc. They are just higher level of abstraction than jQuery.</p>

@@ -50,7 +50,7 @@ end Hello;
 {% endhighlight %}
 <h4>Basic constructs</h4>
 <p>The table below, shows C# code, and equivalent Ada code.</p>
-<table class="code_cmp" style="margin-bottom: 20px;">
+<table style="margin-bottom: 20px;">
 <tbody>
 <tr>
 <th>C#</th>
@@ -121,7 +121,7 @@ Put_Line(Integer'Image(i));
 <tr>
 <td>
 {% highlight csharp %}
-if (a &gt; b)  
+if (a > b)  
 {
   Console.WriteLine("Condition met");  
 }  
@@ -133,7 +133,7 @@ else
 </td>
 <td>
 {% highlight ada %}
-if a &gt; b then   
+if a > b then   
  Put_Line("Condition met");
 else   
  Put_Line("Condition not met"); 
@@ -162,10 +162,10 @@ switch(i)
 <td>
 {% highlight ada %}
 case i is   
-  when 0 =&gt; Put_Line("zero");   
-  when 1 =&gt; Put_Line("one");   
-  when 2 =&gt; Put_Line("two");   
-  when others =&gt; Put_Line("none");
+  when 0 => Put_Line("zero");   
+  when 1 => Put_Line("one");   
+  when 2 => Put_Line("two");   
+  when others => Put_Line("none");
 end case;
 {% endhighlight %}
 </td>
@@ -173,7 +173,7 @@ end case;
 <tr>
 <td>
 {% highlight csharp %}
-for (int i=1; i&lt;=10; ++i)  
+for (int i=1; i<=10; ++i)  
 {
   Console.WriteLine("Iteration: ");   
   Console.WriteLine(i);   
@@ -312,7 +312,7 @@ is
 
 	procedure Inc;
 	--# global in out Trip, Total;
-	--# derives Trip from Trip &amp; Total from Total;
+	--# derives Trip from Trip & Total from Total;
 	--# post Trip = Trip~ + 1 and Total = Total~ + 1;
 
 end Odometer;{% endhighlight %}

@@ -42,7 +42,11 @@ permalink: "/csriptcs-csharp-in-console/"
 
 <h3>Installation</h3>
 <p>The easiest way to install scriptcs is <a href="http://chocolatey.org/">Chocolatey</a> ('apt-get' for windows). If you didn't hear about it, you should definitely try it out. To install Chocolatey run the following command in console:</p>
-<p><code>@powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%systemdrive%\chocolatey\bin</code></p>
+<p>
+{% highlight console %}
+@powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%systemdrive%\chocolatey\bin
+{% endhighlight %}
+</p>
 <p>Once you have Chocolatey installed, you can install scriptcs:</p>
 <p><code>cinst scriptcs</code></p>
 <p>Chocolatey will install scriptcs to <em>%APPDATA%\scriptcs\</em>. You need to update your PATH accordingly, to easily run it from command line.</p>
