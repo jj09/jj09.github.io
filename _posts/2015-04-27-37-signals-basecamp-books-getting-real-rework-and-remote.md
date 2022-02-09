@@ -33,7 +33,11 @@ author:
   last_name: ''
 permalink: "/37-signals-basecamp-books-getting-real-rework-and-remote/"
 ---
-<div style="text-align: center;"><img class="alignnone size-medium wp-image-104" style="max-height: 350px; width: auto; margin: 20px;" src="{{ site.baseurl }}/assets/2015/04/getting-real.jpg" alt="Getting Real: The Smarter, Faster, Easier Way to Build a Successful Web Application" /><img class="alignnone size-medium wp-image-25" style="max-height: 350px; width: auto; margin: 20px;" src="{{ site.baseurl }}/assets/2015/04/DHH-Rework.jpg" alt="Rework (David Heinemeier Hansson and Jason Fried)" /><img class="alignnone size-medium wp-image-25" style="max-height: 350px; width: auto; margin: 20px;" src="{{ site.baseurl }}/assets/2015/04/DHH-Remote.jpg" alt="Remote: Office Not Required (David Heinemeier Hansson and Jason Fried)" /></div>
+<div style="text-align: center;">
+  <img class="alignnone size-medium wp-image-104" style="max-height: 300px; width: auto; margin: 20px;" src="{{ site.baseurl }}/assets/2015/04/getting-real.jpg" alt="Getting Real: The Smarter, Faster, Easier Way to Build a Successful Web Application" />
+  <img class="alignnone size-medium wp-image-25" style="max-height: 300px; width: auto; margin: 20px;" src="{{ site.baseurl }}/assets/2015/04/DHH-Rework.jpg" alt="Rework (David Heinemeier Hansson and Jason Fried)" />
+  <img class="alignnone size-medium wp-image-25" style="max-height: 300px; width: auto; margin: 20px;" src="{{ site.baseurl }}/assets/2015/04/DHH-Remote.jpg" alt="Remote: Office Not Required (David Heinemeier Hansson and Jason Fried)" />
+</div>
 <p>Recently I read 3 books written by founders of <a href="https://basecamp.com/">Basecamp</a> (formerly 37 Signals): <a href="http://david.heinemeierhansson.com/">David Heinemeier Hansson</a> (creator of Ruby on Rails framework) and <a href="https://twitter.com/jasonfried">Jason Fried</a>:</p>
 <ul>
 <li><a href="https://gettingreal.37signals.com/">Getting Real</a></li>
