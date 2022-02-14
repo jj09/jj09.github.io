@@ -17,10 +17,10 @@ I started this blog in 2013. It was my first year living in the USA. I was in Gr
 Intially I was hosting my blog on webio.pl (that was BC time - Before Cloud). I [moved it to Azure App Service in 2014]({{ site.baseurl }}/moving-wordpress-blog-azure-webio-hosting/) (it was called Azure Website back then). I did many tweaks and improvements since then:
 * Added Google Analytics
 * Added custom domain: jj09.net
-* Created web job that was performing backup of all files + database
+* Created a web job that was performing backup of all files + database (<a href="{{ site.baseurl }}/how-to-save-money-on-azure-with-webjobs">blog post</a>)
 * Enabled comments with Disqus
 * Added performance optimizations (minifications, image compressions, etc.) - all with WordPress plugins
-* Added HTTPS with Cloudflare
+* <a href="{{ site.baseurl }}/taking-wordpress-blog-to-https-with-cloudflare-in-less-than-10-minutes">Added HTTPS with Cloudflare</a>
 * Enabled caching with Cloudflare
 * Added SEO optimization
 
