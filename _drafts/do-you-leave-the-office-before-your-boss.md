@@ -28,7 +28,7 @@ author:
   last_name: ''
 permalink: "/"
 ---
-<p>Recently I had a conversation with a friend of mine who is a team leader. He told me that as a manager he supposed to leave early. I asked why. I had a guess what answer can be, but I was sure these times are gone long time ago. He told that if he leaves late, he is <b>pressuring</b> his employees to stay late, as "you should not leave before your boss leaves the office".</p>
+<p>Recently I had a conversation with a friend of mine who is a team leader. He told me that as a manager he supposed to leave early. I asked why. I had a guess what answer could be, but I was sure these times are gone long time ago. He told that if he leaves late, he is <b>pressuring</b> his employees to stay late, as "you should not leave before your boss leaves the office".</p>
 <p>I was like...</p>
 <p><img src="{{ site.baseurl }}/assets/giphy.gif" alt="Shocked Mr Bean" /></p>
 <p>Initially I thought he was joking. After I told him that I leave before my boss very often, he said that I am an exception.</p>
@@ -45,9 +45,9 @@ permalink: "/"
 1. Work harder, but <b>not</b> longer!<br />
 2. You do not enjoy your job. LEAVE!</p>
 <p>There is only 1 solution to problem number 2: your coworkers do not like their jobs. LEAVE!</p>
-<p>Have you ever had 1 hour that was more productive than entire day? I had. Have you ever had a day when you just couldn't figure out something pretty simple? That's a time when you should go for a walk, run or a bike ride. In 99% of cases, after you get back you solve the issue on the spot. Have you heard about <a href="https://www.psychologytoday.com/us/blog/your-brain-work/201209/stop-trying-solve-problems">unconscious mind</a>?</p>
+<p>Have you ever had 1 hour that was more productive than entire day? I had. Have you ever had a day when you just couldn't figure out something pretty simple? That's a time when you should go for a walk, run or a bike ride. In 99% of cases, after you get back you will solve the issue on the spot. Have you heard about <a href="https://www.psychologytoday.com/us/blog/your-brain-work/201209/stop-trying-solve-problems">unconscious mind</a>?</p>
 <p>This is what you should worry about: how do you optimize YOUR time to be productive. Long hours is rarely an answer. However, <a href="https://www.cnbc.com/2018/12/03/elon-musk-works-80-hour-weeks--heres-how-that-impacts--your-health.html">Elon Musk would disagree</a>.</p>
 <p>There are times when you push for a deadline, and then you need to take a week off. I have friends who have worked 80-hour work weeks for startups only to take 6 months off after 2 years, because of burnout. Time in life is limited, and everybody has the same amount. Do the math.</p>
-<p>Do not optimize your work schedule for time when your boss leave. Optimize it for yourself!</p>
+<p>Do not optimize your work schedule for time when your boss leave. Optimize it for your own productivity!</p>
 <p>*I am not saying that it is bad to stay longer to help fix some production issue, or finish something you work on because you are in the flow. I am just talking about staying longer just to stay "until your boss leaves".</p>
 <p>Do you wait until your boss leave the office?</p>
