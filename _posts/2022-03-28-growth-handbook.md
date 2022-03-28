@@ -146,8 +146,8 @@ If you want to learn more about growth I recommend below resources. Get familiar
 <h3>Books</h3>
   - **[Hacking Growth](https://amzn.to/3IdQB0Y)** - growth bible, strongly recommended!
   - [TOP 101 Growth Hacks](https://amzn.to/3KSQolz) and [TOP 101 Growth Hacks 2](https://amzn.to/3wgENsz)
-  - [Growth Hacking: Silicon Valley's Best Kept Secret](https://www.goodreads.com/book/show/34773507-growth-hacking)
   - [Badass: Making Users Awesome](https://amzn.to/3JtZvsL)
+  - [Growth Hacking: Silicon Valley's Best Kept Secret](https://www.goodreads.com/book/show/34773507-growth-hacking)
 <h3>Talks</h3>
   - [Growth @ AirBnB](https://www.youtube.com/watch?v=03mc78lKOwI)
   - [Growth by Alex Schultz](https://www.youtube.com/watch?v=n_yHZ_vKjno) ([3 years newer talk](https://www.youtube.com/watch?v=URiIsrdplbo))
