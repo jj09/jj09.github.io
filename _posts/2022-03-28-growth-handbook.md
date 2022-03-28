@@ -6,7 +6,7 @@ categories:
 published: true
 status: publish
 date: 2022-03-28 8:09:09.000000000 -07:00
-permalink: "/growth-handbook"
+permalink: "/growth-handbook/"
 ---
 
 <img src="{{ site.baseurl }}/assets/2022/growth.jpeg" alt="Growth header image" />
