@@ -2,7 +2,7 @@
 layout: post
 title: Moving from WordPress to Jekyll
 categories: 
-    - blog
+- blog
 published: true
 status: publish
 date: 2022-02-06 10:59:24.000000000 -08:00

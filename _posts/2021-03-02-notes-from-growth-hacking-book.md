@@ -8,7 +8,7 @@ published: true
 password: ''
 status: publish
 categories:
-- blog
+- growth
 tags: []
 meta:
   _edit_last: '1'

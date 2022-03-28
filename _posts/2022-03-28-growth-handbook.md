@@ -2,10 +2,10 @@
 layout: post
 title: Growth Handbook
 categories:
-  - growth
-published: false
-status: draft
-date: 2022-03-28 9:09:09.000000000 -07:00
+- growth
+published: true
+status: publish
+date: 2022-03-28 8:09:09.000000000 -07:00
 permalink: "/growth-handbook"
 ---
 
@@ -16,7 +16,7 @@ permalink: "/growth-handbook"
 
 I spent almost 3 years on the Facebook Marketplace Growth team. I helped to grow Facebook Buy and Sell Groups, contributed to growth of [C2C Shipped](https://www.facebook.com/help/796066857221106) transactions by 10x in less than 6 months, and led a team that increased [young adults engagement on Marketplace and on Facebook App](https://www.theverge.com/2021/10/25/22745622/facebook-young-adults-refocusing-teams).
 
-How did we do that? This post is a brain dump of ~~all~~some things I learned during that journey and beyond.
+How did we do that? This post is a brain dump of ~~all~~ some things I learned during that journey and beyond.
 
 <h2>Find Product Market Fit First</h2>
 
@@ -54,7 +54,7 @@ How many clicks it takes to make a purchase on your website? Or any activity tha
 
 <h3>In-app upsells</h3>
 
-In order to bring awareness of new features, or simply trying to promote something on your website or app, you can add prompts across different surfaces. Your upsell will be more successful if it’s put in the right context, at the right time. E.g., someone is buying a book, maybe they also want to buy a pdf summary for an extra $1? You might be less successful if someone came to your website to use a [real estate investment calculator](https://apps.apple.com/us/app/reic/id1512907313) you created, and you are trying to upsell your Vue.js Tutorial. Check out [9 awesome examples of upsells](https://www.appcues.com/blog/upselling-prompts-saas).
+In order to bring awareness of new features, or simply trying to promote something on your website or app, you can add prompts across different surfaces. Your upsell will be more successful if it’s put in the right context, at the right time. E.g., someone is buying a book, maybe they also want to buy a pdf summary for an extra <span>$</span>1? You might be less successful if someone came to your website to use a [real estate investment calculator](https://apps.apple.com/us/app/reic/id1512907313) you created, and you are trying to upsell your Vue.js Tutorial. Check out [9 awesome examples of upsells](https://www.appcues.com/blog/upselling-prompts-saas).
 
 <h3>Notifications</h3>
 
@@ -62,7 +62,7 @@ The best way to increase your product retention is to send notifications to remi
 
 <h3>Facebook or Google ads</h3>
 
-Paid ads are easy to make, but not easy to make cost effective! Julian Shapiro’s Growth Handbook has a good intro overview of using ads as acquisition channels. I recommend checking out ["Acquisition channels"](https://www.julian.com/guide/growth/customer-acquisition) (especially channel cost), [“Making ads”](https://www.julian.com/guide/growth/make-ads) and [“Running ads”](https://www.julian.com/guide/growth/facebook-instagram-ads). Again, be aware that ads are easy to make, but not easy to make profitable and efficient. By doing small tweaks in content, CTA text or art work you can increase efficiency by 2x, 5x or even 10x. This can make it profitable or not. If you spend $10,000 on ads that generate $4000 in sales that’s not profitable. You need to improve your ads efficiency by 2.5x to make it break even. Be aware of artificial growth! A few years ago [Chamath](https://twitter.com/chamath) claimed that [40 cents of every $1 dollar goes to Facebook, Google or Amazon](https://www.youtube.com/watch?v=iVOFSsvThxY). You can find many courses, books and tutorials on runnings paid ads online. Be aware that they expire fast! Most advanced advertisers learn how to maximize them to their advantage every day, and you need to be on top of these tricks to keep your ads profitable. Here is a sample [Facebook ads tutorial](https://www.youtube.com/watch?v=M77Ia2VD_xI) and [Google ads tutorial](https://www.youtube.com/watch?v=SNjqe9GT9mw). I also like [this Google ads beginner’s guide](https://blog.hootsuite.com/google-ads/). You should also consider [which platform is best for your product](https://databox.com/facebook-ads-or-google-ads). You can also [use both](https://www.wordstream.com/blog/ws/2018/07/09/facebook-plus-google).
+Paid ads are easy to make, but not easy to make cost effective! Julian Shapiro’s Growth Handbook has a good intro overview of using ads as acquisition channels. I recommend checking out ["Acquisition channels"](https://www.julian.com/guide/growth/customer-acquisition) (especially channel cost), [“Making ads”](https://www.julian.com/guide/growth/make-ads) and [“Running ads”](https://www.julian.com/guide/growth/facebook-instagram-ads). Again, be aware that ads are easy to make, but not easy to make profitable and efficient. By doing small tweaks in content, CTA text or art work you can increase efficiency by 2x, 5x or even 10x. This can make it profitable or not. If you spend <span>$</span>10,000 on ads that generate <span>$</span>4,000 in sales that’s not profitable. You need to improve your ads efficiency by 2.5x to make it break even. Be aware of artificial growth! A few years ago [Chamath](https://twitter.com/chamath) claimed that [40 cents of every <span>$</span>1 dollar goes to Facebook, Google or Amazon](https://www.youtube.com/watch?v=iVOFSsvThxY). You can find many courses, books and tutorials on runnings paid ads online. Be aware that they expire fast! Most advanced advertisers learn how to maximize them to their advantage every day, and you need to be on top of these tricks to keep your ads profitable. Here is a sample [Facebook ads tutorial](https://www.youtube.com/watch?v=M77Ia2VD_xI) and [Google ads tutorial](https://www.youtube.com/watch?v=SNjqe9GT9mw). I also like [this Google ads beginner’s guide](https://blog.hootsuite.com/google-ads/). You should also consider [which platform is best for your product](https://databox.com/facebook-ads-or-google-ads). You can also [use both](https://www.wordstream.com/blog/ws/2018/07/09/facebook-plus-google).
 
 <h3>SEO</h3>
 
@@ -84,7 +84,7 @@ You can find a lot of different growth hacks in [Aladdin Happy’s](https://twit
 
 <h2>What to work on? Use ICE framework</h2>
 
-Coming up with ideas never was the biggest problem for my teams. We always had more ideas than what we could execute. Our brainstorm sessions (powered by [mural](https://www.mural.co/)) always produced 100s of ideas.
+Coming up with ideas never was the biggest problem for my teams. We always had more ideas than what we could execute. Our brainstorm sessions (powered by [mural](https://www.mural.co/)) always produced 100s of ideas. The dillema was *what* to work on.
 
 The simple framework that can help you prioritize your ideas is [ICE Framework](https://ladder.io/blog/growth-strategy). [ICE](https://ladder.io/blog/growth-strategy) stands for Impact, Confidence, Ease of implementation. You score ideas on a scale of 1-10 in every category, and then rank them by summing it up. I’ve seen a lot of engineers throughout my career focusing too much on impact, while totally neglecting ease of implementation.
 
@@ -111,18 +111,40 @@ For more about opportunity sizing checkout [this](https://builtin.com/product/op
 
 <h2>Lessons Learned</h2>
 
-- Doing trumps Planning - trying things always produce better results than endless planning, and analyzing. Over years I observed that growth is not proportional to how much effort you put into single change, but rather to the number of different things you tried. It doesn’t mean to do some shitty changes and hope it will magically bring users. Rather, it emphasizes the importance of execution and trying different things. No matter how crazy and unlikely to bring growth they are!
-- MVE (Minimal Viable Experiment) - when you are not sure if something is going to work, instead of building full-fledged features try to run a directional experiment that requires minimal amount of work. If the experiment shows some positive results, double down and build a fully fledged feature.
-- Make your users winners - in the book [Badass: Making Users Awesome](https://amzn.to/3JtZvsL), [Kathy Sierra](https://en.wikipedia.org/wiki/Kathy_Sierra) explains the importance of making your users feel good while using your product. You need to make users feel “successful” when they are using your product. They need to feel like they are winning something while using your product. If there is no win, there is no point of using your product.
-- Iterate, iterate, iterate - if something didn’t work at first, but you have a strong hypothesis why it should’ve (e.g., data or just intuition), you should iterate. I’ve seen many times people giving up too early. I have also seen when something didn’t work, because there was no trivial bug affecting a large portion of the users. I rarely see something taking off to the moon on the first try. Even if it does, there is probably still an opportunity to iterate and get even greater impact from it.
-- Do not run too many experiments at once - in an ideal scenario you just run 1 A/B test for your product. As you want to move fast you may need to run multiple experiments in parallel. In that case, you will get the best results if you isolate them. I.e., you experiment with one thing on the minimum population needed to show statistically significant results, e.g. 20% (10% get a test, 10% control treatment), another thing on different 20% of users, etc. What if you won’t get meaningful results with a running test on 20% users? You may rerun it later with a larger population when you won’t have other experiments to run. Running a bunch of 50/50 A/B tests may result in randomizing user experience and you won’t be able to tell which of the changes is causing (or not) desired results.
-- Use back tests and holdouts - when you try new things, you may run into novelty effects. I.e., some new feature is causing a temporary spike in engagement, but after some time it goes back to neutral or even negative. Running a test for 2 weeks, and making a decision based on data from <span style="text-decoration:underline;">only week two</span> should be sufficient to remove the novelty bias. But not always. Feature performance can degrade after a month or two. To monitor long term effects of a feature you should consider using back tests. This means launching new experiences for the majority of the population, and keeping a small number of users who still get the old experience. To monitor the compound effect of changes made in some period of time, consider also using [holdouts](https://blog.statsig.com/introducing-holdouts-4bcfc1821d1c). Keeping a small number of users who won’t get any of the new features that you introduced in a given period of time. This can help you assess the total impact of changes you made over time. Usually there is a cannibalization effect and the sum of all backtests won’t equal the holdout impact. Keep in mind that using backtest and holdouts require a pretty large number of users to get statistically significant results. Thus, consider these techniques only when your product is more mature, and you have a lot of experiments running at the same time.
-- What didn’t work in the past may work now - before joining Facebook Marketplace Growth team I often heard: “We tried this in the past, it didn’t work. Don’t waste your time”. In my early days at Growth team, when I was trying to find different ideas, one engineer advised me to look at past experiments that didn’t work. “If it didn’t work in the past, it may work now”. Timing is one of the key elements of building a successful product. If you are [too early with an idea](https://www.youtube.com/watch?v=EUCC2RryD6o) you won’t get anywhere. Another factor in addition to timing is execution. There were multiple attempts at Electric cars before Tesla, and there were a lot of different social networks before Facebook.
+<h3>Doing trumps Planning</h3>
+
+Trying things always produce better results than endless planning, and analyzing. Over years I observed that growth is not proportional to how much effort you put into single change, but rather to the number of different things you tried. It doesn’t mean to do some shitty changes and hope it will magically bring users. Rather, it emphasizes the importance of execution and trying different things. No matter how crazy and unlikely to bring growth they are!
+
+<h3>MVE - Minimal Viable Experiment</h3>
+
+When you are not sure if something is going to work, instead of building full-fledged features try to run a directional experiment that requires minimal amount of work. If the experiment shows some positive results, double down and build a fully fledged feature.
+
+<h3>Make your users winners</h3>
+
+In the book [Badass: Making Users Awesome](https://amzn.to/3JtZvsL), [Kathy Sierra](https://en.wikipedia.org/wiki/Kathy_Sierra) explains the importance of making your users feel good while using your product. You need to make users feel “successful” when they are using your product. They need to feel like they are winning something while using your product. If there is no win, there is no point of using your product.
+
+<h3>Iterate, iterate, iterate</h3>
+
+If something didn’t work at first, but you have a strong hypothesis why it should’ve (e.g., data or just intuition), you should iterate. I’ve seen many times people giving up too early. I have also seen when something didn’t work, because there was no trivial bug affecting a large portion of the users. I rarely see something taking off to the moon on the first try. Even if it does, there is probably still an opportunity to iterate and get even greater impact from it.
+
+<h3>Do not run too many experiments at once</h3>
+
+In an ideal scenario you just run 1 A/B test for your product. As you want to move fast you may need to run multiple experiments in parallel. In that case, you will get the best results if you isolate them. I.e., you experiment with one thing on the minimum population needed to show statistically significant results, e.g. 20% (10% get a test, 10% control treatment), another thing on different 20% of users, etc. What if you won’t get meaningful results with a running test on 20% users? You may rerun it later with a larger population when you won’t have other experiments to run. Running a bunch of 50/50 A/B tests may result in randomizing user experience and you won’t be able to tell which of the changes is causing (or not) desired results.
+
+<h3>Use back tests and holdouts</h3>
+
+When you try new things, you may run into novelty effects. I.e., some new feature is causing a temporary spike in engagement, but after some time it goes back to neutral or even negative. Running a test for 2 weeks, and making a decision based on data from <u>only week two</u> should be sufficient to remove the novelty bias. But not always. Feature performance can degrade after a month or two. To monitor long term effects of a feature you should consider using back tests. This means launching new experiences for the majority of the population, and keeping a small number of users who still get the old experience. To monitor the compound effect of changes made in some period of time, consider also using [holdouts](https://blog.statsig.com/introducing-holdouts-4bcfc1821d1c). Keeping a small number of users who won’t get any of the new features that you introduced in a given period of time. This can help you assess the total impact of changes you made over time. Usually there is a cannibalization effect and the sum of all backtests won’t equal the holdout impact. Keep in mind that using backtest and holdouts require a pretty large number of users to get statistically significant results. Thus, consider these techniques only when your product is more mature, and you have a lot of experiments running at the same time.
+
+<h3>What didn’t work in the past may work now</h3>
+
+Before joining Facebook Marketplace Growth team I often heard: “We tried this in the past, it didn’t work. Don’t waste your time”. In my early days at Growth team, when I was trying to find different ideas, one engineer advised me to look at past experiments that didn’t work. “If it didn’t work in the past, it may work now”. Timing is one of the key elements of building a successful product. If you are [too early with an idea](https://www.youtube.com/watch?v=EUCC2RryD6o) you won’t get anywhere. Another factor in addition to timing is execution. There were multiple attempts at Electric cars before Tesla, and there were a lot of different social networks before Facebook.
 
 <h2>Recommended Growth Resources</h2>
 
+If you want to learn more about growth I recommend below resources. Get familiar with them and try out some growth ideas in your product. Remember that more things you try, more likely you will be successful.
+
 <h3>Books</h3>
-  - **[Hacking Growth](https://amzn.to/3IdQB0Y)** (growth bible, strongly recommended!)
+  - **[Hacking Growth](https://amzn.to/3IdQB0Y)** - growth bible, strongly recommended!
   - [TOP 101 Growth Hacks](https://amzn.to/3KSQolz) and [TOP 101 Growth Hacks 2](https://amzn.to/3wgENsz)
   - [Growth Hacking: Silicon Valley's Best Kept Secret](https://www.goodreads.com/book/show/34773507-growth-hacking)
   - [Badass: Making Users Awesome](https://amzn.to/3JtZvsL)
