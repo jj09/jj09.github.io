@@ -11,8 +11,8 @@ permalink: "/growth-handbook/"
 
 <img src="{{ site.baseurl }}/assets/2022/growth.jpeg" alt="Growth header image" />
 
-<blockquote>Measure some shit, try some shit, test some more shit, throw the stuff that doesn't work. It's not that complicated!</blockquote>
-<div style="margin: -30px 100px 30px 0; text-align: right"><i>Chamath Palihapitiya</i></div>
+<blockquote><p>Measure some shit, try some shit, test some more shit, throw the stuff that doesn't work. It's not that complicated!</p>
+<p>Chamath Palihapitiya</p></blockquote>
 
 I spent almost 3 years on the Facebook Marketplace Growth team. I helped to grow Facebook Buy and Sell Groups, contributed to growth of [C2C Shipped](https://www.facebook.com/help/796066857221106) transactions by 10x in less than 6 months, and led a team that increased [young adults engagement on Marketplace and on Facebook App](https://www.theverge.com/2021/10/25/22745622/facebook-young-adults-refocusing-teams).
 
