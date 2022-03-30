@@ -139,6 +139,12 @@ When you try new things, you may run into novelty effects. I.e., some new featur
 
 Before joining Facebook Marketplace Growth team I often heard: “We tried this in the past, it didn’t work. Don’t waste your time”. In my early days at Growth team, when I was trying to find different ideas, one engineer advised me to look at past experiments that didn’t work. “If it didn’t work in the past, it may work now”. Timing is one of the key elements of building a successful product. If you are [too early with an idea](https://www.youtube.com/watch?v=EUCC2RryD6o) you won’t get anywhere. Another factor in addition to timing is execution. There were multiple attempts at Electric cars before Tesla, and there were a lot of different social networks before Facebook.
 
+<h3> The importance of North Star Metric</h3>
+
+North Star Metric is a metric that the best measures value of your product. It could be Daily Active Users, number of transactions per day or number of posts users create on your service.
+
+When you grow your product, you need to have North Star Metric and focus all efforts on it. Would some change increase it? Do it. Otherwise - abandon. This helps tremendously with correct focus and proritization.
+
 <h2>Recommended Growth Resources</h2>
 
 If you want to learn more about growth I recommend below resources. Get familiar with them and try out some growth ideas in your product. Remember that more things you try, more likely you will be successful.
