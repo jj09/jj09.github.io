@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Space
-date: 
+#date: 
 type: post
 parent_id: '0'
 published: false

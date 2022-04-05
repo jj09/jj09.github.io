@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Tips & Tricks for selling on Facebook
-date: 
+#date: 
 type: post
 parent_id: '0'
 published: false

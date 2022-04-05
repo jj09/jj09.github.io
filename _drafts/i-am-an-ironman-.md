@@ -1,7 +1,7 @@
 ---
 layout: post
 title: I am an Ironman!
-date: 
+#date: 
 type: post
 parent_id: '0'
 published: false

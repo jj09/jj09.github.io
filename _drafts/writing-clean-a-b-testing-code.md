@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Writing clean A/B testing code
-date: 
+#date: 
 type: post
 parent_id: '0'
 published: false

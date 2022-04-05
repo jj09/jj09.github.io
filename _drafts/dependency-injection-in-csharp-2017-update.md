@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Dependency Injection in C# - 2017 update
-date: 
+#date: 
 type: post
 parent_id: '0'
 published: false

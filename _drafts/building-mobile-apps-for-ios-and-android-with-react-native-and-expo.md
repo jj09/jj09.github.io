@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Building Mobile Apps for iOS and Android with React Native and Expo
-date: 
+#date: 
 type: post
 parent_id: '0'
 published: false
