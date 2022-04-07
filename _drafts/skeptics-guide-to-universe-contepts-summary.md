@@ -13,7 +13,7 @@ permalink: "/skeptics-guide-to-universe-concepts-summary/"
     <a href="https://amzn.to/3r3Eb64"><img src="{{ site.baseurl }}/assets/2022/skeptics-guide-to-universe-book-cover.jpg" alt="Skeptics Guide to Universe - book cover" /></a>
 </div>
 
-Skeptics Guide to Universe is a great book about different mechanisms of deception and biases. After reading this I decided to summarize all the concepts from the book.
+Skeptics Guide to Universe is a great book about different mechanisms of deception and biases. After reading it I decided to summarize all the concepts from the book for the future reference. Especially because I didn't find any good summary online.
 
 <h2>Concepts</h2>
 
@@ -107,8 +107,9 @@ Skeptics Guide to Universe is a great book about different mechanisms of decepti
 
 <h2>Summary</h2>
 
-<a href="https://twitter.com/elonmusk/status/1472649556965969925">Elon's tweet</a> showing 50 biases to be aware of is a good supplement for this book: 
+Remember to be skeptical about this book and ideas presented in it!
+
+I found out about this book from Elon Musk's tweet. In his other tweet he shared <a href="https://twitter.com/elonmusk/status/1472649556965969925">awesome infographic</a> 
+showing 50 biases to be aware of. It is a good supplement for this book: 
 
 <img src="{{ site.baseurl }}/assets/2022/50-cognitive-biases.png" alt="50 cognitive biases to be aware of" />
-
-Remember to be skeptical about this book and ideas presented in it as well!
