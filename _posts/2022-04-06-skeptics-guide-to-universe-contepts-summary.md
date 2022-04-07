@@ -5,7 +5,6 @@ categories:
 - books
 published: true
 status: publish
-# date: 2022-04-11 8:09:09.000000000 -07:00
 permalink: "/skeptics-guide-to-universe-concepts-summary/"
 ---
 
