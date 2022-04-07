@@ -3,8 +3,6 @@ layout: post
 title: Skeptics Guide to Universe - Concepts Summary
 categories:
 - books
-published: true
-status: publish
 permalink: "/skeptics-guide-to-universe-concepts-summary/"
 ---
 
