@@ -29,13 +29,17 @@ author:
 permalink: "/"
 ---
 <p><!-- wp:paragraph --></p>
-<p>Since joining Facebook, this blog is not very technical. This is mostly caused by extreme scrutiny that company is facing and not sharing any of awesome things we do at Facebook Marketplace to help over 1 Billion people World-Wide to buy and sell used things for cheap instead of throwing them away and buying new, expensive items, is just a safety measure to prevent others from taking 1 single data point, putting it our of context and building a Sci-Fi narrative. Instead I blog about my <a href="https://jj09.net/puppy-tutorial/"><s>puppy</s> dog</a>, and now Ironman triathlon.</p>
+<p>Since joining Facebook, this blog is not very technical. This is mostly caused by extreme scrutiny that company is facing. I wish I could've share more about awesome things we did at Facebook Marketplace to help over 1 Billion people to buy and sell used things for cheap instead of throwing them away and buying new, expensive items. It's just a safety measure to prevent others from taking 1 single data point, putting it our of context and building a Sci-Fi narrative. Instead I blog about my <a href="https://jj09.net/puppy-tutorial/"><s>puppy</s> dog</a>, and now Ironman triathlon.</p>
+<h3>How did I get into triathlon</h3>
+- Lance
+- Biking
+- Didn't want to be fat: these guys who can do STP, but are 20lbs+ overweight.
 <p><!-- /wp:paragraph --></p>
 <p><!-- wp:paragraph --></p>
 <p>The Ironman triathlon is 2.4 mile swim, 112 mile bike and 26.2 mile run (marathon). You have 17 hours to complete in order to finish.</p>
 <p><!-- /wp:paragraph --></p>
 <p><!-- wp:paragraph --></p>
-<p>Training</p>
+<h3>Training</h3>
 <p><!-- /wp:paragraph --></p>
 <p><!-- wp:paragraph --></p>
 <p>I found <a href="https://s3-eu-west-1.amazonaws.com/kpdocshare/Training_Plans/TRI38.First_Ironman.pdf">a plan</a> online, which I started to follow. I did a quick consult with a coach (Lesley Mettler)...only to realize how much I don't know, and how much more I could've learn. I recommend anyone who want to attempt Ironman to get a coach FROM THE BEGINNING!!! It will make your training more efficient, more enjoyable and less stressful (is that enough? am I doing it right?).</p>
@@ -75,3 +79,6 @@ permalink: "/"
 <li>stretching is extremely important</li>
 </ul>
 <p><!-- /wp:list --></p>
+<h3>Why do I care?</h3>
+In July I did 22h of training. It's recommended that all of us do 30mins/day -> 15h/month. I just did extra 7h on top of that!
+If you want to do sprint triathlon you can do it with 3.5h/week or less! 2x30 mins run + 1x30 mins swim + 1x1-2h bike ride!
