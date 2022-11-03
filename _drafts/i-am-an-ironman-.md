@@ -30,6 +30,13 @@ permalink: "/"
 ---
 <p><!-- wp:paragraph --></p>
 <p>Since joining Facebook, this blog is not very technical. This is mostly caused by extreme scrutiny that company is facing. I wish I could've share more about awesome things we did at Facebook Marketplace to help over 1 Billion people to buy and sell used things for cheap instead of throwing them away and buying new, expensive items. It's just a safety measure to prevent others from taking 1 single data point, putting it our of context and building a Sci-Fi narrative. Instead I blog about my <a href="https://jj09.net/puppy-tutorial/"><s>puppy</s> dog</a>, and now Ironman triathlon.</p>
+
+<p>I've been doing triathlons for over 5 years now. Mostly Sprint and Olympic distances, Ocassionally half Ironman (AKA Ironman 70.3). The Sprint distance is 750m of swimming, followed by 20km biking and 5k run. Olympic is double that: 1.5k swim + 40k bike + 10k run. Half Ironman is 1.2 mile swim + 56 mile bike + 13.1 mile run (half marathon), which adds up to total of 70.3 miles. Hence, it's also being called Ironman 70.3.</p>
+
+<p>I knew that at some point in my life I wanted to finish the full distance Ironman triathlon. Then COViD happen, and it put a pause on my favorite sport. In 2020, together with friends we did our own Sprint and Olympic distance triathlon at Lake Sammamish. We just swam, change to bike outfit, did the bike distance, and after locking bikes securely, finished everything with a run.</p>
+
+<p>When, in 2021 triathlons started happening again, I decided to do Ironman 70.3 Oregon. After finishing it, in July, I thought: why not keep training and do full Ironman this year? There was Ironman California, just 3 months away, which would be just enough time to build up from half to full Ironman. After discussing it with my wife, I signed up!</p>
+
 <h3>How did I get into triathlon</h3>
 - Lance
 - Biking
