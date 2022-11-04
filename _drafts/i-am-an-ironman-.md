@@ -1,91 +1,65 @@
 ---
 layout: post
-title: I am an Ironman!
-#date: 
-type: post
-parent_id: '0'
-published: false
-password: ''
-status: draft
+title: How to become an Ironman!
 categories:
-- blog
-tags: []
-meta:
-  _edit_last: '1'
-  layout: default
-  feature_size: blank
-  hide_post_title: default
-  unlink_post_title: default
-  hide_post_meta: default
-  hide_post_date: default
-  hide_post_image: default
-  unlink_post_image: default
-author:
-  login: jj09
-  email: jakub.jedryszek@gmail.com
-  display_name: jj09
-  first_name: ''
-  last_name: ''
-permalink: "/"
+- triathlon
+permalink: "/how-to-become-an-ironman/"
 ---
-<p><!-- wp:paragraph --></p>
-<p>Since joining Facebook, this blog is not very technical. This is mostly caused by extreme scrutiny that company is facing. I wish I could've share more about awesome things we did at Facebook Marketplace to help over 1 Billion people to buy and sell used things for cheap instead of throwing them away and buying new, expensive items. It's just a safety measure to prevent others from taking 1 single data point, putting it our of context and building a Sci-Fi narrative. Instead I blog about my <a href="https://jj09.net/puppy-tutorial/"><s>puppy</s> dog</a>, and now Ironman triathlon.</p>
+The Ironman triathlon is 2.4 mile swim, 112 mile bike and 26.2 mile run (marathon). You have 17 hours to complete it in order to finish.
 
-<p>I've been doing triathlons for over 5 years now. Mostly Sprint and Olympic distances, Ocassionally half Ironman (AKA Ironman 70.3). The Sprint distance is 750m of swimming, followed by 20km biking and 5k run. Olympic is double that: 1.5k swim + 40k bike + 10k run. Half Ironman is 1.2 mile swim + 56 mile bike + 13.1 mile run (half marathon), which adds up to total of 70.3 miles. Hence, it's also being called Ironman 70.3.</p>
+<h2>How I got into triathlons</h2>
 
-<p>I knew that at some point in my life I wanted to finish the full distance Ironman triathlon. Then COViD happen, and it put a pause on my favorite sport. In 2020, together with friends we did our own Sprint and Olympic distance triathlon at Lake Sammamish. We just swam, change to bike outfit, did the bike distance, and after locking bikes securely, finished everything with a run.</p>
+I've been doing triathlons for over 5 years now. Mostly Sprint and Olympic distances. Ocassionally half Ironman (AKA Ironman 70.3). The Sprint distance is 750m of swimming, followed by 20km bike and 5k run. Olympic is double of that: 1.5k swim + 40k bike + 10k run. Half Ironman is 1.2 mile swim + 56 mile bike + 13.1 mile run (half marathon), which adds up to total of 70.3 miles. Hence, it's also being called Ironman 70.3.
 
-<p>When, in 2021 triathlons started happening again, I decided to do Ironman 70.3 Oregon. After finishing it, in July, I thought: why not keep training and do full Ironman this year? There was Ironman California, just 3 months away, which would be just enough time to build up from half to full Ironman. After discussing it with my wife, I signed up!</p>
+I love biking since I was a kid. When I got to college, inspired by Lance Armstrong, I decided to try triathlons. Unfortunately, it took me a while as I was going through knee injury at the time, which ended up with arthroscopy. Coming back to sports after that took over 1 year.
 
-<h3>How did I get into triathlon</h3>
-- Lance
-- Biking
-- Didn't want to be fat: these guys who can do STP, but are 20lbs+ overweight.
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
-<p>The Ironman triathlon is 2.4 mile swim, 112 mile bike and 26.2 mile run (marathon). You have 17 hours to complete in order to finish.</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
+The first triathlon, I've ever done was indoor triathlon i55: 10 mins of swimming, 30 mins of biking and 15 mins of running. The final result was based on the distance covered. As most of beginners, I pushed too hard on bike, and was barely able to run for 15 minutes. Despite that, I was hooked, and soon after that signed up for my very first sprint triathlon.
+
+The sprint triathlon didn't happen, because of the water quality at Juanita Beach in Kirkland. A few days before the race, they change triathlon to run-bike-run, which ultimately was duathlon. I still got triathlon finisher medal as they had them made before finding out about the water quality issue.
+
+Despite all the obstacles, I decided to keep going, and signed up for an Olympic Triathlon. It was Troika Triathlon in Spokane, WA. It was almost my first, legit triathlon. Almost because of weather issues they cut the swim short, and added distance to bike :O I still liked the challenge, and decided to take it to the next level. I did one more Olympic tri and entered the serious triathlon World by doing half-Ironman distance race. It was actually much easier than I thought, and I was thinking that maybe I would've been able to pull a full distance that day!
+
+While training for half-Ironman though, I learned that you cannot live life like you use to and just throw trainings in the spare time. You need to add time for rest, and take care of the nutrition. One week before the half-Ironman race I was soo tired that I spent entire weekend in bed. I wasn't sick. No cold, or sore throat. I was just exhausted.
+
+Over years I did a few more Sprint, Olympic and one more Ironman 70.3 triathlon. While olympic distance races went well, the half-Ironman was a challenge. I was dealing with foot injury, and decided to just run less during the training for the race. This, didn't ended up well. After the race, I messed up my foot so bad that I was barely able to walk. Fortunately, after a week or so I was fine. At that time I didn't even stretch before and after workouts!
+
+I consluded that races above Olympic distance are not healthy. They require more time to train that you need to stay healthy. There is too much strain on your body. Often ending up in injuries. There is also need to spend more time that I would want training than doing other things. Wanna go hiking this weekend? No, I need to do planned swim. If I won't my training plan will get screw up, and I'll have to readjust it...and I won't be prepared to the race as good as I should've.
+
+<h2>Ironman journey</h2>
+
+I knew that at some point in my life I wanted to finish the full distance Ironman triathlon. I was delaying it as I knew that it will require significant time cmmitment not only for time to train, but also for time to rest. Then COViD happen, and it put a pause to my favorite sport. In 2020, when all events were cancelled, I did Sprint and Olympic triathlon with friends. We just swam, changed to bike outfit, did the bike distance, and after locking bikes securely in our cars, finished everything with a run.
+
+When, in 2021 triathlons started happening again, I decided to do Ironman 70.3 Oregon. I was hungry. As running was my weakest discipline, because of knee injuries, I decided to do half Marathon earlier that year. My thinking was: if I finish half marathon, I can do half Ironman. Swimming and biking wasn't a problem for me. The running was the issue. I followed adjusted 6 weeks to race training plan, and that was enough to finish. After finishing in July 2021, I thought: why not keep training and do a full Ironman this year? There was Ironman California, just 3 months away, which would give me enough time to build up from half to full Ironman. After discussing it with my wife, I signed up!
+
 <h3>Training</h3>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
-<p>I found <a href="https://s3-eu-west-1.amazonaws.com/kpdocshare/Training_Plans/TRI38.First_Ironman.pdf">a plan</a> online, which I started to follow. I did a quick consult with a coach (Lesley Mettler)...only to realize how much I don't know, and how much more I could've learn. I recommend anyone who want to attempt Ironman to get a coach FROM THE BEGINNING!!! It will make your training more efficient, more enjoyable and less stressful (is that enough? am I doing it right?).</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
-<p>I maintained a Google Spreadsheet where I tracked all my workouts. I used green for workouts I did as planned (at least 80%+ of planned distance). Yellow were workouts cut short (below 80%, but I did something), and red were skipped workouts). The best part of my day was when after training I was going to the spreadsheet and I was marking workout as done (green).</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
-<p>Life</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
-<p>Training for Ironman is not only about making time for training, but also about making more time for resting! I underestimated how much more time I would need for rest. Especially, during the weekends after long workouts I just wanted to lay down in bed and watch TV...</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
-<p>Sometimes, easy thing like attending baby shower at 2PM on Saturday or joining friends for new James Bond movie that my friend rented cinema for is impossible. I couldn't do baby shower because that day I had to ride 100 miles. For me that was ~8h...I would have to start at ~5AM, and to have 1h for shower/stretch and driving to baby shower...not ideal taking into account that sunrise at the time was after 7AM. When planning to watch the new Bond movie with friends at 1PM, I had only 90mins run planned for that day...but plan changed a week before (when everything was set for the movie), and I had to run 16 miles, which took me almost 4 hours. I planned to start at 8AM, but my body said no to 6AM wake up...and I ended up starting after 9AM, and finished around 1PM...no time to shower/stretch/drive to the cinema...and I skipped the movie.</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
-<p>When reading this you probably think: couldn't you just move that workout to different day or wake up earlier? On top of your body that is tired, your workout plan which is pretty packed (you cannot easily move workouts without impact on your training and you want to prepare the best you can right?), the weather is another component that comes to play. I am talking only about sunrise time, but also about rain and cold.</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
-<p>Regarding the weather I was actually pretty fortunate taking into account I live in Seattle, and weather here in September/October can be not the best. I had to shuffle workouts a bit, do some zwift biking instead of running outside, and replace Open Water Swims with pool...but the most important long runs and long bike rides I was able to do outdoor! Thank you!</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
-<p>Challenges</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
-<p>On top of already mentioned time-management issues and weather, you may also run into another obstacle: injury. This happened to me ~4-5 weeks before the race. My knee didn't handle training load well, and I also messed up by forgetting a knee brace for my long run.</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
-<p>Situations like that are easy to make you quit. Alternative, which I took, is countless PT sessions, stretching, messages and exercises at home on top of my workouts.</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:paragraph --></p>
-<p>Thoughts:</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:list --></p>
-<ul>
-<li>stretching is extremely important</li>
-</ul>
-<p><!-- /wp:list --></p>
-<h3>Why do I care?</h3>
+
+I found <a href="https://s3-eu-west-1.amazonaws.com/kpdocshare/Training_Plans/TRI38.First_Ironman.pdf">My First Ironman Training Plan</a> online, which I started to follow. I did a quick consult with a coach (Lesley Mettler)...only to realize how much I don't know, and how much more I could've learn. I recommend anyone who want to attempt an Ironman to get a coach FROM THE BEGINNING!!! It will make your training more efficient, more enjoyable and less stressful. Is that enough? Am I doing it right? Isn't that too much if I just want to finish?
+
+I maintained a Google Spreadsheet where I tracked all my workouts. I used green for workouts I did as planned (at least 80% or more of planned distance). Yellow for workouts that were cut short (below 80%), and red for workouts I skipped workouts. Marking workouts as done (green) was one of the best parts of my day.
+
+<h3>Life</h3>
+
+Training for Ironman is not only about making time for training, but also about making more time for resting! I underestimated how much more time I would need for rest. Especially, during the weekends after long workouts. I just wanted to lay down in bed and watch TV...
+
+Sometimes, easy thing like attending baby shower at 2PM on Saturday or joining friends to watch new James Bond movie in the cinema that my friend rented was impossible. I couldn't do baby shower because that day I had to ride 100 miles. For me that was ~8h...I would have to start at ~5AM, and to have 1h for shower/stretch and driving to baby shower. Not ideal. Especially taking into account that sunrise at the time was after 7AM. When planning to watch the new Bond movie with friends at 1PM, I had only 90mins run planned for that day. However, I had to change that plan (when everything was already set for the movie), and I had to run 16 miles, which took me almost 4 hours. I planned to start at 8AM, but my body said no to 6AM wake up. I ended up starting after 9AM, and finished around 1PM. I skipped the movie. The Ironman dream was more important.
+
+When reading this you probably think: couldn't you just move that workout to different day or do it after the movie? Well, it's not that easy. Doing it after the movie would require me to start around 5PM at best. Finishing long run at 9PM is not great. Moving to another day? It's not easy to ensure that you do enough of swimming, biking and running even when everything goes according to the plan. Trying to move things around, especially closer to race, is hard. Of course you can do it, but...you would be prepared worse.The weather is another component that comes to play. The rain and cold may mess up your plans for good.
+
+Regarding the weather I was actually pretty fortunate, taking into account I live in Seattle, and weather here in September/October can be not the best. I had to shuffle workouts a bit, do some zwift biking instead of running outside, and replace Open Water Swims with pool. The most important long runs and long bike rides I was able to do outdoor! Yay!
+
+<h3>Challenges</h3>
+
+On top of already mentioned time-management issues and weather, you may also run into another very common obstacle: injury. This happened to me ~4-5 weeks before the race. My knee didn't handle training load well. I also messed up by forgetting a knee brace that I usually wear for one of my long runs.
+
+Many people quit at that point. I decided to do whatever it takes. Countless PT sessions, stretching, messages and hours of exercises at home on top of my workouts helped to alleviate the issue. I was still not very confident that I will be able to finish the race though.
+
+I did whatever I could, overcame all the obstacles: time management, sacrificing social life, and managing injury. Unfortunately, I couldn't overcome the final obstacle. The race was cancelled because of [Bomb Cyclone](https://www.tri247.com/triathlon-news/elite/ironman-california-cancelled-weather)!
+
+Thoughts:
+
+* stretching is extremely important
+
+
+<h2>Why do I care?</h2>
 In July I did 22h of training. It's recommended that all of us do 30mins/day -> 15h/month. I just did extra 7h on top of that!
 If you want to do sprint triathlon you can do it with 3.5h/week or less! 2x30 mins run + 1x30 mins swim + 1x1-2h bike ride!
