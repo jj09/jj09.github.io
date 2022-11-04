@@ -15,7 +15,7 @@ I love biking since I was a kid. When I got to college, inspired by Lance Armstr
 
 The first triathlon, I've ever done was indoor triathlon i55: 10 mins of swimming, 30 mins of biking and 15 mins of running. The final result was based on the distance covered. As most of beginners, I pushed too hard on bike, and was barely able to run for 15 minutes. Despite that, I was hooked, and soon after that signed up for my very first sprint triathlon.
 
-The sprint triathlon didn't happen, because of the water quality at Juanita Beach in Kirkland. A few days before the race, they change triathlon to run-bike-run, which ultimately was duathlon. I still got triathlon finisher medal as they had them made before finding out about the water quality issue.
+The sprint triathlon didn't happen, because of the water quality at Juanita Beach in Kirkland. A few days before the race, they changed triathlon to run-bike-run, which was ultimately a duathlon. I still got triathlon finisher medal as they had them made before finding out about the water quality issue.
 
 Despite all the obstacles, I decided to keep going, and signed up for an Olympic Triathlon. It was Troika Triathlon in Spokane, WA. It was almost my first, legit triathlon. Almost because of weather issues they cut the swim short, and added distance to bike :O I still liked the challenge, and decided to take it to the next level. I did one more Olympic tri and entered the serious triathlon World by doing half-Ironman distance race. It was actually much easier than I thought, and I was thinking that maybe I would've been able to pull a full distance that day!
 
