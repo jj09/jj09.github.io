@@ -1,9 +1,9 @@
 ---
 layout: post
-title: How to become an Ironman!
+title: I am an Ironman!
 categories:
 - triathlon
-permalink: "/how-to-become-an-ironman/"
+permalink: "/i-am-an-ironman/"
 ---
 The Ironman triathlon is 2.4 mile swim, 112 mile bike and 26.2 mile run (marathon). You have 17 hours to complete it in order to finish.
 
