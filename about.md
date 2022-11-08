@@ -38,7 +38,7 @@ author:
   last_name: ''
 permalink: "/about/"
 ---
-<p style="text-align: justify;"><img class="aligncenter size-medium wp-image-13" src="{{ site.baseurl }}/assets/2013/06/JakubJedryszek.jpg" alt="Jakub Jedryszek" width="350" height="350" /></p>
+<p style="text-align: justify;"><img class="aligncenter size-medium wp-image-13" src="{{ site.baseurl }}/assets/JacobJedryszek-full-square.jpg" alt="Jacob Jedryszek" width="350" height="350" /></p>
 <h3>Current</h3>
 <p>I am helping to grow Facebook Marketplace.</p>
 <p><img class="aligncenter size-full wp-image-19946" src="{{ site.baseurl }}/assets/2013/06/FbMarketplaceOnMobile-scaled-e1617406305947.jpeg" alt="Facebook Marketplace" width="960" height="517" /></p>
