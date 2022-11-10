@@ -10,13 +10,13 @@ permalink: "/resume/"
 <ul>
   <li>Meta: Software Engineer (9/2019 - Present)
     <ul>
-      <li>Building new product <a href="https://super.events">super.events</a></li>
-      <li>Helped to grow Facebook Marketplace (Buy and Sell Groups, C2C Shipping, Young Adults Engagement)</li>
+      <li>Building Live Q&A product for creators: <a href="https://super.events">super.events</a></li>
+      <li>Helped to grow <a href="https://facebook.com/marketplace">Facebook Marketplace</a> (Buy and Sell Groups, C2C Shipping, Young Adults Engagement)</li>
     </ul>
   </li>
   <li>Microsoft: Software Engineer (9/2014 - 9/2019)
     <ul>
-      <li>Reinvented User Experience at Azure Search and did early growth work.</li>
+      <li>Redesigned and rebuilt Azure Search Management Console and did early growth work.</li>
       <li>Started and shipped <a href="https://jj09.net/under-the-hood-of-the-azure-mobile-app/">Azure Mobile
           App</a> (Xamarin, iOS, Android, UWP, C#, xUnit, NUnit, <a href="https://www.xamarin.com/test-cloud">Xamarin
           Test Cloud</a>, <a href="https://www.visualstudio.com/team-services/">VSTS</a>).</li>
