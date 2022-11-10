@@ -14,7 +14,7 @@ I work on [Super.Events](https://super.events) - Live Q&A platform for creators.
 
 In the past, I worked on [Facebook Marketplace Growth Team](/growth-handbook/).
 
-Before Meta, I worked for Microsoft where I helped to build the [new Azure Management Portal](/azure-portal-the-largest-single-page-app-in-the-world/), [Azure Management Mobile App](/under-the-hood-of-the-azure-mobile-app/), [Azure Search](/azure-search-on-azure-friday/), and [SeeingAI app](/seeing-ai-photo-gallery/).
+Before Meta, I worked for Microsoft where I helped to build the [new Azure Management Portal](/azure-portal-the-largest-single-page-app-in-the-world/), [Azure Management Mobile App](/under-the-hood-of-the-azure-mobile-app/), [Azure Search](/azure-search-on-azure-friday/), and [SeeingAI](/seeing-ai-photo-gallery/).
 
 <!-- I worked at Microsoft on Azure Cloud. I helped to ship the [new Azure Management Portal](/azure-portal-the-largest-single-page-app-in-the-world/) - the first Single Page App using TypeScript. I started [Azure Management Mobile App](/under-the-hood-of-the-azure-mobile-app/), which utill today has higher store ratings than gcloud and AWS mobile apps on both App Store and Google Play. I helped to improve the management console for [Azure Search](/azure-search-on-azure-friday/). In my 10% time, I was helping with [SeeingAI app](/seeing-ai-photo-gallery/) - a mobile app for blind people that recognizes the environment around them. -->
 
