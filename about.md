@@ -48,7 +48,7 @@ I occasionally speak at conferences around the World. You can find talks [here
 
 <p style="text-align: justify;"><img class="aligncenter wp-image-16221 size-full" src="{{ site.baseurl }}/assets/2013/06/speaking2.jpeg" alt="speaking - QCon Shanghai" width="900" height="600" /></p>
 
-<h3>This I built in spare time</h3>
+<h3>OSS projects</h3>
 
 * [IP heatmap](https://github.com/jj09/ip-heatmap-generator) - user's density visualizer
 * [voiceCmdr](https://github.com/jj09/voiceCmdr) - library for adding voice commands to your website
