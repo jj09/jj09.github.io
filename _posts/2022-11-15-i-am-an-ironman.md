@@ -83,7 +83,9 @@ Thanks to the experience from the previous year, I knew better how to manage my 
 
 In my second attempt, I prepared better in all disciplines. I followed the same [My First Ironman Training Plan](https://s3-eu-west-1.amazonaws.com/kpdocshare/Training_Plans/TRI38.First_Ironman.pdf). I still swam only once per week. This time I modified long runs to be distance based building up to 16 miles as longest run per my coach recommendation.
 
-I vastly improved nutrition, both during and after training. 60g+ of carbs per hour during, and [protein shake](https://www.target.com/p/premier-protein-shake-chocolate-4pk-11-fl-oz/-/A-50835667) after workouts longer than 1h. I showed up on the start line stronger than year before and injury free.
+I vastly improved nutrition, both during and [after training](https://twitter.com/realJacobJed/status/1569351545950699521?s=20&t=rFJyPdDq2T-jATA2b38L2A). 60g+ of carbs per hour during, and [protein shake](https://www.target.com/p/premier-protein-shake-chocolate-4pk-11-fl-oz/-/A-50835667) after workouts longer than 1h. 
+
+I showed up on the start line stronger than year before and injury free.
 
 <h3>Successful race</h3>
 
