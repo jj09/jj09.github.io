@@ -59,13 +59,11 @@ I occasionally speak at conferences around the World. You can find talks [here
 
 <h3>Sport and outdoors</h3>
 
-I love biking and triathlons. 
+I love biking and triathlons. [I am an Ironman](/i-am-an-ironman/).
 
-I am an Ironman (2.4 mile swim + 112 mile bike + 26.2 mile run).
+<!-- My favorite distance is Olympic triathlon: 1.5k swim + 40k bike + 10k run. -->
 
-My favorite distance is Olympic triathlon: 1.5k swim + 40k bike + 10k run.
-
-I also enjoy hiking, skiing and sailing.
+I also enjoy hiking, skiing, soccer and sailing.
 
 <!-- <p style="text-align: justify;">Cycling is my passion. I ride over 3000 miles on my bike every year. From time to time I participate in bike rides such as <a href="http://www.cascade.org/rides-major-rides-flying-wheels/flying-wheels-ride-details">Flying Wheels</a>, <a href="http://www.cascade.org/rides-major-rides/group-health-stp-presented-alaska-airlines">Seattle To Portland</a>,  <a href="http://www.cascade.org/rides-major-rides/chilly-hilly">Chilly Hilly</a>, <a href="http://www.cascade.org/rides-major-rides/ride-seattle-vancouver-and-party-rsvp">Ride from Seattle to Vancouver</a>.</p>
 <p style="text-align: justify;"><img class="aligncenter size-full wp-image-12531" src="{{ site.baseurl }}/assets/2013/06/bike.jpg" alt="Jakub Jedryszek - bike" width="800" height="459" /></p>
