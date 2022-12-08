@@ -44,7 +44,7 @@ permalink: "/"
 </li>
 <li>reduce cognitive leaks
 <ul>
-<li>junk food example</li>
+<li>junk food example - solving difficult problems all day increases liklihood of eating junk food because brain doesn't have cognitive power to make right decision</li>
 </ul>
 </li>
 </ul>
