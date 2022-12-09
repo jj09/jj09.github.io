@@ -173,7 +173,7 @@ To query Apollo GraphQL endpoint we can use `useQuery` React hook provided by `@
 
 <h3>Call 'hello' query from React</h3>
 
-Let's create `Hello` React component that will do the call and display it. We need to defined GraphQL query and pass it to `useQuery`. Neat thing about Apollo server is ability to directly copy/paste query from playground.
+Let's create `Hello` React component that will perform a call to GraphQL API and display the returned result. We need to define a GraphQL query and pass it to `useQuery`. Neat thing about Apollo server is the ability to directly copy/paste query from the playground.
 
 {% highlight react %}
 import { gql, useQuery } from '@apollo/client';
@@ -315,7 +315,7 @@ This will set us up for the next section. You should always extract independent 
 
 CRUD stands for Create, Read, Update, Delete. It's a backbone on every web app. Except twitter. They didn't support Update for a while xD
 
-In this section, I'll describe how to create simple CRUD for Books. Every book will have title and year when it was published. Data will be stored in MongoDB. Web UI will have interface to display (Read), add (Create), edit (Update) and delete books through GraphQL API.
+In this section, I'll describe how to create simple CRUD for books. Every book will have title and year when it was published. Data will be stored in MongoDB. Web UI will have interface to display (Read), add (Create), edit (Update) and delete books through GraphQL API.
 
 <h3>Working with MongoDB</h3>
 
@@ -359,7 +359,7 @@ Make sure your MongoDB uses port 27017. If not, update the uri. You can find the
 
 <h3>Create Book model and query data from MongoDB</h3>
 
-We can map MongoDB collections to node.js object by creating models with `mongoose`. Create Book model in `src/models/Book.js` file:
+We can map MongoDB collections to JavaScript objects by creating models with `mongoose`. Create Book model in `src/models/Book.js` file:
 
 {% highlight javascript %}
 import mongoose from 'mongoose';
@@ -391,7 +391,7 @@ export const typeDefs = gql`
 `;
 {% endhighlight %}
 
-We also need to add resolver in `src/resolvers.js`:
+We also need to add resolver that is querying MongoDB with `mongoose` in `src/resolvers.js`:
 
 {% highlight javascript %}
 import {Book} from './models/Book.js';
@@ -442,7 +442,7 @@ export default function Book({book}) {
 }
 {% endhighlight %}
 
-The `Books` component will use the `Book` component to display all books from MongoDB. It will also fetch data from GraphQL API. We need to define GraphQL query (which we can copy form Playground), and query Apollo Server with `useQuery`. Create new file in `src\components\Books.js`:
+The `Books` component will use the `Book` component to display all books from MongoDB. It will also fetch data from GraphQL API. We need to define GraphQL query (which we can copy form Playground), and query Apollo Server with `useQuery`. Create new file `src\components\Books.js`:
 
 {% highlight react %}
 import { gql, useQuery } from '@apollo/client';
@@ -540,15 +540,11 @@ export default function App() {
   return (
     <ApolloProvider client={client}>
       <BrowserRouter>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a href="/" className="navbar-brand">Home</a>
-          <div className="navbar navbar-collapse">
-            <div className="navbar-nav mr-auto">
-              <Link to="/books" className="nav-item nav-link">
-                Books
-              </Link>
-            </div>
-          </div>          
+        <nav className="navbar navbar-dark bg-dark">
+          <div className="navbar-nav mr-auto flex-row">
+            <Link to="/" className="nav-link mr-2">Home</Link>
+            <Link to="/books" className="nav-link mr-2">Books</Link>
+          </div>
         </nav>
         <div className="container mt-5">
           <Routes>
@@ -562,7 +558,7 @@ export default function App() {
 }
 {% endhighlight %}
 
-After that you should see main page with navigation and links to home that displays `Hello` component, and link to books that displays the list of books from MongoDB in a table:
+After that you should see the main page with navigation and links to home that displays `Hello` component, and link to books that displays the list of books from MongoDB in a table:
 
 <img src="{{ site.baseurl }}/assets/2022/react-router.gif" alt="React Router navigation" title="React Router navigation" />
 
