@@ -408,7 +408,7 @@ Querying with Playground should return empty array:
 
 <img src="{{ site.baseurl }}/assets/2022/apollo-query-books-empty.png" alt="Apollo books query (empty)" title="Apollo books query (empty)" />
 
-We can add a Book to Mongo with Compass by clicking `ADD DATA -> Insert document`:
+Let's add a book to MongoDB with Compass by clicking `ADD DATA -> Insert document`:
 
 <img src="{{ site.baseurl }}/assets/2022/insert-mongodb-document.png" alt="Insert document with Compass" title="Insert document with Compass" />
 
@@ -468,12 +468,14 @@ export default function Books() {
     return <div>
         <table className='table'>
             <thead className='thead-dark'>
-                <th>Title</th>
-                <th>Year</th>
+                <tr>
+                    <th>Title</th>
+                    <th>Year</th>
+                </tr>
             </thead>
             <tbody>
-                {loading && <p>Loading...</p>}
-                {error && <p>Check console for error logs</p>}
+                {loading && <tr><td>Loading...</td></tr>}
+                {error && <tr><td>Check console for error logs</td></tr>}
                 {!loading && !error && data?.books.map(book => <Book book={book} key={book.id} />)}
             </tbody>
         </table>
@@ -563,28 +565,556 @@ After that you should see the main page with navigation and links to home that d
 <img src="{{ site.baseurl }}/assets/2022/react-router.gif" alt="React Router navigation" title="React Router navigation" />
 
 <h3>Add create mutation</h3>
-Update schema
-Update resolver
-Show with Compass
+
+To insert a new book to MongoDB, we need to create a `Mutation`.
+
+In GraphQL we can fetch data with `Query`, but to create or modify data, we need to create a `Mutation`. 
+
+Let's start with updating schema. Mutations are in a separate block in the schema. We will add `create` mutation that takes `title` and `year` parameters, and returns `Book` object to `src/models/typeDefs.js` file:
+
+{% highlight javascript %}
+import gql from 'graphql-tag';
+
+export const typeDefs = gql`
+    type Query {
+        hello(name: String): String
+        books: [Book]
+    }
+    type Book {
+        id: ID,
+        title: String,
+        year: Int,
+    }
+    type Mutation {
+        create(title: String, year: Int): Book
+    }
+`;
+{% endhighlight %}
+
+Now, we need to implement resolver for `create` mutation. Similarly to schema, we need to add a new block `Mutation` to our resolvers, and `create` function. In the `create` function we need to add logic to create new book and save it to MongoDB. This is `src/resolvers.js` after updates:
+
+{% highlight javascript %}
+import {Book} from './models/Book.js';
+
+export const resolvers = {
+    Query: {
+        hello: (_, {name}) => `Hello ${name}`,
+        books: async () => await Book.find({}),
+    },
+    Mutation: {
+        create: async (_, {title, year}) => {
+            const newBook = new Book({
+                title, year
+            });
+            await newBook.save();
+            return newBook;
+        }
+    }
+};
+{% endhighlight %}
+
+We can test creating books with GraphQL Playground:
+
+<img src="{{ site.baseurl }}/assets/2022/apollo-graphql-playground-create-mutation.png" alt="Apollo GraphQL Playground - create mutation" title="Apollo GraphQL Playground - create mutation" />
+
+If everything went well you should see new book in MongoDB. Notice `__v0` field in book inserted with Mongoose. This is versionKey property, which is set on each document when first created by Mongoose.
+
+<img src="{{ site.baseurl }}/assets/2022/mongodb-insert-mongoose.png" alt="MongoDB - document created with mongoose" title="MongoDB - document created with mongoose" />
 
 <h3>Add UI for creating new Book</h3>
 
-<!-- Update local cache/refetch
-https://www.apollographql.com/docs/react/data/mutations/#refetching-queries  -->
+Let's start with new `CreateBook` component. We need to create a new form to collect `title` and `year`, and call `create` mutation we created in previous section.
+
+We will utilize `useState` hook to access `input` fields data (`title` and `year`).
+
+To call mutation, we will use `useMutation` hook from `@apollo/client`.
+
+We can get `CREATE_BOOK_MUTATION` from GraphQL playground.
+
+Make sure to convert year from string to integer when passing it as variable to mutation. Otherwise it will return an error. You can simple add `+` before the variable to convert string to integer.
+
+Add `src/components/CreateBook.js` file to `web-ui` folder:
+
+{% highlight react %}
+import { useState } from 'react';
+import { gql, useMutation } from '@apollo/client';
+
+const CREATE_BOOK_MUTATION = gql`
+    mutation Mutation($title: String, $year: Int) {
+        create(title: $title, year: $year) {
+            id
+            title
+            year
+        }
+    }
+`;
+
+export default function CreateBook() {
+    const [title, setTitle] = useState('');
+    const [year, setYear] = useState('');
+    const [createMutation] = useMutation(CREATE_BOOK_MUTATION);
+
+    const handleSubmit = evt => {
+        evt.preventDefault();
+        console.info('Creating Book...', title, year);
+        createMutation({
+            variables: {
+                title,
+                year: +year,
+            }
+        });
+        alert(`Book ${title} (${year}) created!`);
+        setTitle('');
+        setYear('');
+    };
+
+    return <form onSubmit={evt => handleSubmit(evt)}>
+        <div className="form-group">
+            <label htmlFor="title">Title:</label>
+            <input 
+                type="text" 
+                name="title" 
+                className="form-control"
+                value={title}
+                onChange={e => setTitle(e.target.value)}
+                />
+        </div>
+        <div className="form-group">
+            <label htmlFor="year">Year:</label>
+            <input 
+                type="text" 
+                name="year" 
+                className="form-control"
+                value={year}
+                onChange={e => setYear(e.target.value)}
+                />
+        </div>
+        <input type="submit" value="Create" className="btn btn-primary" />
+    </form>;
+}
+{% endhighlight %}
+
+We will also create a separate route `/create` to to display `CreateBook` component, and a link to that route. Update `src/App.js`:
+
+{% highlight react %}
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import Hello from './components/Hello';
+import Books from './components/Books';
+import CreateBook from './components/CreateBook';
+import { Link, BrowserRouter, Route, Routes } from 'react-router-dom';
+
+const client = new ApolloClient({
+  uri: 'http://localhost:4000',
+  cache: new InMemoryCache(),
+});
+
+export default function App() {
+  return (
+    <ApolloProvider client={client}>
+      <BrowserRouter>
+        <nav className="navbar navbar-dark bg-dark">
+          <div className="navbar-nav mr-auto flex-row">
+            <Link to="/" className="nav-link mr-2">Home</Link>
+            <Link to="/books" className="nav-link mr-2">Books</Link>
+            <Link to="/create" className="nav-link mr-2">Create Book</Link>
+          </div>
+        </nav>
+        <div className="container mt-5">
+          <Routes>
+            <Route path="/" element={<Hello />} />
+            <Route path="/books" element={<Books />} />
+            <Route path="/create" element={<CreateBook />} />
+          </Routes>
+        </div>
+      </BrowserRouter>      
+    </ApolloProvider>
+  );
+}
+{% endhighlight %}
+
+<img src="{{ site.baseurl }}/assets/2022/react-create-book.gif" alt="Create book UI in React" title="Create book UI in React" />
+
+You may notice that new book does not appear on the books list without refresh. There are two ways to fix it:
+1. [Update local GraphQL cache](https://www.apollographql.com/docs/react/data/mutations/#updating-the-cache-directly) - use this approach when performance is priority over correctness
+2. [Refetch query](https://www.apollographql.com/docs/react/data/mutations/#refetching-queries) - use this approach when correctness is more important than performance
+
+We will use refetch query approach, which is usually the best default answer, unless you really care about high performance.
+
+This requires to pass a list of queries to refetch to `useMutation` hook:
+
+{% highlight react %}
+const [createMutation] = useMutation(CREATE_BOOK_MUTATION, {
+    refetchQueries: [
+        {query: BOOKS_QUERY}
+    ]
+});
+{% endhighlight %}
+
+As you can see, we need `BOOKS_QUERY`, which we already defined in `Books` component. To do not copy/pasta, let's extract all GraphQL queries and mutations to `src/graphql.js` file:
+
+{% highlight javascript %}
+import { gql } from '@apollo/client';
+
+export const CREATE_BOOK_MUTATION = gql`
+    mutation Mutation($title: String, $year: Int) {
+        create(title: $title, year: $year) {
+            id
+            title
+            year
+        }
+    }
+`;
+
+export const BOOKS_QUERY = gql`
+    query Books {
+        books {
+            title
+            year
+            id
+        }
+    }
+`;
+{% endhighlight %}
+
+Now you can remove `BOOKS_QUERY` variable from `Books` component and just import it from `graphql.js`:
+
+{% highlight javascript %}
+import { BOOKS_QUERY } from '../graphql';
+{% endhighlight %}
+
+Similarly in, `CreateBook` component you can remove `CREATE_BOOK_MUTATION`, and import both `CREATE_BOOK_MUTATION` and `BOOKS_QUERY` from `graphql.js`:
+
+{% highlight javascript %}
+import { BOOKS_QUERY, CREATE_BOOK_MUTATION } from '../graphql';
+{% endhighlight %}
 
 <h3>Deleting books</h3>
-Backend
-UI
+
+Delete mutation will be very similar to `create` mutation from previous section. We just need a mutation that takes `id` of a book we want to delete.
+
+Let's update schema in `src/models/typeDefs.js` by adding `delete` mutation that takes `id` parameter and returns the same id if books is successfully deleted:
+
+{% highlight javascript %}
+import gql from 'graphql-tag';
+
+export const typeDefs = gql`
+    type Query {
+        hello(name: String): String
+        books: [Book]
+    }
+    type Book {
+        id: ID,
+        title: String,
+        year: Int,
+    }
+    type Mutation {
+        create(title: String, year: Int): Book
+        delete(id: ID): ID
+    }
+`;
+{% endhighlight %}
+
+And implement resolver function in `src/resolvers.js`:
+
+{% highlight javascript %}
+import {Book} from './models/Book.js';
+
+export const resolvers = {
+    Query: {
+        hello: (_, {name}) => `Hello ${name}`,
+        books: async () => await Book.find({}),
+    },
+    Mutation: {
+        create: async (_, {title, year}) => {
+            const newBook = new Book({
+                title, year
+            });
+            await newBook.save();
+            return newBook;
+        },
+        delete: async (_, {id}) => {
+            const result = await Book.deleteOne({_id: id});
+            if (result.acknowledged && result.deletedCount === 1) {
+                return id;
+            }
+            return null;
+        },
+    }
+};
+{% endhighlight %}
+
+We can test deleting book in GraphQL playground by grabbing an id from MongoDB Compass:
+
+<img src="{{ site.baseurl }}/assets/2022/apollo-graphql-playground-delete.png" alt="Apollo GraphQL Playground - delete" title="Apollo GraphQL Playground - delete" />
+
+If we try to delete book that doesn't exist we should get `null` in response:
+
+{% highlight json %}
+{
+  "data": {
+    "delete": null
+  }
+}
+{% endhighlight %}
+
+We have our backend working. Let's add delete functionality to UI. 
+
+Add delete mutation to `graphql.js` (you can copy/paste from GraphQL Playground):
+
+{% highlight javascript %}
+export const DELETE_BOOK_MUTATION = gql`
+    mutation Mutation($id: ID) {
+        delete(id: $id)
+    }
+`;
+{% endhighlight %}
+
+We will add delete button to `Book` component, and call `delete` mutation from there:
+
+{% highlight react %}
+import { useMutation } from "@apollo/client";
+import { DELETE_BOOK_MUTATION, BOOKS_QUERY } from "../graphql";
+
+export default function Book({book}) {
+    const [deleteBookMutation] = useMutation(DELETE_BOOK_MUTATION, {
+        refetchQueries: [
+            {query: BOOKS_QUERY},
+        ],
+    });
+    const deleteBook = () => {
+        deleteBookMutation({
+            variables: {
+                id: book.id,
+            },
+        });
+    };
+    return (
+        <tr>
+            <td>{book.title}</td>
+            <td>{book.year}</td>
+            <td>
+                <button className="btn btn-danger" onClick={deleteBook}>
+                    Delete
+                </button>
+            </td>
+        </tr>
+    );
+}
+{% endhighlight %}
+
+We also need to add new column to table header in `Books` component:
+
+{% highlight html %}
+<thead className='thead-dark'>
+    <tr>
+        <th>Title</th>
+        <th>Year</th>
+        <th></th>
+    </tr>
+</thead>
+{% endhighlight %}
+
+Clicking delete button should delete book from MongoDB and from delete row from books list table:
+
+<img src="{{ site.baseurl }}/assets/2022/react-delete-book.gif" alt="Delete book from React UI" title="Delete book from React UI" />
 
 <h3>Editing books</h3>
-Backend
-UI
+
+Editing is almost like creating. You need to pass `id` of an existing book in addition to `title` and `year`.
+
+Let's update schema by adding `edit` mutation:
+
+{% highlight javascript %}
+import gql from 'graphql-tag';
+
+export const typeDefs = gql`
+    type Query {
+        hello(name: String): String
+        books: [Book]
+    }
+    type Book {
+        id: ID,
+        title: String,
+        year: Int,
+    }
+    type Mutation {
+        create(title: String, year: Int): Book
+        delete(id: ID): ID
+        edit(id: ID, title: String, year: Int): Book
+    }
+`;
+{% endhighlight %}
+
+And resolvers, by implementing `edit` mutation:
+
+{% highlight javascript %}
+import {Book} from './models/Book.js';
+
+export const resolvers = {
+    Query: {
+        hello: (_, {name}) => `Hello ${name}`,
+        books: async () => await Book.find({}),
+    },
+    Mutation: {
+        create: async (_, {title, year}) => {
+            const newBook = new Book({
+                title, year
+            });
+            await newBook.save();
+            return newBook;
+        },
+        delete: async (_, {id}) => {
+            const result = await Book.deleteOne({_id: id});
+            if (result.acknowledged && result.deletedCount === 1) {
+                return id;
+            }
+            return null;
+        },
+        edit: async (_, {id, title, year}) => {
+            const result = await Book.updateOne(
+                {
+                    _id: id,
+                },
+                {
+                    $set: {
+                        title,
+                        year
+                    },
+                });
+            if (result.acknowledged && result.modifiedCount === 1) {
+                return await Book.findOne({_id: id});
+            }
+            return null;
+        }
+    }
+};
+{% endhighlight %}
+
+Test in GraphQL Playground:
+
+<img src="{{ site.baseurl }}/assets/2022/apollo-graphql-playground-edit.png" alt="Apollo GraphQL Playground - edit" title="Apollo GraphQL Playground - edit" />
+
+To enable editing from UI, we will add edit button to `Book` component. It will change text to `input` fields when in editing mode, and display save and cancel buttons to commit or discard changes. 
+
+Let's start with adding `EDIT_BOOK_MUTATION` to `src/graphql.js`:
+
+{% highlight javascript %}
+export const EDIT_BOOK_MUTATION = gql`
+    mutation Mutation($id: ID, $title: String, $year: Int) {
+        edit(id: $id, title: $title, year: $year) {
+            id
+            title
+            year
+        }
+    }
+`;
+{% endhighlight %}
+
+Update `src/components/Book.js` by adding editing state, buttons and call to update book:
+
+{% highlight react %}
+import { useMutation } from "@apollo/client";
+import { DELETE_BOOK_MUTATION, BOOKS_QUERY, EDIT_BOOK_MUTATION } from "../graphql";
+import { useState } from "react";
+
+export default function Book({book}) {
+    const [deleteBookMutation] = useMutation(DELETE_BOOK_MUTATION, {
+        refetchQueries: [
+            {query: BOOKS_QUERY},
+        ],
+    });
+    const deleteBook = () => {
+        deleteBookMutation({
+            variables: {
+                id: book.id,
+            },
+        });
+    };
+
+    const [isEditing, setIsEditing] = useState(false);
+    const [title, setTitle] = useState(book.title);
+    const [year, setYear] = useState(book.year);
+    const [editBookMutation] = useMutation(EDIT_BOOK_MUTATION, {
+        refetchQueries: [
+            {query: BOOKS_QUERY},
+        ],
+    });
+
+    const saveChanges = () => {
+        editBookMutation({
+            variables: {
+                id: book.id,
+                title: title,
+                year: +year,
+            },
+        });
+        setIsEditing(false);        
+    };
+
+    const discardChanges = () => {
+        setIsEditing(false);
+        setTitle(book.title);
+        setYear(book.year);
+    };
+
+    return (
+        <tr>
+            <td>
+                {isEditing 
+                 ? <input type="text" 
+                    value={title} 
+                    onChange={(e) => setTitle(e.target.value)} 
+                    className="form-control" />
+                 : book.title}
+            </td>
+            <td>
+                {isEditing 
+                 ? <input type="text" 
+                    value={year} 
+                    onChange={(e) => setYear(e.target.value)}
+                    className="form-control" />
+                 : book.year}
+            </td>
+            <td>
+                {isEditing 
+                ? <>
+                    <button className="btn btn-success mr-2" onClick={saveChanges}>
+                        Save
+                    </button>
+                    <button className="btn btn-danger" onClick={discardChanges}>
+                        Cancel
+                    </button>
+                </>
+                : <>
+                    <button className="btn btn-info mr-2" onClick={() => setIsEditing(true)}>
+                        Edit
+                    </button>
+                    <button className="btn btn-danger" onClick={deleteBook}>
+                        Delete
+                    </button>
+                </>
+                }
+                
+            </td>
+        </tr>
+    );
+}
+{% endhighlight %}
+
+Now, you should be able to edit books inline:
+
+<img src="{{ site.baseurl }}/assets/2022/react-edit-book.gif" alt="Edit book from React UI" title="Edit book from React UI" />
+
+To make sure that everything works as expected, you can double check if books are being properly created, deleted and updated in Mongo with MongoDB Compass.
 
 <h2>Summary</h2>
 
-At Meta, we built [Super Events](https://super.events) web app with Apollo Server, Mongo and [Vue.js](https://vuejs.org/). We also built iOS app, which used the same Apollo Server GraphQL APIs like web app.
+<!-- At Meta, we built [Super Events](https://super.events) web app with Apollo Server, Mongo and [Vue.js](https://vuejs.org/). We also built iOS app, which used the same Apollo Server GraphQL APIs like web app.
 
-While Vue vs React is a matter of preference, or requirements of your project, using Apollo Server over Express.js
+While Vue vs React is a matter of preference, or requirements of your project, using Apollo Server over Express.js -->
 
-Is Apollo Server better than Express? It depends. Everything has its pros and cons. I like Apollo Server for easy of setup, free Graphical UI (very useful during development) and support for many front-end frameworks.
-https://github.com/apollographql/apollo-server/tree/cfb086227e623ba1531bb887c3919e224682ccbc#comparison-with-express-graphql
+You can find entire code in this github repo: [https://github.com/jj09/marn-stack-app](https://github.com/jj09/marn-stack-app)
+
+Is Apollo Server better than Express? It depends. Everything has its pros and cons. I like Apollo Server for ease of setup, free Graphical UI (very useful during development) and support for many front-end frameworks. For more check out [Comparison of Apollo Server with `express-graphql`](https://github.com/apollographql/apollo-server/tree/cfb086227e623ba1531bb887c3919e224682ccbc#comparison-with-express-graphql)
+
+You can very easily swap different components for MARN stack. E.g., swap React with Vue.js like I did for [this demo project](https://github.com/jj09/vue-apollo).
