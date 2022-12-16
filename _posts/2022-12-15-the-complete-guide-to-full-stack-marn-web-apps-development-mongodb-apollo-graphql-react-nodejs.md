@@ -18,13 +18,19 @@ permalink: "/the-complete-guide-to-full-stack-marn-web-apps-development-mongodb-
 **MARN** stands for **M**ongoDB, **A**pollo Server, **R**eact and **N**ode.js.
 
 * [MongoDB](https://en.wikipedia.org/wiki/MongoDB) — document database
-* [Apollo Server](https://www.apollographql.com/docs/apollo-server/) — [GraphQL](https://en.wikipedia.org/wiki/GraphQL) server that's compatible with any GraphQL client
+* [Apollo Server](https://www.apollographql.com/docs/apollo-server/) — [GraphQL](https://en.wikipedia.org/wiki/GraphQL) server
 * [React](https://en.wikipedia.org/wiki/React_(JavaScript_library)) — a client-side JavaScript framework
 * [Node.js](https://en.wikipedia.org/wiki/Node.js) — back-end JavaScript runtime environment
 
 **MARN Stack** is the next generation of popular [MERN Stack](https://www.geeksforgeeks.org/mern-stack/) ([MongoDB](https://en.wikipedia.org/wiki/MongoDB), [Express.js](https://en.wikipedia.org/wiki/Express.js), [React](https://en.wikipedia.org/wiki/React_(JavaScript_library)), [Node.js](https://en.wikipedia.org/wiki/Node.js)). Using [Apollo Server](https://www.apollographql.com/docs/apollo-server/) instead of [Express.js](https://en.wikipedia.org/wiki/Express.js) makes it very easy to create [GraphQL](https://en.wikipedia.org/wiki/GraphQL) APIs.
 
+Why Apollo Server instead of Express? Everything has its pros and cons. I like Apollo Server for its ease of setup, GraphiQL console (very useful during development) and support for many front-end frameworks. For more check out [Comparison of Apollo Server with `express-graphql`](https://github.com/apollographql/apollo-server/tree/cfb086227e623ba1531bb887c3919e224682ccbc#comparison-with-express-graphql).
+
 There is a lot of documentation and youtube videos for building GraphQL backend with Apollo Server. There is also a lot of documentation for consuming GraphQL API from React. However, there is nothing about building end-to-end web apps with React, Apollo Server backend and MongoDB persistance layer.
+
+In this article I will show you how to build end to end web app with [React](https://en.wikipedia.org/wiki/React_(JavaScript_library)) front-end, and [Node.js](https://en.wikipedia.org/wiki/Node.js) backend with [GraphQL](https://en.wikipedia.org/wiki/GraphQL) API (powered by [Apollo Server](https://www.apollographql.com/docs/apollo-server/)) and [MongoDB](https://en.wikipedia.org/wiki/MongoDB) persistance layer.
+
+<!-- diagram -->
 
 <h2>Getting Started</h2>
 
@@ -1113,8 +1119,12 @@ To make sure that everything works as expected, you can double check if books ar
 
 While Vue vs React is a matter of preference, or requirements of your project, using Apollo Server over Express.js -->
 
-You can find entire code in this github repo: [https://github.com/jj09/marn-stack-app](https://github.com/jj09/marn-stack-app)
+You can find entire code in this github repo: [https://github.com/jj09/marn-stack-app](https://github.com/jj09/marn-stack-app).
 
-Is Apollo Server better than Express? It depends. Everything has its pros and cons. I like Apollo Server for ease of setup, free Graphical UI (very useful during development) and support for many front-end frameworks. For more check out [Comparison of Apollo Server with `express-graphql`](https://github.com/apollographql/apollo-server/tree/cfb086227e623ba1531bb887c3919e224682ccbc#comparison-with-express-graphql)
+To learn more about Apollo Server, checkout [Apollo docs](https://www.apollographql.com/docs/). It's pretty good!
+
+To dive into MongoDB check out [MongoDB CRUD Operations](https://www.mongodb.com/docs/manual/crud/) and [mongoose API](https://mongoosejs.com/docs/api.html). Once you learn how to write Mongo queries with [MongoDB Shell](https://www.mongodb.com/docs/mongodb-shell/), you don't really need to go over [mongoose API](https://mongoosejs.com/docs/api.html) as it's almost identical.
+
+If you are new to React, I recommend [React Docs](https://beta.reactjs.org/) and [ReactJS Crash Course](https://www.youtube.com/watch?v=w7ejDZ8SWv8).
 
 You can very easily swap different components for MARN stack. E.g., swap React with Vue.js like I did for [this demo project](https://github.com/jj09/vue-apollo).
