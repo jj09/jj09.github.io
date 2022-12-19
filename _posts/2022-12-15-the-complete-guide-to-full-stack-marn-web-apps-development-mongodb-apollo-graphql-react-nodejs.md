@@ -24,9 +24,9 @@ permalink: "/the-complete-guide-to-full-stack-marn-web-apps-development-mongodb-
 
 **MARN Stack** is the next generation of popular [MERN Stack](https://www.geeksforgeeks.org/mern-stack/) ([MongoDB](https://en.wikipedia.org/wiki/MongoDB), [Express.js](https://en.wikipedia.org/wiki/Express.js), [React](https://en.wikipedia.org/wiki/React_(JavaScript_library)), [Node.js](https://en.wikipedia.org/wiki/Node.js)). Using [Apollo Server](https://www.apollographql.com/docs/apollo-server/) instead of [Express.js](https://en.wikipedia.org/wiki/Express.js) makes it very easy to create [GraphQL](https://en.wikipedia.org/wiki/GraphQL) APIs.
 
-Why Apollo Server instead of Express? Everything has its pros and cons. I like Apollo Server for its ease of setup, GraphiQL console (very useful during development) and support for many front-end frameworks. For more check out [Comparison of Apollo Server with `express-graphql`](https://github.com/apollographql/apollo-server/tree/cfb086227e623ba1531bb887c3919e224682ccbc#comparison-with-express-graphql).
+Why Apollo Server instead of Express? Everything has its pros and cons. I like Apollo Server for its ease of setup, GraphiQL console (very useful during development), and support for many front-end frameworks. For more check out [Comparison of Apollo Server with `express-graphql`](https://github.com/apollographql/apollo-server/tree/cfb086227e623ba1531bb887c3919e224682ccbc#comparison-with-express-graphql).
 
-There is a lot of documentation and youtube videos for building GraphQL backend with Apollo Server. There is also a lot of documentation for consuming GraphQL API from React. However, there is nothing about building end-to-end web apps with React, Apollo Server backend and MongoDB persistance layer.
+There is a lot of documentation and tutorials for building GraphQL backend with Apollo Server. There is also a lot of documentation for consuming GraphQL API from React. Yet, there is nothing about building end-to-end web apps with React, Apollo Server backend, and MongoDB persistence layer.
 
 In this article I will show you how to build end to end web app with [React](https://en.wikipedia.org/wiki/React_(JavaScript_library)) front-end, and [Node.js](https://en.wikipedia.org/wiki/Node.js) backend with [GraphQL](https://en.wikipedia.org/wiki/GraphQL) API (powered by [Apollo Server](https://www.apollographql.com/docs/apollo-server/)) and [MongoDB](https://en.wikipedia.org/wiki/MongoDB) persistance layer.
 
@@ -44,7 +44,7 @@ brew install node
 ```
 npm install nodemon
 ```
-- Install Mongo ([instructions for Mac](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/), [instructions for Windows](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/)). I'm using MongoDB Community Edition 6.0. To install it on Mac with brew:
+- Install Mongo ([instructions for Mac](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/), [instructions for Windows](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/)). I'm using MongoDB Community Edition 6.0. I recommend installing with brew (on Mac):
 ```
 xcode-select --install  # installing XCode tools
 brew tap mongodb/brew`
@@ -127,7 +127,7 @@ console.log(`🚀 Server ready at ${url}`);
 
 [GraphQL resolvers](https://www.apollographql.com/docs/apollo-server/data/resolvers) are responsible for pupulating data into fields in Schema.
 
-Above code defines 1 field (`hello`) in GraphQL Schema, and resolver function returns `"Hello from Apollo Server"` when querying that field.
+The above code defines 1 field (`hello`) in GraphQL Schema, and the resolver function returns `"Hello from Apollo Server"` when querying that field.
 
 Start Apollo Server with:
 ```
@@ -175,11 +175,11 @@ export default function App() {
 }
 {% endhighlight %}
 
-To query Apollo GraphQL endpoint we can use `useQuery` React hook provided by `@apollo/client` module.
+To query the Apollo GraphQL endpoint we can use `useQuery` React hook provided by `@apollo/client` module.
 
 <h3>Call 'hello' query from React</h3>
 
-Let's create `Hello` React component that will perform a call to GraphQL API and display the returned result. We need to define a GraphQL query and pass it to `useQuery`. Neat thing about Apollo server is the ability to directly copy/paste query from the playground.
+Let's create `Hello` React component that will perform a call to GraphQL API and display the returned result. We need to define a GraphQL query and pass it to `useQuery`. The neat thing about the Apollo server is the ability to directly copy/paste queries from the playground.
 
 {% highlight react %}
 import { gql, useQuery } from '@apollo/client';
@@ -234,7 +234,7 @@ This should display `Hello from Apollo Server` in the browser coming from GraphQ
 
 So far, the query is pretty simple. Let's make it more sophisticated by adding parameter `name`, and changing response to `Hello ${name}`.
 
-In order to do that we need to modify GraphQL schema and resolvers in the backend:
+To do that we need to modify GraphQL schema and resolvers in the backend:
 
 {% highlight javascript %}
 const typeDefs = gql`
@@ -284,7 +284,7 @@ This should result in displaying `Hello Jacob` in the browser:
 
 <h3>Refactoring resolvers and schema to separate components</h3>
 
-Before we move to the next section, let's cleanup our backend code by extracting schema and resolvers to separate modules.
+Before we move to the next section, let's clean up our backend code by extracting schema and resolvers to separate modules.
 
 Create new file `src/models/typeDefs.js`:
 
@@ -1000,7 +1000,7 @@ Test in GraphQL Playground:
 
 <img src="{{ site.baseurl }}/assets/2022/apollo-graphql-playground-edit.png" alt="Apollo GraphQL Playground - edit" title="Apollo GraphQL Playground - edit" />
 
-To enable editing from UI, we will add edit button to `Book` component. It will change text to `input` fields when in editing mode, and display save and cancel buttons to commit or discard changes. 
+To enable editing from UI, we will add an edit button to `Book` component. It will change text to `input` fields when in editing mode, and display save and cancel buttons to commit or discard changes. 
 
 Let's start with adding `EDIT_BOOK_MUTATION` to `src/graphql.js`:
 
@@ -1119,7 +1119,7 @@ To make sure that everything works as expected, you can double check if books ar
 
 While Vue vs React is a matter of preference, or requirements of your project, using Apollo Server over Express.js -->
 
-You can find entire code in this github repo: [https://github.com/jj09/marn-stack-app](https://github.com/jj09/marn-stack-app).
+You can find entire code in this github repo: [https://github.com/jj09/marn](https://github.com/jj09/marn).
 
 To learn more about Apollo Server, checkout [Apollo docs](https://www.apollographql.com/docs/). It's pretty good!
 
