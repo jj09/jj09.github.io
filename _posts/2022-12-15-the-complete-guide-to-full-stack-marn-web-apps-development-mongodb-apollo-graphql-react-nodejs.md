@@ -1119,6 +1119,8 @@ To make sure that everything works as expected, you can double check if books ar
 
 While Vue vs React is a matter of preference, or requirements of your project, using Apollo Server over Express.js -->
 
+Congratulations! Now, you know how to build web apps with MARN stack!
+
 You can find entire code in this github repo: [https://github.com/jj09/marn](https://github.com/jj09/marn).
 
 To learn more about Apollo Server, checkout [Apollo docs](https://www.apollographql.com/docs/). It's pretty good!
