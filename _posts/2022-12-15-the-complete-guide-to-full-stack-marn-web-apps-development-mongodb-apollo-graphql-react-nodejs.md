@@ -36,7 +36,7 @@ In this article I will show you how to build end to end web app with [React](htt
 
 <h3>Installing dependencies</h3>
 
-- Install node.js: I recommend installing node with [brew](https://brew.sh/) (I'm using node 9.2.0 and npm 8.1.2):
+- Install node.js: I recommend installing node with [brew](https://brew.sh/) (I'm using node 16.14.2 and npm 8.5.0):
 ```
 brew install node
 ```
@@ -71,19 +71,11 @@ npm install @apollo/client graphql @apollo/server
 npm install @babel/core @babel/node @babel/preset-env --save-dev
 ```
 
-Create .babelrc file in `apollo-server` directory:
-
-{% highlight json %}
-{
-    "presets": ["@babel/preset-env"]
-}
-{% endhighlight %}
-
 Add script to run Apollo Server with nodemon to `package.json`:
 
 {% highlight json %}
 "scripts": {
-    "start": "nodemon --exec babel-node -- src/index.js"
+    "start": "nodemon --exec babel-node --presets='@babel/preset-env' -- src/index.js"
 },
 {% endhighlight %}
 
