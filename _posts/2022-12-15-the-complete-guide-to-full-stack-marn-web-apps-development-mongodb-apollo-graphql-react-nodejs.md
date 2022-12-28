@@ -28,7 +28,7 @@ Why Apollo Server instead of Express? Everything has its pros and cons. I like A
 
 There is a lot of documentation and tutorials for building GraphQL backend with Apollo Server. There is also a lot of documentation for consuming GraphQL API from React. Yet, there is nothing about building end-to-end web apps with React, Apollo Server backend, and MongoDB persistence layer.
 
-In this article I will show you how to build end to end web app with [React](https://en.wikipedia.org/wiki/React_(JavaScript_library)) front-end, and [Node.js](https://en.wikipedia.org/wiki/Node.js) backend with [GraphQL](https://en.wikipedia.org/wiki/GraphQL) API (powered by [Apollo Server](https://www.apollographql.com/docs/apollo-server/)) and [MongoDB](https://en.wikipedia.org/wiki/MongoDB) persistance layer.
+In this article I will show you how to build end to end web app with [React](https://en.wikipedia.org/wiki/React_(JavaScript_library)) front-end, and [Node.js](https://en.wikipedia.org/wiki/Node.js) backend with [GraphQL](https://en.wikipedia.org/wiki/GraphQL) API (powered by [Apollo Server](https://www.apollographql.com/docs/apollo-server/)) and [MongoDB](https://en.wikipedia.org/wiki/MongoDB) persistence layer.
 
 <!-- diagram -->
 
