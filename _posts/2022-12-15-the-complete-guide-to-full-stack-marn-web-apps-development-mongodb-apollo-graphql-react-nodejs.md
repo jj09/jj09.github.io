@@ -112,7 +112,7 @@ const { url } = await startStandaloneServer(server, {
     listen: { port: 4000 },
 });
 
-console.log(`🚀 Server ready at ${url}`);
+console.info(`🚀 Server ready at ${url}`);
 {% endhighlight %}
 
 [GraphQL schema](https://www.apollographql.com/docs/apollo-server/schema/schema) describes the shape of your available data.
