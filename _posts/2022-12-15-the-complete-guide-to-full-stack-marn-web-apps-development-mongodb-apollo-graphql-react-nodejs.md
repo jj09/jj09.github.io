@@ -67,8 +67,8 @@ cd apollo-server
 
 Install dependencies:
 ```
-npm install @apollo/client graphql @apollo/server
-npm install @babel/core @babel/node @babel/preset-env --save-dev
+npm install @apollo/server graphql-tag
+npm install @babel/core @babel/node --save-dev
 ```
 
 Add script to run Apollo Server with nodemon to `package.json`:
@@ -145,6 +145,13 @@ npm start
 ```
 
 <h2>Querying Apollo GraphQL API from React</h2>
+
+Install `@apollo/client` module:
+
+```
+cd web-ui
+npm install @apollo/client
+```
 
 To call Apollo Server with Apollo Client module, we need to do two things:
 
