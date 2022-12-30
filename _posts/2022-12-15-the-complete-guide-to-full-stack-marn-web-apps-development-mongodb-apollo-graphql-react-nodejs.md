@@ -22,6 +22,10 @@ permalink: "/the-complete-guide-to-full-stack-marn-web-apps-development-mongodb-
 * [React](https://en.wikipedia.org/wiki/React_(JavaScript_library)) — a client-side JavaScript framework
 * [Node.js](https://en.wikipedia.org/wiki/Node.js) — back-end JavaScript runtime environment
 
+<img src="{{ site.baseurl }}/assets/2022/marn-architecture.png" alt="MARN Stack Architecture" title="MARN Stack Architecture" />
+
+React UI communicates with server using GraphQL API. Apollo Server is running on Node.js, and communicates with MongoDB through [mongoose](https://www.npmjs.com/package/mongoose).
+
 **MARN Stack** is the next generation of popular [MERN Stack](https://www.geeksforgeeks.org/mern-stack/) ([MongoDB](https://en.wikipedia.org/wiki/MongoDB), [Express.js](https://en.wikipedia.org/wiki/Express.js), [React](https://en.wikipedia.org/wiki/React_(JavaScript_library)), [Node.js](https://en.wikipedia.org/wiki/Node.js)). Using [Apollo Server](https://www.apollographql.com/docs/apollo-server/) instead of [Express.js](https://en.wikipedia.org/wiki/Express.js) makes it very easy to create [GraphQL](https://en.wikipedia.org/wiki/GraphQL) APIs.
 
 Why Apollo Server instead of Express? Everything has its pros and cons. I like Apollo Server for its ease of setup, GraphiQL console (very useful during development), and support for many front-end frameworks. For more check out [Comparison of Apollo Server with `express-graphql`](https://github.com/apollographql/apollo-server/tree/cfb086227e623ba1531bb887c3919e224682ccbc#comparison-with-express-graphql).
