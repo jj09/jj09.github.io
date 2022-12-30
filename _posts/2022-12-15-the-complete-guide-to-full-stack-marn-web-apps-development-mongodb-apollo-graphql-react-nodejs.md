@@ -229,7 +229,7 @@ This should display `Hello from Apollo Server` in the browser coming from GraphQ
 
 <img src="{{ site.baseurl }}/assets/2022/hello-from-apollo-server.png" alt="Hello from Apollo Server" title="Hello from Apollo Server" />
 
-<h3>Add parameter to query</h3>
+<h3>Add parameter to GraphQL query</h3>
 
 So far, the query is pretty simple. Let's make it more sophisticated by adding parameter `name`, and changing response to `Hello ${name}`.
 
@@ -517,7 +517,7 @@ When you go back to website you should see the book, which we added to database 
 <!-- https://getbootstrap.com/docs/4.0/getting-started/introduction/ 
 https://getbootstrap.com/docs/4.0/content/tables/  -->
 
-<h3>Add React Router</h3>
+<h3>React Router</h3>
 
 Before we start working on creating, deleting and updating books, let's add navigation to our UI with [React Router](https://reactrouter.com). This will allow us to separate different views instead of cluttering them on the same page.
 
@@ -569,7 +569,7 @@ After that you should see the main page with navigation and links to home that d
 
 <img src="{{ site.baseurl }}/assets/2022/react-router.gif" alt="React Router navigation" title="React Router navigation" />
 
-<h3>Add create mutation</h3>
+<h3>Create book mutation</h3>
 
 To insert a new book to MongoDB, we need to create a `Mutation`.
 
@@ -626,7 +626,7 @@ If everything went well you should see new book in MongoDB. Notice `__v0` field 
 
 <img src="{{ site.baseurl }}/assets/2022/mongodb-insert-mongoose.png" alt="MongoDB - document created with mongoose" title="MongoDB - document created with mongoose" />
 
-<h3>Add UI for creating new Book</h3>
+<h3>UI for creating books</h3>
 
 Let's start with new `CreateBook` component. We need to create a new form to collect `title` and `year`, and call `create` mutation we created in previous section.
 
