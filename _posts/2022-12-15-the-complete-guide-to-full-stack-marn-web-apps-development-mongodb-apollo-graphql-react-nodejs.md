@@ -22,10 +22,6 @@ permalink: "/the-complete-guide-to-full-stack-marn-web-apps-development-mongodb-
 * [React](https://en.wikipedia.org/wiki/React_(JavaScript_library)) — a client-side JavaScript framework
 * [Node.js](https://en.wikipedia.org/wiki/Node.js) — back-end JavaScript runtime environment
 
-<img src="{{ site.baseurl }}/assets/2022/marn-architecture.png" alt="MARN Stack Architecture" title="MARN Stack Architecture" />
-
-React UI communicates with server using GraphQL API. Apollo Server is running on Node.js, and communicates with MongoDB through [mongoose](https://www.npmjs.com/package/mongoose).
-
 **MARN Stack** is the next generation of popular [MERN Stack](https://www.geeksforgeeks.org/mern-stack/) ([MongoDB](https://en.wikipedia.org/wiki/MongoDB), [Express.js](https://en.wikipedia.org/wiki/Express.js), [React](https://en.wikipedia.org/wiki/React_(JavaScript_library)), [Node.js](https://en.wikipedia.org/wiki/Node.js)). Using [Apollo Server](https://www.apollographql.com/docs/apollo-server/) instead of [Express.js](https://en.wikipedia.org/wiki/Express.js) makes it very easy to create [GraphQL](https://en.wikipedia.org/wiki/GraphQL) APIs.
 
 Why Apollo Server instead of Express? Everything has its pros and cons. I like Apollo Server for its ease of setup, GraphiQL console (very useful during development), and support for many front-end frameworks. For more check out [Comparison of Apollo Server with `express-graphql`](https://github.com/apollographql/apollo-server/tree/cfb086227e623ba1531bb887c3919e224682ccbc#comparison-with-express-graphql).
@@ -34,7 +30,11 @@ There is a lot of documentation and tutorials for building GraphQL backend with 
 
 In this article I will show you how to build end to end web app with [React](https://en.wikipedia.org/wiki/React_(JavaScript_library)) front-end, and [Node.js](https://en.wikipedia.org/wiki/Node.js) backend with [GraphQL](https://en.wikipedia.org/wiki/GraphQL) API (powered by [Apollo Server](https://www.apollographql.com/docs/apollo-server/)) and [MongoDB](https://en.wikipedia.org/wiki/MongoDB) persistence layer.
 
-<!-- diagram -->
+<img src="{{ site.baseurl }}/assets/2022/marn-architecture.png" alt="MARN Stack Architecture" title="MARN Stack Architecture" />
+
+I created a video version of this guide:
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/6YAKvGlFcwo" title="Complete Guide to Web Apps Development with MARN Stack: MongoDB, Apollo Server, React, and Node.js" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <h2>Getting Started</h2>
 
@@ -1118,13 +1118,13 @@ To make sure that everything works as expected, you can double check if books ar
 
 <h2>Summary</h2>
 
-<!-- At Meta, we built [Super Events](https://super.events) web app with Apollo Server, Mongo and [Vue.js](https://vuejs.org/). We also built iOS app, which used the same Apollo Server GraphQL APIs like web app.
-
-While Vue vs React is a matter of preference, or requirements of your project, using Apollo Server over Express.js -->
-
 Congratulations! Now, you know how to build web apps with MARN stack!
 
 You can find entire code in this github repo: [https://github.com/jj09/marn](https://github.com/jj09/marn).
+
+I also recorded a video version of this guide:
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/6YAKvGlFcwo" title="Complete Guide to Web Apps Development with MARN Stack: MongoDB, Apollo Server, React, and Node.js" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 To learn more about Apollo Server, checkout [Apollo docs](https://www.apollographql.com/docs/). It's pretty good!
 
