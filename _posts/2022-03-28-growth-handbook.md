@@ -36,6 +36,8 @@ Another way to measure PMF is to look at your [retention curves](https://article
 
 <img src="{{ site.baseurl }}/assets/2022/retention-smiling-curve.png" alt="Retention - smiling curve" />
 
+There is also saying that if you have PMF you know it. There are usually multiple indicators: users growth, people reaching out with positive feedback, etc.
+
 <h2>Growth strategies</h2>
 
 After you determine that you have PMF, it's time to grow. There are a lot of different ways to grow. This is a comprehensive, but not exhaustive, list of growth strategies:
