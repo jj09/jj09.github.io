@@ -36,7 +36,7 @@ Another way to measure PMF is to look at your [retention curves](https://article
 
 <img src="{{ site.baseurl }}/assets/2022/retention-smiling-curve.png" alt="Retention - smiling curve" />
 
-There is also saying that if you have PMF you know it. There are usually multiple indicators: users growth, people reaching out with positive feedback, etc.
+There is also saying that if you have PMF you know it. There are usually multiple indicators: users growth, people reaching out with positive feedback, people talk about your product on Reddit or Hackernews etc.
 
 <h2>Growth strategies</h2>
 
@@ -44,7 +44,19 @@ After you determine that you have PMF, it's time to grow. There are a lot of dif
 
 <h3>Access</h3>
 
-Allow more people to have access to your product. This could be expanding to more countries or more demographics (older or younger generations). Is your product launched only in the US? Launch it to Canada, and Mexico as well. Then the EU, Asia, etc. Some Asian countries, like India or Indonesia, are huge markets! Is your product tailored for a particular demographic, e.g., millennials? Consider expanding the value prop to gen X or gen Z. Another strategy to expand access is to enable login through 3rd parties like Google or Facebook so people don’t have to create new accounts. You can also provide logout experience if you always required login before.
+Allow more people to have access to your product. Examples:
+
+- International Expansion - launching your product in more countries
+- Demographics expansion - launching your product for different age groups, or creating value prop for different generation
+- relaxing requirements to use your product - removing need to create an account, provide ID verification, etc.
+
+Is your product launched only in the US? Launch it to Canada, and Mexico as well. Then the EU, Asia, etc. Some Asian countries, like India or Indonesia, are huge markets! India has 1.5B people. It's almost 5x US! Launching your product in India has a potential to grow user base by 5x. EU is about 1.5x size of US. That's opprtunity to at least double your user base.
+
+If your product is not accessible for kids (people under 18) you can consider fulfiling requirements that will make it so. Maybe you can create a separate version of your product for kids. Is your product tailored for a particular demographic, e.g., millennials? Consider expanding the value prop to gen X or gen Z. 
+
+Another strategy to expand access is to enable login through 3rd parties like Google or Facebook so people don’t have to create new accounts. You can also provide logout experience if you always required login before.
+
+Remember that expanding access has cost. It might be legal, like GDPR in EU, or operational. You may need to translate to different language. Before growing through access, make sure you analyze costs of expansion. Ideally, you should compare different access plays, and go after one that brings the most value (users) for least amount of effort. I.e., expanding to Canada doesn't require translation, and laws are pretty similar to US.
 
 <h3>Category expansion</h3>
 
