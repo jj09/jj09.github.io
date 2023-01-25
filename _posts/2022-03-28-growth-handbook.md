@@ -60,11 +60,13 @@ Remember that expanding access has cost. It might be legal, like GDPR in EU, or 
 
 <h3>Category expansion</h3>
 
-This is a very broad strategy and it depends on the type of your business. If you are selling t-shirts, start also selling hoodies. If you are selling books for elementary schools, start selling books for middle schools and high schools.
+You can grow your product by introducing a new variation of it for current users, or to acquire new users.
+
+This is a very broad strategy and it depends on the type of your business. If you are selling t-shirts, start also selling hoodies. If you are selling books for elementary schools, start selling books for middle schools and high schools. Selling for individuals? Start selling for businesses, etc.
 
 <h3>Friction removal</h3>
 
-How many clicks it takes to make a purchase on your website? Or any activity that your user wants to perform? Simply reducing the number of actions (clicks, filling out forms, etc.) that is required to achieve something on your website or app would make your users use your product more. There is nothing more frustrating than 10s of clicks to go through multiple different views, with a lot of unnecessary information in order to achieve something. I’ve seen that removing 1 text input from a form can increase the completion rate by 10%! Imagine if you can increase your sales by 10% just by removing one field from a form your users fill out to purchase your product.
+How many clicks it takes to make a purchase on your website? Or any activity that your user wants to perform? Simply reducing the number of actions (clicks, filling out forms, etc.) that is required to achieve something on your website or app would make your users use your product more. There is nothing more frustrating than tens of clicks to go through multiple different views, with a lot of unnecessary information in order to achieve something. I’ve seen that removing 1 text input from a form can increase the completion rate by 10%! Imagine if you can increase your sales by 10% just by removing one field from a form your users fill out to purchase your product.
 
 <h3>In-app upsells</h3>
 
@@ -72,7 +74,7 @@ In order to bring awareness of new features, or simply trying to promote somethi
 
 <h3>Notifications</h3>
 
-The best way to increase your product retention is to send notifications to remind your users about your product. There are multiple notification challens: in-app (shown in notification section), [push notification](https://buildfire.com/what-is-a-push-notification/), or email. Push notifications are now also [available in browsers](https://frizbit.com/blog/how-to-use-push-notifications-on-your-website-as-a-growth-channel/)! Similarly like with in-app upsells, notifications will be most successful if targeting and timing is correct. You should also keep track of notification metrics like views (how many people have seen your notification), CTR (Click Through Rate) and CVR (Conversion Rate). Conversion Rate tells you how many people performed the desired action (like buying your product) as a result of notification. You may have notifications with high CTR that do not result in any conversions. Check out [7 examples of how different companies use notifications](https://neilpatel.com/blog/push-notifications-to-boost-engagement/).
+The best way to increase your product retention is to send notifications to remind your users about your product. There are multiple notification channels: in-app (shown in notification section), [push notification](https://buildfire.com/what-is-a-push-notification/), or email. Push notifications are now also [available in browsers](https://frizbit.com/blog/how-to-use-push-notifications-on-your-website-as-a-growth-channel/)! Similarly like with in-app upsells, notifications will be most successful if targeting and timing is correct. You should also keep track of notification metrics like views (how many people have seen your notification), CTR (Click Through Rate) and CVR (Conversion Rate). Conversion Rate tells you how many people performed the desired action (like buying your product) as a result of notification. You may have notifications with high CTR that do not result in any conversions. Check out [7 examples of how different companies use notifications](https://neilpatel.com/blog/push-notifications-to-boost-engagement/).
 
 <h3>Facebook or Google ads</h3>
 
@@ -81,6 +83,18 @@ Paid ads are easy to make, but not easy to make cost effective! Julian Shapiro�
 <h3>SEO</h3>
 
 Search Engine Optimization. SEO is for making your website pop-up in search results as high as possible. It’s probably an even more advanced growth strategy than running ads, as you need to actively invest in it, and effects are not immediate. I may write a separate post or series of posts about SEO in the future. [Google Search Central](https://developers.google.com/search/docs) is the bible of SEO. For a more general guide check [Moz’s SEO guide](https://moz.com/beginners-guide-to-seo).
+
+<h3>Promotions</h3>
+
+People love promotions. If you offer 50% discount for 1 week you can sell more during that week than over entire year.
+
+You have to be careful though, and always considering the cost of promotions. If you run large scale promotion it can kill your profits. People who would buy your product anyway will buy it at discount, and instead of profit from selling more you may end up losing more money.
+
+<h3>Referral Program</h3>
+
+Incentivizing users to refer your product to friends might be effective if incentives are attractive enough. You can offer monetary rewards, additional product features or some internal loyalty points.
+
+For exmaple, Discover offer $50 for every friend you invite to start account with them. Your friend also gets $50. Thus, cost of acquiring customer is $100! Make sure to run analysis before running such referral programs as they can be exploited, and very costly.
 
 <h3>Growth Hacks</h3>
 
