@@ -3,9 +3,6 @@ layout: post
 title: Growth Handbook
 categories:
 - growth
-published: true
-status: publish
-date: 2022-03-28 8:09:09.000000000 -07:00
 permalink: "/growth-handbook/"
 ---
 
@@ -36,7 +33,7 @@ Another way to measure PMF is to look at your [retention curves](https://article
 
 <img src="{{ site.baseurl }}/assets/2022/retention-smiling-curve.png" alt="Retention - smiling curve" />
 
-There is also saying that if you have PMF you know it. There are usually multiple indicators: users growth, people reaching out with positive feedback, people talk about your product on Reddit or Hackernews etc.
+There is also a third way: if you have PMF you know it. There are usually multiple indicators: user growth, people reaching out with positive feedback, people talking about your product on Reddit or Hackernews, etc.
 
 <h2>Growth strategies</h2>
 
@@ -47,48 +44,94 @@ After you determine that you have PMF, it's time to grow. There are a lot of dif
 Allow more people to have access to your product. Examples:
 
 - International Expansion - launching your product in more countries
-- Demographics expansion - launching your product for different age groups, or creating value prop for different generation
+- Demographics expansion - launching your product for different age groups, or creating value prop for different generations
 - relaxing requirements to use your product - removing need to create an account, provide ID verification, etc.
+- enabling third-party login (no need to create an account)
+- providing logout experience (if your product requires login)
 
-Is your product launched only in the US? Launch it to Canada, and Mexico as well. Then the EU, Asia, etc. Some Asian countries, like India or Indonesia, are huge markets! India has 1.5B people. It's almost 5x US! Launching your product in India has a potential to grow user base by 5x. EU is about 1.5x size of US. That's opprtunity to at least double your user base.
+Is your product launched only in the US? Launch it to Canada, and Mexico as well. Then the EU, Asia, etc. Some Asian countries, like India or Indonesia, are huge markets! India has 1.5B people. It's almost 5x US! Launching your product in India has the potential to grow the user base by 5x. EU is about 1.5x the size of the US. That's an opportunity to at least double your user base.
 
-If your product is not accessible for kids (people under 18) you can consider fulfiling requirements that will make it so. Maybe you can create a separate version of your product for kids. Is your product tailored for a particular demographic, e.g., millennials? Consider expanding the value prop to gen X or gen Z. 
+Be aware of the cost of international expansion. Potential language translation, if you launching to non-English speaking countries, payments/taxes handling, operational cost, or compliance with different laws like GDPR in European Union. When doing international expansion always analyze the cost, and how big the opportunity is. Launching in Canada may have very little additional work, but not much user growth potential. Launching to India can be huge, but may require much more additional work. Try to find a sweet spot where a minimal amount of work will yield as much ROI as possible.
 
-Another strategy to expand access is to enable login through 3rd parties like Google or Facebook so people don’t have to create new accounts. You can also provide logout experience if you always required login before.
+If you have never done international expansion before, try to start small. Launch to the "easiest" country first - one that requires a minimal amount of work from your side. This will help you to build a muscle for future expansions, and an idea of the impact that you can expect from only opening your product to a different market.
 
-Remember that expanding access has cost. It might be legal, like GDPR in EU, or operational. You may need to translate to different language. Before growing through access, make sure you analyze costs of expansion. Ideally, you should compare different access plays, and go after one that brings the most value (users) for least amount of effort. I.e., expanding to Canada doesn't require translation, and laws are pretty similar to US.
+There is another trap: you may have PMF in one country, but not in other. If possible, try to determine, which countries will adopt your product most likely. I.e., US and Europe are pretty similar, but South-East Asia is different.
+
+If your product is not accessible for people under 18 you can consider fulfilling requirements that will make it so. Maybe you can create a separate version of your product for kids. Is your product tailored for a particular demographic, e.g., millennials? Consider expanding the value prop to gen X or gen Z.
+
+Again, be aware of the cost of such expansion. Many times juice may not be worth the squeeze. 
+
+Another strategy to expand access is to enable login through 3rd parties like Google or Facebook so people don’t have to create new accounts. This can drastically improve your user acquisition. Creating an account, confirming email, etc. is a much higher cost for users comparing to clicking "Sign in with Google". You can also provide a logout experience if you always required login before. This may help to capture some people who just want to lurk before committing to use your product.
+
+Before growing through access, make sure you analyze the costs of expansion. Ideally, you should compare different access plays, and go after one that brings the most value (users) for the least amount of effort. I.e., expanding to Canada doesn't require translation, and laws are pretty similar to the US.
 
 <h3>Category expansion</h3>
 
-You can grow your product by introducing a new variation of it for current users, or to acquire new users.
+You can grow your product by introducing a new variation of it for your current users or to acquire new users.
 
-This is a very broad strategy and it depends on the type of your business. If you are selling t-shirts, start also selling hoodies. If you are selling books for elementary schools, start selling books for middle schools and high schools. Selling for individuals? Start selling for businesses, etc.
+This is a very broad strategy and it depends on the type of your business. If you are selling t-shirts, start also selling hoodies. If you are selling subscriptions, introduce a new tier with more or fewer features. Selling for individuals? Start selling for businesses, etc.
+
+Cloud providers nailed that strategy to the extreme. There are 10s of products, like Virtual Machines, Databases, etc., and 10s of variations of each product. VM with 8GB of RAM, VM with 4GM of RAM, VM with backup feature and without, Redis on-prem, or self-managed.
+
+There is one thing to be aware of: introducing too many variations may cause [analysis paralysis](https://www.investopedia.com/terms/a/analysisparalysis.asp), which may lead to a decrease in sales. Make sure that growing through category expansion is slow, and intentional, and that people want particular variations of your product. Don't throw at them 100s of options if they would be content with three.
 
 <h3>Friction removal</h3>
 
-How many clicks it takes to make a purchase on your website? Or any activity that your user wants to perform? Simply reducing the number of actions (clicks, filling out forms, etc.) that is required to achieve something on your website or app would make your users use your product more. There is nothing more frustrating than tens of clicks to go through multiple different views, with a lot of unnecessary information in order to achieve something. I’ve seen that removing 1 text input from a form can increase the completion rate by 10%! Imagine if you can increase your sales by 10% just by removing one field from a form your users fill out to purchase your product.
+How many clicks does it take to make a purchase on your website? Or any activity that your user wants to perform? Simply reducing the number of actions (clicks, filling out forms, etc.) that is required to achieve something on your website or app would make your users use your product more. There is nothing more frustrating than tens of clicks to go through multiple different views, with a lot of unnecessary information to achieve something. I’ve seen that removing 1 text input from a form can increase the completion rate by 10%! Imagine if you can increase your sales by 10% just by removing one field from a form your users fill out to purchase your product.
+
+Friction is causing your users to feel not great. Is it me or does this app just sucks? Whichever is true, they will go and use an app that doesn't make them feel that. You need to make your users feel [awesome](https://amzn.to/3wC2uKy) when they are using your product. Better, and more efficient they are at using your product, the more likely they will keep using it.
 
 <h3>In-app upsells</h3>
+To bring awareness of new features, or simply try to promote something on your website or app, you can add prompts across different surfaces. Your upsell will be more successful if it’s put in the right context, at the right time. E.g., if someone is buying a book, maybe they also want to buy a pdf summary for an extra <span>$</span>1? You might be less successful if someone came to your website to use a [real estate investment calculator](https://apps.apple.com/us/app/reic/id1512907313) you created, and you are trying to upsell your Vue.js Tutorial. 
 
-In order to bring awareness of new features, or simply trying to promote something on your website or app, you can add prompts across different surfaces. Your upsell will be more successful if it’s put in the right context, at the right time. E.g., someone is buying a book, maybe they also want to buy a pdf summary for an extra <span>$</span>1? You might be less successful if someone came to your website to use a [real estate investment calculator](https://apps.apple.com/us/app/reic/id1512907313) you created, and you are trying to upsell your Vue.js Tutorial. Check out [9 awesome examples of upsells](https://www.appcues.com/blog/upselling-prompts-saas).
+Check out [9 awesome examples of upsells](https://www.appcues.com/blog/upselling-prompts-saas).
 
 <h3>Notifications</h3>
 
-The best way to increase your product retention is to send notifications to remind your users about your product. There are multiple notification channels: in-app (shown in notification section), [push notification](https://buildfire.com/what-is-a-push-notification/), or email. Push notifications are now also [available in browsers](https://frizbit.com/blog/how-to-use-push-notifications-on-your-website-as-a-growth-channel/)! Similarly like with in-app upsells, notifications will be most successful if targeting and timing is correct. You should also keep track of notification metrics like views (how many people have seen your notification), CTR (Click Through Rate) and CVR (Conversion Rate). Conversion Rate tells you how many people performed the desired action (like buying your product) as a result of notification. You may have notifications with high CTR that do not result in any conversions. Check out [7 examples of how different companies use notifications](https://neilpatel.com/blog/push-notifications-to-boost-engagement/).
+The best way to increase your product retention is to send notifications to remind your users about your product. There are multiple notification channels: in-app (shown in the notification section), [mobile push notification](https://buildfire.com/what-is-a-push-notification/), or email. Push notifications are now also [available in browsers](https://frizbit.com/blog/how-to-use-push-notifications-on-your-website-as-a-growth-channel/)! 
+
+Similarly like with in-app upsells, notifications will be most successful if targeting and timing are correct. You should also keep track of notification metrics like views (how many people have seen your notification), CTR (Click Through Rate), and CVR (Conversion Rate). Conversion Rate tells you how many people performed the desired action (like buying your product) as a result of the notification. You may have notifications with high CTR that do not result in any conversions. 
+
+Check out [7 examples of how different companies use notifications](https://neilpatel.com/blog/push-notifications-to-boost-engagement/).
 
 <h3>Facebook or Google ads</h3>
 
-Paid ads are easy to make, but not easy to make cost effective! Julian Shapiro’s Growth Handbook has a good intro overview of using ads as acquisition channels. I recommend checking out ["Acquisition channels"](https://www.julian.com/guide/growth/customer-acquisition) (especially channel cost), [“Making ads”](https://www.julian.com/guide/growth/make-ads) and [“Running ads”](https://www.julian.com/guide/growth/facebook-instagram-ads). Again, be aware that ads are easy to make, but not easy to make profitable and efficient. By doing small tweaks in content, CTA text or art work you can increase efficiency by 2x, 5x or even 10x. This can make it profitable or not. If you spend <span>$</span>10,000 on ads that generate <span>$</span>4,000 in sales that’s not profitable. You need to improve your ads efficiency by 2.5x to make it break even. Be aware of artificial growth! A few years ago [Chamath](https://twitter.com/chamath) claimed that [40 cents of every <span>$</span>1 dollar goes to Facebook, Google or Amazon](https://www.youtube.com/watch?v=iVOFSsvThxY). You can find many courses, books and tutorials on runnings paid ads online. Be aware that they expire fast! Most advanced advertisers learn how to maximize them to their advantage every day, and you need to be on top of these tricks to keep your ads profitable. Here is a sample [Facebook ads tutorial](https://www.youtube.com/watch?v=M77Ia2VD_xI) and [Google ads tutorial](https://www.youtube.com/watch?v=SNjqe9GT9mw). I also like [this Google ads beginner’s guide](https://blog.hootsuite.com/google-ads/). You should also consider [which platform is best for your product](https://databox.com/facebook-ads-or-google-ads). You can also [use both](https://www.wordstream.com/blog/ws/2018/07/09/facebook-plus-google).
+Paid ads are easy to make, but not easy to make them cost-effective! It's not do and forget thing. You need to constantly iterate and monitor your ad campaigns. By doing small tweaks in content, CTA text, or artwork you can increase efficiency by 2x, 5x, or even 10x. This can make it profitable or not. If you spend <span>$</span>10,000 on ads that generate <span>$</span>4,000 in sales that are not profitable. You need to improve the efficiency of your ads by 2.5x to make them break even. 
+
+Be aware of artificial growth! A few years ago [Chamath](https://twitter.com/chamath) claimed that [40 cents of every <span>$</span>1 VCs invest in startups go to Facebook, Google, or Amazon](https://www.youtube.com/watch?v=iVOFSsvThxY). It may make sense to grow your product at all costs in the beginning, but keep in mind that this strategy is not sustainable. Probably, sooner or later you will have to increase the efficiency of your ads or move to other growth channels.
+
+Again, be aware that ads are easy to make, but not easy to make profitable and efficient. You can find many courses, books, and tutorials on runnings paid ads online. Be aware that they expire fast! Most advanced advertisers learn how to maximize them to their advantage every day, and you need to be on top of these tricks to keep your ads profitable. 
+
+Here is a sample [Facebook ads tutorial](https://www.youtube.com/watch?v=M77Ia2VD_xI) and [Google ads tutorial](https://www.youtube.com/watch?v=SNjqe9GT9mw). I also like [this Google ads beginner’s guide](https://blog.hootsuite.com/google-ads/). You should also consider [which platform is best for your product](https://databox.com/facebook-ads-or-google-ads). You can also [use both](https://www.wordstream.com/blog/ws/2018/07/09/facebook-plus-google).
+
+Julian Shapiro wrote great articles about [“Making ads”](https://www.julian.com/guide/growth/make-ads) and [“Running ads”](https://www.julian.com/guide/growth/facebook-instagram-ads).
 
 <h3>SEO</h3>
 
-Search Engine Optimization. SEO is for making your website pop-up in search results as high as possible. It’s probably an even more advanced growth strategy than running ads, as you need to actively invest in it, and effects are not immediate. I may write a separate post or series of posts about SEO in the future. [Google Search Central](https://developers.google.com/search/docs) is the bible of SEO. For a more general guide check [Moz’s SEO guide](https://moz.com/beginners-guide-to-seo).
+Search Engine Optimization. SEO is for making your website rank in search results as high as possible. If you are on page 2 of Google results, probably no one will visit your website through that channel. SEO is probably an even more advanced growth strategy than running ads, as you need to actively invest in it, and the effects are not immediate. You may need to wait for results even a few months. On the flip side, its effects may last for a long time.
+
+SEO usually means optimizing for Google Search. Google has [over 90% of the search engine market share](https://kinsta.com/search-engine-market-share). The second is Bing with less than 5%. This means that optimizing for Bing search will probably have 18x less impact than optimizing for Google. Fortunately, the majority of Google SEO tricks apply also to other search engines. 
+
+There is no good way to measure SEO efficiency as you cannot A/B test it. You need to apply all SEO changes across your website. The best you can do is to monitor the amount of traffic from search.
+
+Part of growing your product through SEO is content marketing. Recently, it's very popular to share insights into building your product. Providing some interesting facts about how you run your business, how you started, showing your progress, how much money you made over time, etc. It may draw people's attention better than your product itself, and by learning more about you, people are more likely to buy your product. If not today, maybe in the future.
+
+6 simple steps to make your product rank better:
+
+1. Make sure that search engines can index your site - SPA or sites with login are not good
+2. High-quality and compelling content that people want to read that results in a low [bounce rate](https://www.semrush.com/blog/bounce-rate/)
+3. Keyword optimization - use keywords that people would enter in search input box
+4. Performance - fast-loading sites with good UX perform better and have a lower [bounce rate](https://www.semrush.com/blog/bounce-rate/)
+5. Make content that people will want to share with others
+6. Title, URL, and description to draw high CTR in the rankings (be aware of [bounce rate](https://www.semrush.com/blog/bounce-rate/))
+
+To start with SEO: audit your website with [Site Audit Checklist](https://moz.com/seo-audit-checklist) from Moz. Check out [Google Search Central](https://developers.google.com/search/docs) - the bible of SEO, and for a more general guide check out [Moz’s SEO guide](https://moz.com/beginners-guide-to-seo).
 
 <h3>Promotions</h3>
 
-People love promotions. If you offer 50% discount for 1 week you can sell more during that week than over entire year.
+People love promotions. If you offer a 50% discount for 1 week you can sell more during that week than over the entire year.
 
-You have to be careful though, and always considering the cost of promotions. If you run large scale promotion it can kill your profits. People who would buy your product anyway will buy it at discount, and instead of profit from selling more you may end up losing more money.
+You have to be careful though, and always consider the cost of promotions. If you run large-scale promotions it can kill your profits. People who would buy your product anyway will buy it at discount, and instead of profiting from selling more, you may end up losing more money.
 
 <h3>Referral Program</h3>
 
