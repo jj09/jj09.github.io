@@ -131,54 +131,90 @@ To start with SEO: audit your website with [Site Audit Checklist](https://moz.co
 
 People love promotions. If you offer a 50% discount for 1 week you can sell more during that week than over the entire year.
 
-You have to be careful though, and always consider the cost of promotions. If you run large-scale promotions it can kill your profits. People who would buy your product anyway will buy it at discount, and instead of profiting from selling more, you may end up losing more money.
+What works well for promotions is also seasonal discounts. Black Friday, Holidays, Summer promotions, back-to-school promotions, etc.
+
+Depending on your product you can also offer promotions where people are deciding whether to use it in the off-season. 
+
+For example Zwift - virtual cycling app is most popular in the winter months. Usually around November or December is when people are debating whether they should try indoor biking, and which platform to choose. That's a good time to run a promotion. Another good time is after the season: in March/April, when people are going back to outdoor biking, throwing 3 months for free if you buy a yearly subscription might be attractive. Especially because they still remember the good experiences they had during the winter months. In July they will probably forget...unless there are forest fires, and it's unhealthy to bike outside. Another good opportunity to run a promotion.
+
+LeetCode runs promotions usually around holidays. This is a time of code freezes when engineers have more spare time for coding. Getting a LeetCode subscription is much more likely than during deadline times.
+
+You have to be careful when running promotions. Always consider the cost of promotions. If you run large-scale promotions it can kill your profits. People who would buy your product anyway will buy it at discount, and instead of profiting from selling more, you may end up losing more money.
 
 <h3>Referral Program</h3>
 
-Incentivizing users to refer your product to friends might be effective if incentives are attractive enough. You can offer monetary rewards, additional product features or some internal loyalty points.
+Incentivizing users to refer your product to friends might be effective if incentives are attractive enough. You can offer monetary rewards, additional product features, or some internal loyalty points. 
 
-For exmaple, Discover offer $50 for every friend you invite to start account with them. Your friend also gets $50. Thus, cost of acquiring customer is $100! Make sure to run analysis before running such referral programs as they can be exploited, and very costly.
+For example, Discover offers <span>$</span>50 for every friend you invite to start an account with them. Your friend also gets <span>$</span>50. Thus, the cost of acquiring customers is $100! Make sure to run analysis before running such referral programs as they can be exploited, and very costly.
+
+Running a referral program is not easy. You need:
+
+- a mechanism to track who signed up through a referral
+- keep track of how many referrals the given user has, and maybe even the lifecycle of referred customers
+- keep track of potential rewards that should be awarded
+- you need to shield from exploiting your program: i.e., one person can create multiple fake accounts, and cash out the referrals
+- you need to keep track of the cost and ROI of the program all the time
 
 <h3>Growth Hacks</h3>
 
-In addition to larger initiatives described above, you can also try simpler, faster to implements growth hacks:
-- Change Content - make it shorter and show DIRECT VALUE for the user; explain what is user getting by engaging with your product or taking particular action.
+In addition to the larger initiatives described above, you can also try simpler, faster-to-implement ways to grow - growth hacks.
+
+Growth hacks, are small changes that can implement quickly, and power your user's growth.
+
+Some example growth hacks you can apply to your product:
+
+- Change Content - make it shorter and show DIRECT VALUE for the user; explain what is user getting by engaging with your product or taking a particular action.
 - Change CTA (Call To Action) content or color of text or background.
 - Add some unit/text/CTA to some impactful view - if you want people to take some action, upsell it where you get the most traffic.
 - Add insights or remove not needed insights - people like seeing stats about how they are doing; e.g., if they listed something for sale, a notification saying “your product got X views in the last Y days” can increase engagement. Even without any explicit call to action in content, people tend to engage with the product to find out more. Strava is pretty good about it. Sometimes they send emails, like your monthly summary: “you ran X miles last month”. I found myself going to check more details about my performance in the app very often. It’s working!
-- Improve performance (removing things from page/view helps with perf, adding things hurts perf) - better performance can lead to growth as users can be more productive, and less frustrated when using your app or website.
-- Remove some not needed unit/text/CTA - an often overlooked growth hack is to just remove some of the least impactful or not relevant anymore things from your product. It’s very easy to end up with [feature bloat](https://developerexperience.io/problems/unnecessary-features), but product teams rarely audit them and deprecate/remove
-- Prefil form with defaults (e.g., do not ask the user to select a subscription plan, preselect most popular for them) - reducing friction in forms can drastically increase completion rate, which can lead to significant increase in sales.
-- Change number of items shown - if you are displaying, e.g., newest 4 items, consider displaying 6 or just 2 or 3. If you display less, you may score performance gains. Displaying more may lead to more impact as people have more opportunities for engagement.
+- Improve performance (removing things from page/view helps with perf, adding things hurts perf) - better performance can lead to growth as users can be more productive, and less frustrated when using your app or website. It's also good for SEO.
+- Remove some not needed unit/text/CTA - an often overlooked growth hack is to just remove some of the least impactful or not relevant any more things from your product. It’s very easy to end up with [feature bloat](https://developerexperience.io/problems/unnecessary-features), but product teams rarely audit and remove them.
+- Prefill the form with defaults (e.g., do not ask the user to select a subscription plan, preselect the most popular plan for them) - reducing friction in forms can drastically increase the completion rate, which can lead to a significant increase in sales.
+- Change the number of items shown - if you are displaying, e.g., the newest 4 items, consider displaying 6 or just 2 or 3. If you display less, you may score performance gains. Displaying more may lead to more impact as people have more choices and opportunities for engagement.
 
-You can find a lot of different growth hacks in [Aladdin Happy’s](https://twitter.com/happyaladdin) books [TOP 101 Growth Hacks](https://amzn.to/3KSQolz) and [TOP 101 Growth Hacks 2](https://amzn.to/3wgENsz). Both books contain 202 different ideas. This can help you with brainstorming your own ideas.
+You can find a lot of different growth hack ideas in [Aladdin Happy’s](https://twitter.com/happyaladdin) books [TOP 101 Growth Hacks](https://amzn.to/3KSQolz) and [TOP 101 Growth Hacks 2](https://amzn.to/3wgENsz). Both books contain 202 different ideas. This can help you with brainstorming your ideas.
 
 <h2>What to work on? Use ICE framework</h2>
 
-Coming up with ideas never was the biggest problem for my teams. We always had more ideas than what we could execute. Our brainstorm sessions (powered by [mural](https://www.mural.co/)) always produced 100s of ideas. The dillema was *what* to work on.
+Coming up with ideas never was the biggest problem for my teams. We always had more ideas than what we could execute. Our brainstorming sessions (powered by [mural](https://www.mural.co/)) always produced 100s of ideas. The dilemma was *what* to work on.
 
-The simple framework that can help you prioritize your ideas is [ICE Framework](https://ladder.io/blog/growth-strategy). [ICE](https://ladder.io/blog/growth-strategy) stands for Impact, Confidence, Ease of implementation. You score ideas on a scale of 1-10 in every category, and then rank them by summing it up. I’ve seen a lot of engineers throughout my career focusing too much on impact, while totally neglecting ease of implementation.
+The simple framework that can help you prioritize ideas is [ICE Framework](https://ladder.io/blog/growth-strategy). [ICE](https://ladder.io/blog/growth-strategy) stands for Impact, Confidence, and Ease of implementation. You score ideas on a scale of 1-10 in every category, and then rank them by summing them up. 
+
+I’ve seen a lot of engineers throughout my career focusing too much on impact, while neglecting ease of implementation.
 
 Examples:
 
-- Redesign landing page (Impact: 7, Confidence: 5, Ease of implementation: 3, ICE score: 15).
-- Create a new notification (Impact: 3, Confidence: 6, Ease of Implementation: 7, ICE score: 16).
+- Redesign landing page:
+    * Impact: 7
+    * Confidence: 6
+    * Ease of implementation: 3
+    * ICE score: 16
+- Create a new notification:
+    * Impact: 3
+    * Confidence: 6
+    * Ease of Implementation: 9
+    * ICE score: 18
+- Launch product in India:
+    * Impact: 9
+    * Confidence: 5
+    * Ease of Implementation: 1
+    * ICE score: 15
 
-Do this for all potential projects, narrow your list down to top 10, and start working on the first one. You can keep other ideas in the backlog, but don’t focus on them too much to not get too distracted. You should always be focused on 1 idea, keep 10 in mind, and the rest keep in the backlog.
+Do this for all potential projects, narrow your list down to the top 10, and start working on the first one. You can keep other ideas in the backlog, but don’t focus on them too much to not get too distracted. You should always be focused on 1 idea, keep 10 in mind, and the rest keep in the backlog.
 
 <h3>How to estimate impact and confidence? Opportunity sizing</h3>
 
 There is no straightforward formula for estimating ease of implementation. It depends on the engineers, their familiarity with the product, etc. However, you can estimate impact and confidence with opportunity sizing.
 
-For example: you want to upsell a new product you are selling by creating a Facebook ad. You can estimate the number of people who will see the ad. Based on that you can estimate the number of people who will click on it, and the number of people who will make a purchase after visiting the product page.
+For example: you want to upsell a new product you are selling by creating a Facebook ad. You can estimate the number of people who will see the ad. Based on that you can estimate the number of people who will click on it, and the number of people who will purchase after visiting the product page.
 
-Let’s say your ad will be seen by 100,000 people. Based on your past experiences, targeting quality or by just guesstimating based on some data found online about funnel performance, you can estimate your ad’s CTR. Let’s say it would be 2%. This gives you 2000 people visiting your landing page. How many people will buy the product? Ideally you can estimate that based on the % of people who buy a product after visiting your landing page. If you’ve seen that 1% of people who land on the product page buy it (that would be pretty good!) then your opportunity size is 1% of 2000 = 20 products.
+Let’s say your ad will be seen by 100,000 people. Based on your past experiences, targeting quality or by just guesstimating based on some data found online about funnel performance, you can estimate your ad’s CTR. Let’s say it would be 2%. This gives you 2000 people visiting your landing page. How many people will buy the product? Ideally, you can estimate that based on the % of people who buy a product after visiting your landing page. If you’ve seen that 1% of people who land on the product page buy it (that would be pretty good!) then your opportunity size is 1% of 2000 = 20 products.
 
-You can do similar estimation for notifications or other growth channels.
+You can do a similar estimation for notifications or other growth channels.
 
 Note: be aware of cannibalization. If you reach the same people with 2 growth channels they won’t produce a sum of expected results. I.e., if someone sees your ad twice you probably won’t double the number of visits. Maybe you will increase visits by 20-30%.
 
-For more about opportunity sizing checkout [this](https://builtin.com/product/opportunity-sizing), [this](https://medium.com/related-works-inc/intro-to-opportunity-sizing-ce9d7e5a29c4) or [that](https://segment.com/academy/grow-using-data/finding-growth-opportunities-in-your-product/).
+For more about opportunity sizing check out [this](https://builtin.com/product/opportunity-sizing), [this](https://medium.com/related-works-inc/intro-to-opportunity-sizing-ce9d7e5a29c4) or [that](https://segment.com/academy/grow-using-data/finding-growth-opportunities-in-your-product/).
 
 <h2>Lessons Learned</h2>
 
@@ -188,7 +224,7 @@ Trying things always produce better results than endless planning, and analyzing
 
 <h3>MVE - Minimal Viable Experiment</h3>
 
-When you are not sure if something is going to work, instead of building full-fledged features try to run a directional experiment that requires minimal amount of work. If the experiment shows some positive results, double down and build a fully fledged feature.
+When you are not sure if something is going to work, instead of building full-fledged features try to run a directional experiment that requires a minimal amount of work. If the experiment shows some positive results, double down and build a fully-fledged feature.
 
 <h3>Make your users winners</h3>
 
@@ -196,31 +232,31 @@ In the book [Badass: Making Users Awesome](https://amzn.to/3JtZvsL), [Kathy Sier
 
 <h3>Iterate, iterate, iterate</h3>
 
-If something didn’t work at first, but you have a strong hypothesis why it should’ve (e.g., data or just intuition), you should iterate. I’ve seen many times people giving up too early. I have also seen when something didn’t work, because there was no trivial bug affecting a large portion of the users. I rarely see something taking off to the moon on the first try. Even if it does, there is probably still an opportunity to iterate and get even greater impact from it.
+If something didn’t work at first, but you have a strong hypothesis about why it should’ve (e.g., data or just intuition), you should iterate. I’ve seen many times people give up too early. I have also seen when something didn’t work because there was no trivial bug affecting a large portion of the users. I rarely see something taking off to the moon on the first try. Even if it does, there is probably still an opportunity to iterate and get an even greater impact from it.
 
 <h3>Do not run too many experiments at once</h3>
 
-In an ideal scenario you just run 1 A/B test for your product. As you want to move fast you may need to run multiple experiments in parallel. In that case, you will get the best results if you isolate them. I.e., you experiment with one thing on the minimum population needed to show statistically significant results, e.g. 20% (10% get a test, 10% control treatment), another thing on different 20% of users, etc. What if you won’t get meaningful results with a running test on 20% users? You may rerun it later with a larger population when you won’t have other experiments to run. Running a bunch of 50/50 A/B tests may result in randomizing user experience and you won’t be able to tell which of the changes is causing (or not) desired results.
+In an ideal scenario, you just run 1 A/B test for your product. As you want to move fast you may need to run multiple experiments in parallel. In that case, you will get the best results if you isolate them. I.e., you experiment with one thing on the minimum population needed to show statistically significant results, e.g. 20% (10% get a test, 10% control treatment), another thing on different 20% of users, etc. What if you won’t get meaningful results with a running test on 20% of users? You may rerun it later with a larger population when you won’t have other experiments to run. Running a bunch of 50/50 A/B tests may result in randomizing user experience and you won’t be able to tell which of the changes is causing (or not) desired results.
 
 <h3>Use back tests and holdouts</h3>
 
-When you try new things, you may run into novelty effects. I.e., some new feature is causing a temporary spike in engagement, but after some time it goes back to neutral or even negative. Running a test for 2 weeks, and making a decision based on data from <u>only week two</u> should be sufficient to remove the novelty bias. But not always. Feature performance can degrade after a month or two. To monitor long term effects of a feature you should consider using back tests. This means launching new experiences for the majority of the population, and keeping a small number of users who still get the old experience. To monitor the compound effect of changes made in some period of time, consider also using [holdouts](https://blog.statsig.com/introducing-holdouts-4bcfc1821d1c). Keeping a small number of users who won’t get any of the new features that you introduced in a given period of time. This can help you assess the total impact of changes you made over time. Usually there is a cannibalization effect and the sum of all backtests won’t equal the holdout impact. Keep in mind that using backtest and holdouts require a pretty large number of users to get statistically significant results. Thus, consider these techniques only when your product is more mature, and you have a lot of experiments running at the same time.
+When you try new things, you may run into novelty effects. I.e., some new feature is causing a temporary spike in engagement, but after some time it goes back to neutral or even negative. Running a test for 2 weeks, and making a decision based on data from <u>only week two</u> should be sufficient to remove the novelty bias. But not always. Feature performance can degrade after a month or two. To monitor the long-term effects of a feature you should consider using backtests. This means launching new experiences for the majority of the population and keeping a small number of users who still get the old experience. To monitor the compound effect of changes made in some period of time, consider also using [holdouts](https://blog.statsig.com/introducing-holdouts-4bcfc1821d1c). Keeping a small number of users who won’t get any of the new features that you introduced in a given period. This can help you assess the total impact of changes you made over time. Usually, there is a cannibalization effect and the sum of all backtests won’t equal the holdout impact. Keep in mind that using backtest and holdouts require a pretty large number of users to get statistically significant results. Thus, consider these techniques only when your product is more mature, and you have a lot of experiments running at the same time.
 
 <h3>What didn’t work in the past may work now</h3>
 
-Before joining Facebook Marketplace Growth team I often heard: “We tried this in the past, it didn’t work. Don’t waste your time”. In my early days at Growth team, when I was trying to find different ideas, one engineer advised me to look at past experiments that didn’t work. “If it didn’t work in the past, it may work now”. Timing is one of the key elements of building a successful product. If you are [too early with an idea](https://www.youtube.com/watch?v=EUCC2RryD6o) you won’t get anywhere. Another factor in addition to timing is execution. There were multiple attempts at Electric cars before Tesla, and there were a lot of different social networks before Facebook.
+Before joining the Facebook Marketplace Growth team I often heard: “We tried this in the past, but it didn’t work. Don’t waste your time”. In my early days on the Growth team, when I was trying to find different ideas, one engineer advised me to look at past experiments that didn’t work. “If it didn’t work in the past, it may work now”. Timing is one of the key elements of building a successful product. If you are [too early with an idea](https://www.youtube.com/watch?v=EUCC2RryD6o) you won’t get anywhere. Another factor in addition to timing is execution. There were multiple attempts at Electric cars before Tesla, and there were a lot of different social networks before Facebook.
 
 <h3>North Star Metric</h3>
 
-North Star Metric is a metric that the best measures value of your product. It could be Daily Active Users, number of transactions per day or number of posts users create on your service.
+North Star Metric is a metric that the best measures value of your product. It could be Daily Active Users, the number of transactions per day, or the number of posts users create on your service.
 
-When you grow your product, you should have North Star Metric and focus all your efforts on growing it. Would some change increase your North Star Metric? Do it. Otherwise - abandon or postpone. This helps tremendously with correct focus and proritization.
+When you grow your product, you should have North Star Metric and focus all your efforts on growing it. Would some change increase your North Star Metric? Do it. Otherwise - abandon or postpone. This helps tremendously with correct focus and prioritization.
 
 For more about North Star metric check out [this post](https://blog.growthhackers.com/does-a-north-star-metric-oversimplify-growth-7c8428b0307f) by [Sean Ellis](https://twitter.com/SeanEllis).
 
 <h2>Recommended Growth Resources</h2>
 
-If you want to learn more about growth I recommend below resources. Get familiar with them and try out some growth ideas in your product. Remember that more things you try, more likely you will be successful.
+If you want to learn more about growth I recommend the below resources. Get familiar with them and try out some growth ideas in your product. Remember that the more things you try, the more likely you will be successful.
 
 <h3>Books</h3>
   - **[Hacking Growth](https://amzn.to/3IdQB0Y)** - growth bible, strongly recommended!
