@@ -129,7 +129,7 @@ To start with SEO: audit your website with [Site Audit Checklist](https://moz.co
 
 <h3>Promotions</h3>
 
-People love promotions. If you offer a 50% discount for 1 week you can sell more during that week than over the entire year.
+People love promotions. If you offer a 50% discount for 1 week you can sell more during that week than over the entire year. People are much more likely to buy the same product if you price it at <span>$</span>100 with a 20% discount than <span>$</span>80 product without any discounts. It’s [behavioral economics effect](https://www.digivate.com/blog/digital-marketing/behavioural-economics-marketing).
 
 What works well for promotions is also seasonal discounts. Black Friday, Holidays, Summer promotions, back-to-school promotions, etc.
 
@@ -139,13 +139,21 @@ For example Zwift - virtual cycling app is most popular in the winter months. Us
 
 LeetCode runs promotions usually around holidays. This is a time of code freezes when engineers have more spare time for coding. Getting a LeetCode subscription is much more likely than during deadline times.
 
+Uber and Lyft use promotions to outcompete each other. The same with food delivery apps like DoorDash and Uber Eats. Do you remember a week without any promotion on Uber, Lyft, or DoorDash? *"<span>$</span>0 delivery in the next 3 days for orders above $20"*, *"Spend <span>$</span>100, get <span>$</span>15 coupon"*.
+
 You have to be careful when running promotions. Always consider the cost of promotions. If you run large-scale promotions it can kill your profits. People who would buy your product anyway will buy it at discount, and instead of profiting from selling more, you may end up losing more money.
 
 <h3>Referral Program</h3>
 
-Incentivizing users to refer your product to friends might be effective if incentives are attractive enough. You can offer monetary rewards, additional product features, or some internal loyalty points. 
+Incentivizing users to refer your product to friends might be effective if incentives are attractive enough. You can offer monetary rewards, additional product features, or some internal loyalty points.
 
-For example, Discover offers <span>$</span>50 for every friend you invite to start an account with them. Your friend also gets <span>$</span>50. Thus, the cost of acquiring customers is $100! Make sure to run analysis before running such referral programs as they can be exploited, and very costly.
+In the early days, PayPal used a referral program to acquire new users. If you referred someone, both you and the new user got <span>$</span>10 on your PayPal account. Today, many banks use that strategy. Discover offers <span>$</span>50 for every friend you invite to start an account with them. Your friend also gets <span>$</span>50. Thus, the cost of acquiring customers is $100! If you want to run a similar referral program, make sure to run analysis before! If your acquisition cost is higher than the lifetime value of the user it may not be the best strategy. Keep in mind that referral programs can be exploited, and very costly.
+
+You do not necessarily have to offer monetary rewards. Dropbox offers 1GB of additional storage for you and the user invited by you to the platform. You can also offer on-platform "points", but less attractive reward result in fewer referrals.
+
+Another referral program strategy is to create invite-only platform. Only people invited can use it. That strategy helps with the quality of users and creates exclusivity impression. Gmail used that strategy in the early days. They discontinued that after reaching market domination.
+
+The ultimate dream of a referral program is to achieve viral growth. Viral growth means that every user brings more than 1 new users. It's not necessary 2, 3, or more. It could be 1.1, which means every 10 users bring 11 new users. Even 1.01 - every 100 users bring 101 new users - is great. If your product is good enough, you don't even need to offer incentives.
 
 Running a referral program is not easy. You need:
 
