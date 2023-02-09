@@ -139,13 +139,13 @@ For example Zwift - virtual cycling app is most popular in the winter months. Us
 
 LeetCode runs promotions usually around holidays. This is a time of code freezes when engineers have more spare time for coding. Getting a LeetCode subscription is much more likely than during deadline times.
 
-Uber and Lyft use promotions to outcompete each other. The same with food delivery apps like DoorDash and Uber Eats. Do you remember a week without any promotion on Uber, Lyft, or DoorDash? *"<span>$</span>0 delivery in the next 3 days for orders above $20"*, *"Spend <span>$</span>100, get <span>$</span>15 coupon"*.
+Running promotions can be a powerful tool to fight competition. Uber and Lyft use promotions to outcompete each other. The same with food delivery apps like DoorDash, Postmates, and Uber Eats. Do you remember a week without any promotion on Uber, Lyft, or DoorDash? Upsells like *"<span>$</span>0 delivery in the next 3 days for orders above $20"*, *"Spend <span>$</span>100, get <span>$</span>15 coupon"* are almost permanent element of their apps. This game is still ongoing, but each of mentioned companies were able to build advantage in some submarket thanks to promotions.
 
 You have to be careful when running promotions. Always consider the cost of promotions. If you run large-scale promotions it can kill your profits. People who would buy your product anyway will buy it at discount, and instead of profiting from selling more, you may end up losing more money.
 
 <h3>Referral Program</h3>
 
-Incentivizing users to refer your product to friends might be effective if incentives are attractive enough. You can offer monetary rewards, additional product features, or some internal loyalty points.
+Incentivizing users to refer your product to friends might be effective if incentives are attractive enough. You can offer monetary rewards, additional product features, or some internal currency like coins in games.
 
 In the early days, PayPal used a referral program to acquire new users. If you referred someone, both you and the new user got <span>$</span>10 on your PayPal account. Today, many banks use that strategy. Discover offers <span>$</span>50 for every friend you invite to start an account with them. Your friend also gets <span>$</span>50. Thus, the cost of acquiring customers is $100! If you want to run a similar referral program, make sure to run analysis before! If your acquisition cost is higher than the lifetime value of the user it may not be the best strategy. Keep in mind that referral programs can be exploited, and very costly.
 
