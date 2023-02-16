@@ -145,23 +145,25 @@ You have to be careful when running promotions. Always consider the cost of prom
 
 <h3>Referral Program</h3>
 
-Incentivizing users to refer your product to friends might be effective if incentives are attractive enough. You can offer monetary rewards, additional product features, or some internal currency like coins in games.
+Referral program is rewarding your current users for inviting new users to use your product. You can offer monetary rewards, discounts, additional product features, or some internal currency like coins in games.
 
-In the early days, PayPal used a referral program to acquire new users. If you referred someone, both you and the new user got <span>$</span>10 on your PayPal account. Today, many banks use that strategy. Discover offers <span>$</span>50 for every friend you invite to start an account with them. Your friend also gets <span>$</span>50. Thus, the cost of acquiring customers is $100! If you want to run a similar referral program, make sure to run analysis before! If your acquisition cost is higher than the lifetime value of the user it may not be the best strategy. Keep in mind that referral programs can be exploited, and very costly.
+There was time when Uber was offering <span>$</span>10 off for next ride for you and a friend who you invited to the platform. In the early days, PayPal used a referral program to acquire new users. If you referred someone, both you and the new user got <span>$</span>10 on your PayPal account. Today, many banks use that strategy. Discover offers <span>$</span>50 for every friend you invite to start credit card with them. Your friend also gets <span>$</span>50. Thus, the cost of acquiring customers is <span>$</span>100! If you want to run a similar referral program, make sure to run analysis before! If your acquisition cost is higher than the lifetime value of the user it may not be the best strategy. Keep in mind that referral programs can be exploited, which would make it very costly, and not effective.
 
-You do not necessarily have to offer monetary rewards. Dropbox offers 1GB of additional storage for you and the user invited by you to the platform. You can also offer on-platform "points", but less attractive reward result in fewer referrals.
+You do not necessarily have to offer monetary rewards. Dropbox offers 1GB of additional storage for you and the user invited by you to the platform. You can also offer on-platform "points". For example in FIFA World Cup you can buy players with coins. You could offer coins in exchange for referral. Remember, that less attractive reward result in fewer referrals.
 
 Another referral program strategy is to create invite-only platform. Only people invited can use it. That strategy helps with the quality of users and creates exclusivity impression. Gmail used that strategy in the early days. They discontinued that after reaching market domination.
 
-The ultimate dream of a referral program is to achieve viral growth. Viral growth means that every user brings more than 1 new users. It's not necessary 2, 3, or more. It could be 1.1, which means every 10 users bring 11 new users. Even 1.01 - every 100 users bring 101 new users - is great. If your product is good enough, you don't even need to offer incentives.
+The ultimate dream of a referral program is to achieve viral growth. Viral growth means that every user brings more than 1 new users. It's not necessary 2, 3, or more. It could be 1.1, which means every 10 users bring 11 new users. Even 1.01 - every 100 users bring 101 new users - is great. If your product is good enough, you don't even need to offer incentives. You just need to have very frictionless referal flow: from sending referral to user sign up for platform. It could involve enabling people to send invites directly to people from their gmail contacts or their Facebook friends.
 
 Running a referral program is not easy. You need:
 
 - a mechanism to track who signed up through a referral
 - keep track of how many referrals the given user has, and maybe even the lifecycle of referred customers
 - keep track of potential rewards that should be awarded
-- you need to shield from exploiting your program: i.e., one person can create multiple fake accounts, and cash out the referrals
+- you need to shield from exploiting your program: i.e., one person can create multiple fake accounts to get referral bonuses
 - you need to keep track of the cost and ROI of the program all the time
+
+Similar to referral program is affiliate program. However, affiliate marketing focuses on using third-parties to send customers to use your product. Amazon has affiliate program. You can put personalized referral links on your blog, YouTube video or social media, and when people make purchase through these links you get a small share of profits.
 
 <h3>Growth Hacks</h3>
 

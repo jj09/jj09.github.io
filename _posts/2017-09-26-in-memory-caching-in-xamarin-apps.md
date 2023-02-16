@@ -45,7 +45,11 @@ permalink: "/in-memory-caching-in-xamarin-apps/"
 <h3>Implementing in-memory cache</h3>
 <p>After browsing internets and asking people at <a href="https://xamarinchat.slack.com">Xamarin chat</a> we didn't find anything that would work for us, and we decided to implement in-memory cache by ourselves.</p>
 {% highlight csharp %}
-public class InMemoryCache<t> : IInMemoryCache<t>
+public interface IInMemoryCache {
+    public async Task<T> GetOrAdd(string key, DateTimeOffset expiration, Func<string, Task<T>> addFactory);
+}
+
+public class InMemoryCache : IInMemoryCache
 {
     private const int LimitedCacheThreshold = 1000;
 
@@ -93,13 +97,13 @@ public class InMemoryCache<t> : IInMemoryCache<t>
 
     private readonly ConcurrentDictionary<string, WeakReference<reference>> _weakCache;
     private readonly ConcurrentDictionary<string, Reference> _limitedCache;
-    private readonly ConcurrentDictionary<string, Task<t>> _pendingTasks;
+    private readonly ConcurrentDictionary<string, Task<T>> _pendingTasks;
 
     private InMemoryCache()
     {
         _weakCache = new ConcurrentDictionary<string, WeakReference<reference>>(StringComparer.Ordinal);
         _limitedCache = new ConcurrentDictionary<string, Reference>(StringComparer.Ordinal);
-        _pendingTasks = new ConcurrentDictionary<string, Task<t>>(StringComparer.Ordinal);
+        _pendingTasks = new ConcurrentDictionary<string, Task<T>>(StringComparer.Ordinal);
     }
 
     public static IInMemoryCache<t> Create()
@@ -107,7 +111,7 @@ public class InMemoryCache<t> : IInMemoryCache<t>
         return new InMemoryCache<t>();
     }
 
-    public async Task<t> GetOrAdd(string key, DateTimeOffset expiration, Func<string, Task<t>> addFactory)
+    public async Task<T> GetOrAdd(string key, DateTimeOffset expiration, Func<string, Task<T>> addFactory)
     {
         WeakReference<reference> cachedReference;
 
@@ -157,14 +161,24 @@ public class InMemoryCache<t> : IInMemoryCache<t>
         }
         finally
         {
-            Task<t> unused;
+            Task<T> unused;
             _pendingTasks.TryRemove(key, out unused);
         }
     }
 }
 {% endhighlight %}
+
+This is sample usage of cache:
+
+{% highlight csharp %}
+var cache = InMemoryCache<string>.Create();
+var item = cache.GetOrAdd<string>("key", DateTime.Now.AddDays(1), lambdaToFetchValue);
+{% endhighlight %}
+
 <p>We use two layers of caching. First is using <code>WeakReference</code> that leaves memory management to Garbage Collector. As GC is not very predictable and sometimes may unnecessary release some reference, we have second layer of caching. We call it <code>_limitedCache</code>, and it keeps objects in memory until capacity reach 1000 objects. Then we remove half (500), least used objects from dictionary. Because the same objects are being kept in two dictionaries, the <code>WeakReference</code> will never be released as long as object is in <code>_limitedCache</code>. Thus, we always check only if object is present in <code>_weakCache</code>.</p>
+
 <p>There is also third dictionary that keeps track of pending tasks that are responsible for getting data. This prevents us from sending the same requests more than once if object is not in cache yet.</p>
+
 <h3>Summary</h3>
 <p>What is great about building apps with Xamarin is the ability to share code across platforms. When we were implementing cache, we didn't touch any platform specific code. All work was done in <a href="https://developer.xamarin.com/guides/cross-platform/application_fundamentals/pcl/introduction_to_portable_class_libraries/">Portable Class Library</a>.</p>
 <p>Adding cache to <a href="https://aka.ms/azureapp">Azure App</a> helped not only to decrease user's network data usage, but also to improve performance significantly!</p>
