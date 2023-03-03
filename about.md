@@ -8,9 +8,7 @@ permalink: "/about/"
 
 <h2>Hi, I am Jacob!</h2>
 
-I am Software Engineer at Meta.
-
-I work on [Super.Events](https://super.events) - Live Q&A platform for creators.
+I am Software Engineer at Meta. I work on [experimental products](https://npe.fb.com/).
 
 In the past, I worked on [Facebook Marketplace Growth Team](/growth-handbook/).
 
