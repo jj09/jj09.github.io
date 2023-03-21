@@ -8,7 +8,7 @@ permalink: "/about/"
 
 <h2>Hi, I am Jacob!</h2>
 
-I am Software Engineer at Meta. I work on [experimental products](https://npe.fb.com/).
+I am Software Engineer at Meta. I work on new products.
 
 In the past, I worked on [Facebook Marketplace Growth Team](/growth-handbook/).
 
