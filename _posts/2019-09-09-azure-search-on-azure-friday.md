@@ -40,7 +40,7 @@ permalink: "/azure-search-on-azure-friday/"
 <p>01:00 - Creating a search index<br />
 02:37 - <a href="https://github.com/jj09/azsearch.js">AzSearch.js</a> - Automagical UI and sample React controls<br />
 03:27 - Searching the <a href="http://jfkfiles2.azurewebsites.net/">JFK Files</a><br />
-08:00 - Adding search to <a href="http://hanselmansearch.azurewebsites.net/">Scott's blog</a></p>
+08:00 - Adding search to Scott's blog</p>
 <p>You can deploy JFK Files by yourself. More info in our <a href="https://github.com/microsoft/AzureSearch_JFK_Files">JFK Files github repo</a>.</p>
 <p>Check out <a href="https://github.com/jj09/azsearch.js">AzSearch.js</a> to generate website to search your index!</p>
 <p>This is just tip of the iceberg! Check <a href="https://docs.microsoft.com/en-us/azure/search/">our docs</a> for more! You can start today by creating your <a href="https://docs.microsoft.com/en-us/azure/search/search-create-service-portal">first search service</a>. We allow one free service per subscription!</p>

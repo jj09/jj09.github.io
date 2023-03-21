@@ -10,7 +10,7 @@ permalink: "/resume/"
 <ul>
   <li>Meta: Software Engineer (9/2019 - Present)
     <ul>
-      <li>Building Live Q&A product for creators: <a href="https://super.events">super.events</a></li>
+      <li>Building New Products at Meta Moonshot Factory</li>
       <li>Helped to grow <a href="https://facebook.com/marketplace">Facebook Marketplace</a> (Buy and Sell Groups, C2C Shipping, Young Adults Engagement)</li>
     </ul>
   </li>

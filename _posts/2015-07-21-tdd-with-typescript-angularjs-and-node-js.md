@@ -38,4 +38,3 @@ permalink: "/tdd-with-typescript-angularjs-and-node-js/"
 <p>In this talk I gave an overview of JavaScript testing frameworks, and tools. I also demonstrated how TypeScript can strengthen your tests by adding free unit tests (type checking) thanks to strong typing.</p>
 <p><script async class="speakerdeck-embed" data-id="5c2362764fed403aa29ca790f2048e90" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script></p>
 <p>The demo code is available on <a href="https://github.com/jj09/tdd-with-typescript-angularjs-nodejs">github</a>.</p>
-<p>The site I created as a demo is live on Azure: <a href="http://tddvoting.azurewebsites.net/">tddvoting.azurewebsites.net</a>.</p>

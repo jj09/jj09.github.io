@@ -49,4 +49,4 @@ permalink: "/tech-ed-north-america-2013/"
 <h5><a href="http://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/DEV-B314">Microsoft ASP.NET, Web, and Cloud Tools Preview (Damian Edwards)</a></h5>
 <p>General overview and new enchancements of Web Tools and Features in .NET.</p>
 <div style="margin-bottom: 50px; text-align: center"><iframe style="height: 270px; width: 480px" src="http://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/DEV-B314/player?w=480&amp;h=270" frameborder="0" scrolling="no"></iframe></div>
-<p>There was <a href="http://www.ndcoslo.com/">NDC</a> conference in Oslo, in last week (June 12-14), but Videos are not available yet. The next big thing is <a href="http://www.buildwindows.com/">build 2013</a> in San Francisco, June 26 - 28. </p>
+<p>There was <a href="http://www.ndcoslo.com/">NDC</a> conference in Oslo, in last week (June 12-14), but Videos are not available yet. The next big thing is <b>build 2013</b> in San Francisco, June 26 - 28. </p>

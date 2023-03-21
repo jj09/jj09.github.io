@@ -32,7 +32,7 @@ author:
   last_name: ''
 permalink: "/the-best-domain-registrar-is-google/"
 ---
-<p>I moved all my domains (<a href="http://jj09.net">jj09.net</a>, <a href="http://jedryszek.com">jedryszek.com</a>, <a href="http://jakubjedryszek.com">jakubjedryszek.com</a>)</p>
+<p>I moved all my domains (<a href="http://jj09.net">jj09.net</a>, <strong>jedryszek.com</strong>, <strong>jakubjedryszek.com</strong>)</p>
 <p><span style="font-size: 20px;">from:</span></p>
 <p><img class="aligncenter size-full wp-image-9831" src="{{ site.baseurl }}/assets/2015/05/godaddy.jpg" alt="GoDaddy" width="600" height="215" /></p>
 <p>&nbsp;</p>

@@ -49,7 +49,7 @@ permalink: "/under-the-hood-of-the-azure-mobile-app/"
 <p>The great thing about Xamarin Native apps is the fact that you can do everything what is possible when building native iOS apps with swift and native Android apps with Java. You can take any code sample in swift or Java, translate it to C# and use in your Xamarin app. Additionally, you can share code across platforms. We have around 60-70% code share. Most of our code is shared using PCL (Portable Class Library). Some components are in Shared Project.</p>
 <p><img class="aligncenter size-full wp-image-18131" src="{{ site.baseurl }}/assets/2017/06/AzureMobileSolution.png" alt="Azure Mobile Solution" width="532" height="422" /></p>
 <h3>Continuous Integration and Continuous Delivery with VSTS and Hockey App</h3>
-<p><a href="https://www.visualstudio.com/team-services/">VSTS</a> provide awesome tools for customizing build params, running tests, and deploying with <a href="https://www.hockeyapp.net/">HockeyApp</a>. What's more, when you are publishing your alpha/beta builds with <a href="https://www.hockeyapp.net/">HockeyApp</a> you get auto-update notifications for free.</p>
+<p><a href="https://www.visualstudio.com/team-services/">VSTS</a> provide awesome tools for customizing build params, running tests, and deploying with HockeyApp (now [replaced by Visual Studio App Center](https://devblogs.microsoft.com/appcenter/hockeyapp-is-being-retired/))</a>. What's more, when you are publishing your alpha/beta builds with HockeyApp you get auto-update notifications for free.</p>
 <p>We have 3 environments:</p>
 <ul>
 <li>alpha - deployed on every commit if tests are passing (used by team members)</li>

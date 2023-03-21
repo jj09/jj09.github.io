@@ -6,7 +6,7 @@ categories:
 permalink: "/vue-for-react-developers/"
 ---
 
-It's been a while since I learned “yet another” JavaScript framework. I recently joined the [Super.Events](https://super.events) team at Meta and the Super web app is written in [Vue.js](https://vuejs.org/).
+It's been a while since I learned “yet another” JavaScript framework. I recently joined the Super team at Meta and the Super web app is written in [Vue.js](https://vuejs.org/).
 
 I’ve been working with [Knockout](https://jj09.net/ndc-london-2016-azure-portal-and-recommended-talks/), [Angular](https://jj09.net/tdd-with-typescript-angularjs-and-node-js/), [React](https://jj09.net/cognitive-search-azure-search-with-ai/) and [Aurelia](https://jj09.net/strange-loop-and-ncdevcon/) in the past. Vue has a lot of similarities with pretty much all of them. It’s like an intersection of Angular and React. This blog post is a short overview of gotchas and differences between Vue and other JS frameworks.
 

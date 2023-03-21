@@ -64,7 +64,7 @@ permalink: "/hi-im-jakub-and-i-work-for-microsoft/"
 <p>We use git for source control management. As Continuous Integration Server, we use <a href="http://jenkins-ci.org/">Jenkins</a>.</p>
 <p>We have code review process supported by CodeFlow. It is required to have at least 2 reviews before code can be checked-in/pushed to the repository.</p>
 <p>Building process is supported by MSBuild.</p>
-<p>Behind the scenes, we use bunch of other JS libs, e.g. <a href="https://github.com/kriskowal/q">q.js</a>, <a href="http://www.injectjs.com/">inject.js</a>, <a href="http://d3js.org/">d3.js</a>, <a href="http://hammerjs.github.io/">hammer.js</a> or <a href="http://zeroclipboard.org/">ZeroClipboard.js</a>.</p>
+<p>Behind the scenes, we use bunch of other JS libs, e.g. <a href="https://github.com/kriskowal/q">q.js</a>, <a href="http://www.injectjs.com/">inject.js</a>, <a href="http://d3js.org/">d3.js</a>, <a href="http://hammerjs.github.io/">hammer.js</a> or <a href="https://github.com/zeroclipboard/zeroclipboard/">ZeroClipboard.js</a>.</p>
 <h3>Summary</h3>
 <p>After 1 month I love it! There are many challenges, and interesting problems to solve. I am still new to the project, and I didn't discover it entirely yet. What I can say now, I really like the people from my team, the software development process and work environment in my team.</p>
 <p>Probably I will be writing about my work on this blog. Stay tuned!</p>

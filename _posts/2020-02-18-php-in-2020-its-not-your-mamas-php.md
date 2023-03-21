@@ -31,9 +31,9 @@ author:
 permalink: "/php-in-2020-its-not-your-mamas-php/"
 ---
 <p>I decided to write this post, because before joining Facebook I thought that PHP is just old, limited language from 2 decades ago when server was responsible for simple form parsing, and generating HTML.</p>
-<p>I actually learned web development using PHP in mid-2000s, when I was in middle school. I created my personal blog, and website about very popular back then game Deluxe Ski Jump. I actually still have the source code and recently put it on Azure at <a href="http://dsjonline.azurewebsites.net/">dsjonine.azurewebsites.net</a> - it is in polish, and there is no database:P Didn't bother to update character encoding from ISO-8859-2 to UTF. Why I used ISO-8859-2? Because my cousin told me to do so! It was real copy/paste programmer back then! Good times :D</p>
-<p>Mark Zuckerberg wrote first version of Facebook around that time using PHP too. <a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)">LAMP</a> stack was the way to go for web development in 2000s.</p>
-<p>A few days after joining facebook I realized that PHP now is full blown OO language. It has classes, interfaces, abstract classes, dependency injection, etc. It is much closer to C# or Java than to PHP that I used to write 15 years ago. </p>
+<p>I actually learned web development using PHP in mid-2000s, when I was in middle school. I created my personal blog, and website about very popular back then game Deluxe Ski Jump. I actually still have the source code and recently put it on Azure. Didn't bother to update character encoding from ISO-8859-2 to UTF. Why I used ISO-8859-2? Because my cousin told me to do so! I was a real copy/paste programmer back then! Good times :D</p>
+<p>Mark Zuckerberg wrote the first version of Facebook around that time using PHP too. <a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)">LAMP</a> stack was the way to go for web development in 2000s.</p>
+<p>A few days after joining Facebook I realized that PHP now is a full-blown OO language. It has classes, interfaces, abstract classes, dependency injection, etc. It is much closer to C# or Java than to PHP that I used to write 15 years ago. </p>
 <p>At facebook we use <a href="https://hacklang.org/">Hack</a> (typed PHP). It's awesome. You have the best of two Worlds: type safety and no compilation! Just save, and refresh to see your changes. Yay! Sample Hack/PHP code:</p>
 
 {% highlight php %}
@@ -70,9 +70,9 @@ permalink: "/php-in-2020-its-not-your-mamas-php/"
 <p>If you want to learn more about modern PHP, check out these resources:</p>
 <ul>
 <li><a href="https://phptherightway.com/">PHP the right way</a></li>
-<li><a href="https://www.amazon.com/Modern-PHP-Features-Good-Practices-ebook/dp/B00TKVLL26">Modern PHP book</a></li>
+<li><a href="https://amzn.to/3Jz0fhs">Modern PHP book</a></li>
 <li><a href="https://www.youtube.com/watch?v=wCZ5TJCBWMg">25 years of PHP (by the Creator of PHP)</a></li>
-<li><a href="https://www.amazon.com/Hack-HHVM-Programming-Productivity-Breaking-ebook/dp/B014VH495E">Hack and HHVM book</a></li>
+<li><a href="https://amzn.to/3FF6DlY">Hack and HHVM book</a></li>
 </ul>
 <p>As of February 2020, PHP is 5th most popular language on StackOverflow (<a href="https://stackoverflow.com/tags">source</a>)! Just recently taken over by python.</p>
 <p>In any means I am not recommending you to learn PHP if you don't have to. Choose <a href="https://www.rust-lang.org/">Rust</a> or <a href="https://golang.org/">Go</a> instead! Just wanted to let you know, that PHP changed A LOT! PHP in 2020 is not PHP from Web 1.0 times.</p>

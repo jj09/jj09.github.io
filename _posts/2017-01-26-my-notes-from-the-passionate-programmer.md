@@ -50,7 +50,7 @@ permalink: "/my-notes-from-the-passionate-programmer/"
 12. Learn how business work.<br />
 13. Have/find a mentor.<br />
 14. Be a Mentor.<br />
-15. Practice (<a href="https://code.google.com/codejam/">Google Code Jam</a>, <a href="https://projecteuler.net/">Project Euler</a>, <a href="http://www.codekatas.org/">Code Katas</a>).<br />
+15. Practice (<a href="https://codingcompetitions.withgoogle.com/codejam">Google Code Jam</a>, <a href="https://projecteuler.net/">Project Euler</a>, <a href="http://www.codekatas.org/">Code Katas</a>).<br />
 16. Know/learn Software Development Methodologies.<br />
 17. Read other's code (and criticize it).<br />
 18. Automate tasks.<br />

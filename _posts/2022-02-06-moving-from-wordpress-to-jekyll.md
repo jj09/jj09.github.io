@@ -57,7 +57,7 @@ List things I did (and to be done as I'm done yet):
 - [x] Migrate syntax highlighting tags: `<pre>` to `\{\% highlight \%\}` (I did it manually instead of writing a script, as I had multiple variations of code snippets and wanted to fix text formatting along the way)
 - [x] setup domain
     * [github guide](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
-    * [pages settings](https://github.com/jj09/jj09.github.io/settings/pages)
+    * pages settings: [https://github.com/jj09/jj09.github.io} -> settings -> pages
     * [How to setup google domain for github pages](https://dev.to/trentyang/how-to-setup-google-domain-for-github-pages-1p58)
 - [x] setup HTTPS (this took a few hours to get certificate through Github Pages)
     * [github FAQ](https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https)

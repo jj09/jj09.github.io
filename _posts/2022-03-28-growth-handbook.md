@@ -92,7 +92,7 @@ The best way to increase your product retention is to send notifications to remi
 
 Similarly like with in-app upsells, notifications will be most successful if targeting and timing are correct. You should also keep track of notification metrics like views (how many people have seen your notification), CTR (Click Through Rate), and CVR (Conversion Rate). Conversion Rate tells you how many people performed the desired action (like buying your product) as a result of the notification. You may have notifications with high CTR that do not result in any conversions. 
 
-Check out [7 examples of how different companies use notifications](https://neilpatel.com/blog/push-notifications-to-boost-engagement/).
+Check out [How 7 Companies are Using Push Notifications to Boost Engagement](https://neilpatel.com/blog/push-notifications-to-boost-engagement/) by Neil Patel.
 
 <h3>Facebook or Google ads</h3>
 
