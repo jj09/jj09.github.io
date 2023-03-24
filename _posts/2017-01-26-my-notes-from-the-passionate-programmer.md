@@ -35,18 +35,18 @@ permalink: "/my-notes-from-the-passionate-programmer/"
 ---
 <p><a href="http://amzn.to/2DKemOf"><img class="aligncenter size-full wp-image-32" src="{{ site.baseurl }}/assets/2017/01/Chad-Fowler-The-Passionate-Programmer.jpg" alt="Chad Fowler - The Passionate Programmer" width="300" height="450" /></a></p>
 <p>It's been a while since I read <a href="http://chadfowler.com/">Chad Fowler's</a> <a href="http://amzn.to/2DKemOf">The Passionate Programmer</a>.</p>
-<p>Recently I found notes I did during reading it. I thought I would share them with you. It is tl;dr of every one of 53 chapters of the book.</p>
+<p>Recently I found notes I did during reading it. I thought I would share them with you. It is tl;dr of every one of the 53 chapters of the book.</p>
 <p>1. Keep on radar bleeding edge technologies vs sunset technologies.<br />
 2. Follow job market requirements.<br />
-3. Understand business.<br />
+3. Understand the business.<br />
 4. Be the Worst in the team so you can learn from others.<br />
-5. Learn/know different type programming languages (C#, C, python, prolog...).<br />
-6. Avoid fear-driven career choice.<br />
-7. Keep on radar known tech/platforms vs unknown(to learn).<br />
-8. Learn what is under abstraction layer of your programming language.<br />
+5. Learn/know different type of programming languages (C#, C, python, prolog...).<br />
+6. Avoid fear-driven career choices.<br />
+7. Keep radar on known tech/platforms vs unknown(to learn).<br />
+8. Learn what is under the abstraction layer of your programming language.<br />
 9. Use different technologies.<br />
-10. Log your excitement level over days.<br />
-11. Everyday learn something new about tech/tools you are using.<br />
+10. Log your excitement level over the days.<br />
+11. Every day learn something new about the tech/tools you are using.<br />
 12. Learn how business work.<br />
 13. Have/find a mentor.<br />
 14. Be a Mentor.<br />
@@ -56,34 +56,34 @@ permalink: "/my-notes-from-the-passionate-programmer/"
 18. Automate tasks.<br />
 19. Do it now!<br />
 20. Predict the future - possible requested features (make it easy to implement it).<br />
-21. Make daily review (problems, processes to improve).<br />
+21. Make daily reviews (problems, processes to improve).<br />
 22. Understand your manager/company goals.<br />
-23. Set goals for you current job (long term).<br />
+23. Set goals for your current job (long term).<br />
 24. Make boring tasks fun!<br />
 25. How much are you worth?<br />
-26. Share you areas of knowledge in job (implemented modules, deployment process etc.). Make documentation.<br />
+26. Share your areas of knowledge in the job (implemented modules, deployment process etc.). Make documentation.<br />
 27. Measure (by metrics), improve, measure.<br />
 28. Work as hard as you can (no fb, twitter etc.).<br />
 29. Learn how to fail.<br />
 30. Say 'No' when you know you cannot do something.<br />
 31. Don't panic.<br />
 32. Say It, Do It, Show It.<br />
-33. Be aware what others think about you (managers, team mates etc.).<br />
+33. Be aware of what others think about you (managers, teammates etc.).<br />
 34. Don't make people afraid of you.<br />
-35. Track you decisions and analyze them (diary).<br />
-36. In person communication over email/Skype.<br />
-37. Have elevator pitch (business benefits of your recent work).<br />
+35. Track your decisions and analyze them (diary).<br />
+36. In-person communication over email/Skype.<br />
+37. Have an elevator pitch (business benefits of your recent work).<br />
 38. Have the mission!<br />
-39. Be present on-line (blog, twitter, LinkedIn).<br />
+39. Be present online (blog, Twitter, LinkedIn).<br />
 40. Care about your brand (google yourself).<br />
 41. Contribute to open source!<br />
-42. Be remarkable (do something what will take a week in one day).<br />
-43. Propose changes/features to software you are using (mail author).<br />
+42. Be remarkable (do something that will take a week in one day).<br />
+43. Propose changes/features to the software you are using (mail author).<br />
 44. Be up to date with current/new tech.<br />
 45. Try to do your job as you are your manager.<br />
-46. Path is more important than destination.<br />
-47. Create map of your past, current and future career (and what your learn, when you lost time).<br />
-48. Try to be alpha geek (or follow some of them).<br />
+46. Path is more important than the destination.<br />
+47. Create a map of your past, current and future career (and what you learn, when you lost time).<br />
+48. Try to be an alpha geek (or follow some of them).<br />
 49. Ask your coworkers for feedback.<br />
 50. Avoid monkey traps (do not be too confident in some things, or review them from time to time; know your enemy - play with technology you don't like).<br />
 51. Avoid Waterfall career planning.<br />
