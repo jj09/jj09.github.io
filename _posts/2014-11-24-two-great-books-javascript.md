@@ -33,7 +33,7 @@ author:
   last_name: ''
 permalink: "/two-great-books-javascript/"
 ---
-<p>Recently I read two great books about JavaScript: <a href="http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742">JavaScript: The Good Parts</a> and <a href="http://www.amazon.com/Effective-JavaScript-Specific-Software-Development/dp/0321812182">Effective JavaScript: 68 Specific Ways to Harness the Power of JavaScript</a>. Both are not for beginners, but rather programmers who know some Object Oriented language (e.g., C#, Java or C++).</p>
+<p>Recently I read two great books about JavaScript: <a href="https://amzn.to/3nhyEd6">JavaScript: The Good Parts</a> and <a href="https://amzn.to/40zfgGX">Effective JavaScript: 68 Specific Ways to Harness the Power of JavaScript</a>. Both are not for beginners, but rather for programmers who know some Object Oriented language (e.g., C#, Java or C++).</p>
 <h3>JavaScript: The Good Parts</h3>
 <p><img class="wp-image-6021 size-full aligncenter" src="{{ site.baseurl }}/assets/2014/11/JavaScriptGoodPartsCover.jpg" alt="JavaScript: The Good Parts - cover" width="300" height="394" /><br />
 Written by the "God Father of JavaScript": Douglas Crockford. This book is an overview of JavaScript language features that are different than in Object Oriented programming languages, such as C# or Java. Additionally, there is an overview of the good, and the bad parts of the language. What to avoid, and how. You can read it in a week (~200 pages).</p>
@@ -44,11 +44,11 @@ I like this book even better than "The Good Parts". It contains very good exampl
 <h3>Other JavaScript books</h3>
 <p>I would be very happy to hear from you other JavaScript books that are worth (or not) reading. So far, besides mentioned books, I heard good things about:</p>
 <ul>
-<li><a href="http://www.amazon.com/Performance-JavaScript-Faster-Application-Interfaces/dp/059680279X">High Performance JavaScript by Nicholas Zakas</a></li>
-<li><a href="http://www.amazon.com/Eloquent-JavaScript-Modern-Introduction-Programming/dp/1593272820">Eloquent JavaScript: A Modern Introduction to Programming by Marijn Haverbeke</a></li>
-<li><a href="http://www.amazon.com/JavaScript-Patterns-Stoyan-Stefanov/dp/0596806752">JavaScript Patterns by Stoyan Stefanov</a></li>
-<li><a href="http://www.amazon.com/JavaScript-Definitive-Guide-Activate-Guides/dp/0596805527">JavaScript: The Definitive Guide by David Flanagan</a></li>
-<li><a href="http://www.amazon.com/Learning-JavaScript-Design-Patterns-Osmani/dp/1449331815">Learning JavaScript Design Patterns by Addy Osmani</a></li>
-<li><a href="http://www.amazon.com/Speaking-JavaScript-Axel-Rauschmayer/dp/1449365035">Speaking JavaScript by Axel Rauschmayer</a></li>
+<li><a href="https://amzn.to/40aum5H">High Performance JavaScript by Nicholas Zakas</a></li>
+<li><a href="https://amzn.to/3nfDAiz">Eloquent JavaScript: A Modern Introduction to Programming by Marijn Haverbeke</a></li>
+<li><a href="https://amzn.to/3FRk2rd">JavaScript Patterns by Stoyan Stefanov</a></li>
+<li><a href="https://amzn.to/3LNgF8p">JavaScript: The Definitive Guide by David Flanagan</a></li>
+<li><a href="https://amzn.to/3LK0wkj">Learning JavaScript Design Patterns by Addy Osmani</a></li>
+<li><a href="https://amzn.to/3K1axs3">Speaking JavaScript by Axel Rauschmayer</a></li>
 </ul>
 <p>Can you recommend some of them? Share your opinions in comments.</p>

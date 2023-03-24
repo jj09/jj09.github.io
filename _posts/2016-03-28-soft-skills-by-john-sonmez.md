@@ -34,7 +34,7 @@ author:
 permalink: "/soft-skills-by-john-sonmez/"
 ---
 <p><img class="aligncenter size-full wp-image-13151" src="{{ site.baseurl }}/assets/2016/03/Soft-Skills-Jon-Sonmez.jpg" alt="Soft Skills (Jon Sonmez)" width="319" height="400" /></p>
-<p><a href="http://www.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397">Soft Skills: The Software Developer's Life Manual</a> by <a href="http://simpleprogrammer.com/">Jon Sonmez</a> is a great set of advises about every aspect of programmer's career and life. Take a look at the book content:</p>
+<p><a href="https://amzn.to/3yYQIeJ">Soft Skills: The Software Developer's Life Manual</a> by <a href="http://simpleprogrammer.com/">Jon Sonmez</a> is a great set of advises about every aspect of programmer's career and life. Take a look at the book content:</p>
 <ol>
 <li>Career</li>
 <li>Marketing yourself</li>

@@ -42,7 +42,7 @@ permalink: "/programming-contest-tips/"
 <p>My general tips (based on competitions I participated in) on how to prepare for programming contests:</p>
 <ul>
 <li>Make preparation before. Do not just walk in (especially if it is your first contest). Check <a href="http://mrmbdctg.freehostia.com/contest_Tipsforbeginner.html">Programming Contest Year Plan - Yes a year Plan to be a better Programmer</a>.</li>
-<li>Take <a href="http://www.amazon.com/Introduction-Algorithms-Thomas-H-Cormen/dp/0262033844/">Introduction to Algorithms</a> book to the contest.</li>
+<li>Take <a href="https://amzn.to/40vepqz">Introduction to Algorithms</a> book to the contest.</li>
 <li>Create (and print if no internet access is allowed) a template for the standard program. 90% of problems have N test cases. You need to parse it, compute the solution and print it. My approach is to read all input first and serialize it to e.g. Case class. Then I am looping through all cases and printing output. I prepared a <a href="https://github.com/jj09/GoogleCodeJam/blob/master/Template.csx">template file</a>, which allows me to save time during the contest.</li>
 <li>Find out what languages/technologies are allowed during the contest and practice with it before the contest. Programming in Eclipse is different than programming in Visual Studio! Especially debugging.</li>
 <li>Find out how you need to provide a solution (send source code or just solution?) and how to read/write input/output.</li>

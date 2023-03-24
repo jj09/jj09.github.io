@@ -37,4 +37,4 @@ permalink: "/the-last-lecture/"
 <div style="text-align: center; margin-bottom: 10px;">
 <iframe width="656" height="492" src="https://www.youtube.com/embed/ji5_MqicxSo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-<p>The lecture took place at Carnegie Mellon on September 18, 2007. Randy Pausch died on July 25th, 2008. There is also a <a href="http://www.amazon.com/The-Last-Lecture-Randy-Pausch/dp/1401323251">book</a> written by him after worldwide success of the lecture (16 millions views on youtube).</p>
+<p>The lecture took place at Carnegie Mellon on September 18, 2007. Randy Pausch died on July 25th, 2008. There is also a <a href="https://amzn.to/3TI73hu">book</a> written by him after worldwide success of the lecture (16 millions views on youtube).</p>

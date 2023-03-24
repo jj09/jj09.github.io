@@ -59,7 +59,7 @@ permalink: "/getting-started-with-fsharp/"
 <li><a href="https://vimeo.com/97344498">Railway Oriented Programming — error handling in functional languages</a> by <a href="https://twitter.com/scottwlaschin">Scott Wlaschin</a></li>
 <li><a href="https://www.youtube.com/watch?v=MHvr71T_LZw">Domain-Driven Design, Event Sourcing and CQRS with F# and EventStore</a> by <a href="http://gorodinski.com/">Lev Gorodinski</a></li>
 </ul>
-<p>There is also a book written by Jon Skeet and Tomas Petricek: <a href="http://www.amazon.com/Real-World-Functional-Programming-With-Examples/dp/1933988924">Real World Functional Programming: With Examples in F# and C#</a>.</p>
+<p>There is also a book written by Jon Skeet and Tomas Petricek: <a href="https://amzn.to/3ZkFdZS">Real World Functional Programming: With Examples in F# and C#</a>.</p>
 <h2>Testing</h2>
 <ul>
 <li><a href="https://app.pluralsight.com/library/courses/fsharp-unit-testing">Unit Testing with F# (Pluralsight)</a> by <a href="http://blog.ploeh.dk/">Mark Seemann</a> (1h 32m)</li>

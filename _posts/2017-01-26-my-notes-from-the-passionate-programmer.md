@@ -63,7 +63,7 @@ permalink: "/my-notes-from-the-passionate-programmer/"
 25. How much are you worth?<br />
 26. Share your areas of knowledge in the job (implemented modules, deployment process etc.). Make documentation.<br />
 27. Measure (by metrics), improve, measure.<br />
-28. Work as hard as you can (no fb, twitter etc.).<br />
+28. Work as hard as you can (no fb, Twitter etc.).<br />
 29. Learn how to fail.<br />
 30. Say 'No' when you know you cannot do something.<br />
 31. Don't panic.<br />

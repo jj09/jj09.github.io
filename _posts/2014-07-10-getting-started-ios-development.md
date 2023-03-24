@@ -38,7 +38,7 @@ permalink: "/getting-started-ios-development/"
 <h3>Tools</h3>
 <p>Unfortunately, or fortunately, there is only one right set of tools: MacBook and xCode. Of course you can use terminal and Vim but...</p>
 <h3>Objective-C</h3>
-<p>First step in learning iOS Development is to learn Objective-C. Good place to start is free <a href="http://tryobjectivec.codeschool.com/">Try Objective-C</a> on CodeSchool. There is also <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html">Programming with Objective-C</a> on Mac Developer Library, but it is more in documentation style, than tutorial. Choose whatever you like better. To get more deeply there is a great book written by Stephen G. Kochan: <a href="http://www.amazon.com/Programming-Objective-C-Edition-Developers-Library/dp/0321967607">Programming in Objective-C</a>. It is for beginners, but discuss all aspects of the language in details.</p>
+<p>First step in learning iOS Development is to learn Objective-C. Good place to start is free <a href="http://tryobjectivec.codeschool.com/">Try Objective-C</a> on CodeSchool. There is also <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html">Programming with Objective-C</a> on Mac Developer Library, but it is more in documentation style, than tutorial. Choose whatever you like better. To get more deeply there is a great book written by Stephen G. Kochan: <a href="https://amzn.to/3TH3ach">Programming in Objective-C</a>. It is for beginners, but discuss all aspects of the language in details.</p>
 <p><img class="aligncenter size-full wp-image-3201" src="{{ site.baseurl }}/assets/2014/07/programming-in-objective-c-cover.jpg" alt="Programming in Objective-C " width="200" height="257" /></p>
 <h3>iPhone/iPad programming</h3>
 <p>To get started, there are two nice tutorials:</p>
@@ -48,7 +48,7 @@ permalink: "/getting-started-ios-development/"
 </ul>
 <p>After getting familiar with the platform, it is time to become more advanced. My favorite, and the best in my opinion is Stanford course: <a href="https://itunes.apple.com/us/course/developing-ios-7-apps-for/id733644550">Developing iOS 7 Apps for iPhone and iPad</a> by Paul Hegarty. He is a great teacher. I really recommend you to go through all lectures and do all homeworks if you think seriously about becoming iOS developer.</p>
 <p><img class="aligncenter size-full wp-image-3271" src="{{ site.baseurl }}/assets/2014/07/developing-ios7-stanford.jpg" alt="Developing iOS 7 Apps for iPhone and iPad" width="530" height="260" /></p>
-<p>To summarize and sort out your knowledge, there is another great book: <a href="http://www.amazon.com/iOS-Programming-Ranch-Guide-Guides/dp/0321942051">iOS Programming: The Big Nerd Ranch Guide</a>.</p>
+<p>To summarize and sort out your knowledge, there is another great book: <a href="https://amzn.to/40svOAg">iOS Programming: The Big Nerd Ranch Guide</a>.</p>
 <p><img class="aligncenter size-full wp-image-3211" src="{{ site.baseurl }}/assets/2014/07/ios-programming-cover.jpg" alt="iOS Programming: The Big Nerd Ranch Guide" width="200" height="286" /></p>
 <p>&nbsp;</p>
 <h3>UPDATE: Swift</h3>
