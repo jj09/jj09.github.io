@@ -278,3 +278,4 @@ If you want to learn more about growth I recommend the below resources. Get fami
   - [Growth by Alex Schultz](https://www.youtube.com/watch?v=n_yHZ_vKjno) ([3 years newer talk](https://www.youtube.com/watch?v=URiIsrdplbo))
 <h3>Articles</h3>
   - [Awesome Growth Hacking](https://github.com/bekatom/awesome-growth-hacking) - github repo with a lot of resources
+  - [Growth Handbook by Kazuki Nakayashiki](https://medium.com/glasp/growth-handbook-e06831249e3c)
