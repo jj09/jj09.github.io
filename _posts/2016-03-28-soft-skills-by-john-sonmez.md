@@ -44,7 +44,7 @@ permalink: "/soft-skills-by-john-sonmez/"
 <li>Fitness</li>
 <li>Spirit</li>
 </ol>
-<p>This book is not a source of truth for everything, but it may give you useful ideas for some particular aspects of your career and life. John is explaining that programmer's career is not only about coding. I especially like the fact that this book is not only about work/career-oriented things, but it puts work and life together. John explains the importance of living a healthy life (exercise and diet), and how this will help you with your career. He also showcases how to manage your finances throughout your career, and the importance of thinking "long term".</p>
+<p>This book is not a source of truth for everything, but it may give you useful ideas for some particular aspects of your career and life. John is explaining that a programmer's career is not only about coding. I especially like the fact that this book is not only about work/career-oriented things, but it puts work and life together. John explains the importance of living a healthy life (exercise and diet), and how this will help you with your career. He also showcases how to manage your finances throughout your career, and the importance of thinking "long term".</p>
 <p>For more, check reviews <a href="http://www.amazon.com/Soft-Skills-software-developers-manual/product-reviews/1617292397/ref=cm_cr_dp_see_all_btm?ie=UTF8&amp;showViewpoints=1&amp;sortBy=recent">on Amazon</a> and <a href="https://www.goodreads.com/book/show/23232941-soft-skills">GoodReads</a>.</p>
 <p>Enjoy!</p>
-<p>Have you read this book? What do you think? Share your opinions in comments!</p>
+<p>Have you read this book? What do you think? Share your opinions in the comments!</p>
