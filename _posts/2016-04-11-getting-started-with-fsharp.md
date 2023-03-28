@@ -34,8 +34,8 @@ author:
 permalink: "/getting-started-with-fsharp/"
 ---
 <p><img class="aligncenter size-full wp-image-13581" src="{{ site.baseurl }}/assets/2016/04/fsharp-logo.png" alt="F#" width="256" height="256" /></p>
-<p><strong>tl;dr This post is a list of resources for learning F# and overview of my mini-project: Stock Estimator.</strong></p>
-<p>I couldn't resist anymore, and I finally tried F#. For the first two days it was painful. Some elements of F# syntax are weird. However after getting use to that, F# became a joy, and instead of a week (as I planned) I spent with F# almost two months.</p>
+<p><strong>tl;dr This post is a list of resources for learning F# and an overview of my mini-project: Stock Estimator.</strong></p>
+<p>I couldn't resist anymore, and I finally tried F#. For the first two days, it was painful. Some elements of F# syntax are weird. However, after getting used to that, F# became a joy, and instead of a week (as I planned) I spent with F# almost two months.</p>
 <h2>Getting Started</h2>
 <ul>
 <li><a href="https://app.pluralsight.com/library/courses/fsharp-jumpstart">F# Jumpstart (Pluralsight)</a> 1h 25m - brief introduction to F#, good for the beginning the get the sneak peak</li>
@@ -44,7 +44,7 @@ permalink: "/getting-started-with-fsharp/"
 <li><a href="https://vimeo.com/131640714">F# for C# Developers</a> by <a href="http://trelford.com/blog/">Phillip Trelford</a></li>
 <li><a href="https://channel9.msdn.com/posts/Understanding-the-World-with-F">Understanding the World with F#</a> by <a href="http://tomasp.net/">Tomas Petricek</a></li>
 <li><a href="http://www.tryfsharp.org/">Try F#</a> - interactive tutorial for learning F# (works only in IE because of Silverlight)</li>
-<li><a href="https://github.com/ChrisMarinos/FSharpKoans">Functional Koans - F#</a> - collection of F# exercises inspired by <a href="http://github.com/edgecase/ruby_koans">Ruby koans</a> that requires you to fix failing unit tests one by one (fun and informative!)</li>
+<li><a href="https://github.com/ChrisMarinos/FSharpKoans">Functional Koans - F#</a> - a collection of F# exercises inspired by <a href="http://github.com/edgecase/ruby_koans">Ruby koans</a> that requires you to fix failing unit tests one by one (fun and informative!)</li>
 </ul>
 <h2>Deep Dive</h2>
 <ul>
@@ -71,7 +71,7 @@ permalink: "/getting-started-with-fsharp/"
 <p>It is also worth to check <a href="https://vimeo.com/131641270">End-to-end Functional Web Development</a> by <a href="http://tomasp.net/">Tomas Petricek</a> where he showcases building web app with Suave.</p>
 <p>For more, check <a href="http://fsharp.org/guides/web/">Web Programming with F# Guide</a>.</p>
 <h2>Stock Estimator</h2>
-<p>I created F# based app for predicting future stock prices ($1,000,000 idea!). The back-end is written in F#, and communicates with stock data API (Yahoo Finance) through F# type provider. There is also Suave Web API (microservice), and ASP.NET Core web app that communicates with it. Front-end is powered by <a href="http://aurelia.io/">Aurelia Framework</a>, and <a href="https://d3js.org/">D3 library</a>. In other words: I built F# microservice, consumed it from non-F# app, and have reusable logic in separated project. All communication with microservice happens through the client (with Aurelia Framework). So, there is no usage of F# from C#, but...I also created simple Console app (with C#) that uses mentioned F# logic. There is also Windows Forms app for displaying estimates, written in F#, that also use reusable logic.</p>
+<p>I created F# based app for predicting future stock prices ($1,000,000 idea!). The back-end is written in F# and communicates with stock data API (Yahoo Finance) through the F# type provider. There is also Suave Web API (microservice), and ASP.NET Core web app that communicates with it. Front-end is powered by <a href="http://aurelia.io/">Aurelia Framework</a>, and <a href="https://d3js.org/">D3 library</a>. In other words: I built an F# microservice, consumed it from a non-F# app, and have reusable logic in a separate project. All communication with microservice happens through the client (with Aurelia Framework). So, there is no usage of F# from C#, but...I also created a simple Console app (with C#) that uses mentioned F# logic. There is also Windows Forms app for displaying estimates, written in F#, that also uses reusable logic.</p>
 <p>Entire source code is available on <a href="https://github.com/jj09/StockEstimator">github</a>. Check it out!</p>
 <h2>Summary</h2>
-<p>Programming in F# is pure joy! It's a great language for working with data. Moreover, F# fits perfectly into today's World of microservices. You don't have to rewrite your already existing app, or create entire app with F#. You can just create one microservice with F#, and see how it works for you!</p>
+<p>Programming in F# is pure joy! It's a great language for working with data. Moreover, F# fits perfectly into today's World of microservices. You don't have to rewrite your already existing app or create an entire app with F#. You can just create one microservice with F#, and see how it works for you!</p>
