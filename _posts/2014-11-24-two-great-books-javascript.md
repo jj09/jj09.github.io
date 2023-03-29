@@ -37,12 +37,12 @@ permalink: "/two-great-books-javascript/"
 <h3>JavaScript: The Good Parts</h3>
 <p><img class="wp-image-6021 size-full aligncenter" src="{{ site.baseurl }}/assets/2014/11/JavaScriptGoodPartsCover.jpg" alt="JavaScript: The Good Parts - cover" width="300" height="394" /><br />
 Written by the "God Father of JavaScript": Douglas Crockford. This book is an overview of JavaScript language features that are different than in Object Oriented programming languages, such as C# or Java. Additionally, there is an overview of the good, and the bad parts of the language. What to avoid, and how. You can read it in a week (~200 pages).</p>
-<p>In addition to JavaScript Good Parts, I recommend you to watch <a href="https://www.youtube.com/watch?v=JxAXlJEmNMg&amp;list=PLK2r_jmNshM9o-62zTR2toxyRlzrBsSL2">Crockford on JavaScript</a> (<a href="http://yuiblog.com/crockford/">mirror</a>). You will learn not only about JavaScript, but also about the history of programming languages. There is also <a href="http://www.pluralsight.com/courses/table-of-contents/javascript-good-parts">JavaScript the Good Parts course</a> by Douglas Crockford on Pluralsight. This course is focused only on JavaScript though.</p>
+<p>In addition to JavaScript Good Parts, I recommend you to watch <a href="https://www.youtube.com/watch?v=JxAXlJEmNMg&amp;list=PLK2r_jmNshM9o-62zTR2toxyRlzrBsSL2">Crockford on JavaScript</a> (<a href="http://yuiblog.com/crockford/">mirror</a>). You will learn not only about JavaScript but also about the history of programming languages. There is also <a href="http://www.pluralsight.com/courses/table-of-contents/javascript-good-parts">JavaScript the Good Parts course</a> by Douglas Crockford on Pluralsight. This course is focused only on JavaScript though.</p>
 <h3>Effective JavaScript: 68 Specific Ways to Harness the Power of JavaScript</h3>
 <p><img class="wp-image-6031 size-full aligncenter" src="{{ site.baseurl }}/assets/2014/11/EffectiveJavaScriptCover.jpg" alt="Effective JavaScript - cover" width="300" height="394" /><br />
-I like this book even better than "The Good Parts". It contains very good examples that show specific aspects of the language. These examples combined with associated explanations makes this book clear and very informative for me. What I like especially was the structure: short 68 problems with explanation, analysis, and examples. Also, not very long (~200 pages). If you can choose only one of the books described in this post, read this one.</p>
+I like this book even better than "The Good Parts". It contains very good examples that show specific aspects of the language. These examples combined with associated explanations make this book clear and very informative for me. What I like especially was the structure: short 68 problems with explanations, analysis, and examples. Also, not very long (~200 pages). If you can choose only one of the books described in this post, read this one.</p>
 <h3>Other JavaScript books</h3>
-<p>I would be very happy to hear from you other JavaScript books that are worth (or not) reading. So far, besides mentioned books, I heard good things about:</p>
+<p>I would be very happy to hear from you about other JavaScript books that are worth (or not) reading. So far, besides mentioned books, I heard good things about:</p>
 <ul>
 <li><a href="https://amzn.to/40aum5H">High Performance JavaScript by Nicholas Zakas</a></li>
 <li><a href="https://amzn.to/3nfDAiz">Eloquent JavaScript: A Modern Introduction to Programming by Marijn Haverbeke</a></li>
@@ -51,4 +51,4 @@ I like this book even better than "The Good Parts". It contains very good exampl
 <li><a href="https://amzn.to/3LK0wkj">Learning JavaScript Design Patterns by Addy Osmani</a></li>
 <li><a href="https://amzn.to/3K1axs3">Speaking JavaScript by Axel Rauschmayer</a></li>
 </ul>
-<p>Can you recommend some of them? Share your opinions in comments.</p>
+<p>Can you recommend some of them? Share your opinions in the comments.</p>
