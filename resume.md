@@ -10,53 +10,46 @@ permalink: "/resume/"
 <ul>
   <li>Meta: Software Engineer (9/2019 - Present)
     <ul>
-      <li>Building New Products at Meta Moonshot Factory</li>
-      <li>Helped to grow <a href="https://facebook.com/marketplace">Facebook Marketplace</a> (Buy and Sell Groups, C2C Shipping, Young Adults Engagement)</li>
+      <li>Building New Products (Vue.js, node.js, MongoDB, AWS, iOS, Swift).</li>
+      <li><a href="https://facebook.com/marketplace">Facebook Marketplace</a> - helped to grow Buy and Sell Groups, C2C Shipping, and Young Adults Engagement (React, React Native, Hack/PHP, iOS).</li>
     </ul>
   </li>
   <li>Microsoft: Software Engineer (9/2014 - 9/2019)
     <ul>
-      <li>Redesigned and rebuilt Azure Search Management Console and did early growth work.</li>
-      <li>Started and shipped <a href="https://jj09.net/under-the-hood-of-the-azure-mobile-app/">Azure Mobile
-          App</a> (Xamarin, iOS, Android, UWP, C#, xUnit, NUnit, <a href="https://www.xamarin.com/test-cloud">Xamarin
+      <li>Azure Search - redesigned and rebuilt Azure Search Management Console, integrated UI generation tool to enable easier service adoption, and did early growth work (TypeScript, C#, Knockout.js).</li>
+      <li><a href="https://jj09.net/under-the-hood-of-the-azure-mobile-app/">Microsoft Azure App</a> - mobile app for managing and monitoring Azure Cloud Resources. Turned hackathon project into a product (Xamarin, iOS, Android, UWP, C#, xUnit, NUnit, <a href="https://www.xamarin.com/test-cloud">Xamarin
           Test Cloud</a>, <a href="https://www.visualstudio.com/team-services/">VSTS</a>).</li>
-      <li>Shipped the new <a
-          href="https://channel9.msdn.com/events/Visual-Studio/Visual-Studio-Live-Redmond-2016/T15">Azure Portal</a> (<a
+      <li><a
+          href="https://channel9.msdn.com/events/Visual-Studio/Visual-Studio-Live-Redmond-2016/T15">Azure Management Portal</a> - one of the first large-scale TypeScript Web Apps (<a
           href="http://www.typescriptlang.org/">TypeScript</a>, JavaScript, <a
           href="http://knockoutjs.com/">Knockout.js</a>, <a href="http://lesscss.org/">LESS</a>, Selenium, <a
           href="http://en.wikipedia.org/wiki/Visual_Studio_Unit_Testing_Framework">Visual Studio Unit Testing
           Framework</a>, Jenkins, <a href="http://msdn.microsoft.com/en-us/library/dd393574.aspx">MSBuild</a>).</li>
+        <li><a href="https://www.microsoft.com/en-us/ai/seeing-ai">SeeingAI</a> - a mobile app for blind people helping them with daily tasks: recognizing people's faces,  text, the light on/off status, describing environment and more (iOS, Xamarin, C#).</li>
     </ul>
   </li>
   <li><b><a href="http://www.santoslab.org">SAnToS lab</a></b>: Graduate Research Assistant (1/2013 - 8/2014)
     <ul>
-      <li>Worked on PCA Pump (Patient-Controlled Analgesia) prototype.</li>
-      <li>Worked on <a href="http://libre.adacore.com/tools/gps/">GNAT Programming Studio</a> plugin (<a
-          href="http://www.sireum.org/bakar">Bakar Kiasan</a>) for static software analysis.</li>
-      <li>Technologies: <a href="http://en.wikipedia.org/wiki/SPARK_(programming_language)">SPARK Ada</a>, <a
-          href="http://en.wikipedia.org/wiki/Architecture_Analysis_%26_Design_Language">AADL</a>, Python (PyGTK,
-        PyUnit), Java, Scala, Jenkins (Continuous Integration), bash.</li>
+      <li>Built a PCA Pump (Patient-Controlled Analgesia) prototype (<a href="http://en.wikipedia.org/wiki/SPARK_(programming_language)">SPARK Ada</a>, <a
+          href="http://en.wikipedia.org/wiki/Architecture_Analysis_%26_Design_Language">AADL</a>).</li>
+      <li>Built <a href="http://libre.adacore.com/tools/gps/">GNAT Programming Studio</a> plugin (<a
+          href="http://www.sireum.org/bakar">Bakar Kiasan</a>) for static software analysis (Python, PyGTK, PyUnit, Java, Scala, Jenkins, bash).</li>      
     </ul>
   </li>
   <li><b><a href="http://www.smtsoftware.com/en">SMT Software</a></b>: Web Developer (3/2012 - 12/2012)
     <ul>
-      <li>Worked on <a href="http://www.3dledger.com/">3D Ledger</a> for <a href="http://creditsafe.com/">CreditSafe</a>
-        (credit reports provider). Live service maintenance.</li>
-      <li>Technologies: ASP.NET MVC, C#, WCF, HTML/CSS, JavaScript (jQuery, AJAX), Oracle.</li>
+      <li>Built <a href="http://www.3dledger.com/">3D Ledger</a> for <a href="http://creditsafe.com/">CreditSafe</a> - credit reports provider (ASP.NET MVC, C#, WCF, HTML/CSS, JavaScript, jQuery, AJAX, Oracle).</li>
     </ul>
   </li>
   <li><b><a href="http://www.k-state.edu/vpcm/">Kansas State University - Communication and Marketing</a></b>: Web
     Developer (9/2011 - 12/2011)
     <ul>
-      <li>Worked on the Kansas State University websites and <a href="http://www.k-state.edu/maps/">Campus Map</a>.</li>
-      <li>Technologies: PHP, MySQL, HTML/CSS, JavaScript (YUI), Google Maps API, Wordpress.</li>
+      <li>Worked on the Kansas State University websites and <a href="http://www.k-state.edu/maps/">Campus Map</a> (PHP, MySQL, HTML/CSS, JavaScript, YUI, Google Maps API, Wordpress).</li>
     </ul>
   </li>
   <li><b><a href="http://www.pgs-soft.com/">PGS Software</a></b>: Web Developer Intern (10/2010 - 11/2010)
     <ul>
-      <li>Worked on <a href="https://yearbook.com/">Yearbook Machine</a> web application that enables people to create
-        yearbook online.</li>
-      <li>Technologies: PHP, MySQL, HTML/CSS, JavaScript(jQuery, AJAX).</li>
+      <li><a href="https://yearbook.com/">Yearbook Machine</a> web app for collaborative yearbook creation (PHP, MySQL, HTML/CSS, JavaScript, jQuery, AJAX).</li>      
     </ul>
   </li>
 </ul>
