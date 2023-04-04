@@ -11,7 +11,7 @@ permalink: "/resume/"
   <li>Meta: Software Engineer (9/2019 - Present)
     <ul>
       <li>Building New Products (Vue.js, node.js, MongoDB, AWS, iOS, Swift).</li>
-      <li><a href="https://facebook.com/marketplace">Facebook Marketplace</a> - helped to grow Buy and Sell Groups, C2C Shipping, and Young Adults Engagement (React, React Native, Hack/PHP, iOS).</li>
+      <li><a href="https://facebook.com/marketplace">Facebook Marketplace</a> - helped to grow "Buy and Sell" Groups, C2C Shipping, and Young Adults Engagement (React, React Native, Hack/PHP, iOS).</li>
     </ul>
   </li>
   <li>Microsoft: Software Engineer (9/2014 - 9/2019)
@@ -25,7 +25,7 @@ permalink: "/resume/"
           href="http://knockoutjs.com/">Knockout.js</a>, <a href="http://lesscss.org/">LESS</a>, Selenium, <a
           href="http://en.wikipedia.org/wiki/Visual_Studio_Unit_Testing_Framework">Visual Studio Unit Testing
           Framework</a>, Jenkins, <a href="http://msdn.microsoft.com/en-us/library/dd393574.aspx">MSBuild</a>).</li>
-        <li><a href="https://www.microsoft.com/en-us/ai/seeing-ai">SeeingAI</a> - a mobile app for blind people helping them with daily tasks: recognizing people's faces,  text, the light on/off status, describing environment and more (iOS, Xamarin, C#).</li>
+        <li><a href="https://www.microsoft.com/en-us/ai/seeing-ai">SeeingAI</a> - a mobile app for blind people helping them with daily tasks: recognizing people's faces,  text, the light on/off status, describing the environment and more (iOS, Xamarin, C#).</li>
     </ul>
   </li>
   <li><b><a href="http://www.santoslab.org">SAnToS lab</a></b>: Graduate Research Assistant (1/2013 - 8/2014)
