@@ -32,7 +32,7 @@ author:
 permalink: "/properly-measuring-http-request-time-with-node-js/"
 ---
 <p>When your backend code is calling external APIs you may want to measure particular request time to identify bottlenecks.</p>
-<p>The most straight forward, but incorrect, way to measure how long request takes is to use JavaScript <code>Date</code> object:</p>
+<p>The most straightforward, but incorrect, way to measure how long a request takes is to use JavaScript <code>Date</code> object:</p>
 
 {% highlight javascript %}
 var request = require('request');
@@ -44,8 +44,8 @@ request.get('https://google.com', function (err, response) {
 });
 {% endhighlight %}
 
-<p>However, this won't give you the actual time that request takes. Above request call is async, and you start measuring time at the time when request was queued, not actually sent.</p>
-<p>In order to determine how much time elapsed since sending request, you can use the <code>time</code> parameter:</p>
+<p>However, this won't give you the actual time that request takes. The above request call is async, and you start measuring time at the time when the request was queued, not actually sent.</p>
+<p>In order to determine how much time elapsed since sending the request, you can use the <code>time</code> parameter:</p>
 
 {% highlight javascript %}
 var request = require('request');
@@ -75,4 +75,38 @@ request.get({ url: 'http://www.google.com', time: true }, function (err, respons
 <p><code>The actual time elapsed: 72<br />
 Time elapsed since queuing the request: 156</code></p>
 <p>Notice that the first callback resolves after the second one(!)</p>
-<p>The difference is almost 2x. Depending on your server side code, this difference might be even larger, and give you incorrect hints while you are profiling your application.</p>
+<p>The difference is almost 2x. Depending on your server-side code, this difference might be even larger, and give you incorrect hints while you are profiling your application.</p>
+
+<h3>2023 Update</h3>
+
+Since [request package](https://www.npmjs.com/package/request) is deprecated, you can use [superagent-node-http-timings](https://www.npmjs.com/package/superagent-node-http-timings) to get detailed http timings information:
+
+{% highlight javascript %}
+const superagent = require('superagent');
+const logNetworkTime = require('superagent-node-http-timings');
+
+superagent
+  .get(`https://google.com`)
+  .use(logNetworkTime((err, result) => {
+    console.log(result);
+  }))
+  .then(x => x);
+{% endhighlight %}
+
+Sample result:
+
+{% highlight json %}
+{
+  url: 'https://www.google.com/',
+  status: 200,
+  timings: {
+    socketAssigned: 0.659234,
+    dnsLookup: 5.110974,
+    tcpConnection: 10.424859,
+    tlsHandshake: 22.362443,
+    firstByte: 66.831464,
+    contentTransfer: 14.258803,
+    total: 119.647777
+  }
+}
+{% endhighlight %}
