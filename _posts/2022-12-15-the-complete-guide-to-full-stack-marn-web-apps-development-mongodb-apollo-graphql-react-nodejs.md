@@ -13,6 +13,8 @@ tags:
 permalink: "/the-complete-guide-to-full-stack-marn-web-apps-development-mongodb-apollo-graphql-react-nodejs/"
 ---
 
+This is a step-by-step overview for creating the front-end, backend, and persistence layer with MARN Stack: MongoDB, Apollo Server, React and Node.js. I also created a video version of this tutorial, which you can find on [YouTube](https://www.youtube.com/embed/6YAKvGlFcwo).
+
 <h2>What is the MARN stack?</h2>
 
 **MARN** stands for **M**ongoDB, **A**pollo Server, **R**eact and **N**ode.js.
@@ -28,7 +30,7 @@ Why Apollo Server instead of Express? Everything has its pros and cons. I like A
 
 There is a lot of documentation and tutorials for building GraphQL backend with Apollo Server. There is also a lot of documentation for consuming GraphQL API from React. Yet, there is nothing about building end-to-end web apps with React, Apollo Server backend, and MongoDB persistence layer.
 
-In this article I will show you how to build end to end web app with [React](https://en.wikipedia.org/wiki/React_(JavaScript_library)) front-end, and [Node.js](https://en.wikipedia.org/wiki/Node.js) backend with [GraphQL](https://en.wikipedia.org/wiki/GraphQL) API (powered by [Apollo Server](https://www.apollographql.com/docs/apollo-server/)) and [MongoDB](https://en.wikipedia.org/wiki/MongoDB) persistence layer.
+In this article, I will show you how to build end to end web app with [React](https://en.wikipedia.org/wiki/React_(JavaScript_library)) front-end, and [Node.js](https://en.wikipedia.org/wiki/Node.js) backend with [GraphQL](https://en.wikipedia.org/wiki/GraphQL) API (powered by [Apollo Server](https://www.apollographql.com/docs/apollo-server/)) and [MongoDB](https://en.wikipedia.org/wiki/MongoDB) persistence layer.
 
 <img src="{{ site.baseurl }}/assets/2022/marn-architecture.png" alt="MARN Stack Architecture" title="MARN Stack Architecture" />
 
@@ -58,12 +60,12 @@ brew install mongodb-community@6.0
 
 <h3>Setup Apollo Server (GraphQL API) with Node.js</h3>
 
-Create new directory for your app:
+Create a new directory for your app:
 ```
 mkdir marn-app
 ```
 
-Create new directory for Apollo Server
+Create a new directory for Apollo Server
 ```
 mkdir apollo-server
 cd apollo-server
@@ -121,7 +123,7 @@ console.info(`🚀 Server ready at ${url}`);
 
 [GraphQL schema](https://www.apollographql.com/docs/apollo-server/schema/schema) describes the shape of your available data.
 
-[GraphQL resolvers](https://www.apollographql.com/docs/apollo-server/data/resolvers) are responsible for pupulating data into fields in Schema.
+[GraphQL resolvers](https://www.apollographql.com/docs/apollo-server/data/resolvers) are responsible for populating data into fields in Schema.
 
 The above code defines 1 field (`hello`) in GraphQL Schema, and the resolver function returns `"Hello from Apollo Server"` when querying that field.
 
@@ -209,7 +211,7 @@ export default function Hello() {
 }
 {% endhighlight %}
 
-To make it work we need to update `App.js` with changes mentioned in previous section: initializing `ApolloCLient` and wrapping components with `ApolloProvider`:
+To make it work we need to update `App.js` with changes mentioned in the previous section: initializing `ApolloCLient` and wrapping components with `ApolloProvider`:
 
 {% highlight react %}
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
@@ -235,7 +237,7 @@ This should display `Hello from Apollo Server` in the browser coming from GraphQ
 
 <h3>Add parameter to GraphQL query</h3>
 
-So far, the query is pretty simple. Let's make it more sophisticated by adding parameter `name`, and changing response to `Hello ${name}`.
+So far, the query is pretty simple. Let's make it more sophisticated by adding a parameter `name`, and changing the response to `Hello ${name}`.
 
 To do that we need to modify GraphQL schema and resolvers in the backend:
 
@@ -253,9 +255,9 @@ const resolvers = {
 };
 {% endhighlight %}
 
-Notice that we extract `name` param from the second argument of resolver function.
+Notice that we extract `name` param from the second argument of the resolver function.
 
-We can use GraphQL Playground to test it, and help us to generate the query with parameter:
+We can use GraphQL Playground to test it, and help us to generate the query with a parameter:
 
 <img src="{{ site.baseurl }}/assets/2022/apollo-graphql-playground-query-with-param.png" alt="Apollo GraphQL Playground: query with param" title="Apollo GraphQL Playground: query with param" />
 
@@ -318,13 +320,13 @@ import {resolvers} from './resolvers.js';
 import {typeDefs} from './models/typeDefs.js';
 {% endhighlight %}
 
-This will set us up for the next section. You should always extract independent modules as much as possible to keep you code clean.
+This will set us up for the next section. You should always extract independent modules as much as possible to keep your code clean.
 
 <h2>CRUD with MongoDB</h2>
 
-CRUD stands for Create, Read, Update, Delete. It's a backbone on every web app. Except twitter. They didn't support Update for a while xD
+CRUD stands for Create, Read, Update, Delete. It's the backbone of every web app. Except Twitter. They didn't support Update for a while xD
 
-In this section, I'll describe how to create simple CRUD for books. Every book will have title and year when it was published. Data will be stored in MongoDB. Web UI will have interface to display (Read), add (Create), edit (Update) and delete books through GraphQL API.
+In this section, I'll describe how to create simple CRUD for books. Every book will have a title and year when it was published. Data will be stored in MongoDB. Web UI will have an interface to display (Read), add (Create), edit (Update) and delete books through GraphQL API.
 
 <h3>Working with MongoDB</h3>
 
@@ -333,7 +335,7 @@ To start mongo on Mac ([docs](https://www.mongodb.com/docs/manual/tutorial/insta
 brew services start mongodb-community@6.0
 ```
 
-I recommend to use [MongoDB Compass](https://www.mongodb.com/try/download/compass) for working with data in MongoDB. It's much easier than using [MongoDB Shell (mongosh)](https://www.mongodb.com/docs/mongodb-shell/). Of course, if you prefer using `mongosh`, go for it.
+I recommend using [MongoDB Compass](https://www.mongodb.com/try/download/compass) for working with data in MongoDB. It's much easier than using [MongoDB Shell (mongosh)](https://www.mongodb.com/docs/mongodb-shell/). Of course, if you prefer using `mongosh`, go for it.
 
 To get started with Books Library, let's create new database called `marn` and new collection called `books`. It can be done easily with Compass:
 
@@ -350,7 +352,7 @@ cd apollo-server
 npm install mongoose
 ```
 
-To connect to MongoDB we can establish connection in `src/index.js` by adding this code:
+To connect to MongoDB we can establish a connection in `src/index.js` by adding this code:
 
 {% highlight javascript %}
 import mongoose from 'mongoose';
@@ -362,7 +364,7 @@ const db = await mongoose.connect("mongodb://localhost:27017/marn", {
 console.info('📚 Connected to db', db?.connections[0]?._connectionString);
 {% endhighlight %}
 
-Make sure your MongoDB uses port 27017. If not, update the uri. You can find the uri in Compass UI:
+Make sure your MongoDB uses port 27017. If not, update the URI. You can find the URI in Compass UI:
 
 <img src="{{ site.baseurl }}/assets/2022/compass-localhost.png" alt="MongoDB uri in Compass" title="MongoDB uri in Compass" />
 
@@ -382,7 +384,7 @@ We can query all books by simply calling the `Book` model:
 Book.find({})
 {% endhighlight %}
 
-To make data accessible through GraphQL, we need to add `Book` type to GraphQL schema and `books` query that returns array of `Book` elements in `src/models/typeDefs.js`:
+To make data accessible through GraphQL, we need to add `Book` type to GraphQL schema and `books` query that returns an array of `Book` elements in `src/models/typeDefs.js`:
 
 {% highlight javascript %}
 import gql from 'graphql-tag';
@@ -400,7 +402,7 @@ export const typeDefs = gql`
 `;
 {% endhighlight %}
 
-We also need to add resolver that is querying MongoDB with `mongoose` in `src/resolvers.js`:
+We also need to add the resolver that is querying MongoDB with `mongoose` in `src/resolvers.js`:
 
 {% highlight javascript %}
 import {Book} from './models/Book.js';
@@ -413,7 +415,7 @@ export const resolvers = {
 };
 {% endhighlight %}
 
-Querying with Playground should return empty array:
+Querying with Playground should return an empty array:
 
 <img src="{{ site.baseurl }}/assets/2022/apollo-query-books-empty.png" alt="Apollo books query (empty)" title="Apollo books query (empty)" />
 
@@ -428,15 +430,15 @@ Once the book is added it should be returned in `books` query:
 
 To make styling easier, let's use [Twitter Bootstrap](https://getbootstrap.com).
 
-Add bootstrap css to `web-ui/public/index.html` in `<head>` section:
+Add bootstrap CSS to `web-ui/public/index.html` in `<head>` section:
 
 {% highlight html %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 {% endhighlight %}
 
 To display books, we will create two components: 
-1. `Books` - for querying GraphQL API and displyaing all books
-2. `Book` - for displaying single book (data will be passed from `Books` component)
+1. `Books` - for querying GraphQL API and displaying all books
+2. `Book` - for displaying a single book (data will be passed from `Books` component)
 
 Let's start with `Book` component. Create new file `src/components/Book.js`:
 
@@ -451,7 +453,7 @@ export default function Book({book}) {
 }
 {% endhighlight %}
 
-The `Books` component will use the `Book` component to display all books from MongoDB. It will also fetch data from GraphQL API. We need to define GraphQL query (which we can copy form Playground), and query Apollo Server with `useQuery`. Create new file `src\components\Books.js`:
+The `Books` component will use the `Book` component to display all books from MongoDB. It will also fetch data from GraphQL API. We need to define GraphQL query (which we can copy from Playground), and query Apollo Server with `useQuery`. Create new file `src\components\Books.js`:
 
 {% highlight react %}
 import { gql, useQuery } from '@apollo/client';
@@ -514,7 +516,7 @@ export default function App() {
 }
 {% endhighlight %}
 
-When you go back to website you should see the book, which we added to database displayed in a table:
+When you go back to the website you should see the book, which we added to the database displayed in a table:
 
 <img src="{{ site.baseurl }}/assets/2022/books-table-one-book.png" alt="Books table displayed with React" title="Books table displayed with React" />
 
@@ -532,9 +534,9 @@ cd web-ui
 npm install react-router-dom
 ```
 
-We need to wrap all components in `BrowserRouter`, map routes to components, and add links allowing to navigate between routes.
+We need to wrap all components in `BrowserRouter`, map routes to components, and add links allowing us to navigate between routes.
 
-All changes that needs to be done take place in `src/App.js`:
+All changes that need to be done take place in `src/App.js`:
 
 {% highlight react %}
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
@@ -569,17 +571,17 @@ export default function App() {
 }
 {% endhighlight %}
 
-After that you should see the main page with navigation and links to home that displays `Hello` component, and link to books that displays the list of books from MongoDB in a table:
+After that, you should see the main page with navigation and links to home that displays `Hello` component, and a link to books that display the list of books from MongoDB in a table:
 
 <img src="{{ site.baseurl }}/assets/2022/react-router.gif" alt="React Router navigation" title="React Router navigation" />
 
 <h3>Create book mutation</h3>
 
-To insert a new book to MongoDB, we need to create a `Mutation`.
+To insert a new book into MongoDB, we need to create a `Mutation`.
 
 In GraphQL we can fetch data with `Query`, but to create or modify data, we need to create a `Mutation`. 
 
-Let's start with updating schema. Mutations are in a separate block in the schema. We will add `create` mutation that takes `title` and `year` parameters, and returns `Book` object to `src/models/typeDefs.js` file:
+Let's start with updating the schema. Mutations are in a separate block in the schema. We will add `create` a mutation that takes `title` and `year` parameters, and returns `Book` object to `src/models/typeDefs.js` file:
 
 {% highlight javascript %}
 import gql from 'graphql-tag';
@@ -600,7 +602,7 @@ export const typeDefs = gql`
 `;
 {% endhighlight %}
 
-Now, we need to implement resolver for `create` mutation. Similarly to schema, we need to add a new block `Mutation` to our resolvers, and `create` function. In the `create` function we need to add logic to create new book and save it to MongoDB. This is `src/resolvers.js` after updates:
+Now, we need to implement a resolver for the `create` mutation. Similarly to the schema, we need to add a new block `Mutation` to our resolvers and `create` a function. In the `create` function we need to add logic to create a new book and save it to MongoDB. This is `src/resolvers.js` after updates:
 
 {% highlight javascript %}
 import {Book} from './models/Book.js';
@@ -626,21 +628,21 @@ We can test creating books with GraphQL Playground:
 
 <img src="{{ site.baseurl }}/assets/2022/apollo-graphql-playground-create-mutation.png" alt="Apollo GraphQL Playground - create mutation" title="Apollo GraphQL Playground - create mutation" />
 
-If everything went well you should see new book in MongoDB. Notice `__v0` field in book inserted with Mongoose. This is versionKey property, which is set on each document when first created by Mongoose.
+If everything went well you should see a new book in MongoDB. Notice `__v0` field in the book inserted with Mongoose. This is `versionKey` property, which is set on each document when first created by Mongoose.
 
 <img src="{{ site.baseurl }}/assets/2022/mongodb-insert-mongoose.png" alt="MongoDB - document created with mongoose" title="MongoDB - document created with mongoose" />
 
 <h3>UI for creating books</h3>
 
-Let's start with new `CreateBook` component. We need to create a new form to collect `title` and `year`, and call `create` mutation we created in previous section.
+Let's start with a new `CreateBook` component. We need to create a new form to collect `title` and `year`, and call the `create` mutation we created in the previous section.
 
-We will utilize `useState` hook to access `input` fields data (`title` and `year`).
+We will utilize `useState` hook to access `input` field data (`title` and `year`).
 
 To call mutation, we will use `useMutation` hook from `@apollo/client`.
 
 We can get `CREATE_BOOK_MUTATION` from GraphQL playground.
 
-Make sure to convert year from string to integer when passing it as variable to mutation. Otherwise it will return an error. You can simple add `+` before the variable to convert string to integer.
+Make sure to convert year from string to integer when passing it as a variable to mutation. Otherwise, it will return an error. You can simply add `+` before the variable to convert a string to an integer.
 
 Add `src/components/CreateBook.js` file to `web-ui` folder:
 
@@ -703,7 +705,7 @@ export default function CreateBook() {
 }
 {% endhighlight %}
 
-We will also create a separate route `/create` to to display `CreateBook` component, and a link to that route. Update `src/App.js`:
+We will also create a separate route `/create` to display the `CreateBook` component, and a link to that route. Update `src/App.js`:
 
 {% highlight react %}
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
@@ -743,13 +745,13 @@ export default function App() {
 
 <img src="{{ site.baseurl }}/assets/2022/react-create-book.gif" alt="Create book UI in React" title="Create book UI in React" />
 
-You may notice that new book does not appear on the books list without refresh. There are two ways to fix it:
-1. [Update local GraphQL cache](https://www.apollographql.com/docs/react/data/mutations/#updating-the-cache-directly) - use this approach when performance is priority over correctness
+You may notice that a new book does not appear on the books list without a refresh. There are two ways to fix it:
+1. [Update local GraphQL cache](https://www.apollographql.com/docs/react/data/mutations/#updating-the-cache-directly) - use this approach when performance is a priority over correctness
 2. [Refetch query](https://www.apollographql.com/docs/react/data/mutations/#refetching-queries) - use this approach when correctness is more important than performance
 
-We will use refetch query approach, which is usually the best default answer, unless you really care about high performance.
+We will use the refetch query approach, which is usually the best default answer unless you really care about high performance.
 
-This requires to pass a list of queries to refetch to `useMutation` hook:
+This requires passing a list of queries to refetch to `useMutation` hook:
 
 {% highlight react %}
 const [createMutation] = useMutation(CREATE_BOOK_MUTATION, {
@@ -799,9 +801,9 @@ import { BOOKS_QUERY, CREATE_BOOK_MUTATION } from '../graphql';
 
 <h3>Deleting books</h3>
 
-Delete mutation will be very similar to `create` mutation from previous section. We just need a mutation that takes `id` of a book we want to delete.
+Delete mutation will be very similar to `create` mutation from the previous section. We just need a mutation that takes `id` of a book we want to delete.
 
-Let's update schema in `src/models/typeDefs.js` by adding `delete` mutation that takes `id` parameter and returns the same id if books is successfully deleted:
+Let's update schema in `src/models/typeDefs.js` by adding `delete` mutation that takes `id` parameter and returns the same id if book is successfully deleted:
 
 {% highlight javascript %}
 import gql from 'graphql-tag';
@@ -823,7 +825,7 @@ export const typeDefs = gql`
 `;
 {% endhighlight %}
 
-And implement resolver function in `src/resolvers.js`:
+And implement the resolver function in `src/resolvers.js`:
 
 {% highlight javascript %}
 import {Book} from './models/Book.js';
@@ -852,11 +854,11 @@ export const resolvers = {
 };
 {% endhighlight %}
 
-We can test deleting book in GraphQL playground by grabbing an id from MongoDB Compass:
+We can test deleting book in the GraphQL playground by grabbing an id from MongoDB Compass:
 
 <img src="{{ site.baseurl }}/assets/2022/apollo-graphql-playground-delete.png" alt="Apollo GraphQL Playground - delete" title="Apollo GraphQL Playground - delete" />
 
-If we try to delete book that doesn't exist we should get `null` in response:
+If we try to delete a book that doesn't exist we should get `null` in response:
 
 {% highlight json %}
 {
@@ -878,7 +880,7 @@ export const DELETE_BOOK_MUTATION = gql`
 `;
 {% endhighlight %}
 
-We will add delete button to `Book` component, and call `delete` mutation from there:
+We will add a delete button to `Book` component, and call `delete` mutation from there:
 
 {% highlight react %}
 import { useMutation } from "@apollo/client";
@@ -911,7 +913,7 @@ export default function Book({book}) {
 }
 {% endhighlight %}
 
-We also need to add new column to table header in `Books` component:
+We also need to add a new column to the table header in `Books` component:
 
 {% highlight html %}
 <thead className='thead-dark'>
@@ -923,7 +925,7 @@ We also need to add new column to table header in `Books` component:
 </thead>
 {% endhighlight %}
 
-Clicking delete button should delete book from MongoDB and from delete row from books list table:
+Clicking a delete button should delete a book from MongoDB and delete a row from the books list table:
 
 <img src="{{ site.baseurl }}/assets/2022/react-delete-book.gif" alt="Delete book from React UI" title="Delete book from React UI" />
 
@@ -931,7 +933,7 @@ Clicking delete button should delete book from MongoDB and from delete row from 
 
 Editing is almost like creating. You need to pass `id` of an existing book in addition to `title` and `year`.
 
-Let's update schema by adding `edit` mutation:
+Let's update the schema by adding `edit` mutation:
 
 {% highlight javascript %}
 import gql from 'graphql-tag';
@@ -1114,13 +1116,13 @@ Now, you should be able to edit books inline:
 
 <img src="{{ site.baseurl }}/assets/2022/react-edit-book.gif" alt="Edit book from React UI" title="Edit book from React UI" />
 
-To make sure that everything works as expected, you can double check if books are being properly created, deleted and updated in Mongo with MongoDB Compass.
+To make sure that everything works as expected, you can double-check if books are being properly created, deleted and updated in Mongo with MongoDB Compass.
 
 <h2>Summary</h2>
 
 Congratulations! Now, you know how to build web apps with MARN stack!
 
-You can find entire code in this github repo: [https://github.com/jj09/marn](https://github.com/jj09/marn).
+You can find the entire code in this GitHub repo: [https://github.com/jj09/marn](https://github.com/jj09/marn).
 
 I also recorded a video version of this guide:
 
@@ -1132,4 +1134,4 @@ To dive into MongoDB check out [MongoDB CRUD Operations](https://www.mongodb.com
 
 If you are new to React, I recommend [React Docs](https://beta.reactjs.org/) and [ReactJS Crash Course](https://www.youtube.com/watch?v=w7ejDZ8SWv8).
 
-You can very easily swap different components for MARN stack. E.g., swap React with Vue.js like I did for [this demo project](https://github.com/jj09/vue-apollo).
+You can very easily swap different components for MARN stack. E.g., swap React with Vue.js as I did for [vue-apollo](https://github.com/jj09/vue-apollo) demo project.
