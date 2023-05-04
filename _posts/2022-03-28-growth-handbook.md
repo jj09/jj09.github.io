@@ -11,7 +11,7 @@ permalink: "/growth-handbook/"
 <blockquote><p>Measure some shit, try some shit, test some more shit, throw the stuff that doesn't work. It's not that complicated!</p>
 <p>Chamath Palihapitiya</p></blockquote>
 
-I spent almost 3 years on the Facebook Marketplace Growth team. I helped to grow Facebook Buy and Sell Groups, contributed to the growth of [C2C](https://www.facebook.com/help/796066857221106) Shipped](https://www.facebook.com/help/796066857221106) transactions by 10x in less than 6 months, and led a team that increased [young adults engagement on Marketplace and on Facebook App](https://www.theverge.com/2021/10/25/22745622/facebook-young-adults-refocusing-teams).
+I spent almost 3 years on the Facebook Marketplace Growth team. I helped to grow Facebook Buy and Sell Groups, contributed to the growth of [C2C Shipped](https://www.facebook.com/help/796066857221106) transactions by 10x in less than 6 months, and led a team that increased [young adults engagement on Marketplace and on Facebook App](https://www.theverge.com/2021/10/25/22745622/facebook-young-adults-refocusing-teams).
 
 How did we do that? This post is a brain dump of ~~all~~ some things I learned during that journey and beyond.
 
