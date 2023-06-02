@@ -53,7 +53,9 @@ permalink: "/building-large-scale-web-applications-with-typescript/"
 1:12:00 - Q&amp;A<br />
 1:20:56 - Recommended resources to get started with JavaScript and TypeScript</p>
 <h3>Video</h3>
-<p><iframe src="https://www.youtube.com/embed/9spkHRFTaVs" width="854" height="510" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+<p>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/9spkHRFTaVs" title="Building Large Scale Web Applications with TypeScript" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</p>
 <h3>Slides</h3>
 <p><script class="speakerdeck-embed" src="//speakerdeck.com/assets/embed.js" async="" data-id="65f4d0c15e1c45618452ef547e7abffa" data-ratio="1.77777777777778"></script></p>
 <h3>Code</h3>
