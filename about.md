@@ -42,7 +42,7 @@ Before Meta, I worked for Microsoft where I helped to build the [new Azure Manag
 
 <h3>Public speaker</h3>
 
-I occasionally speak at conferences around the World. You can find talks [here](http://jj09.net/speaking) and on [my youtube channel](https://www.youtube.com/@jj09).
+I occasionally speak at conferences around the World. You can find my talks [here](http://jj09.net/speaking) and on [my youtube channel](https://www.youtube.com/@jj09?sub_confirmation=1).
 
 <p style="text-align: justify;"><img class="aligncenter wp-image-16221 size-full" src="{{ site.baseurl }}/assets/2013/06/speaking2.jpeg" alt="speaking - QCon Shanghai" width="900" height="600" /></p>
 
@@ -52,8 +52,8 @@ I occasionally speak at conferences around the World. You can find talks [here
 * [voiceCmdr](https://github.com/jj09/voiceCmdr) - library for adding voice commands to your website
 * [Real Estate Investment Calculator](https://github.com/jj09/RealEstateInvestmentCalculator) - iOS and Android mobile apps for analyzing real estate investment
 * [Shopping Pad](https://github.com/jj09/ShoppingPad) - iOS and Android mobile apps for smart shopping list creation
-* [Bread Crumbs](https://github.com/jj09/breadcrumbs) - iOS and Android mobile apps for bookmarking place and navigating to it later (built before Google maps had that feature)
-* [Desktop Watcher](https://github.com/jj09/DesktopWatcher) - a prank app for Windows: when you leave your computer unlocked, and someone moves your mouse it starts playing scary sound xD
+* [Bread Crumbs](https://github.com/jj09/breadcrumbs) - iOS and Android mobile apps for bookmarking a place and navigating to it later (built before Google Maps had that feature)
+* [Desktop Watcher](https://github.com/jj09/DesktopWatcher) - a prank app for Windows: when you leave your computer unlocked, and someone moves your mouse it starts playing a scary sound xD
 
 <h3>Sport and outdoors</h3>
 
@@ -70,7 +70,7 @@ I also enjoy hiking, skiing, soccer and sailing.
 <p style="text-align: justify;"><img class="aligncenter size-full wp-image-14531" src="{{ site.baseurl }}/assets/2013/06/run.jpg" alt="Jakub Jedryszek - run" width="800" height="533" /></p> -->
 <h3>More</h3>
 
-I would love if you follow me on [Twitter](https://twitter.com/realJacobJed) and subscribe to [my youtube channel](https://www.youtube.com/@jj09).
+I would love it if you follow me on [Twitter](https://twitter.com/realJacobJed) and subscribe to [my youtube channel](https://www.youtube.com/@jj09?sub_confirmation=1).
 
 You can find my Open Source projects on [github](https://github.com/jj09)
 
