@@ -10,6 +10,8 @@ It's been a while since I learned “yet another” JavaScript framework. I rece
 
 I’ve been working with [Knockout](https://jj09.net/ndc-london-2016-azure-portal-and-recommended-talks/), [Angular](https://jj09.net/tdd-with-typescript-angularjs-and-node-js/), [React](https://jj09.net/cognitive-search-azure-search-with-ai/) and [Aurelia](https://jj09.net/strange-loop-and-ncdevcon/) in the past. Vue has a lot of similarities with pretty much all of them. It’s like an intersection of Angular and React. This blog post is a short overview of gotchas and differences between Vue and other JS frameworks.
 
+<img src="{{ site.baseurl }}/assets/2022/vue-react.webp" alt="Vue.js and React logos" title="Vue.js and React logos" />
+
 <h2>Basics</h2>
 I’ve been doing development in VSCode, with the [Vetur extension](https://marketplace.visualstudio.com/items?itemName=octref.vetur). It’s very useful because vue is using Single-File Components. Vue components have <em>.vue</em> extension and following structure:
 
