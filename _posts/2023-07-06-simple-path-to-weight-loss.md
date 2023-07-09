@@ -67,7 +67,7 @@ When I started caring for my weight for the first time, a few years ago, I decid
 
 Many people want to go through torture, and just lose all additional weight in 1 month. Unfortunately, after that, they go back to old eating habits, and their weight is back. This results in demotivation and unwillingness to pick up that challenge again.
 
-It's important to keep a good balance of carbs, protein and fats. Ideally about 50% carbs, 30% protein and 20% fat. If you don't do that, you will end up hungry, and tired. Not keeping this balance is the main reason for weight gain. Eating pasta, which has a lot of carbs is causing the total calorie count to go up, but macros are out of balance. Your body still needs protein. Usually, people overeat carbs and fats but undereat protein. They reach the needed amount of protein by.
+It's important to keep a good balance of carbs, protein and fats. Ideally about 50% carbs, 30% protein and 20% fat. If you don't do that, you will end up hungry, and tired. Not keeping this balance is the main reason for weight gain. Eating pasta, which has a lot of carbs is causing the total calorie count to go up, but macros are out of balance. Your body still needs protein. Usually, people overeat carbs and fats but undereat protein. They reach the needed amount of protein by simply eating too many calories, or they don't at all.
 
 I often struggle with reaching my protein goals per day. It is helpful to use [protein powder](https://amzn.to/3pv1gkG) for that purpose. I add it to yogurt with blueberries or oatmeal if I have it for breakfast.
 
@@ -98,7 +98,7 @@ Watch out for the sugar intake. Any sugar you eat, when you don’t exercise, go
 - [Instant Pot chicken and rice](https://www.spoonfulofflavor.com/instant-pot-chicken-and-rice/)
 - chicken salad
 - turkey burgers
-- Fage yogurt with fruits (blueberries/strawberries/raspberries) and protein powder
+- Fage 0% fat yogurt with fruits (blueberries/strawberries/raspberries) and protein powder (most yogurts have a lot of sugar - don't eat that)
 
 <h3>What to avoid</h3>
 
@@ -127,7 +127,7 @@ Losing weight is not about going through a process and then going back to the pr
 
 I recommend reading [Atomic Habits](https://amzn.to/3NJPtXA)](https://amzn.to/3NJPtXA). A great book about achieving goals through micro changes, and consistency. In the same way how 1% improvement per day results in a 37x improvement in 1 year. Losing 0.1 pounds per day results in 36.5 pounds in a year! Smaller changes are easier to adapt and maintain. If you keep repeating them for 20 days it's more likely you will stick with them for longer. After 66 days new habits are becoming a normal part of your life.
 
-Don't get discouraged by days when you exceed your calories budgets, or small unexpected weight gains during the journey. Look at my weight chart at the beginning. There are a lot of ups and downs. There were weeks in which I gained weight, by sticking to the process. There were also weeks when I didn't and I lost weight anyway. Our body is not perfect machine, but being consistent eventually will pay off.
+Don't get discouraged by days when you exceed your calories budgets, or small unexpected weight gains during the journey. Look at my weight chart at the beginning. There are a lot of ups and downs. There were weeks in which I gained weight, by sticking to the process. There were also weeks when I didn't and I lost weight anyway. Our body is not a perfect machine, but being consistent eventually will pay off.
 
 To learn more about nutrition for workouts I recommend [the section about nutrition](https://fellrnr.com/wiki/Nutrition) from an awesome website [fellnr.com](https://fellrnr.com/).
 
