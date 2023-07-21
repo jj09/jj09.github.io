@@ -117,6 +117,8 @@ The higher your heart rate the more calories you burn. The easiest, and fastest 
 
 I usually aim for 2 runs of 30 minutes or so and 1 long bike ride. During the summer I like to swim in the lake for 30-60 minutes. When I'm training for a triathlon, I exercise more. I like to sign up for a race as it motivates me to work out. I usually create an 8-12 weeks training plan before the race. Thanks to that I don't have to go through a mental exercise of what type of workout should I do every day. I just look at the schedule.
 
+I have observed that workouts are highly effective in curbing cravings. Whenever I find myself idle, my desire for chocolate tends to be stronger compared to after a run or a bike ride. This makes exercising doubly advantageous: not only does it increase my calorie budget, but it also helps reduce my cravings for junk food.
+
 <h3>Summary</h3>
 
 1. Count calories and macros. Don't eat more than you burn. 500 kcal deficit per day results in losing 1 pound per week.
