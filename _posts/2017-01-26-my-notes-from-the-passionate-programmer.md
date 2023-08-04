@@ -40,7 +40,7 @@ permalink: "/my-notes-from-the-passionate-programmer/"
 2. Follow job market requirements.<br />
 3. Understand the business.<br />
 4. Be the Worst in the team so you can learn from others.<br />
-5. Learn/know different type of programming languages (C#, C, python, prolog...).<br />
+5. Learn/know different types of programming languages (C#, C, python, prolog...).<br />
 6. Avoid fear-driven career choices.<br />
 7. Keep radar on known tech/platforms vs unknown(to learn).<br />
 8. Learn what is under the abstraction layer of your programming language.<br />
@@ -63,7 +63,7 @@ permalink: "/my-notes-from-the-passionate-programmer/"
 25. How much are you worth?<br />
 26. Share your areas of knowledge in the job (implemented modules, deployment process etc.). Make documentation.<br />
 27. Measure (by metrics), improve, measure.<br />
-28. Work as hard as you can (no fb, Twitter etc.).<br />
+28. Work as hard as you can (no Facebook, Twitter etc.).<br />
 29. Learn how to fail.<br />
 30. Say 'No' when you know you cannot do something.<br />
 31. Don't panic.<br />

@@ -127,7 +127,7 @@ I have observed that workouts are highly effective in curbing cravings. Whenever
 
 Losing weight is not about going through a process and then going back to the previous life. It's about becoming a different person. A person that doesn't overeat, and chooses their meals consciously.
 
-I recommend reading [Atomic Habits](https://amzn.to/3NJPtXA)](https://amzn.to/3NJPtXA). A great book about achieving goals through micro changes, and consistency. In the same way how 1% improvement per day results in a 37x improvement in 1 year. Losing 0.1 pounds per day results in 36.5 pounds in a year! Smaller changes are easier to adapt and maintain. If you keep repeating them for 20 days it's more likely you will stick with them for longer. After 66 days new habits are becoming a normal part of your life.
+I recommend reading [Atomic Habits](https://amzn.to/3NJPtXA). A great book about achieving goals through micro changes, and consistency. In the same way how 1% improvement per day results in a 37x improvement in 1 year. Losing 0.1 pounds per day results in 36.5 pounds in a year! Smaller changes are easier to adapt and maintain. If you keep repeating them for 20 days it's more likely you will stick with them for longer. After 66 days new habits are becoming a normal part of your life.
 
 Don't get discouraged by days when you exceed your calories budgets, or small unexpected weight gains during the journey. Look at my weight chart at the beginning. There are a lot of ups and downs. There were weeks in which I gained weight, by sticking to the process. There were also weeks when I didn't and I lost weight anyway. Our body is not a perfect machine, but being consistent eventually will pay off.
 
