@@ -11,7 +11,7 @@ permalink: "/resume/"
   <li>Meta: Software Engineer (9/2019 - Present)
     <ul>
       <li>Building New Products (Vue.js, node.js, MongoDB, AWS, iOS, Swift).</li>
-      <li><a href="https://facebook.com/marketplace">Facebook Marketplace</a> - helped to grow "Buy and Sell" Groups, C2C Shipping, and Young Adults Engagement (React, React Native, Hack/PHP, iOS).</li>
+      <li><a href="https://facebook.com/marketplace">Facebook Marketplace</a> - as a member of Growth team I helped to grow "Buy and Sell" Groups, C2C Shipping, and Young Adults Engagement (React, React Native, Hack/PHP, iOS).</li>
     </ul>
   </li>
   <li>Microsoft: Software Engineer (9/2014 - 9/2019)
