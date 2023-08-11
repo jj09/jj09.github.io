@@ -57,9 +57,7 @@ I occasionally speak at conferences around the World. You can find my talks [h
 
 <h3>Sport and outdoors</h3>
 
-I love biking and triathlons. [I am an Ironman](/i-am-an-ironman/).
-
-<!-- My favorite distance is Olympic triathlon: 1.5k swim + 40k bike + 10k run. -->
+I love biking and triathlons. [I am an Ironman](/i-am-an-ironman/) and [US Triathlon National Championships participant](https://track.rtrt.me/e/USAT-AGE_GROUP-2023#/tracker/RV9456DB). My favorite distance is the Olympic triathlon: 1.5k swim + 40k bike + 10k run.
 
 I also enjoy hiking, skiing, soccer and sailing.
 
