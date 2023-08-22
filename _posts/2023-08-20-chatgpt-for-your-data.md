@@ -148,7 +148,11 @@ To see a sample Fine-tuning process, check out [how to make GPT perform 10x for 
 
 <h3>Summary</h3>
 
-You can build Q&A ChatBot for your data with LangChain and OpenAI API. If you don't want to pay for OpenAI API, you can use the Open Source model locally. This still requires computational power but might be cheaper than paying for OpenAI API if you run it in production. You can also consider Fine-tuning the pre-trained model. It's more complicated, requires significant computational power, and you need to re-train your model whenever your dataset changes.
+You can build Q&A ChatBot for your data with LangChain and OpenAI API. If you don't want to pay for OpenAI API, you can use the Open Source model locally. This still requires computational power but might be cheaper than paying for OpenAI API if you run it in production. 
+
+You can also consider Fine-tuning the pre-trained model. It's more complicated, requires significant computational power, and you need to re-train your model whenever your dataset changes.
+
+In the end, you can build products like [Chat with any PDF](https://chatpdf.com).
 
 To learn more details, and how to build a more advanced ChatBot for knowledge base check out [LangChain Chat with Your Data](https://www.deeplearning.ai/short-courses/langchain-chat-with-your-data/).
 
