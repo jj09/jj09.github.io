@@ -8,9 +8,9 @@ permalink: "/about/"
 
 <h2>Hi, I am Jacob!</h2>
 
-I am Software Engineer at Meta. I work on new products.
+I am Software Engineer at Meta. I work on GenAI.
 
-In the past, I worked on [Facebook Marketplace Growth Team](/growth-handbook/).
+In the past, I worked on [Experimental Products](https://techcrunch.com/2022/08/05/meta-testing-livestreaming-platform-influencers-super) and [Facebook Marketplace Growth Team](/growth-handbook/).
 
 Before Meta, I worked for Microsoft where I helped to build the [new Azure Management Portal](/azure-portal-the-largest-single-page-app-in-the-world/), [Azure Management Mobile App](/under-the-hood-of-the-azure-mobile-app/), [Azure Search](/azure-search-on-azure-friday/), and [SeeingAI](/seeing-ai-photo-gallery/).
 
