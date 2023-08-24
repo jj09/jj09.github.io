@@ -8,7 +8,7 @@ permalink: "/about/"
 
 <h2>Hi, I am Jacob!</h2>
 
-I am Software Engineer at Meta. I work on GenAI.
+I work on GenAI at Meta.
 
 In the past, I worked on [Experimental Products](https://techcrunch.com/2022/08/05/meta-testing-livestreaming-platform-influencers-super) and [Facebook Marketplace Growth Team](/growth-handbook/).
 
