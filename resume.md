@@ -11,21 +11,21 @@ permalink: "/resume/"
   <li>Meta: Software Engineer (9/2019 - Present)
     <ul>
       <li>Gen AI (React, GraphQL, Hack/PHP)</li>
-      <li><a href="https://techcrunch.com/2022/08/05/meta-testing-livestreaming-platform-influencers-super">Super</a> - I was responsible for Full-Stack web and mobile development, as well as managing and maintaining the AWS infra (Vue.js, node.js, MongoDB, AWS, iOS, Swift).</li>
-      <li><a href="https://facebook.com/marketplace">Facebook Marketplace</a> Growth - I helped to grow the "Buy and Sell" Groups ecosystem, 10x Shippable products transactions on Marketplace, and increased Young Adults DAU on Marketplace and Facebook App (React, GraphQL, React Native, Hack/PHP, iOS).</li>
+      <li><a href="https://techcrunch.com/2022/08/05/meta-testing-livestreaming-platform-influencers-super">Super</a> - I was responsible for Full-Stack web and mobile development, and managing and maintaining the AWS infra (Vue.js, node.js, MongoDB, AWS, iOS, Swift).</li>
+      <li><a href="https://facebook.com/marketplace">Facebook Marketplace</a> Growth - I helped to grow the "Buy and Sell" Groups ecosystem, increased Shippable products inventory, which led to 10x transactions gorwth on Marketplace, and increased Young Adults DAU on Marketplace and Facebook App (React, GraphQL, React Native, Hack/PHP, iOS).</li>
     </ul>
   </li>
   <li>Microsoft: Software Engineer (9/2014 - 9/2019)
     <ul>
-      <li>Azure Search - redesigned and rebuilt Azure Search Management Console, integrated UI generation tool to enable easier service adoption, and did early growth work (TypeScript, C#, Knockout.js).</li>
-      <li><a href="https://jj09.net/under-the-hood-of-the-azure-mobile-app/">Microsoft Azure App</a> - mobile app enabling to manage and monitor Azure Cloud Services. I wrote the first lines of code and designed the app architecture. Initially hackathon project became an official Microsoft product (Xamarin, iOS, Android, UWP, C#, xUnit, NUnit, <a href="https://www.xamarin.com/test-cloud">Xamarin Test Cloud</a>, <a href="https://www.visualstudio.com/team-services/">VSTS</a>).</li>
+      <li>Azure Search - redesigned and rebuilt Azure Search Management Console, integrated UI generation tool to simplify service adoption, and did early growth work (TypeScript, C#, Knockout.js).</li>
+      <li><a href="https://jj09.net/under-the-hood-of-the-azure-mobile-app/">Microsoft Azure App</a> - mobile app enabling to manage and monitor Azure Cloud Services. I wrote the first lines of code and designed the app architecture. A hackathon project became an official Microsoft product (Xamarin, iOS, Android, UWP, C#, xUnit, NUnit, <a href="https://www.xamarin.com/test-cloud">Xamarin Test Cloud</a>, <a href="https://www.visualstudio.com/team-services/">VSTS</a>).</li>
       <li><a
           href="https://channel9.msdn.com/events/Visual-Studio/Visual-Studio-Live-Redmond-2016/T15">Azure Management Portal</a> - first large-scale Web App written in TypeScript. As a member of the Core team, I wrote a few web components, and fixed performance issues that unblocked the launch of the product (<a
           href="http://www.typescriptlang.org/">TypeScript</a>, JavaScript, <a
           href="http://knockoutjs.com/">Knockout.js</a>, <a href="http://lesscss.org/">LESS</a>, Selenium, <a
           href="http://en.wikipedia.org/wiki/Visual_Studio_Unit_Testing_Framework">Visual Studio Unit Testing
           Framework</a>, Jenkins, <a href="http://msdn.microsoft.com/en-us/library/dd393574.aspx">MSBuild</a>).</li>
-        <li><a href="https://www.microsoft.com/en-us/ai/seeing-ai">SeeingAI</a> - a mobile app for blind people helping them with daily tasks: recognizing people's faces,  text, the light on/off status, describing the environment and more (iOS, Xamarin, C#).</li>
+        <li><a href="https://www.microsoft.com/en-us/ai/seeing-ai">SeeingAI</a> - a mobile app for blind people helping them with daily tasks: recognizing people's faces,  text, describing the environment and more (iOS, Xamarin, C#).</li>
     </ul>
   </li>
   <li><b><a href="http://www.santoslab.org">SAnToS lab</a></b>: Graduate Research Assistant (1/2013 - 8/2014)
