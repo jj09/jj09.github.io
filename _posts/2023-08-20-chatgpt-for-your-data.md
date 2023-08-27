@@ -36,7 +36,7 @@ You also need an OpenAI API key. You can get it at [https://platform.openai.com/
 
 New personal accounts get <span>$</span>5 free credit to use.
 
-You need to put the OpenAI API key in `OPEN_API_KEY` environmental variable. You can do that by adding the following line to your `~/.bash_profile` file on Mac:
+You need to put the OpenAI API key in `OPENAI_API_KEY` environmental variable. You can do that by adding the following line to your `~/.bash_profile` file on Mac:
 
 ```
 export OPENAI_API_KEY=<YOUR_OPENAI_API_KEY>
