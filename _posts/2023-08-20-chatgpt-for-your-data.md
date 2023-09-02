@@ -136,6 +136,10 @@ If you don't want to pay for OpenAI API, you can use one of the Large Language M
 
 I got the best result by using [nous-hermes-13b.ggmlv3.q4_0.bin](https://huggingface.co/TheBloke/Nous-Hermes-13B-GGML/blob/main/nous-hermes-13b.ggmlv3.q4_0.bin) model. It's 7.32GB, while default [ggml-gpt4all-j-v1.3-groovy.bin](https://gpt4all.io/models/ggml-gpt4all-j-v1.3-groovy.bin) is 3.79GB, but it produces much better results.
 
+The tradeoff of running models locally is speed. OpenAI models are deployed in the cloud and run on super fast GPUs. One query, on my local machine (MacBook M1), takes between 10 and 30 seconds! Of course, you can deploy open-source models to the cloud and run your apps on GPUs, but then you have to pay for it.
+
+The big advantage is full control of your end-to-end flow. If OpenAI decides to close its API, or drastically increase price, there is very little you can do about it. Running open-source models in the cloud puts only one constraint on you: the cloud provider's cost and their environment. These change much less often.
+
 <h3>Fine tunning LLM</h3>
 
 Another option to build a "ChatGPT for your data" is through Fine-tuning. It involves taking a pre-trained large language model (LLM) and adapting it to comprehend and respond to specific questions related to your dataset. By further training the model on a narrower dataset containing questions and answers relevant to your domain, you can enhance its ability to provide accurate and contextually relevant responses.

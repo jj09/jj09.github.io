@@ -14,9 +14,9 @@ permalink: "/generative-ai-10-things-to-know/"
 
 Welcome to the world of Generative AI, a fascinating part of artificial intelligence. Creating art, music, stories, or finding answers to your questions is what Generative AI does. This article explains the 10 most important things you need to know about the Generative AI world.
 
-<h3>1. LLM (Large Language Model)</h3>
+<h3>1. Large Language Model (LLM))</h3>
 
-A large language model (LLM) is a language model characterized by its large size. Its size is enabled by AI accelerators, which can process vast amounts of text data, mostly scraped from the Internet. LLM is a [neural network](https://en.wikipedia.org/wiki/Artificial_neural_network) that can contain from tens of millions and up to billions of weights and is (pre-)trained using [self-supervised learning](https://en.wikipedia.org/wiki/Self-supervised_learning) and [semi-supervised learning](https://en.wikipedia.org/wiki/Weak_supervision).
+A large language model (LLM) is characterized by its large size. LLM can have over a trillion parameters, and take multiple Gigabytes of storage. Its size is enabled by AI accelerators, which can process vast amounts of text data, mostly scraped from the Internet. LLM is a [neural network](https://en.wikipedia.org/wiki/Artificial_neural_network) that can contain from tens of millions and up to billions of weights and is (pre-)trained using [self-supervised learning](https://en.wikipedia.org/wiki/Self-supervised_learning) and [semi-supervised learning](https://en.wikipedia.org/wiki/Weak_supervision).
 
 Language models work by taking an input text and repeatedly predicting the next token or word. Up to 2020, fine-tuning was the only way a model could be adapted to be able to accomplish specific tasks. Larger-sized models, such as [GPT-4](https://openai.com/gpt-4) or [Llama 2](https://ai.meta.com/llama/), however, can be prompt-engineered to achieve similar results.
 
