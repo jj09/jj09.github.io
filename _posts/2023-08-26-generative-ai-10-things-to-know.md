@@ -12,9 +12,9 @@ permalink: "/generative-ai-10-things-to-know/"
 
 <img src="{{ site.baseurl }}/assets/2023/generative-ai.jpeg" title="Generative AI" title="Generative AI" />
 
-Welcome to the world of Generative AI, a fascinating part of artificial intelligence. Creating art, music, stories, or finding answers to your questions is what Generative AI does. This article explains the 10 most important things you need to know about the Generative AI world.
+Generative Artificial Intelligence (GenAI) has shown remarkable advancements in recent years and has the potential to revolutionize various industries by automating creative tasks, generating realistic content, and assisting humans in creative endeavors. GenAI is a subset of AI techniques and models that are designed to generate new text, images, videos, or audio content that is similar to what humans produce. This article explains the 10 most important things you need to know about the Generative AI world.
 
-<h3>1. Large Language Model (LLM))</h3>
+<h3>1. Large Language Model (LLM)</h3>
 
 A large language model (LLM) is characterized by its large size. LLM can have over a trillion parameters, and take multiple Gigabytes of storage. Its size is enabled by AI accelerators, which can process vast amounts of text data, mostly scraped from the Internet. LLM is a [neural network](https://en.wikipedia.org/wiki/Artificial_neural_network) that can contain from tens of millions and up to billions of weights and is (pre-)trained using [self-supervised learning](https://en.wikipedia.org/wiki/Self-supervised_learning) and [semi-supervised learning](https://en.wikipedia.org/wiki/Weak_supervision).
 
@@ -36,6 +36,37 @@ To learn more details about Fine-tuning LLMs I recommend:
 <h3>3. Prompt engineering</h3>
 
 Prompt engineering is a technique used in working with AI models, especially in the context of text-to-text models. It involves crafting well-structured and specific instructions or queries, known as prompts, to guide the AI in generating desired outputs. These prompts help the AI understand the task and generate relevant and accurate responses. Prompt engineering can include providing context, examples, instructions, or even specifying styles to ensure the AI produces the intended results.
+
+You might be heard about Zero-shot prompting or few-shot prompting. Zero-shot prompting involves instructing a model to perform a task or generate text without providing any specific examples or labeled data during inference. This is what we usually do when using ChatGPT.
+
+Example of zero-shot prompt:
+
+```
+What's the sentiment of this review: "It doesnt work!"
+```
+
+ChatGPT response:
+
+```
+The sentiment of the review "It doesn't work!" is negative.
+```
+
+Few-shot prompting, on the other hand, provides the model with a few examples or context during inference.
+
+Example of a few-shot prompt:
+
+```
+Great product, 10/10: positive
+Didn't work very well: negative
+Super helpful, worth it: positive
+It doesnt work!:
+```
+
+ChatGPT response:
+
+```
+The sentiment of the review "It doesn't work!" is negative.
+```
 
 To learn more about Prompt Engineering I recommend [ChatGPT Prompt Engineering for Developers](https://learn.deeplearning.ai/chatgpt-prompt-eng) from [DeepLearning.AI](https://www.deeplearning.ai/).
 
