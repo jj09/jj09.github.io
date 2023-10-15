@@ -65,12 +65,8 @@ permalink: "/resume/"
 </ul>
 <h2>Skills</h2>
 <ul>
-  <li><b>Programming</b>: JavaScript/TypeScript, C#, Java, Python, PHP, Ruby, C/C++, SPARK Ada, swift, Objective-C.</li>
-  <li><b>Web Development</b>: node.js, React.js, Vue.js, Knockout.js, Aurelia, Angular, ASP.NET, Ruby
-    on Rails, Microsoft Azure.</li>
+  <li><b>Programming</b>: JavaScript/TypeScript, C#, PHP, swift, Python.</li>
+  <li><b>Web Development</b>: node.js, React.js, Vue.js, ASP.NET.</li>
   <li><b>Mobile</b>: iOS, React Native, Xamarin, Android.</li>
-  <li><b>Databases</b>: MongoDB, MSSQL, MySQL, Oracle.</li>
-  <li><b>Software Engineering</b>: <a href="https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)">SOLID</a>,
-    TDD, Unit Testing (NUnit, xUnit, QUnit, Jasmine, mocha), IoC (Unity, Ninject, SimpleInjector), Continuous
-    Integration (Jenkins, VSTS), Acceptance Testing (Xamarin UI Test, Selenium, FitNesse).</li>
+  <li><b>Databases</b>: MongoDB, MSSQL, MySQL.</li>
 </ul>
