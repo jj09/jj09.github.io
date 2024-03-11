@@ -10,9 +10,9 @@ permalink: "/resume/"
 <ul>
   <li>Meta: Software Engineer (9/2019 - Present)
     <ul>
-      <li>Gen AI (React, GraphQL, Hack/PHP)</li>
-      <li><a href="https://techcrunch.com/2022/08/05/meta-testing-livestreaming-platform-influencers-super">Super</a> - I was responsible for Full-Stack web and mobile development, and managing and maintaining the AWS infra (Vue.js, node.js, MongoDB, AWS, iOS, Swift).</li>
-      <li><a href="https://facebook.com/marketplace">Facebook Marketplace</a> Growth - I helped to grow the "Buy and Sell" Groups ecosystem, increased Shippable products inventory, which led to 10x transactions gorwth on Marketplace, and increased Young Adults DAU on Marketplace and Facebook App (React, GraphQL, React Native, Hack/PHP, iOS).</li>
+      <li>GenAI - building [AI Agents](https://ai.meta.com/genai/) platform with LLMs, prompt engineering, RAG, and more (React, GraphQL, Hack/PHP)</li>
+      <li><a href="https://techcrunch.com/2022/08/05/meta-testing-livestreaming-platform-influencers-super">Super</a> - I was responsible for Full-Stack web and mobile development, and AWS infra (Vue.js, node.js, MongoDB, AWS, iOS, Swift).</li>
+      <li><a href="https://facebook.com/marketplace">Facebook Marketplace</a> Growth - I helped to grow the "Buy and Sell" Groups ecosystem, increased Shippable products inventory, which led to 10x transactions growth on Marketplace, and increased Young Adults DAU on Marketplace and Facebook App (React, GraphQL, React Native, Hack/PHP, iOS).</li>
     </ul>
   </li>
   <li>Microsoft: Software Engineer (9/2014 - 9/2019)
