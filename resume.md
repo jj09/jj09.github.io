@@ -10,7 +10,7 @@ permalink: "/resume/"
 <ul>
   <li>Meta: Software Engineer (9/2019 - Present)
     <ul>
-      <li>GenAI - building <a href="https://ai.meta.com/genai/">AI Agents</a> platform with LLMs, prompt engineering, RAG, and more (React, GraphQL, Hack/PHP)</li>
+      <li>GenAI - building <a href="https://ai.meta.com/genai/">GenAI Agents</a> platform (React, GraphQL, Hack/PHP)</li>
       <li><a href="https://techcrunch.com/2022/08/05/meta-testing-livestreaming-platform-influencers-super">Super</a> - I was responsible for Full-Stack web and mobile development, and AWS infra (Vue.js, node.js, MongoDB, AWS, iOS, Swift).</li>
       <li><a href="https://facebook.com/marketplace">Facebook Marketplace</a> Growth - I helped to grow the "Buy and Sell" Groups ecosystem, increased Shippable products inventory, which led to 10x transactions growth on Marketplace, and increased Young Adults DAU on Marketplace and Facebook App (React, GraphQL, React Native, Hack/PHP, iOS).</li>
     </ul>
@@ -66,7 +66,8 @@ permalink: "/resume/"
 <h2>Skills</h2>
 <ul>
   <li><b>Programming</b>: JavaScript/TypeScript, C#, PHP, swift, Python.</li>
-  <li><b>Web Development</b>: node.js, React.js, Vue.js, ASP.NET.</li>
+  <li><b>Web Development</b>: node.js, React.js, Vue.js, ASP.NET, GraphQL.</li>
   <li><b>Mobile</b>: iOS, React Native, Xamarin, Android.</li>
   <li><b>Databases</b>: MongoDB, MSSQL, MySQL.</li>
+  <li><b>Cloud</b>: AWS, GCP, Azure</li>
 </ul>
