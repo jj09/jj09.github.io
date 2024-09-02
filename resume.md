@@ -10,9 +10,9 @@ permalink: "/resume/"
 <ul>
   <li>Meta: Software Engineer (9/2019 - Present)
     <ul>
-      <li>GenAI - building <a href="https://ai.meta.com/genai/">GenAI Agents</a> platform (React, GraphQL, Hack/PHP)</li>
+      <li>GenAI - building <a href="https://ai.meta.com/ai-studio">GenAI Agents platform</a> (React, GraphQL, Hack/PHP): led multiple initiatives including building an experimentation platform for product and LLM models, running first A/B tests to find PMF, enabling external knowledge (RAG), Tech Leading <a href="https://about.fb.com/news/2024/07/create-your-own-custom-ai-with-ai-studio">AI Studio launch</a> across 100+ people and 3 apps (Facebook, Instagram, Whats App).</li>
       <li><a href="https://techcrunch.com/2022/08/05/meta-testing-livestreaming-platform-influencers-super">Super</a> - I was responsible for Full-Stack web and mobile development, and AWS infra (Vue.js, node.js, MongoDB, AWS, iOS, Swift).</li>
-      <li><a href="https://facebook.com/marketplace">Facebook Marketplace</a> Growth - I helped to grow the "Buy and Sell" Groups ecosystem, increased Shippable products inventory, which led to 10x transactions growth on Marketplace, and increased Young Adults DAU on Marketplace and Facebook App (React, GraphQL, React Native, Hack/PHP, iOS).</li>
+      <li><a href="https://facebook.com/marketplace">Facebook Marketplace</a> Growth - I helped to grow the "Buy and Sell" Groups ecosystem, increased Shippable products inventory, which led to 10x transactions growth on Marketplace, and team that I led increased Young Adults DAU on Marketplace and Facebook App (React, GraphQL, React Native, Hack/PHP, iOS).</li>
     </ul>
   </li>
   <li>Microsoft: Software Engineer (9/2014 - 9/2019)
