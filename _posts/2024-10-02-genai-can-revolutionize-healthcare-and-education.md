@@ -6,6 +6,7 @@ categories:
 tags:
 - AI
 - GenAI
+- BigIdeas
 
 permalink: "/genai-healthcare-education/"
 ---

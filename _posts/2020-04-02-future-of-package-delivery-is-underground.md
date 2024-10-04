@@ -4,6 +4,8 @@ title: Future of Package Delivery is Underground
 type: post
 categories:
 - other
+tags:
+- BigIdeas
 permalink: "/future-of-package-delivery-is-underground/"
 ---
 <img src="{{ site.baseurl }}/assets/2020/04/underground-package-delivery.jpg" alt="Underground Package Delivery System" />
