@@ -38,7 +38,7 @@ Once you have your top three tasks, prioritize them ruthlessly. Be willing to sa
 
 Tip: Revisit your list every morning and align your daily tasks with these top three priorities. This helps you maintain momentum throughout the week and keeps you on track.
 
-Tip 2: add new things to the backlog for next week. Most of the time, the 'urgent' thing can wait. Many times, after a few days is not urgent anymore :)
+Tip 2: add new things to the backlog for next week. Most of the time, the 'urgent' thing can wait. Many times, after a few days, the 'urgent' thing is not urgent anymore :)
 
 <h3>4. Bonus: No Meetings Wednesday</h3>
 
