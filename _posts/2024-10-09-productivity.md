@@ -16,7 +16,7 @@ In a world filled with constant notifications, meetings, and distractions, stayi
 
 <h3>1. Block Mornings for Focused Work</h3>
 
-Mornings are a golden time for productivity, but only if you protect them. Block off your mornings (ideally until lunch) for deep, focused work. This is when your mind is at its freshest and you're less likely to be interrupted. By avoiding meetings and non-essential tasks in the morning, you can dive into your most challenging projects with clarity and concentration. This will enable you to get into the <a href="https://amzn.to/4eIy1Px">Flow</a> state.
+Mornings are a golden time for productivity, but only if you protect them. Block off your mornings (ideally until lunch) for <a href="https://amzn.to/4gVozd3">deep, focused work</a>. This is when your mind is at its freshest and you're less likely to be interrupted. By avoiding meetings and non-essential tasks in the morning, you can dive into your most challenging projects with clarity and concentration. This will enable you to get into the <a href="https://amzn.to/4eIy1Px">Flow</a> state.
 
 Shoot for at least 2h uninterrupted time in the morning.
 
