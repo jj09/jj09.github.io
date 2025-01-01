@@ -68,7 +68,7 @@ I also enjoy hiking, skiing, soccer, martial arts and sailing.
 <p style="text-align: justify;"><img class="aligncenter size-full wp-image-14531" src="{{ site.baseurl }}/assets/2013/06/run.jpg" alt="Jakub Jedryszek - run" width="800" height="533" /></p> -->
 <h3>More</h3>
 
-I would love it if you follow me on [Twitter](https://twitter.com/realJacobJed) and subscribe to [my youtube channel](https://www.youtube.com/@jj09?sub_confirmation=1).
+I would love it if you follow me on [X](https://x.com/realJacobJed) and subscribe to [my youtube channel](https://www.youtube.com/@jj09?sub_confirmation=1).
 
 You can find my Open Source projects on [github](https://github.com/jj09)
 
