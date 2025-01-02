@@ -10,7 +10,7 @@ tags:
 permalink: "/generative-ai-10-things-to-know/"
 ---
 
-<img src="{{ site.baseurl }}/assets/2023/generative-ai.jpeg" title="Generative AI" title="Generative AI" />
+<img src="{{ site.baseurl }}/assets/2023/generative-ai.jpeg" alt="Generative AI" title="Generative AI" />
 
 Generative Artificial Intelligence (GenAI) has shown remarkable advancements in recent years and has the potential to revolutionize various industries by automating creative tasks, generating realistic content, and assisting humans in creative endeavors. GenAI is a subset of AI techniques and models that are designed to generate new text, images, videos, or audio content that is similar to what humans produce. This article explains the 10 most important things you need to know about the Generative AI world.
 

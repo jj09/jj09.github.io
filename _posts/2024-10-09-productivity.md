@@ -10,7 +10,7 @@ tags:
 permalink: "/productivity/"
 ---
 
-<img src="{{ site.baseurl }}/assets/2024/focus-deep-work.webp" title="Deep focus work" title="Deep focus work" />
+<img src="{{ site.baseurl }}/assets/2024/focus-deep-work.webp" alt="Deep focus work" title="Deep focus work" />
 
 In a world filled with constant notifications, meetings, and distractions, staying productive can feel like a never-ending battle. But with the right strategies in place, you can take control of your time and energy. Here are four powerful productivity tips to help you work smarter, not harder.
 

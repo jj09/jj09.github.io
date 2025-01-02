@@ -6,7 +6,7 @@ categories:
 permalink: "/i-am-an-ironman/"
 ---
 
-<img src="{{ site.baseurl }}/assets/2022/Ironman-finish.png" alt="Ironman California finish line" />
+<img src="{{ site.baseurl }}/assets/2022/Ironman-finish.png" alt="Ironman California finish line" title="Ironman California finish line" />
 
 The Ironman triathlon is 2.4 mile swim, 112 mile bike and 26.2 mile run (marathon). You have 17 hours to finish in order to become an Ironman.
 

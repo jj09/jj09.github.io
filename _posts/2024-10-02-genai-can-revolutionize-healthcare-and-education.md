@@ -11,7 +11,7 @@ tags:
 permalink: "/genai-healthcare-education/"
 ---
 
-<img src="{{ site.baseurl }}/assets/2024/genai-healthcare-education.png" title="Generative AI in Healthcare and Education" title="Generative AI in Healthcare and Education" />
+<img src="{{ site.baseurl }}/assets/2024/genai-healthcare-education.png" alt="Generative AI in Healthcare and Education" title="Generative AI in Healthcare and Education" />
 
 Healthcare is currently lagging behind in fully leveraging existing technology. We have technology that can predict what products you might want to buy before you even realize it (like targeted ads), but we aren’t yet applying similar advancements in healthcare to predict potential diseases.
 
