@@ -14,7 +14,7 @@ layout: default
   </div>
 
   <div class="post-categories">
-    <i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp;Tags:&nbsp;
+    <i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp;Categories:&nbsp;
       {% if post %}
       {% assign categories = post.categories %}
       {% else %}
@@ -22,6 +22,18 @@ layout: default
       {% endif %}
       {% for category in categories %}
         <a class="categories-button" href="{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a>
+      {% unless forloop.last %}{% endunless %}
+      {% endfor %}
+  </div>
+  <div class="post-tags">
+    <i class="fa fa-tags fa-fw" aria-hidden="true"></i>&nbsp;Tags:&nbsp;
+      {% if post %}
+      {% assign tags = post.tags %}
+      {% else %}
+      {% assign tags = page.tags %}
+      {% endif %}
+      {% for tag in tags %}
+        <a class="tags-button" href="{{site.baseurl}}/tags/#{{tag|slugize}}">{{tag}}</a>
       {% unless forloop.last %}{% endunless %}
       {% endfor %}
   </div>
