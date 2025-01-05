@@ -7,6 +7,7 @@ tags:
 - AI
 - GenAI
 - BigIdeas
+image: /assets/2024/genai-healthcare-education.png
 
 permalink: "/genai-healthcare-education/"
 ---

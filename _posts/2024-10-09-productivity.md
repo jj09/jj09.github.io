@@ -6,6 +6,7 @@ categories:
 tags:
 - productivity
 - tips
+image: /assets/2024/focus-deep-work.webp
 
 permalink: "/productivity/"
 ---
