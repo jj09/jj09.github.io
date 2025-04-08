@@ -46,14 +46,14 @@ I occasionally speak at conferences around the World. You can find my talks [h
 
 <p style="text-align: justify;"><img class="aligncenter wp-image-16221 size-full" src="{{ site.baseurl }}/assets/2013/06/speaking2.jpeg" alt="speaking - QCon Shanghai" width="900" height="600" /></p>
 
-<h3>OSS projects</h3>
+<!-- <h3>OSS projects</h3>
 
 * [IP heatmap](https://github.com/jj09/ip-heatmap-generator) - user's density visualizer
 * [voiceCmdr](https://github.com/jj09/voiceCmdr) - library for adding voice commands to your website
 * [Real Estate Investment Calculator](https://github.com/jj09/RealEstateInvestmentCalculator) - iOS and Android mobile apps for analyzing real estate investment
 * [Shopping Pad](https://github.com/jj09/ShoppingPad) - iOS and Android mobile apps for smart shopping list creation
 * [Bread Crumbs](https://github.com/jj09/breadcrumbs) - iOS and Android mobile apps for bookmarking a place and navigating to it later (built before Google Maps had that feature)
-* [Desktop Watcher](https://github.com/jj09/DesktopWatcher) - a prank app for Windows: when you leave your computer unlocked, and someone moves your mouse it starts playing a scary sound xD
+* [Desktop Watcher](https://github.com/jj09/DesktopWatcher) - a prank app for Windows: when you leave your computer unlocked, and someone moves your mouse it starts playing a scary sound xD -->
 
 <h3>Sport and outdoors</h3>
 
@@ -68,11 +68,9 @@ I also enjoy hiking, skiing, soccer, martial arts and sailing.
 <p style="text-align: justify;"><img class="aligncenter size-full wp-image-14531" src="{{ site.baseurl }}/assets/2013/06/run.jpg" alt="Jakub Jedryszek - run" width="800" height="533" /></p> -->
 <h3>More</h3>
 
-I would love it if you follow me on [X](https://x.com/realJacobJed) and subscribe to [my youtube channel](https://www.youtube.com/@jj09?sub_confirmation=1).
+Follow me on [X](https://x.com/realJacobJed), subscribe to [my youtube channel](https://www.youtube.com/@jj09?sub_confirmation=1), and check [my favorite books](/books).
 
-You can find my Open Source projects on [github](https://github.com/jj09)
-
-You can check [my favorite books](/books).
+<!-- You can find my Open Source projects on [github](https://github.com/jj09). -->
 
 You can find more details about my work in my [resume](/resume).
 
