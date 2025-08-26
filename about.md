@@ -8,7 +8,8 @@ permalink: "/about/"
 
 <h2>Hi, I am Jacob!</h2>
 
-I am Full-Stack AI Engineer at [Meta Superintelligence Labs](https://www.cnbc.com/2025/06/30/mark-zuckerberg-creating-meta-superintelligence-labs-read-the-memo.html). I helped to launch [Meta AI](https://ai.meta.com/meta-ai/), [Meta AI Characters](https://www.theverge.com/2023/9/27/23891128/meta-ai-assistant-characters-whatsapp-instagram-connect), and [AI Studio](https://about.fb.com/news/2024/07/create-your-own-custom-ai-with-ai-studio/). I worked on LLM infra, cross-app experimentation platform, [RAG](https://en.wikipedia.org/wiki/Retrieval-augmented_generation), personalization, various LLM capabilities, and led AI Studio launch across 100+ people and 3 apps (Facebook, Instagram, WhatsApp).
+I am Full-Stack AI Engineer at [Meta Superintelligence Labs](https://www.cnbc.com/2025/06/30/mark-zuckerberg-creating-meta-superintelligence-labs-read-the-memo.html). I helped to launch [Meta AI](https://ai.meta.com/meta-ai/), [Meta AI Characters](https://www.theverge.com/2023/9/27/23891128/meta-ai-assistant-characters-whatsapp-instagram-connect), and [AI Studio](https://about.fb.com/news/2024/07/create-your-own-custom-ai-with-ai-studio/). I work on LLM infra, cross-app experimentation platform, [RAG](https://en.wikipedia.org/wiki/Retrieval-augmented_generation), personalization, and LLM capabilities.
+<!-- I led AI Studio launch across 100+ people and 3 apps (Facebook, Instagram, WhatsApp).-->
 
 In the past, I worked on a few [Experimental Products](https://tech.facebook.com/engineering/2019/7/npe-team-from-facebook/) (including [Super](https://techcrunch.com/2022/08/05/meta-testing-livestreaming-platform-influencers-super)) and [Facebook Marketplace Growth Team](/growth-handbook/).
 
