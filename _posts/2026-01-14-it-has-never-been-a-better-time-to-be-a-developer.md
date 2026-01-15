@@ -12,7 +12,7 @@ image:
     height: 539
     alt: AI Engineer
 
-permalink: "/ai-era/"
+permalink: "/it-has-never-been-a-better-time-to-be-a-developer/"
 ---
 
 <img src="{{ site.baseurl }}/assets/2026/ai-engineer.png" alt="AI Engineer" title="AI Engineer" />
