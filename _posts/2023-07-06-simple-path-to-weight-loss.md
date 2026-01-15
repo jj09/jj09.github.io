@@ -136,3 +136,5 @@ To learn more about nutrition for workouts I recommend [the section about nutrit
 If you want to develop a sustainable diet and get back to your desired weight, start tracking your weight and calories in [the Weight Loss Tracker spreadsheet](https://docs.google.com/spreadsheets/d/1ho7KNSEitzgiz5PB9VWgWV8A_0ZDG9HzVJyLJXNnGXA/edit?usp=sharing). It's a great feeling when you see the weight chart going down.
 
 Remember the [importance of sleep](https://amzn.to/2JUkNCr). Lack of sleep results in an energy deficit that is often compensated by eating more.
+
+Update: in 2025 I found an awesome blog by [Andrej Karpathy](https://karpathy.ai/): [Biohacking Lite](https://karpathy.github.io/2020/06/11/biohacking-lite/).
