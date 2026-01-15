@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "It Has Never Been a Better Time to Be a Developer!"
+title: "It’s never been a better time to be a developer!"
 categories:
 - programming
 tags:
@@ -12,7 +12,7 @@ image:
     height: 539
     alt: AI Engineer
 
-permalink: "/it-has-never-been-a-better-time-to-be-a-developer/"
+permalink: "/its-never-been-a-better-time-to-be-a-developer/"
 ---
 
 <img src="{{ site.baseurl }}/assets/2026/ai-engineer.png" alt="AI Engineer" title="AI Engineer" />
