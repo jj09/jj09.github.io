@@ -22,15 +22,25 @@
   gtag('config', 'G-7MV8X5P363');
 </script>
 
-{% if page.excerpt %}
+<!-- {% if page.excerpt %}
 <meta name="description" content="{{ page.excerpt| strip_html }}" />
 <meta property="og:description" content="{{ page.excerpt| strip_html }}" />
-{% else %}
+{% else %} -->
 <!-- <meta name="description" content="{{ site.description }}">
 <meta property="og:description" content="{{ site.description }}" /> -->
-<meta name="description" content="Jacob Jedryszek is a Full-Stack AI engineer at Meta Superintelligence Labs.">
-<meta property="og:description" content="Jacob Jedryszek is a Full-Stack AI engineer at Meta Superintelligence Labs." />
+<!-- <meta name="description" content="Jacob Jedryszek is a Full-Stack AI engineer at Meta.">
+<meta property="og:description" content="Jacob Jedryszek is a Full-Stack AI engineer at Meta." />
+{% endif %} -->
+
+{% if page.description %}
+  <meta name="description" content="{{ page.description | strip_html | strip_newlines | truncate: 160 }}">
+{% elsif page.excerpt %}
+  <meta name="description" content="{{ page.content | strip_html | strip_newlines | truncate: 160 }}">
+{% else %}
+  <meta name="description" content="{{ site.description }}">
 {% endif %}
+
+
 <meta name="author" content="{{ site.name }}" />
 
 <!-- {% if page.title %}

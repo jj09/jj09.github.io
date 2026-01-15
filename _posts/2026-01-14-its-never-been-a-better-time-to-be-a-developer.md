@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "It’s never been a better time to be a developer!"
+description: Scott Guthrie (Microsoft VP of Cloud) used to finish his tech talks at various Microsoft conferences with the phrase “It’s never been a better time to be a developer”. It was an inspirational catch-phrase, which of course, was correct - technology is always better today than it was yesterday. However, in 2026, we enter a new era of “better”!
 categories:
 - programming
 tags:
