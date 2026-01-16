@@ -8,6 +8,7 @@ tags:
 - GenAI
 
 permalink: "/generative-ai-10-things-to-know/"
+image: /assets/2023/generative-ai.jpeg
 ---
 
 <img src="{{ site.baseurl }}/assets/2023/generative-ai.jpeg" alt="Generative AI" title="Generative AI" />

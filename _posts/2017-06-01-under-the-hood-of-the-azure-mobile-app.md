@@ -35,6 +35,7 @@ author:
   first_name: ''
   last_name: ''
 permalink: "/under-the-hood-of-the-azure-mobile-app/"
+image: /assets/2017/06/AzureApp-Resources.png
 ---
 <p style="text-align: center;"><img class="size-full wp-image-17711" style="float: left; margin: 10px;" src="{{ site.baseurl }}/assets/2017/06/AzureApp-Resources.png" alt="" width="200" height="356" /></p>
 <p><img class="size-full wp-image-17701" style="float: left; margin: 10px;" src="{{ site.baseurl }}/assets/2017/06/AzureApp-Resource.png" alt="" width="200" height="356" /></p>

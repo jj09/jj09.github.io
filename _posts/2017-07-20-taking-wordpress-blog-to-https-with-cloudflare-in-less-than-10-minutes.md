@@ -33,6 +33,7 @@ author:
   first_name: ''
   last_name: ''
 permalink: "/taking-wordpress-blog-to-https-with-cloudflare-in-less-than-10-minutes/"
+image: /assets/2017/07/Cloudflare-e1500656493331.png
 ---
 <p><img class="aligncenter size-full wp-image-18523" src="{{ site.baseurl }}/assets/2017/07/Cloudflare-e1500656493331.png" alt="CloudFlare" width="800" height="273" /></p>
 <p>Making your website secure has never been easier! I was able to take my WordPress blog to HTTPS in less than 10 minutes!</p>
