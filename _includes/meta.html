@@ -23,11 +23,11 @@
 </script>
 
 {% if page.description %}
-  <meta name="description" content="{{ page.description | strip_html | strip_newlines | truncatewords: 160 }}">
+  <meta name="description" content="{{ page.description | strip_html | strip_newlines | truncatewords: 25 }}">
 {% elsif page.excerpt %}
-  <meta name="description" content="{{ page.content | strip_html | strip_newlines | truncatewords: 160 }}">
+  <meta name="description" content="{{ page.content | strip_html | strip_newlines | truncatewords: 25 }}">
 {% else %}
-  <meta name="description" content="{{ site.description | truncatewords: 160 }}">
+  <meta name="description" content="{{ site.description | truncatewords: 25 }}">
 {% endif %}
 
 <meta name="author" content="{{ site.name }}" />
