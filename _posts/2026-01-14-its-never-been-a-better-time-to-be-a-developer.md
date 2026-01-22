@@ -35,13 +35,18 @@ Claude Code, Github Copilot, Cursor, and other agentic coding assistants aren't 
 
 We're moving from "write code" → "guide AI to write code" → "describe what you want and let the AI figure out the how."
 
+<img src="{{ site.baseurl }}/assets/2026/writing-guiding-describing.jpg" alt="Writing code to guiding AI to write code to describing what you want and let AI figure it out" title="Writing code to guiding AI to write code to describing what you want and let AI figure it out" />
+
+
 A lot of old friction is quietly gone. Developers spend less time on plumbing and more time on creative, high-value work: solving real problems and inventing new features. We can do things much more efficiently now!
 
 <h3>The era of solo-preneurs</h3>
 
-Perhaps the most mind-blowing shift in 2026 is how AI has supercharged the rise of the **solo-preneurs** - developers building profitable businesses entirely alone, with no employees, no VC, and often while traveling the world.
+Perhaps the most mind-blowing shift in 2026 is how AI has supercharged the rise of the [**solo-preneurs**](https://x.com/solofounding/status/2013671125147099308) - developers building profitable businesses entirely alone, with no employees, no VC, and often while traveling the world.
 
 A single engineer can build something that would have required a full engineering team 10 years ago. AI agents handle marketing, customer support, content creation, and even outbound sales. No-code + AI enables anyone to spin up MVPs in just days. Founders are launching AI-powered tools that solve "boring but profitable" problems - and scaling to 6–7 figures without ever hiring.
+
+Solo founders now start 36.3% of all new companies ([source](https://x.com/solofounding/status/2013671125147099308))!
 
 <h3>But wait... aren’t we all going to lose our jobs?</h3>
 
