@@ -68,7 +68,6 @@ Yes! It's not just a better time to be a developer.
 
 **It's the best time in history...and tomorrow will probably top it.**
 
-We're not just getting better tools. We're getting a new kind of collaborator that gets smarter every month. Mundane tasks can be delegated to agents, and we can focus on the fun part of the job. Thinking clearly, using AI deliberately, and building unfair advantages in the area of your passion is the way!
+We're not just getting better tools. We're getting a new kind of collaborator that gets smarter every month. Mundane tasks can be delegated to agents, and we can focus on the fun part of the job. Thinking clearly, using AI deliberately, and building unfair advantages in the area of your passion is the way! Becoming AI-native, and adapting AI-maximalists approach is low-risk high-reward approach.
 
 Happy coding (and prompting) 🚀
-
