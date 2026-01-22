@@ -8,8 +8,7 @@ permalink: "/about/"
 
 <h2>Hi, I am Jacob!</h2>
 
-I am Full-Stack AI Engineer at Meta. I work on next-gen AI Glasses. I helped to launch [Meta AI](https://ai.meta.com/meta-ai/), and [AI Studio](https://about.fb.com/news/2024/07/create-your-own-custom-ai-with-ai-studio/). I worked on LLM infra, cross-app experimentation platform, [RAG](https://en.wikipedia.org/wiki/Retrieval-augmented_generation), personalization, and LLM capabilities.
-<!-- I led AI Studio launch across 100+ people and 3 apps (Facebook, Instagram, WhatsApp).-->
+I am Full-Stack AI Engineer at Meta. I work on [personal superintelligence](https://www.meta.com/superintelligence/) for the next-gen [AI glasses](https://www.meta.com/ai-glasses/). Before, I helped to launch [Meta AI](https://ai.meta.com/meta-ai/), and [AI Studio](https://about.fb.com/news/2024/07/create-your-own-custom-ai-with-ai-studio/) used by 1B+ users. My main focus was building <a href="https://ai.meta.com/ai-studio">GenAI Agents platform</a>, [RAG](https://research.facebook.com/file/4283170945104179/Retrieval-Augmented-Generation-for-Knowledge-Intensive-NLP-Tasks.pdf), and [personalization](https://arxiv.org/pdf/2504.10147).
 
 In the past, I worked on a few [Experimental Products](https://tech.facebook.com/engineering/2019/7/npe-team-from-facebook/) (including [Super](https://techcrunch.com/2022/08/05/meta-testing-livestreaming-platform-influencers-super)) and [Facebook Marketplace Growth Team](/growth-handbook/).
 
