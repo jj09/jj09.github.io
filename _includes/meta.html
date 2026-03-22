@@ -27,7 +27,7 @@
 {% elsif page.excerpt %}
   <meta name="description" content="{{ page.content | strip_html | strip_newlines | truncatewords: 25 }}">
 {% else %}
-  <meta name="description" content="{{ site.description | truncatewords: 25 }}">
+  <meta name="description" content="{{ site.site_description | truncatewords: 25 }}">
 {% endif %}
 
 <meta name="author" content="{{ site.name }}" />

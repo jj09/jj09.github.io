@@ -14,6 +14,8 @@ In the past, I worked on a few [Experimental Products](https://tech.facebook.com
 
 Before Meta, I worked for Microsoft where I helped to build the [new Azure Management Portal](/azure-portal-the-largest-single-page-app-in-the-world/), [Azure Management Mobile App](/under-the-hood-of-the-azure-mobile-app/), [Azure Search](/azure-search-on-azure-friday/), and [SeeingAI](/seeing-ai-photo-gallery/).
 
+I am passionate about [applying AI in Healthcare and Education](/genai-healthcare-education), and improving processes with AI.
+
 <!-- I worked at Microsoft on Azure Cloud. I helped to ship the [new Azure Management Portal](/azure-portal-the-largest-single-page-app-in-the-world/) - the first Single Page App using TypeScript. I started [Azure Management Mobile App](/under-the-hood-of-the-azure-mobile-app/), which utill today has higher store ratings than gcloud and AWS mobile apps on both App Store and Google Play. I helped to improve the management console for [Azure Search](/azure-search-on-azure-friday/). In my 10% time, I was helping with [SeeingAI app](/seeing-ai-photo-gallery/) - a mobile app for blind people that recognizes the environment around them. -->
 
 <!-- Before Meta, I worked for Microsoft where I...
@@ -55,11 +57,13 @@ I occasionally speak at conferences around the World. You can find my talks [h
 * [Bread Crumbs](https://github.com/jj09/breadcrumbs) - iOS and Android mobile apps for bookmarking a place and navigating to it later (built before Google Maps had that feature)
 * [Desktop Watcher](https://github.com/jj09/DesktopWatcher) - a prank app for Windows: when you leave your computer unlocked, and someone moves your mouse it starts playing a scary sound xD -->
 
-<h3>Sport and outdoors</h3>
+<h3>Health and Fitness</h3>
 
 I love biking and triathlons. [I am an Ironman](/i-am-an-ironman/) and [USA Triathlon National Championships finisher](https://track.rtrt.me/e/USAT-AGE_GROUP-2023#/tracker/RV9456DB). My favorite distance is the Olympic triathlon: 1.5k swim + 40k bike + 10k run.
 
 I also enjoy hiking, skiing, soccer, martial arts and sailing.
+
+I believe Health and Fitness are the foundation of everything that matters in life. If you die, nothing else matters. I monitor my fitness age (and VO2 max) with a [Garmin watch](https://www.amazon.com/Garmin-Multisport-Smartwatch-Flashlight-Capability/dp/B0FWFCHT2S), biological age with [Function Health](https://www.functionhealth.com/), and functional Age with [Don’t Die protocol](https://www.youtube.com/watch?v=veJzV8iA6gg&t=359s&pp=ygUcYnJ5YW4gam9obnNvbiBmdW5jdGlvbmFsIGFnZQ%3D%3D).
 
 <!-- <p style="text-align: justify;">Cycling is my passion. I ride over 3000 miles on my bike every year. From time to time I participate in bike rides such as <a href="http://www.cascade.org/rides-major-rides-flying-wheels/flying-wheels-ride-details">Flying Wheels</a>, <a href="http://www.cascade.org/rides-major-rides/group-health-stp-presented-alaska-airlines">Seattle To Portland</a>,  <a href="http://www.cascade.org/rides-major-rides/chilly-hilly">Chilly Hilly</a>, <a href="http://www.cascade.org/rides-major-rides/ride-seattle-vancouver-and-party-rsvp">Ride from Seattle to Vancouver</a>.</p>
 <p style="text-align: justify;"><img class="aligncenter size-full wp-image-12531" src="{{ site.baseurl }}/assets/2013/06/bike.jpg" alt="Jakub Jedryszek - bike" width="800" height="459" /></p>

@@ -11,6 +11,9 @@ name: Jacob Jedryszek
 # Short bio or description (displayed in the header)
 description: Software Engineer at Meta (Ex-MSFT)
 
+# Website description (displayed in the header)
+site_description: Software Engineer at Meta (ex-MSFT). Building personal superintelligence. I helped to build a few products at Microsoft and Meta.
+
 # Twitter username
 twitter:
   username: realJacobJed
