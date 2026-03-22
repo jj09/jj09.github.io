@@ -70,5 +70,5 @@ permalink: "/resume/"
   <li><b>Web Development</b>: node.js, React.js, Vue.js, ASP.NET, GraphQL.</li>
   <li><b>Mobile</b>: iOS, React Native, Xamarin, Android.</li>
   <li><b>Databases</b>: MongoDB, MSSQL, MySQL.</li>
-  <li><b>Cloud</b>: AWS, GCP, Azure</li>
+  <li><b>Cloud</b>: AWS, GCP, Azure, Terraform.</li>
 </ul>
