@@ -249,7 +249,13 @@ Performance optimizations applied to improve mobile PageSpeed score. Changes wer
 **Prompt 2:**
 > review all changes and check if nothing got broken, suggest any improvements to introduced changes
 
-### Changes
+**Prompt 3:**
+> after performance changes pagespeed.web.dev score went from 80 to 84. Are room for more improvements?
+
+**Prompt 4:**
+> implement all proposed improvements
+
+### Round 1 (score: 80 → 84)
 
 **CSS minification** (`_config.yml`)
 - Changed SCSS output from `:expanded` to `:compressed` (~24% smaller CSS, 23KB → 17.5KB)
@@ -278,6 +284,18 @@ Performance optimizations applied to improve mobile PageSpeed score. Changes wer
 
 **Lazy-loaded Disqus comments** (`_layouts/post.html`)
 - Disqus embed script now loads via IntersectionObserver only when the user scrolls near the comments section (with 200px root margin), instead of loading immediately on every post page
+
+### Round 2 (score: 84 → ?)
+
+**Deferred GA4 analytics** (`_includes/meta.html`)
+- Wrapped gtag.js loading in `requestIdleCallback` (with `setTimeout` fallback) so analytics loads after the page is interactive — saves ~200-300ms of main thread blocking on mobile
+
+**Self-hosted avatar** (`_config.yml`, `_layouts/default.html`)
+- Downloaded Gravatar image to `/assets/image/avatar.png` and pointed config to the local copy — eliminates DNS lookup + connection to s.gravatar.com
+- Removed the now-unnecessary `preconnect` hint for s.gravatar.com
+
+**Moved Disqus count.js to post layout only** (`_layouts/default.html`, `_layouts/post.html`)
+- Disqus count script was loading on every page (homepage, about, search) but is only useful on post pages — moved from default layout to post layout
 
 ## snippets
 
