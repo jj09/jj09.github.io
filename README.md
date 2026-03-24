@@ -239,6 +239,46 @@ In such a case feel free to [start a discussion](https://github.com/forever-jeky
 > It is necessary to write, if the days are not to slip emptily by. How else, indeed, to clap the net over the butterfly of the moment? for the moment passes, it is forgotten; the mood is gone; life itself is gone.  
 ~ Vita Sackville-West  
 
+## Performance improvements
+
+Performance optimizations applied to improve mobile PageSpeed score. Changes were made with Claude Code using the following prompts:
+
+**Prompt 1:**
+> help me fix mobile performance issues: https://pagespeed.web.dev/analysis/https-jj09-net/0xzpo62qq4?form_factor=mobile
+
+**Prompt 2:**
+> review all changes and check if nothing got broken, suggest any improvements to introduced changes
+
+### Changes
+
+**CSS minification** (`_config.yml`)
+- Changed SCSS output from `:expanded` to `:compressed` (~24% smaller CSS, 23KB → 17.5KB)
+
+**Removed duplicate analytics** (`_includes/meta.html`)
+- Removed legacy Universal Analytics (UA) script — GA4 was already present, so UA was wasting a network request and blocking the parser with an inline script
+
+**Inlined CSS reset** (`_layouts/default.html`)
+- Inlined ress.min.css (2.3KB) directly into `<style>` tag — eliminates a render-blocking request and removes the unpkg.com CDN dependency entirely
+
+**Added resource hints** (`_layouts/default.html`)
+- Added `preconnect` and `dns-prefetch` for cdn.jsdelivr.net and s.gravatar.com — saves ~100-300ms per CDN origin on first load
+
+**Deferred render-blocking JavaScript** (`_layouts/default.html`)
+- GLightbox JS: changed from synchronous to `defer` with `onload` init
+- darkmode-js: changed from synchronous to `defer` with `onload` init (also fixed a bug where `addDarkmodeWidget` was creating duplicate event listeners)
+
+**Removed unused resources** (`_layouts/default.html`)
+- Removed Plyr CSS (the Plyr JS was already commented out)
+- Removed broken `msapplication-config` meta tag (pointed to invalid path with backtick character)
+- Trimmed favicon declarations from 9 apple-touch-icon variants to the 3 most-used sizes (180, 32, 16)
+
+**Lazy-loaded images** (`_layouts/default.html`)
+- Added inline script that auto-applies `loading="lazy"` and `decoding="async"` to all images inside `#main` content area (covers 347 images across 136 posts without modifying any post files)
+- Added `fetchpriority="high"` on the header avatar image (LCP candidate)
+
+**Lazy-loaded Disqus comments** (`_layouts/post.html`)
+- Disqus embed script now loads via IntersectionObserver only when the user scrolls near the comments section (with 200px root margin), instead of loading immediately on every post page
+
 ## snippets
 
 https://jekyllrb.com/docs/usage/

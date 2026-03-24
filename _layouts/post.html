@@ -50,12 +50,23 @@ layout: default
           this.page.url = '{{ page.url | absolute_url }}';
           this.page.identifier = '{{ page.url | absolute_url }}';
         };
-        (function() {
+        // Lazy-load Disqus when user scrolls near comments
+        var disqusLoaded = false;
+        function loadDisqus() {
+          if (disqusLoaded) return;
+          disqusLoaded = true;
           var d = document, s = d.createElement('script');
           s.src = 'https://jj09.disqus.com/embed.js';
           s.setAttribute('data-timestamp', +new Date());
           (d.head || d.body).appendChild(s);
-        })();
+        }
+        var disqusObserver = new IntersectionObserver(function(entries) {
+          if (entries[0].isIntersecting) {
+            loadDisqus();
+            disqusObserver.disconnect();
+          }
+        }, { rootMargin: '200px' });
+        disqusObserver.observe(document.getElementById('disqus_thread'));
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   </div>
