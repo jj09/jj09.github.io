@@ -285,7 +285,7 @@ Performance optimizations applied to improve mobile PageSpeed score. Changes wer
 **Lazy-loaded Disqus comments** (`_layouts/post.html`)
 - Disqus embed script now loads via IntersectionObserver only when the user scrolls near the comments section (with 200px root margin), instead of loading immediately on every post page
 
-### Round 2 (score: 84 → ?)
+### Round 2 (score: 84 → 94)
 
 **Deferred GA4 analytics** (`_includes/meta.html`)
 - Wrapped gtag.js loading in `requestIdleCallback` (with `setTimeout` fallback) so analytics loads after the page is interactive — saves ~200-300ms of main thread blocking on mobile
