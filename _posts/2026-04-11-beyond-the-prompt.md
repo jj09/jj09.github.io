@@ -40,4 +40,5 @@ It’s easy to get sucked into a 24/7 dopamine cycle of "prompt, review, ship" b
 <h3>The Bottom Line</h3>
 
 Ship smarter code, not just more code. Leverage the tools, but don't become a component of them. Your creativity and your presence for your family are finite resources that require maintenance.
+
 The best engineers in the AI era won't be the ones who prompt the fastest; they’ll be the ones who stay human enough to know which problems are actually worth solving. Prioritize the foundation of your life. Not just for your sake, but for the sake of the work itself.
