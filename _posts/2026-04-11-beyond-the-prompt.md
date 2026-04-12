@@ -7,10 +7,16 @@ categories:
 tags:
 - AI
 - GenAI
+image:
+    path: /assets/2026/beyond-the-prompt.jpg
+    width: 960
+    height: 524
+    alt: Beyond the Prompt - Redefining the Software Engineer's Value in the Age of AI 
 
 permalink: "/beyond-the-prompt/"
 ---
 
+<img src="{{ site.baseurl }}/assets/2026/beyond-the-prompt.jpg" alt="Beyond the Prompt - Redefining the Software Engineer's Value in the Age of AI" title="Beyond the Prompt - Redefining the Software Engineer's Value in the Age of AI" />
 
 We are witnessing the most significant shift in software engineering since the move to high-level languages. With AI coding tools handling the "manual labor" (boilerplate, unit tests, and refactoring), it’s easy to feel like the value of the human engineer is being compressed.
 But the opposite is true. As the cost of generating code drops to near zero, the value of human judgment and the necessity of personal sustainability scale exponentially.
