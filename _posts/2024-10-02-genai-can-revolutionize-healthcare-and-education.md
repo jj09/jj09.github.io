@@ -58,7 +58,7 @@ For instance, students who are struggling in math could receive tailored problem
 
 AI-driven tutoring systems can offer one-on-one support to students, helping explain difficult concepts or answering questions in real time. These systems can be accessible around the clock, providing students with a resource when teachers or human tutors may not be available.
 
-These virtual tutors don’t just help with academic content—they can also monitor emotional states and adjust their responses based on the student’s engagement level. By recognizing when a student is confused or frustrated, AI systems can adapt their teaching approach, ensuring that learning remains productive and stress-free.
+These virtual tutors don’t just help with academic content. They can also monitor emotional states and adjust their responses based on the student’s engagement level. By recognizing when a student is confused or frustrated, AI systems can adapt their teaching approach, ensuring that learning remains productive and stress-free.
 
 <h4>3. Enhancing Educational Content Creation</h4>
 
@@ -72,4 +72,4 @@ Are you passionate about transforming healthcare and education through Generativ
 
 Reach out to me if you’re ready to be part of this exciting journey and collaborate on shaping the future of personalized medicine and adaptive learning.
 
-Contact me today—together, we can drive revolutionary change!
+Contact me today! Together, we can drive revolutionary change!
