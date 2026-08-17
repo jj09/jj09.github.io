@@ -68,8 +68,4 @@ By offloading the more time-consuming aspects of content creation to AI, teacher
 
 <h3>Call to Action</h3>
 
-Are you passionate about transforming healthcare and education through Generative AI? If you’re interested in exploring the incredible potential of AI-driven innovation in these fields, let’s connect! Whether you’re a healthcare professional, educator, or simply an enthusiast ready to make an impact, I’d love to hear from you.
-
-Reach out to me if you’re ready to be part of this exciting journey and collaborate on shaping the future of personalized medicine and adaptive learning.
-
-Contact me today! Together, we can drive revolutionary change!
+If you are building, researching, or deploying ML architectures in clinical diagnostics or adaptive learning platforms, please reach out. I'm actively looking to connect with engineers and practitioners (both clinicians and educators) working on real-world implementations, model evaluation constraints, or health data infrastructure.
