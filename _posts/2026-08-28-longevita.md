@@ -3,13 +3,23 @@ layout: post
 title: "Longevita: Long Live Life"
 description: "An interactive lifespan calculator with real-time parameter tweaking and a Bang-for-the-Buck ROI engine to optimize your healthspan."
 date: 2026-08-28
+categories:
+- lifestyle
+- health
 tags:
 - health
+- longevity
+- healthAI
+image:
+    path: /assets/2026/longevita.jpeg
+    width: 960
+    height: 443
+    alt: Longevita - Long Live Life 
 
 permalink: "/longevita-long-live-life/"
 ---
 
-<img src="{{ site.baseurl }}/assets/2026/longevita.jpeg" alt="Longevita: Long Live Life" title="Longevita: Long Live Life" />
+<img src="{{ site.baseurl }}/assets/2026/longevita.jpeg" alt="Longevita - Long Live Life" title="Longevita: Long Live Life" />
 
 
 In Bill Perkins’ book ***[Die with Zero](https://diewithzerobook.com/)***, there is a fundamental premise that permanently rewired how I think about time and health:
