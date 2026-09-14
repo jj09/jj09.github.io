@@ -8,13 +8,13 @@ permalink: "/about/"
 
 <h2>Hi, I am Jacob!</h2>
 
-I am Software Engineer at Meta. I work on [personal superintelligence](https://www.meta.com/superintelligence/) for the next-gen [AI glasses](https://www.meta.com/ai-glasses/). Before, I helped to launch [Meta AI](https://ai.meta.com/meta-ai/), and [AI Studio](https://about.fb.com/news/2024/07/create-your-own-custom-ai-with-ai-studio/) used by 1B+ users. My main focus was building <a href="https://ai.meta.com/ai-studio">GenAI Agents platform</a>, [RAG](https://research.facebook.com/file/4283170945104179/Retrieval-Augmented-Generation-for-Knowledge-Intensive-NLP-Tasks.pdf), and [agents personalization](https://arxiv.org/pdf/2504.10147).
+I am Software Engineer at Meta. I work on [personal superintelligence](https://www.meta.com/superintelligence/) for the next-gen [AI glasses](https://www.meta.com/ai-glasses/). Before, I helped to launch [Meta AI](https://ai.meta.com/meta-ai/), and [AI Studio](https://about.fb.com/news/2024/07/create-your-own-custom-ai-with-ai-studio/). My main focus was building <a href="https://ai.meta.com/ai-studio">Agents platform</a>, [RAG](https://research.facebook.com/file/4283170945104179/Retrieval-Augmented-Generation-for-Knowledge-Intensive-NLP-Tasks.pdf), and [personalization](https://arxiv.org/pdf/2504.10147).
 
 In the past, I worked on a few [Experimental Products](https://tech.facebook.com/engineering/2019/7/npe-team-from-facebook/) (including [Super](https://techcrunch.com/2022/08/05/meta-testing-livestreaming-platform-influencers-super)) and [Facebook Marketplace Growth Team](/growth-handbook/).
 
 Before Meta, I worked for Microsoft where I helped to build the [new Azure Management Portal](/azure-portal-the-largest-single-page-app-in-the-world/), [Azure Management Mobile App](/under-the-hood-of-the-azure-mobile-app/), [Azure Search](/azure-search-on-azure-friday/), and [SeeingAI](/seeing-ai-photo-gallery/).
 
-I am passionate about [applying AI in Healthcare and Education](/genai-healthcare-education), and improving processes with AI.
+I am deeply passionate about [improving Healthcare and Education with AI](/genai-healthcare-education).
 
 <!-- I worked at Microsoft on Azure Cloud. I helped to ship the [new Azure Management Portal](/azure-portal-the-largest-single-page-app-in-the-world/) - the first Single Page App using TypeScript. I started [Azure Management Mobile App](/under-the-hood-of-the-azure-mobile-app/), which utill today has higher store ratings than gcloud and AWS mobile apps on both App Store and Google Play. I helped to improve the management console for [Azure Search](/azure-search-on-azure-friday/). In my 10% time, I was helping with [SeeingAI app](/seeing-ai-photo-gallery/) - a mobile app for blind people that recognizes the environment around them. -->
 
